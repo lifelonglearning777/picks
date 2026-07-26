@@ -2058,7 +2058,7 @@ function vSettings(){const s=S.set;
   <div class="set-row"><span class="lbl">文字の大きさ</span>
    <span class="seg">${segBtn("fs","15","小",s.fs)}${segBtn("fs","16","中",s.fs)}${segBtn("fs","18","大",s.fs)}</span></div>
   <div class="set-row"><span class="lbl">アニメーションを減らす</span>${togBtn("motionOff",!s.motion)}</div>
-  <div class="set-row"><span class="lbl">問題中に日本語を表示(お手本タイピング)</span>${togBtn("showJa",s.showJa)}</div>
+  <div class="set-row"><span class="lbl">お手本タイピングで日本語訳も表示<small>オフにすると、英文だけを見て打つ練習になります</small></span>${togBtn("showJa",s.showJa)}</div>
   <div class="set-row"><span class="lbl">正解後に英文の設計図を表示</span>${togBtn("showBP",s.showBP)}</div>
  </div>
  <h2 class="sec">Sound</h2>
@@ -2080,10 +2080,11 @@ function vSettings(){const s=S.set;
    <details class="rule-details">
     <summary>採点のルール<span class="rule-more">くわしく見る</span></summary>
     <ul class="rule-list">
-     <li><b>短縮形はどちらでもOK</b>I'm / I am、don't / do not などは、どちらで書いても正解です。</li>
-     <li><b>thatの省略(英作文・CBTのみ)</b>「I think (that) 〜」のような文は、英作文とCBTチャレンジではthatを省略しても正解です。タイピング・ステップは、表示された通りに書く練習なのでそのままの形が必要です。</li>
-     <li><b>if節・when節は語順自由</b>「If 〜, S+V.」でも「S+V if 〜.」でも、どちらの語順でも正解です(when節も同様)。becauseは今のところ、後ろに置く語順のみを正解にしています。</li>
-     <li><b>標準はゆるめ、厳しくするのは先生の設定から</b>英作文モードでは、初期設定では大文字・記号(.?!)の細かいミスは不正解にせず、内容が合っていれば正解＋直すポイントを表示します。もっと厳しく採点したい場合は、設定画面いちばん下の「Teacher(先生向け設定)」から「英作文でも大文字・記号を厳格に採点」をオンにしてください。</li>
+     <li><b>お手本・語順</b>表示された英文と完全に同じ形で打つ練習です。短縮形(I'm/don't など)も、表示された通りの形が必要です。ゆるさはありません。</li>
+     <li><b>ステップ</b>大文字・記号(.?!)の細かい違いは大目に見ます。ただし単語そのものは表示通りが必要で、thatの省略などは正解になりません。</li>
+     <li><b>英作文</b>日本語だけを見て、自分で英文を組み立てる練習です。短縮形はどちらの形でもOK、thatの省略もOK。大文字・記号は初期設定ではゆるめですが、先生の設定で厳しくできます(設定画面いちばん下の「Teacher」→「英作文でも大文字・記号を厳格に採点」)。</li>
+     <li><b>CBTチャレンジ</b>短縮形・thatの省略はOKですが、大文字・記号はどんな設定でも常に厳しく採点します。</li>
+     <li><b>if節・when節の語順</b>「If 〜, S+V.」でも「S+V if 〜.」でも、ステップ・英作文・CBTチャレンジでは正解になります(when節も同様)。お手本と語順は、表示された1つの語順に固定されています(どちらの語順が出るかは問題によって変わります)。becauseは今のところ、後ろに置く語順のみを正解にしています。</li>
     </ul>
    </details>
   </div>
