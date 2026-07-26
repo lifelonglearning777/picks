@@ -10,14 +10,15 @@
 <link href="https://fonts.googleapis.com/css2?family=Andika:wght@400;700&family=BIZ+UDPGothic:wght@400;700&family=Space+Grotesk:wght@500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
 <style>
 :root{
-  --table:#161B24; --table-2:#1E2632; --table-3:#28303E;
+  --table:#0F172A; --table-2:#1B2740; --table-3:#28324D;
   --grid:rgba(120,150,200,.06);
-  --on:#E9EEF5; --on-soft:#9AA7B8; --on-dim:#6B7789;
+  --on:#F1F5F9; --on-soft:#9AA7B8; --on-dim:#6B7789;
   --paper:#FCFCFA; --paper-2:#F3F4EF;
   --ink:#14181F; --ink-soft:#59616E; --rule:#E1E4DC;
-  --blue:#2E6BFF; --blue-2:#5C8BFF; --blue-soft:#EAF0FF; --blue-ink:#1B3E99;
+  --blue:#4A5FA0; --blue-2:#7186C7; --blue-soft:#EAF0FF; --blue-ink:#1B3E99;
   --red:#FF4D3D; --red-soft:#FFE9E6;
-  --gold:#0D9488; --gold-2:#14B8A6; --gold-soft:#E1F7F3; --gold-ink:#0B5C52;
+  --gold:#14B8A6; --gold-2:#2DD4BF; --gold-soft:#E1F7F3; --gold-ink:#0B5C52;
+  --amber:#FBBF24; --amber-soft:#FEF3D8; --amber-ink:#8A6008;
   --ok:#1FA971; --ok-soft:#EAF7F0;
   --warn:#C3893B; --warn-soft:#FBF1E2;
   --r:14px;
@@ -41,9 +42,9 @@ body.reduce-motion *{animation:none!important;transition:none!important}
 button{font-family:inherit;cursor:pointer;border:none;background:none;color:inherit}
 textarea,input,select{font-family:inherit;font-size:1rem;color:var(--ink)}
 svg{display:block}
-:focus-visible{outline:2.5px solid var(--blue-2);outline-offset:3px;border-radius:6px}
-::selection{background:rgba(46,107,255,.32)}
-.sheet ::selection,.pv-doc ::selection{background:rgba(46,107,255,.22)}
+:focus-visible{outline:2.5px solid var(--gold-2);outline-offset:3px;border-radius:6px}
+::selection{background:rgba(20,184,166,.32)}
+.sheet ::selection,.pv-doc ::selection{background:rgba(20,184,166,.22)}
 ::-webkit-scrollbar{width:11px;height:11px}
 ::-webkit-scrollbar-track{background:transparent}
 ::-webkit-scrollbar-thumb{background:rgba(255,255,255,.16);border-radius:6px;border:3px solid var(--table)}
@@ -100,7 +101,7 @@ h2.sec.ja{font-family:"BIZ UDPGothic",sans-serif;font-size:.92rem;font-weight:70
 .sheet{background:var(--paper);color:var(--ink);border-radius:var(--r);position:relative;
   box-shadow:0 1px 0 rgba(255,255,255,.04),0 18px 40px -22px rgba(0,0,0,.7);
   border:1px solid #E7E8E1;overflow:hidden}
-.sheet::before{content:"";position:absolute;left:0;top:0;bottom:0;width:3px;background:linear-gradient(var(--blue),var(--blue-2))}
+.sheet::before{content:"";position:absolute;left:0;top:0;bottom:0;width:3px;background:linear-gradient(var(--gold),var(--gold-2))}
 .sheet.gold::before{background:linear-gradient(var(--gold),var(--gold-2))}
 .sheet-label{position:absolute;top:.7rem;right:.9rem;font-family:"Space Mono",monospace;
   font-size:.62rem;letter-spacing:.14em;color:#A9AEA2;text-transform:uppercase}
@@ -152,9 +153,9 @@ body:not(.reduce-motion) .tbox .t-dia i.on{animation:keypop .35s ease;display:in
 .map-card{display:flex;flex-direction:column;gap:.5rem;text-align:left;background:var(--table-2);
   border:1px solid rgba(255,255,255,.08);border-radius:14px;padding:.85rem 1rem;cursor:pointer;
   transition:border-color .15s,transform .12s}
-.map-card:hover{border-color:rgba(92,139,255,.55);transform:translateY(-1px)}
+.map-card:hover{border-color:rgba(45,212,191,.55);transform:translateY(-1px)}
 .mc-head{display:flex;align-items:center;gap:.6rem;width:100%}
-.mc-head .mi{width:22px;height:22px;color:var(--blue-2);flex:none}
+.mc-head .mi{width:22px;height:22px;color:var(--gold-2);flex:none}
 .mc-head b{font-size:1rem;color:var(--on)}
 .mc-lv{display:flex;align-items:center;gap:.6rem;width:100%}
 .mc-name{font-family:"Space Mono",monospace;font-size:.62rem;letter-spacing:.06em;text-transform:uppercase;
@@ -200,23 +201,36 @@ body:not(.reduce-motion) .btn-open{animation:openpulse 1.6s ease-in-out infinite
 .m-cards{display:flex;flex-direction:column;gap:.55rem;margin-top:.4rem}
 .m-card{display:flex;align-items:center;gap:.7rem;text-align:left;background:#fff;border:1px solid var(--rule);
   border-radius:11px;padding:.48rem .75rem;transition:border-color .12s,transform .12s,box-shadow .12s}
-.m-card:not(.done):hover{border-color:var(--blue);transform:translateY(-1px);box-shadow:0 3px 10px rgba(46,107,255,.12)}
+.m-card:not(.done):hover{border-color:var(--gold-2);transform:translateY(-1px);box-shadow:0 3px 10px rgba(20,184,166,.12)}
 .m-card .m-lock{width:17px;height:17px;color:#C9C2AC;flex:none}
 .m-card .m-lock svg{width:100%;height:100%;display:block}
 .m-card .m-t{flex:1;min-width:0;display:flex;flex-direction:column;gap:.16rem}
 .m-card b{font-size:.85rem;color:var(--ink)}
 .m-card .m-prog{display:flex;align-items:center;gap:.5rem}
 .m-card .m-bar{flex:1;max-width:9rem;height:4px;border-radius:2px;background:#EDEBE4;overflow:hidden}
-.m-card .m-bar i{display:block;height:100%;background:var(--blue);border-radius:2px}
+.m-card .m-bar i{display:block;height:100%;background:var(--gold-2);border-radius:2px}
+.chest-card{background:var(--table-2);color:var(--on);border:1px solid rgba(255,255,255,.08)}
+.chest-card .eyebrow{color:var(--gold-2)}
+.chest-card .tbx-note{color:var(--gold-2)}
+.chest-card .m-card{background:var(--table-3);border-color:rgba(255,255,255,.08)}
+.chest-card .m-card b{color:var(--on)}
+.chest-card .m-card .m-bar{background:rgba(255,255,255,.1)}
+.chest-card .m-card.done{background:rgba(20,184,166,.14);border-color:var(--gold)}
+.chest-card .m-card .m-go{color:var(--gold-2)}
+.chest-card .m-card.done .m-go,.chest-card .m-card.done b{color:var(--gold-2)}
+.chest-card .m-ic{color:var(--on-dim)}
+.chest-card .btn-open{background:var(--gold);color:#fff}
 .m-card .m-n{font-family:"Space Mono",monospace;font-size:.62rem;color:var(--ink-soft)}
-.m-card .m-go{flex:none;font-family:"BIZ UDPGothic",sans-serif;font-size:.72rem;color:var(--blue)}
+.m-card .m-go{flex:none;font-family:"BIZ UDPGothic",sans-serif;font-size:.72rem;color:var(--gold-2)}
 .m-card.done{background:var(--gold-soft);border-color:var(--gold)}
 .m-card.done .m-lock{color:var(--gold)}
 .m-card.done .m-bar i{background:var(--gold)}
 .m-card.done .m-go,.m-card.done b{color:var(--gold-ink)}
 .mis-done{display:flex;align-items:center;gap:.55rem;font-size:.84rem;font-weight:700;color:var(--gold-ink);padding:.25rem 0 .1rem}
-.mis-done .md-stamp{font-family:"Space Mono",monospace;font-size:.6rem;letter-spacing:.16em;text-transform:uppercase;font-weight:700;
-  color:var(--gold-ink);border:1.5px solid var(--gold);border-radius:6px;padding:.15rem .5rem;transform:rotate(-3deg);flex:none;background:#FFFDF4}
+.chest-card .mis-done{color:var(--on)}
+.mis-done .md-stamp{font-family:"Space Mono",monospace;font-size:.62rem;letter-spacing:.14em;text-transform:uppercase;font-weight:700;
+  display:inline-flex;align-items:center;gap:.3rem;color:var(--gold-ink);border-radius:99px;padding:.2rem .6rem;flex:none;background:var(--gold-soft)}
+.mis-done .md-stamp::before{content:"";width:6px;height:6px;border-radius:50%;background:currentColor}
 body:not(.reduce-motion) .mis-done{animation:stampIn .4s cubic-bezier(.3,1.4,.5,1)}
 @keyframes keypop{0%{transform:scale(.4) rotate(-30deg)}70%{transform:scale(1.25)}100%{transform:scale(1)}}
 .mis-body{display:flex;gap:1rem;align-items:center;flex:1;min-height:0}
@@ -264,7 +278,8 @@ body:not(.reduce-motion) .fin-confetti i:nth-child(5n){animation-delay:.55s;anim
 body:not(.reduce-motion) .reward.new{animation:rwin .5s ease}
 @keyframes rwin{0%{opacity:0;transform:translateY(6px)}100%{opacity:1;transform:none}}
 .reward .r-stamp{font-family:"Space Mono",monospace;font-size:.6rem;letter-spacing:.14em;text-transform:uppercase;color:var(--gold-ink);
-  border:1.5px solid var(--gold);border-radius:6px;padding:.14rem .45rem;transform:rotate(-4deg);flex:none}
+  display:inline-flex;align-items:center;gap:.3rem;border-radius:99px;padding:.16rem .55rem;background:var(--gold-soft);flex:none}
+.reward .r-stamp::before{content:"";width:6px;height:6px;border-radius:50%;background:currentColor}
 .reward .r-t{display:flex;flex-direction:column;gap:.05rem;min-width:0}
 .reward .r-en{font-weight:700;font-size:1.02rem;color:var(--ink)}
 .reward .r-ja{font-size:.74rem;color:var(--ink-soft)}
@@ -286,8 +301,10 @@ body:not(.reduce-motion) .kg-spark path:nth-child(4){animation-delay:1.3s}
   border:1.5px solid #7E8FE8;color:#D3DAFF;background:transparent;cursor:pointer;padding:0}
 .btn-speak-mini svg{width:13px;height:13px}
 .btn-speak-mini:hover{background:rgba(126,143,232,.15)}
+.speak-row .btn-speak-mini{border-color:var(--gold);color:var(--gold-ink)}
+.speak-row .btn-speak-mini:hover{background:var(--gold-soft)}
 @media(max-width:760px){.reward.loot{flex-direction:column}.loot-t{align-items:center;text-align:center}}
-.reward.loot .r-stamp{color:var(--gold-2);border-color:var(--gold-2)}
+.reward.loot .r-stamp{color:var(--amber);border-color:var(--amber)}
 .reward.loot .r-en{color:#fff;font-size:1.15rem}
 .reward.loot .r-ja{color:#C6CBEF;font-size:.8rem}
 .reward.loot .btn-speak{border-color:#7E8FE8;color:#D3DAFF;background:transparent;margin-top:.15rem;padding:.25rem .7rem}
@@ -321,7 +338,7 @@ body:not(.reduce-motion) .loot-fx i:nth-child(3n){animation-delay:2s}
 .menu-big.gold{border-color:rgba(228,161,27,.55);background:linear-gradient(135deg,rgba(228,161,27,.14),var(--table-2) 55%)}
 .menu-big.gold .mi{color:var(--gold-2)}
 .menu-big.gold:hover{border-color:var(--gold-2)}
-.menu-big.blue{border-color:rgba(92,139,255,.45);background:linear-gradient(135deg,rgba(46,107,255,.13),var(--table-2) 55%)}
+.menu-big.blue{border-color:rgba(113,134,199,.45);background:linear-gradient(135deg,rgba(74,95,160,.15),var(--table-2) 55%)}
 .menu-big.blue .mi{color:var(--blue-2)}
 .menu-big.blue:hover{border-color:var(--blue-2)}
 .menu-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:.55rem}
@@ -331,7 +348,7 @@ body:not(.reduce-motion) .loot-fx i:nth-child(3n){animation-delay:2s}
 .menu-card .mt{display:flex;flex-direction:column;gap:.08rem}
 .menu-card:hover{transform:translateY(-1px)}
 .menu-card .mi{width:20px;height:20px;flex:none}
-.menu-card.c-blue{border-left-color:var(--blue)}.menu-card.c-blue .mi{color:var(--blue-2)}.menu-card.c-blue:hover{border-color:rgba(92,139,255,.55);border-left-color:var(--blue)}
+.menu-card.c-blue{border-left-color:var(--blue)}.menu-card.c-blue .mi{color:var(--blue-2)}.menu-card.c-blue:hover{border-color:rgba(113,134,199,.55);border-left-color:var(--blue)}
 .menu-card.c-red{border-left-color:var(--red)}.menu-card.c-red .mi{color:#FF7A6E}.menu-card.c-red:hover{border-color:rgba(255,77,61,.5);border-left-color:var(--red)}
 .menu-card.c-gold{border-left-color:var(--gold)}.menu-card.c-gold .mi{color:var(--gold-2)}.menu-card.c-gold:hover{border-color:rgba(228,161,27,.55);border-left-color:var(--gold)}
 .menu-card b{font-size:.92rem;color:var(--on)}
@@ -352,13 +369,13 @@ body:not(.reduce-motion) .loot-fx i:nth-child(3n){animation-delay:2s}
 .rev-row.off:hover{background:transparent}
 .rev-row.off .mi,.rev-row.off .cnt{color:var(--on-dim)}
 .btn-primary{font-family:"Andika",sans-serif;font-weight:600;font-size:.98rem;letter-spacing:.01em;
-  color:#fff;background:var(--blue);padding:.55rem 1.25rem;border-radius:10px;
+  color:#fff;background:var(--gold);padding:.55rem 1.25rem;border-radius:10px;
   display:inline-flex;align-items:center;gap:.5rem;transition:transform .12s,background .12s}
-.btn-primary:hover{background:#255CE6}
+.btn-primary:hover{background:#0F9488}
 .btn-primary:active{transform:translateY(1px)}
 .btn-primary:disabled{opacity:.4;cursor:not-allowed}
 .btn-primary svg{width:17px;height:17px}
-.btn-gold{background:var(--gold);color:#1F1608}
+.btn-gold{background:#0F766E;color:#fff}
 .btn-gold:hover{background:#D69614}
 
 /* ===== map ===== */
@@ -408,20 +425,22 @@ details.unit[open] .u-no{color:#1F1608;background:var(--gold);border-color:var(-
 .stp.on{color:var(--table);background:var(--on);border-color:var(--on)}
 .stp.past{color:var(--gold-2);border-color:rgba(228,161,27,.55)}
 .train-sheet{padding:1.25rem 1.35rem 1.2rem}
-.q-meta{font-family:"Space Mono",monospace;font-size:.64rem;letter-spacing:.12em;text-transform:uppercase;color:var(--blue);display:flex;gap:.8rem;flex-wrap:wrap;align-items:center}
-.key-progress{display:inline-flex;gap:.15rem;align-items:center;margin-left:auto}
-.key-progress i{width:14px;height:14px;color:var(--rule)}
+.q-meta{font-family:"Space Mono",monospace;font-size:.64rem;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-soft);display:flex;gap:.8rem;flex-wrap:wrap;align-items:center}
+.key-progress{display:inline-flex;gap:.25rem;align-items:center;margin-left:auto}
+.key-progress i{width:22px;height:22px;color:var(--rule);transition:color .2s}
 .key-progress i svg{width:100%;height:100%;display:block}
 .key-progress i.on{color:var(--gold)}
+.key-progress i.pop{animation:keyPop2 .55s cubic-bezier(.34,1.56,.64,1)}
+@keyframes keyPop2{0%{transform:scale(1)}40%{transform:scale(1.7);color:var(--gold-2)}100%{transform:scale(1)}}
 .passage-box{margin:.6rem 0 .9rem;border:1px solid var(--rule);border-radius:10px;background:var(--paper-2);padding:.1rem .9rem}
 .passage-box summary{cursor:pointer;font-size:.8rem;color:var(--ink-soft);padding:.6rem 0;list-style:none}
 .passage-box summary::-webkit-details-marker{display:none}
-.passage-box summary::before{content:"▸ ";color:var(--blue)}
+.passage-box summary::before{content:"▸ ";color:var(--gold-ink)}
 .passage-box[open] summary::before{content:"▾ "}
 .passage-en{font-family:"Andika","BIZ UDPGothic",sans-serif;font-size:.92rem;line-height:1.7;color:var(--ink);padding:.2rem 0 .9rem;white-space:normal}
 .q-meta .gold{color:var(--gold-ink)}
 .q-en{font-family:"Andika",sans-serif;font-weight:700;font-size:1.4rem;line-height:1.42;color:var(--ink);margin:.35rem 0 .15rem;word-break:break-word}
-.q-en .hit{color:var(--blue)}
+.q-en .hit{color:var(--gold-ink)}
 .q-en .miss{color:#C0392B;background:var(--warn-soft);border-radius:3px;text-decoration:underline wavy #C0392B 1.5px;text-underline-offset:3px}
 .q-en .rest{color:#B9BDB2}
 .q-ja{color:var(--ink-soft);font-size:.95rem;font-weight:500}
@@ -429,10 +448,24 @@ details.unit[open] .u-no{color:#1F1608;background:var(--gold);border-color:var(-
 .type-line{margin-top:.9rem}
 .type-line input,.type-line textarea{width:100%;border:1.5px solid var(--rule);border-radius:10px;padding:.6rem .75rem;
   background:#fff;line-height:1.55;font-family:"Andika","BIZ UDPGothic",sans-serif;font-size:1.05rem}
-.type-line input:focus,.type-line textarea:focus{border-color:var(--blue)}
+.type-line input:focus,.type-line textarea:focus{border-color:var(--gold)}
 .type-line textarea{resize:vertical;min-height:3.2rem}
-.type-stats{display:flex;gap:.4rem;flex-wrap:wrap;margin-top:.5rem}
-.type-stats span{font-family:"Space Mono",monospace;font-size:.64rem;color:var(--ink-soft);background:var(--paper-2);border-radius:999px;padding:.15rem .55rem}
+.type-stats{display:flex;gap:0;flex-wrap:wrap;margin-top:.5rem}
+.kb-board{margin-top:1.1rem;padding:.85rem .7rem;background:#F3F4EF;border:1px solid var(--rule);border-radius:12px;
+  display:flex;flex-direction:column;gap:.35rem;align-items:center}
+.kb-row{display:flex;gap:.3rem;justify-content:center;width:100%}
+.kb-row2{padding:0 .6rem}
+.kb-key{min-width:2rem;flex:1;max-width:2.6rem;text-align:center;padding:.4rem 0;border-radius:7px;
+  background:#fff;border:1px solid #DCDED5;box-shadow:0 1.5px 0 #DCDED5;
+  font-family:"Space Mono",monospace;font-size:.78rem;color:var(--ink-soft);text-transform:none;user-select:none}
+.kb-key.wide{flex:1.8;max-width:4.2rem;font-size:.66rem}
+.kb-key.active{background:var(--gold);border-color:var(--gold-2);color:#fff;box-shadow:0 1.5px 0 var(--gold-ink)}
+.kb-key.dim{color:#B9BCB2;background:#EBECE6;font-size:.7rem}
+.kb-space{flex:none;width:60%;max-width:16rem}
+.kb-hint{font-family:"Space Mono",monospace;font-size:.66rem;color:var(--gold-ink);margin-top:.2rem}
+.type-stats span{font-family:"Space Mono",monospace;font-size:.72rem;color:var(--ink-soft)}
+.type-stats span:not(:first-child)::before{content:"·";margin:0 .6rem;color:var(--rule)}
+.type-stats span b{color:var(--ink);font-weight:700;margin-left:.3rem}
 .type-stats b{color:var(--ink)}
 
 /* word order chips */
@@ -441,7 +474,7 @@ details.unit[open] .u-no{color:#1F1608;background:var(--gold);border-color:var(-
   padding:.5rem .6rem;display:flex;gap:.4rem;flex-wrap:wrap;align-items:center}
 .order-bank{display:flex;gap:.45rem;flex-wrap:wrap;margin-top:.6rem}
 .w-chip{font-family:"Andika",sans-serif;font-size:.95rem;font-weight:600;padding:.32rem .7rem;border-radius:9px;
-  border:1.5px solid var(--blue);color:var(--blue);background:#fff;transition:transform .08s;position:relative}
+  border:1.5px solid var(--gold);color:var(--gold-ink);background:#fff;transition:transform .08s;position:relative}
 .w-chip:active{transform:scale(.94)}
 .w-chip.used{opacity:.25;pointer-events:none}
 .w-chip .kbd{position:absolute;top:-7px;right:-5px;font-family:"Space Mono",monospace;font-size:.54rem;
@@ -454,30 +487,31 @@ details.unit[open] .u-no{color:#1F1608;background:var(--gold);border-color:var(-
 .fb{margin-top:.8rem;border-radius:10px;padding:.65rem .85rem;font-size:.9rem;line-height:1.6}
 .fb.good{background:var(--ok-soft);color:#14563C;border:1px solid #BFE5D2}
 .fb.almost{background:var(--warn-soft);color:#6E4A16;border:1px solid #EBD5AE}
-.fb.info{background:var(--blue-soft);color:var(--blue-ink);border:1px solid #CBD9FB}
+.fb.info{background:var(--gold-soft);color:var(--gold-ink);border:1px solid #BFE5DD}
 .fb .h{font-family:"Space Mono",monospace;font-size:.6rem;letter-spacing:.14em;text-transform:uppercase;display:block;margin-bottom:.15rem;opacity:.75}
 .fb ul{margin:.2rem 0 0 1.1rem}
 .fb li{margin:.1rem 0}
 .stamp{position:absolute;right:.8rem;top:.6rem;font-family:"Space Mono",monospace;font-weight:700;
-  letter-spacing:.1em;font-size:.72rem;color:var(--red);border:2px solid var(--red);border-radius:6px;
-  padding:.08rem .45rem;transform:rotate(-7deg);animation:stampIn .3s cubic-bezier(.3,1.4,.5,1)}
-.stamp.gold{color:var(--gold-ink);border-color:var(--gold)}
-@keyframes stampIn{from{transform:rotate(-7deg) scale(1.7);opacity:0}to{transform:rotate(-7deg) scale(1);opacity:1}}
+  letter-spacing:.12em;font-size:.68rem;color:var(--red);display:inline-flex;align-items:center;gap:.3rem;
+  animation:stampIn .3s cubic-bezier(.3,1.4,.5,1)}
+.stamp::before{content:"";width:6px;height:6px;border-radius:50%;background:currentColor}
+.stamp.gold{color:var(--gold-ink)}
+@keyframes stampIn{from{transform:scale(1.4);opacity:0}to{transform:scale(1);opacity:1}}
 
 /* hint */
 .aid{margin-top:.7rem;display:flex;gap:.45rem;flex-wrap:wrap;align-items:center}
 .btn-aid{font-family:"Space Mono",monospace;font-size:.68rem;letter-spacing:.06em;text-transform:uppercase;
-  padding:.4rem .8rem;border-radius:8px;border:1px solid var(--blue);color:var(--blue);background:#fff}
+  padding:.4rem .8rem;border-radius:8px;border:1px solid var(--gold);color:var(--gold-ink);background:#fff}
 .btn-aid:disabled{opacity:.35;cursor:not-allowed}
 .aid-note{font-family:"Space Mono",monospace;font-size:.6rem;color:var(--ink-soft)}
-.aid-box{margin-top:.5rem;background:var(--blue-soft);border-radius:10px;padding:.6rem .8rem;font-size:.9rem;color:var(--ink);line-height:1.7}
+.aid-box{margin-top:.5rem;background:var(--gold-soft);border-radius:10px;padding:.6rem .8rem;font-size:.9rem;color:var(--ink);line-height:1.7}
 .aid-box.hints{display:flex;flex-direction:column;gap:0;padding:.15rem .8rem}
 .hint-row{display:flex;align-items:baseline;gap:.6rem;padding:.34rem 0;font-size:.92rem}
-.hint-row+.hint-row{border-top:1px dashed rgba(46,107,255,.18)}
-.hint-row .h-tag{flex:none;font-family:"Space Mono",monospace;font-size:.6rem;letter-spacing:.06em;color:var(--blue);
+.hint-row+.hint-row{border-top:1px dashed rgba(11,92,82,.18)}
+.hint-row .h-tag{flex:none;font-family:"Space Mono",monospace;font-size:.6rem;letter-spacing:.06em;color:var(--gold-ink);
   display:inline-flex;align-items:baseline;gap:.3rem;width:4.6rem}
 .hint-row .h-tag em{font-style:normal;color:var(--ink-soft);font-family:"BIZ UDPGothic",sans-serif;font-size:.68rem}
-.aid-box .h{font-family:"Space Mono",monospace;font-size:.6rem;letter-spacing:.14em;text-transform:uppercase;color:var(--blue-ink);display:block;margin-bottom:.15rem}
+.aid-box .h{font-family:"Space Mono",monospace;font-size:.6rem;letter-spacing:.14em;text-transform:uppercase;color:var(--gold-ink);display:block;margin-bottom:.15rem}
 .aid-box .en{font-weight:700}
 
 /* structure blueprint */
@@ -500,46 +534,44 @@ body[data-colors="hc"] .bp-cell.role-x{border-color:#00694B}
 
 /* speech / confidence */
 .speak-row{display:flex;gap:.5rem;align-items:center;margin-top:.7rem;flex-wrap:wrap}
-.btn-speak{display:inline-flex;align-items:center;gap:.4rem;font-size:.85rem;font-weight:600;color:var(--blue);
-  border:1.5px solid var(--blue);border-radius:999px;padding:.35rem .85rem;background:#fff}
+.btn-speak{display:inline-flex;align-items:center;gap:.4rem;font-size:.85rem;font-weight:600;color:var(--gold-ink);
+  border:1.5px solid var(--gold);border-radius:999px;padding:.35rem .85rem;background:#fff}
 .btn-speak svg{width:15px;height:15px}
 .speak-note{font-family:"Space Mono",monospace;font-size:.62rem;color:var(--ink-soft)}
 .conf-row{display:flex;gap:.45rem;margin-top:.7rem;flex-wrap:wrap;align-items:center}
 .conf-note{flex-basis:100%;font-size:.68rem;color:var(--ink-soft)}
 .conf-btn{flex:1;min-width:110px;border:1.5px solid var(--rule);border-radius:10px;background:#fff;
   padding:.5rem .6rem;font-size:.85rem;color:var(--ink);transition:border-color .1s}
-.conf-btn:hover{border-color:var(--blue)}
-.conf-btn.on{border-color:var(--blue);background:var(--blue-soft)}
+.conf-btn:hover{border-color:var(--gold)}
+.conf-btn.on{border-color:var(--gold);background:var(--gold-soft)}
 .train-nav{display:flex;justify-content:space-between;gap:.7rem;margin-top:1.1rem;flex-wrap:wrap}
 .btn-ghost{font-family:"Space Mono",monospace;font-size:.72rem;letter-spacing:.06em;text-transform:uppercase;
   color:var(--ink-soft);padding:.55rem .9rem;border-radius:10px;border:1.5px solid var(--rule);background:#fff}
 .btn-ghost:hover{border-color:var(--ink-soft)}
-.key-earn{position:relative;display:flex;align-items:center;gap:.7rem;background:linear-gradient(120deg,#FFF8E4,#FBF0CF);
-  border:1.5px solid var(--gold);border-radius:14px;padding:.7rem 1rem;margin-top:.8rem;overflow:hidden;
-  animation:stampIn .35s cubic-bezier(.3,1.4,.5,1)}
+.key-earn{position:relative;display:flex;align-items:center;gap:.65rem;background:#FFFCF3;
+  border:1px solid rgba(228,161,27,.35);border-left:4px solid var(--gold);border-radius:10px;padding:.55rem .8rem;margin-top:.8rem;overflow:hidden;max-width:26rem;
+  box-shadow:0 3px 10px -6px rgba(180,130,10,.4);animation:stampIn .3s cubic-bezier(.3,1.4,.5,1)}
 .key-earn::after{content:"";position:absolute;top:0;bottom:0;width:46px;left:-60px;transform:skewX(-18deg);
   background:linear-gradient(90deg,transparent,rgba(255,255,255,.85),transparent)}
 body:not(.reduce-motion) .key-earn::after{animation:shine 1.1s ease .15s 1}
 @keyframes shine{to{left:110%}}
-.ke-icon{display:flex;align-items:center;justify-content:center;width:40px;height:40px;flex:none;border-radius:50%;
+.ke-icon{display:flex;align-items:center;justify-content:center;width:34px;height:34px;flex:none;border-radius:50%;
   background:var(--gold);color:#fff;box-shadow:0 2px 8px rgba(228,161,27,.45)}
-.ke-icon svg{width:21px;height:21px}
+.ke-icon svg{width:18px;height:18px}
 body:not(.reduce-motion) .ke-icon{animation:keypop .45s cubic-bezier(.34,1.56,.64,1)}
-.ke-t b{font-size:1rem;color:var(--gold-ink);display:block}
+.ke-t b{font-size:.92rem;color:var(--gold-ink);display:block}
 .ke-dias{display:flex;align-items:center;gap:.3rem;margin-top:.15rem}
 .ke-dias i{font-style:normal;width:16px;height:16px;color:#E0D7BC}
 .ke-dias i svg{width:100%;height:100%;display:block}
 .ke-dias i.on{color:var(--gold)}
-.ke-dias small{font-size:.72rem;color:#8A6008;margin-left:.3rem}
-.key-earn.master{background:linear-gradient(120deg,var(--gold-2),var(--gold));border-color:#C98F12}
-.key-earn.master .ke-icon{background:#fff;color:var(--gold)}
-.key-earn.master .ke-t b{color:#4A3302;letter-spacing:.04em}
-.key-earn.master .ke-dias i.on{color:#fff;text-shadow:0 1px 0 rgba(0,0,0,.15)}
-.key-earn.master .ke-dias small{color:#5E4104}
+.ke-dias small{font-size:.7rem;color:#8A6008;margin-left:.3rem}
+.key-earn.master{background:var(--amber-soft);border-left-color:var(--amber)}
+.key-earn.master .ke-icon{background:var(--amber);color:#fff}
+.key-earn.master .ke-t b{color:var(--amber-ink);letter-spacing:.03em}
 .ke-burst{position:absolute;left:28px;top:50%;width:0;height:0;pointer-events:none}
 .ke-burst i{position:absolute;font-style:normal}
 .ke-burst i::before{content:"◆";font-size:.6rem;color:var(--gold)}
-.ke-burst i:nth-child(2n)::before{color:var(--blue-2)}
+.ke-burst i:nth-child(2n)::before{color:var(--amber)}
 .ke-burst i:nth-child(3n)::before{font-size:.45rem}
 body:not(.reduce-motion) .ke-burst i{animation:burst .8s ease-out .1s forwards;opacity:0}
 .ke-burst i:nth-child(1){--bx:46px;--by:-30px}.ke-burst i:nth-child(2){--bx:70px;--by:-6px}
@@ -551,17 +583,19 @@ body:not(.reduce-motion) .ke-burst i{animation:burst .8s ease-out .1s forwards;o
 
 /* finish */
 .finish{text-align:center;padding:.6rem 0 .3rem}
-.finish .fstamp{display:inline-block;font-family:"Space Mono",monospace;font-weight:700;letter-spacing:.16em;
-  color:var(--gold-ink);border:3px solid var(--gold);border-radius:12px;padding:.35rem 1.1rem;font-size:1.1rem;
-  transform:rotate(-4deg);animation:stampIn .35s cubic-bezier(.3,1.4,.5,1)}
+.finish .fstamp{display:inline-flex;align-items:center;gap:.4rem;font-family:"Space Mono",monospace;font-weight:700;letter-spacing:.14em;
+  color:var(--gold-ink);background:var(--gold-soft);border-radius:999px;padding:.3rem 1rem;font-size:.85rem;
+  animation:stampIn .35s cubic-bezier(.3,1.4,.5,1)}
+.finish .fstamp::before{content:"";width:7px;height:7px;border-radius:50%;background:currentColor}
 .finish .ftitle{font-family:"Space Grotesk",sans-serif;font-weight:600;font-size:1.1rem;color:var(--ink);margin-top:.7rem}
 .f-detail{display:flex;justify-content:center;gap:.35rem;flex-wrap:wrap;margin:.55rem 0}
 .f-detail span{font-family:"Space Mono",monospace;font-size:.66rem;color:var(--ink-soft);background:var(--paper-2);border-radius:999px;padding:.15rem .55rem}
-.badge-pop{display:flex;align-items:center;gap:.7rem;background:#fff;border:1.5px solid var(--gold);border-radius:12px;
-  padding:.6rem .85rem;margin:.5rem auto 0;max-width:420px;text-align:left;animation:stampIn .3s ease}
-.badge-pop .bi{width:32px;height:32px;flex:none;color:var(--gold)}
-.badge-pop b{font-size:.9rem;color:var(--ink)}
-.badge-pop small{display:block;font-size:.72rem;color:var(--ink-soft)}
+.badge-pop{display:flex;align-items:center;gap:.75rem;background:#FFFCF3;border:1px solid rgba(228,161,27,.35);border-radius:14px;
+  padding:.75rem 1rem;margin:.6rem auto 0;max-width:22rem;text-align:left;box-shadow:0 3px 10px -6px rgba(180,130,10,.4);animation:stampIn .3s ease}
+.badge-pop .bi{width:40px;height:40px;flex:none;padding:9px;border-radius:50%;background:var(--gold);color:#fff;box-shadow:0 2px 8px rgba(20,184,166,.35)}
+.badge-pop .bi svg{width:100%;height:100%}
+.badge-pop b{font-size:.9rem;color:var(--ink);display:block}
+.badge-pop small{display:block;font-size:.74rem;color:var(--ink-soft);margin-top:.1rem}
 
 /* CBT */
 .modal-back{position:fixed;inset:0;background:rgba(10,12,20,.62);backdrop-filter:blur(2px);z-index:50;
@@ -588,7 +622,7 @@ body:not(.reduce-motion) .modal-back{animation:rwin .18s ease}
   border:1px solid rgba(255,255,255,.18);color:var(--on-soft)}
 .cbt-palette button.cur{background:var(--on);color:var(--table)}
 .cbt-palette button{position:relative}
-.cbt-palette button.ans{border-color:var(--blue-2);color:var(--blue-2);background:rgba(46,107,255,.16)}
+.cbt-palette button.ans{border-color:var(--gold-2);color:var(--gold-2);background:rgba(20,150,140,.16)}
 .cbt-palette button.flag{border-color:var(--gold);color:var(--gold-2)}
 .cbt-palette button.flag::after{content:"";position:absolute;top:0;right:0;border:5px solid transparent;border-top-color:var(--gold);border-right-color:var(--gold);border-radius:0 6px 0 0}
 .cbt-noselect{user-select:none;-webkit-user-select:none}
@@ -609,7 +643,7 @@ body:not(.reduce-motion) .modal-back{animation:rwin .18s ease}
   border:1px solid rgba(255,255,255,.07);border-radius:12px;padding:.8rem .9rem .5rem;margin-top:.55rem}
 .chart .col{flex:1;display:flex;flex-direction:column;align-items:center;gap:.25rem;height:100%;justify-content:flex-end}
 .chart .bar{width:100%;max-width:34px;background:linear-gradient(180deg,var(--gold-2),var(--gold));border-radius:5px 5px 2px 2px;min-height:2px}
-.chart .bar.blue{background:linear-gradient(180deg,var(--blue-2),var(--blue))}
+.chart .bar.blue{background:var(--table-3)}
 .chart .dlab{font-family:"Space Mono",monospace;font-size:.56rem;color:var(--on-dim)}
 .badge-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:.5rem}
 .badge-cell{background:var(--table-2);border:1px solid rgba(255,255,255,.07);border-radius:12px;padding:.7rem .6rem;text-align:center}
@@ -627,13 +661,13 @@ body:not(.reduce-motion) .modal-back{animation:rwin .18s ease}
 .show-more{display:block;width:100%;margin-top:.55rem;padding:.5rem;border-radius:10px;border:1px dashed rgba(255,255,255,.2);
   background:transparent;color:var(--on-soft);font-family:"BIZ UDPGothic",sans-serif;font-size:.78rem;cursor:pointer}
 .show-more:hover{border-color:var(--gold);color:var(--gold-2)}
-.phrase-card.editing{border-color:var(--blue-2)}
-.mine-input{width:100%;background:rgba(255,255,255,.07);border:1px solid var(--blue-2);border-radius:8px;
+.phrase-card.editing{border-color:var(--gold-2)}
+.mine-input{width:100%;background:rgba(255,255,255,.07);border:1px solid var(--gold-2);border-radius:8px;
   padding:.4rem .6rem;font-family:"Andika",sans-serif;font-size:.9rem;color:var(--on)}
 .mine-input:focus{outline:none;background:rgba(255,255,255,.1)}
 .mine-actions{display:flex;justify-content:flex-end;gap:.4rem;margin-top:.4rem}
 .mine-actions .btn-aid{background:transparent;color:var(--on-soft);border-color:rgba(255,255,255,.25)}
-.mine-actions .btn-aid.save{color:var(--blue-2);border-color:var(--blue-2)}
+.mine-actions .btn-aid.save{color:var(--gold-2);border-color:var(--gold-2)}
 .phrase-card{background:var(--table-2);border:1px solid rgba(255,255,255,.07);border-radius:10px;padding:.55rem .8rem;display:flex;gap:.6rem;align-items:flex-start;flex-wrap:nowrap}
 .phrase-card>div:first-child{flex:1;min-width:0}
 .phrase-card .pc-act{flex:none}
@@ -674,9 +708,9 @@ body:not(.reduce-motion) .modal-back{animation:rwin .18s ease}
 .set-row .lbl{flex:1;font-size:.88rem;color:var(--on)}
 .set-row .lbl small{display:block;font-size:.7rem;color:var(--on-dim)}
 .set-row input[type=text],.set-row input[type=password]{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.2);
-  border-radius:8px;padding:.34rem .6rem;font-size:.85rem;color:var(--on);caret-color:var(--blue-2)}
+  border-radius:8px;padding:.34rem .6rem;font-size:.85rem;color:var(--on);caret-color:var(--gold-2)}
 .set-row input::placeholder{color:var(--on-dim)}
-.set-row input:focus{outline:none;border-color:var(--blue-2);background:rgba(255,255,255,.09)}
+.set-row input:focus{outline:none;border-color:var(--gold-2);background:rgba(255,255,255,.09)}
 .seg{display:flex;border:1px solid rgba(255,255,255,.16);border-radius:9px;overflow:hidden}
 .seg button{font-size:.76rem;padding:.32rem .7rem;color:var(--on-soft)}
 .seg button.on{background:var(--on);color:var(--table)}
@@ -763,15 +797,15 @@ body:not(.reduce-motion) .modal-back{animation:rwin .18s ease}
 const DATA=[
 {name:"2年前期中間",sub:"",grade:"2年",units:[
  {name:"あげる・送る表現(SVOO)",en:"give type",items:[
-    {ja:"私は彼にそのかばんをあげました。",en:"I gave him the bag.",pat:"主語＋動詞＋人＋物",st:[["I","s"],["gave","v"],["him","o"],["the bag.","o"]],exp:"giveは「人に＋物を」の順で並べます。"},
-    {ja:"健が私に本をくれました。",en:"Ken gave me a book.",pat:"主語＋動詞＋人＋物",st:[["Ken","s"],["gave","v"],["me","o"],["a book.","o"]],exp:"give 人 物で「人に物をあげる」という意味です。"},
-    {ja:"弟が私にＴシャツをくれました。",en:"My brother gave me a T-shirt.",pat:"主語＋動詞＋人＋物",st:[["My brother","s"],["gave","v"],["me","o"],["a T-shirt.","o"]],exp:"give 人 物で「人に物をあげる」という意味です。"},
-    {ja:"母が私にギターをくれました。",en:"My mother gave me a guitar.",pat:"主語＋動詞＋人＋物",st:[["My mother","s"],["gave","v"],["me","o"],["a guitar.","o"]],exp:"give 人 物で「人に物をあげる」という意味です。"},
-    {ja:"父が私にコンピューターをくれました。",en:"My father gave me a computer.",pat:"主語＋動詞＋人＋物",st:[["My father","s"],["gave","v"],["me","o"],["a computer.","o"]],exp:"give 人 物で「人に物をあげる」という意味です。"},
-    {ja:"母はこれらの新しい本を私にくれました。",en:"My mother gave me these new books.",pat:"主語＋動詞＋人＋物",st:[["My mother","s"],["gave","v"],["me","o"],["these new books.","o"]],exp:"give 人 物の語順です。"},
-    {ja:"母は私たちにクッキーをいくつか買ってくれました。",en:"Our mother bought us some cookies.",pat:"主語＋動詞＋人＋物",st:[["Our mother","s"],["bought","v"],["us","o"],["some cookies.","o"]],exp:"buy 人 物で「人に物を買ってあげる」です。"},
-    {ja:"彼女はそのCDを買いました。（「彼に」を加えて）",en:"She bought him the CD.",pat:"主語＋動詞＋人＋物",st:[["She","s"],["bought","v"],["him","o"],["the CD.","o"]],exp:"buy 人 物の順に人を割り込ませます。"},
-    {ja:"私はボブにメッセージを送るつもりです。",en:"I will send Bob a message.",pat:"主語＋will＋動詞＋人＋物",st:[["I","s"],["will send","v"],["Bob","o"],["a message.","o"]],exp:"willのあとの動詞は原形(send)にします。"},
+    {ja:"私は彼にそのかばんをあげました。",en:"I gave him the bag.",alt:["I gave the bag to him."],pat:"主語＋動詞＋人＋物",st:[["I","s"],["gave","v"],["him","o"],["the bag.","o"]],exp:"giveは「人に＋物を」の順で並べます。"},
+    {ja:"健が私に本をくれました。",en:"Ken gave me a book.",alt:["Ken gave a book to me."],pat:"主語＋動詞＋人＋物",st:[["Ken","s"],["gave","v"],["me","o"],["a book.","o"]],exp:"give 人 物で「人に物をあげる」という意味です。"},
+    {ja:"弟が私にＴシャツをくれました。",en:"My brother gave me a T-shirt.",alt:["My brother gave a T-shirt to me."],pat:"主語＋動詞＋人＋物",st:[["My brother","s"],["gave","v"],["me","o"],["a T-shirt.","o"]],exp:"give 人 物で「人に物をあげる」という意味です。"},
+    {ja:"母が私にギターをくれました。",en:"My mother gave me a guitar.",alt:["My mother gave a guitar to me."],pat:"主語＋動詞＋人＋物",st:[["My mother","s"],["gave","v"],["me","o"],["a guitar.","o"]],exp:"give 人 物で「人に物をあげる」という意味です。"},
+    {ja:"父が私にコンピューターをくれました。",en:"My father gave me a computer.",alt:["My father gave a computer to me."],pat:"主語＋動詞＋人＋物",st:[["My father","s"],["gave","v"],["me","o"],["a computer.","o"]],exp:"give 人 物で「人に物をあげる」という意味です。"},
+    {ja:"母はこれらの新しい本を私にくれました。",en:"My mother gave me these new books.",alt:["My mother gave these new books to me."],pat:"主語＋動詞＋人＋物",st:[["My mother","s"],["gave","v"],["me","o"],["these new books.","o"]],exp:"give 人 物の語順です。"},
+    {ja:"母は私たちにクッキーをいくつか買ってくれました。",en:"Our mother bought us some cookies.",alt:["Our mother bought some cookies for us."],pat:"主語＋動詞＋人＋物",st:[["Our mother","s"],["bought","v"],["us","o"],["some cookies.","o"]],exp:"buy 人 物で「人に物を買ってあげる」です。"},
+    {ja:"彼女はそのCDを買いました。（「彼に」を加えて）",en:"She bought him the CD.",alt:["She bought the CD for him."],pat:"主語＋動詞＋人＋物",st:[["She","s"],["bought","v"],["him","o"],["the CD.","o"]],exp:"buy 人 物の順に人を割り込ませます。"},
+    {ja:"私はボブにメッセージを送るつもりです。",en:"I will send Bob a message.",alt:["I will send a message to Bob."],pat:"主語＋will＋動詞＋人＋物",st:[["I","s"],["will send","v"],["Bob","o"],["a message.","o"]],exp:"willのあとの動詞は原形(send)にします。"},
     {ja:"私はそれを必要としている人にあげます。",en:"I'll give it to people in need.",pat:"主語＋give＋物＋to＋人",st:[["I'll give","v"],["it","o"],["to people in need.","x"]],exp:"in needで「困っている、必要としている」という意味です。"},
     {ja:"さやかは私たちを駅に導きます。",en:"Sayaka will lead us to the station.",pat:"主語＋will＋動詞＋人＋to＋場所",st:[["Sayaka","s"],["will lead","v"],["us","o"],["to the station.","x"]],exp:"lead 人 to 場所で「人を〜に導く」です。"}
  ]},
@@ -783,9 +817,9 @@ const DATA=[
     {ja:"あなたがとても速く走ったので、私は驚いています。",en:"I am surprised you ran very fast.",writeAlt:["I am surprised that you ran very fast."],pat:"I am surprised＋(that)＋主語＋動詞",st:[["I","s"],["am surprised","v"],["you ran very fast.","x"]],exp:"英作文ではthatを省略しても正解です(タイピング系では表示どおりに)。"}
  ]},
  {name:"There is/are構文",en:"there is/are",items:[
-    {ja:"この公園には今日、たくさんの人がいます。",en:"There are many people in this park today.",pat:"There are＋名詞(複数)＋その他",st:[["There are","v"],["many people","s"],["in this park today.","x"]],exp:"複数の人やものがいる/あるときはThere areを使います。"},
-    {ja:"新しいレストランがあります。",en:"There is a new restaurant.",pat:"There is＋名詞(単数)",st:[["There is","v"],["a new restaurant.","s"]],exp:"1つ・1人のときはThere isを使います。"},
-    {ja:"本は何冊ありますか。",en:"How many books are there?",pat:"How many＋名詞＋be動詞＋there？",st:[["How many books","s"],["are","v"],["there?","x"]],exp:"数をたずねるときはHow many＋複数形で始めます。"}
+    {ja:"この公園には今日、たくさんの人がいます。",en:"There are many people in this park today.",pat:"There are＋名詞(複数)＋その他",st:[["There","s"],["are","v"],["many people","o"],["in this park today.","x"]],exp:"複数の人やものがいる/あるときはThere areを使います。"},
+    {ja:"新しいレストランがあります。",en:"There is a new restaurant.",pat:"There is＋名詞(単数)",st:[["There","s"],["is","v"],["a new restaurant.","o"]],exp:"1つ・1人のときはThere isを使います。"},
+    {ja:"本は何冊ありますか。",en:"How many books are there?",pat:"How many＋名詞＋be動詞＋there？",st:[["How many books","o"],["are","v"],["there?","s"]],exp:"数をたずねるときはHow many＋複数形で始めます。"}
  ]},
  {name:"その他の重要表現",en:"other expressions",items:[
     {ja:"芽室はコーンで有名です。",en:"Memuro is famous for corn.",pat:"主語＋be動詞＋famous for＋名詞",st:[["Memuro","s"],["is famous for","v"],["corn.","o"]],exp:"be famous forで「〜で有名」という意味です。cornは通常、数えない名詞として使います(×corns)。"},
@@ -948,7 +982,7 @@ const DATA=[
   {ja:"私はその問題を解き明かすことができます。",en:"I can figure out the problem.",pat:"その他の重要表現",exp:"figure outで「(考えて)解き明かす、理解する」という意味の熟語です。"},
   {ja:"ペンギンの羽毛は毎年生えかわります。",en:"Penguins' new feathers grow in every year.",pat:"その他の重要表現",exp:"grow inで「(新しく)生えてくる、生えそろう」という意味です。newを入れることで「新しい羽毛が生えてくる」と自然に伝わります。"},
   {ja:"カズが私を訪ねてくる前に、宿題を終えました。",en:"I finished my homework before Kazu visited me.",pat:"その他の重要表現",exp:"beforeは「〜する前に」という意味の接続詞です。whenやbecauseと同じように主語+動詞が続きます。"},
-  {ja:"私はそのケーキの半分をマイクにあげました。",en:"I gave half of the cake to Mike.",pat:"その他の重要表現",exp:"half of 〜で「〜の半分」という意味です。"},
+  {ja:"私はそのケーキの半分をマイクにあげました。",en:"I gave half of the cake to Mike.",alt:["I gave Mike half of the cake."],pat:"その他の重要表現",exp:"half of 〜で「〜の半分」という意味です。"},
   {ja:"雨は2日から5日の間、続くでしょう。",en:"The rain will last for two to five days.",pat:"その他の重要表現",exp:"lastはここでは動詞で「続く」という意味です。for A to B daysで「A日からB日間」という期間を表します。"}
  ]}
 ]}
@@ -1067,8 +1101,8 @@ function judge(input,q,strict){
       issues.push("spell");
       const mwD=aDisp[mw]||mw,ewD=iDisp[ew]||ew;
       /* 文法ヒューリスティック */
-      if(ew+"s"===mw||ew+"es"===mw)msgs.push(`主語に合わせて、動詞の形(${mwD})を確認しよう。`);
-      else if(mw+"s"===ew||mw+"es"===ew)msgs.push(`この文では「${mwD}」と原形(または単数形)を使います。`);
+      if(ew+"s"===mw||ew+"es"===mw)msgs.push(`「${ewD}」に-s(-es)が必要です。「${mwD}」の形を確認しよう。`);
+      else if(mw+"s"===ew||mw+"es"===ew)msgs.push(`「${ewD}」の-s(-es)は不要です。「${mwD}」の形を確認しよう。`);
       else if(PAST_IRR[ew]===mw)msgs.push(`過去のことなので、動詞を過去形(${mwD})にしよう。`);
       else if(ew+"ed"===mw||ew+"d"===mw)msgs.push(`過去のことなので、動詞を過去形にしよう。`);
       else if(["am","is","are","was","were"].includes(mw)&&["am","is","are","was","were"].includes(ew))msgs.push(`主語に合うbe動詞は「${mwD}」です。`);
@@ -1258,7 +1292,7 @@ function coachMsg(){const d=day(),due=dueList().length;
  if(d.sent===0)return`まずは1文。「見て打つ」からでいい。鍵は毎日少しずつ集まります。`;
  if(d.sent<3)return`いい調子。あと ${3-d.sent} 文でミッション達成です。`;
  return`今日もよく頑張りました。音読までできたら完ぺきです。`}
-const ORNATE_KEY='<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="8" cy="8" r="5.2"/><circle cx="8" cy="8" r="2.1" fill="currentColor" stroke="none" opacity=".35"/><path d="M8 5.6 9.9 8 8 10.4 6.1 8z" fill="currentColor" stroke="none"/><path d="m11.8 11.8 8.4 8.4M17.5 17.5l2.3-2.3M15 20l2-2" /></svg>'
+const ORNATE_KEY='<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="7.3" cy="7.3" r="4.3"/><circle cx="7.3" cy="7.3" r="1.5" fill="currentColor" stroke="none" opacity=".55"/><path d="M10.4 10.4 19.3 19.3"/><path d="M15.2 15.2 17.6 12.8M17.4 17.4 19.8 15"/></svg>'
 const RICH_CHEST=`<svg viewBox="0 0 200 150" role="img" aria-label="宝箱">
 <defs>
  <radialGradient id="kg-glow" cx="50%" cy="46%" r="60%">
@@ -1334,7 +1368,7 @@ function vHome(){
  <div class="coach"><div class="avatar">${ICONS.coach}</div><div>
    <div class="c-label">Coach</div><div class="c-msg">${esc(coachMsg())}</div></div></div>
  <div class="home-top">
- <section class="sheet gold"><details class="info-pop"><summary aria-label="このカードについて"><span>?</span></summary>
+ <section class="sheet gold chest-card"><details class="info-pop"><summary aria-label="このカードについて"><span>?</span></summary>
    <div class="info-pop-panel">
     <p><b>出題範囲</b>${(S.set.seasons&&S.set.seasons.length)?S.set.seasons.map(i=>DATA[i-1]?DATA[i-1].name:"").join("・"):"すべてのシーズン"} <small style="color:var(--on-dim)">設定画面で変更できます</small></p>
     <p>今日のミッションを3つクリアすると<br>宝箱があきます。<br>ネイティブがよく使うフレーズを<br>貯めよう!<br><small style="color:var(--on-dim)">記録ページに保存されます</small></p>
@@ -1488,7 +1522,7 @@ function startSession(ids,mode,label,review){
    const extra=dueList().map(q=>q.id).filter(id=>!list.includes(id)).slice(0,2);
    extra.forEach((id,i)=>{const pos=i===0?0:Math.min(list.length,Math.ceil(list.length/2));list.splice(pos,0,id);mixed[id]=1});
  }
- session={list,idx:0,mode,label,review:!!review,att:null,requeued:{},correct:0,t0:Date.now(),mixed};
+ session={list,idx:0,mode,label,review:!!review,att:null,requeued:{},correct:0,t0:Date.now(),mixed,startKeys:totalKeys(),startMaster:masterCount()};
  S.resume={list,idx:0,mode,label,review:!!review,mixed};save();
  view="session";render()}
 function resumeSession(){const r=S.resume;if(!r)return;
@@ -1511,18 +1545,19 @@ function vSession(){
  else body=vWrite(q,a);
  return`<div class="train-top"><button class="btn-quit" id="btnQuit">← やめる(保存されます)</button>
    <div class="steps">${stepTags}</div></div>
- <section class="sheet"><span class="sheet-label">${esc(session.label)}</span>
+ <section class="sheet">
    <div class="train-sheet">${body}</div></section>`}
 function isMixed(q){return!!(session&&session.mixed&&session.mixed[q.id])}
-function metaHtml(q){const s=S.q[q.id];
- return`<div class="q-meta"><span>${esc(levelName(q.level))} · ${esc(q.unit)}</span>${isMixed(q)?'<span class="mix-chip">復習</span>':""}
-  <span class="key-progress" aria-label="このもんだいの鍵の進み具合">${['c','m','w'].map(k=>`<i class="${s&&s.keys[k]?'on':''}">${ICONS.key}</i>`).join("")}</span></div>
+function metaHtml(q,justEarned){const s=S.q[q.id];
+ return`<div class="q-meta"><span>${esc(levelName(q.level))} · ${esc(q.unit)}${session&&session.mode?" · "+esc(modeName(session.mode)):""}</span>${isMixed(q)?'<span class="mix-chip">復習</span>':""}
+  <span class="key-progress" aria-label="このもんだいの鍵の進み具合">${['c','m','w'].map(k=>`<i class="${s&&s.keys[k]?'on':''}${justEarned===k?' pop':''}">${ICONS.key}</i>`).join("")}</span></div>
   ${q.passage?`<details class="passage-box"><summary>読解文を見る</summary><div class="passage-en en">${esc(q.passage).replace(/\n/g,"<br>")}</div></details>`:""}`}
 
 /* --- お手本タイピング --- */
 function vCopy(q,a){
  const t=q.en,inp=a.cur||"",matched=(()=>{let n=0;while(n<inp.length&&n<t.length&&inp[n]===t[n])n++;return n})();
  const bad=inp.length>matched;
+ const nextCh=!bad?t[matched]:"";
  return`${metaHtml(q)}
  <div class="q-en en" aria-label="お手本">${esc(t.slice(0,matched))?`<span class="hit">${esc(t.slice(0,matched))}</span>`:""}${bad?`<span class="miss">${esc(t.slice(matched,matched+1))}</span><span class="rest">${esc(t.slice(matched+1))}</span>`:`<span class="rest">${esc(t.slice(matched))}</span>`}</div>
  ${S.set.showJa?`<div class="q-ja">${esc(q.ja)}</div>`:""}
@@ -1531,6 +1566,30 @@ function vCopy(q,a){
  <div class="type-stats">
    <span>ミス <b>${a.err}</b></span><span>Backspace <b>${a.bs}</b></span>
    <span>${a.t0?`経過 <b>${Math.round((Date.now()-a.t0)/1000)}</b> 秒`:"タイプすると計測開始"}</span>
+ </div>
+ ${kbHtml(nextCh)}`}
+const KB_ROWS=[["1","2","3","4","5","6","7","8","9","0"],["Q","W","E","R","T","Y","U","I","O","P"],["A","S","D","F","G","H","J","K","L"],["shift","Z","X","C","V","B","N","M",",",".","?"]];
+function kbHtml(nextCh){
+ const isUpperLetter=/[A-Z]/.test(nextCh);
+ const isApos=nextCh==="'";
+ const needsShift=isUpperLetter||isApos;
+ const lower=nextCh?nextCh.toLowerCase():"";
+ const isPunct=k=>[",",".","?"].includes(k);
+ const rowHtml=(row,isNumRow)=>row.map(k=>{
+   let active=false,dim=isNumRow;
+   if(isNumRow){if(k==="7"&&isApos){active=true;dim=false}}
+   else if(k==="shift")active=needsShift;
+   else if(isPunct(k))active=nextCh===k;
+   else active=/[A-Za-z]/.test(k)&&lower===k.toLowerCase();
+   return `<span class="kb-key${active?' active':''}${k==="shift"?' wide':''}${dim?' dim':''}">${k==="shift"?"Shift":k}</span>`}).join("");
+ const spaceActive=nextCh===" ";
+ return`<div class="kb-board" aria-hidden="true">
+  <div class="kb-row">${rowHtml(KB_ROWS[0],true)}</div>
+  <div class="kb-row">${rowHtml(KB_ROWS[1])}</div>
+  <div class="kb-row kb-row2">${rowHtml(KB_ROWS[2])}</div>
+  <div class="kb-row">${rowHtml(KB_ROWS[3])}</div>
+  <div class="kb-row"><span class="kb-key kb-space${spaceActive?' active':''}">Space</span></div>
+  ${isApos?'<div class="kb-hint">アポストロフィ(\')は Shift + 7</div>':""}
  </div>`}
 function bindCopy(q,a){const ti=$("#ti");if(!ti)return;ti.focus();
  try{ti.setSelectionRange(ti.value.length,ti.value.length)}catch(e){}
@@ -1671,24 +1730,19 @@ function bindWrite(q,a){const ti=$("#ti");if(ti){ti.focus();
 function vDone(q,a){
  const showConf=S.set.conf&&!a.confDone&&session.mode!=="copy";
  const earned=a.result==="write"?(a.hint===0?"w":"m"):a.result==="order"?"m":a.result==="step"?"w":"c";
- const keyNames={c:"Copy Key",m:"Memory Key",w:"Writing Key"};
- return`${metaHtml(q)}
+ return`${metaHtml(q,a.keyNew?earned:null)}
  <div style="position:relative"><span class="stamp gold">${a.result==="copy"&&a.acc>=100?"PERFECT":"CLEAR"}</span>
  <div class="q-en en">${esc(q.en)}</div><div class="q-ja">${esc(q.ja)}</div></div>
  ${a.fbOk||""}
  ${a.acc!==null&&a.acc!==undefined&&a.result==="copy"?`<div class="type-stats"><span>正確さ <b>${a.acc}%</b></span><span>速さ <b>${a.wpm}</b> wpm</span><span>時間 <b>${a.sec}</b> 秒</span><span>ミス <b>${a.err}</b></span></div>`:""}
- ${a.keyNew?(()=>{const st=S.q[q.id],n=['c','m','w'].filter(k=>st.keys[k]).length,mas=isMaster(q.id);
-   return`<div class="key-earn v2 ${mas?'master':''}">
-    <span class="ke-burst" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></span>
+ ${a.keyNew&&isMaster(q.id)?`<div class="key-earn master">
     <span class="ke-icon">${ORNATE_KEY}</span>
-    <div class="ke-t"><b>${mas?"MASTER!":keyNames[earned]+" を手に入れた!"}</b>
-     <span class="ke-dias">${['c','m','w'].map(k=>`<i class="${st.keys[k]?'on':''}">${ICONS.key}</i>`).join("")}
-      <small>${mas?"3本コンプリート! この文はもうきみのもの":"あと "+(3-n)+" 本でマスター"}</small></span>
-    </div></div>`})():""}
+    <div class="ke-t"><b>MASTER!</b><small>3本そろいました。この文はもうきみのもの</small></div></div>`:""}
  ${S.set.showBP?blueprintHtml(q):""}
  ${q.exp?`<div class="aid-box" style="margin-top:.6rem"><span class="h">Point</span>${esc(q.exp)}</div>`:""}
  <div class="speak-row">
-   ${canSpeak&&S.set.speech?`<button class="btn-speak" id="btnSpeak">${ICONS.sound} もう一度聞く</button><span class="speak-note">声に出して読もう</span>`:`<span class="speak-note">声に出して読もう</span>`}
+   ${canSpeak&&S.set.speech?`<button class="btn-speak-mini" id="btnSpeak" aria-label="もう一度聞く">${ICONS.sound}</button>`:""}
+   <span class="speak-note">声に出して読もう</span>
  </div>
  ${showConf?`<div class="conf-row" role="group" aria-label="自信度">
    <button class="conf-btn ${a.conf==='sure'?'on':''}" data-cf="sure">自信あり</button>
@@ -1697,8 +1751,7 @@ function vDone(q,a){
    <span class="conf-note">正直に選ぶと、次にこの文が出るタイミングをPICKSがちょうどよく調整します</span></div>`:""}
  ${newBadges.length?newBadges.map(b=>`<div class="badge-pop"><span class="bi">${ICONS.badge}</span><div><b>${esc(b.n)}</b><small>${esc(b.d)}</small></div></div>`).join(""):""}
  <div class="train-nav"><span></span>
-   <button class="btn-primary btn-gold" id="btnNext">${session.idx<session.list.length-1?"次の問題へ":"結果を見る"} →</button></div>
- <div style="text-align:right;margin-top:.3rem"><span class="empty" style="font-size:.62rem;color:var(--ink-soft)">Enterキーでも進めます</span></div>`}
+   <button class="btn-primary btn-gold" id="btnNext">${session.idx<session.list.length-1?"次の問題へ":"結果を見る"} →</button></div>`}
 function blueprintHtml(q){
  const roles={s:"主語",v:"動詞",o:"目的語・補語",x:"その他"};
  if(q.st)return`<div class="blueprint"><span class="h">英文の設計図</span>
@@ -1739,8 +1792,8 @@ const FIN_EMBLEM=`<svg viewBox="0 0 200 170" role="img" aria-label="クリア記
  <circle cx="100" cy="72" r="40" fill="url(#fg-gold)" stroke="#8A5B08" stroke-width="2"/>
  <circle cx="100" cy="72" r="31" fill="#FFFDF4" stroke="#E4A11B" stroke-width="2"/>
  <g transform="translate(84 56) scale(1.35)" stroke="#B87B10" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-  <circle cx="8" cy="8" r="5.2"/><path d="M8 5.6 9.9 8 8 10.4 6.1 8z" fill="#E4A11B" stroke="none"/>
-  <path d="m11.8 11.8 8.4 8.4M17.5 17.5l2.3-2.3M15 20l2-2"/>
+  <circle cx="7.3" cy="7.3" r="4.3"/><circle cx="7.3" cy="7.3" r="1.5" fill="#E4A11B" stroke="none"/>
+  <path d="M10.4 10.4 19.3 19.3"/><path d="M15.2 15.2 17.6 12.8M17.4 17.4 19.8 15"/>
  </g>
 </g>
 <g class="fg-spark" fill="#F5C64F">
@@ -1752,12 +1805,13 @@ const FIN_EMBLEM=`<svg viewBox="0 0 200 170" role="img" aria-label="クリア記
 function showFinish(){
  stopSpeak();
  const n=session.list.length,wasReview=session.review,dueN=dueList().length;
+ const keysGained=totalKeys()-(session.startKeys||0),masterGained=masterCount()-(session.startMaster||0);
  $("#app").innerHTML=`<section class="sheet gold fin-sheet"><div class="pad finish">
   <span class="fin-confetti" aria-hidden="true">${[...Array(14)].map(()=>"<i></i>").join("")}</span>
   <div class="fin-emblem">${FIN_EMBLEM}</div>
   <span class="fstamp">SESSION CLEAR</span>
-  <div class="ftitle">${esc(session.label)} · ${n}問 おつかれさま!</div>
-  <div class="f-detail"><span>今日の合計 ${day().sent} 文</span><span>鍵 ${totalKeys()} 本</span><span>マスター ${masterCount()} 文</span></div>
+  <div class="ftitle">${esc(session.label)}</div>
+  ${keysGained||masterGained?`<div class="f-detail">${keysGained?`<span>鍵 +${keysGained}本</span>`:""}${masterGained?`<span>マスター +${masterGained}文</span>`:""}</div>`:""}
   ${newBadges.length?newBadges.map(b=>`<div class="badge-pop"><span class="bi">${ICONS.badge}</span><div><b>${esc(b.n)}</b><small>${esc(b.d)}</small></div></div>`).join(""):""}
   ${(!wasReview&&dueN)?`<p class="f-review-note">記憶が消えかけたタイミングでの復習が、いちばん定着します。</p>`:""}
   <div class="train-nav" style="justify-content:center;margin-top:1rem">
@@ -1826,7 +1880,7 @@ function vCbt(){
     <button class="btn-ghost" id="btnPrev" ${cbt.idx===0?"disabled":""}>← 前へ</button>
     <button class="btn-ghost" id="btnFlag">${cbt.flag[q.id]?"マーク解除":"見直しマーク"}</button></div>
    <div style="display:flex;gap:.5rem">
-    ${cbt.idx<cbt.list.length-1?`<button class="btn-primary" id="btnNextC">次へ →</button>`:""}
+    ${cbt.idx<cbt.list.length-1?`<button class="btn-ghost" id="btnNextC">次へ →</button>`:""}
     <button class="btn-primary btn-gold" id="btnSubmit">提出する</button></div>
   </div></div></section>
  ${cbt.confirm?`<div class="modal-back">${vCbtConfirm()}</div>`:""}`}
@@ -2084,7 +2138,8 @@ function vSettings(){const s=S.set;
      <li><b>ステップ</b>大文字・記号(.?!)の細かい違いは大目に見ます。ただし単語そのものは表示通りが必要で、thatの省略などは正解になりません。</li>
      <li><b>英作文</b>日本語だけを見て、自分で英文を組み立てる練習です。短縮形はどちらの形でもOK、thatの省略もOK。大文字・記号は初期設定ではゆるめですが、先生の設定で厳しくできます(設定画面いちばん下の「Teacher」→「英作文でも大文字・記号を厳格に採点」)。</li>
      <li><b>CBTチャレンジ</b>短縮形・thatの省略はOKですが、大文字・記号はどんな設定でも常に厳しく採点します。</li>
-     <li><b>if節・when節の語順</b>「If 〜, S+V.」でも「S+V if 〜.」でも、ステップ・英作文・CBTチャレンジでは正解になります(when節も同様)。お手本と語順は、表示された1つの語順に固定されています(どちらの語順が出るかは問題によって変わります)。becauseは今のところ、後ろに置く語順のみを正解にしています。</li>
+     <li><b>if(when)節の語順</b>「If(When) 〜, S+V.」でも「S+V if(when) 〜.」でも、ステップ・英作文・CBTチャレンジでは正解になります。お手本と語順は、表示された語順に固定されています。</li>
+     <li><b>give/buy/sendの書きかえ</b>「give(buy)等 人 物」でも「give(buy)等 物 to(for) 人」でも、ステップ・英作文・CBTチャレンジでは正解になります。お手本と語順は、表示された語順に固定されています。</li>
     </ul>
    </details>
   </div>
