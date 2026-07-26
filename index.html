@@ -170,11 +170,11 @@ body:not(.reduce-motion) .tbox .t-dia i.on{animation:keypop .35s ease;display:in
 .sb-sub{font-family:"Space Mono",monospace;font-size:.66rem;letter-spacing:.08em;text-transform:uppercase;color:var(--on-dim)}
 .sb-prog{margin-left:auto;font-family:"Space Mono",monospace;font-size:.72rem;color:var(--gold-2)}
 .sb-prog em{font-style:normal;color:var(--on-dim)}
-.season-detail-link{display:flex;align-items:center;gap:.7rem;width:100%;text-align:left;margin-top:.9rem;padding:.6rem .9rem;
+.season-detail-link{display:flex;align-items:center;gap:.7rem;width:100%;text-align:left;margin-top:.9rem;padding:.6rem 1rem;
   background:rgba(20,150,140,.08);border:1.5px solid var(--gold);border-radius:10px;
   color:var(--on);cursor:pointer}
 .season-detail-link .mi{width:22px;height:22px;flex:none;color:var(--gold-2)}
-.season-detail-link .mt{display:flex;flex-wrap:wrap;align-items:baseline;gap:.5rem;min-width:0}
+.season-detail-link .mt{display:flex;flex-wrap:wrap;align-items:baseline;gap:1.1rem;min-width:0}
 .season-detail-link b{color:var(--gold-2);font-size:.92rem}
 .season-detail-link small{font-family:"Space Mono",monospace;font-size:.68rem;letter-spacing:.03em;color:var(--on-soft)}
 .season-detail-link .sdl-arw{width:18px;height:18px;flex:none;margin-left:auto;color:var(--gold-2)}
@@ -311,11 +311,11 @@ body:not(.reduce-motion) .loot-fx i:nth-child(3n){animation-delay:2s}
 /* home menu: primary row + secondary row */
 .menu-top{display:grid;grid-template-columns:1fr 1fr;gap:.55rem;margin-bottom:.55rem}
 .menu-top.single{grid-template-columns:1fr}
-.menu-big{border-radius:14px;padding:.85rem 1rem;text-align:left;display:flex;align-items:center;gap:.8rem;
+.menu-big{border-radius:14px;padding:.85rem 1rem;text-align:left;display:flex;align-items:center;gap:.7rem;
   border:1px solid rgba(255,255,255,.08);background:var(--table-2);transition:border-color .12s,transform .12s;cursor:pointer}
 .menu-big:hover{transform:translateY(-1px)}
-.menu-big .mi{width:30px;height:30px;flex:none}
-.menu-big .mt{display:flex;flex-direction:column;gap:.12rem}
+.menu-big .mi{width:22px;height:22px;flex:none}
+.menu-big .mt{display:flex;flex-wrap:wrap;align-items:baseline;gap:.6rem;min-width:0}
 .menu-big b{font-size:1.02rem;color:var(--on)}
 .menu-big small{font-family:"Space Mono",monospace;font-size:.6rem;letter-spacing:.08em;text-transform:uppercase;color:var(--on-dim)}
 .menu-big.gold{border-color:rgba(228,161,27,.55);background:linear-gradient(135deg,rgba(228,161,27,.14),var(--table-2) 55%)}
@@ -338,11 +338,12 @@ body:not(.reduce-motion) .loot-fx i:nth-child(3n){animation-delay:2s}
 .menu-card small{font-family:"Space Mono",monospace;font-size:.6rem;letter-spacing:.08em;text-transform:uppercase;color:var(--on-dim)}
 .menu-card .cnt{font-family:"Space Mono",monospace;font-size:.68rem;color:var(--gold-2)}
 .rev-card{background:var(--table-2);border:1px solid rgba(255,255,255,.07);border-radius:14px;padding:.5rem .55rem}
-.rev-row{display:flex;align-items:center;gap:.7rem;width:100%;text-align:left;padding:.68rem .8rem;border-radius:10px;cursor:pointer}
+.rev-row{display:flex;align-items:center;gap:.7rem;width:100%;text-align:left;padding:.68rem 1rem;border-radius:10px;cursor:pointer}
 .rev-row+.rev-row{border-top:1px dashed rgba(255,255,255,.08)}
 .rev-row:hover{background:rgba(255,255,255,.04)}
-.rev-row .mi{width:20px;height:20px;color:var(--gold-2);flex:none}
+.rev-row .mi{width:22px;height:22px;color:var(--gold-2);flex:none}
 .rev-row .rr-t{display:flex;flex-wrap:wrap;align-items:baseline;gap:.5rem;min-width:0}
+.rev-row .rr-t b{display:inline-block;min-width:5.4em}
 .rev-row b{font-size:.9rem;color:var(--on)}
 .rev-row small{font-size:.72rem;color:var(--on-dim)}
 .rev-row .cnt{margin-left:auto;font-family:"Space Mono",monospace;font-size:.72rem;color:var(--gold-2);flex:none}
@@ -656,6 +657,18 @@ body:not(.reduce-motion) .modal-back{animation:rwin .18s ease}
 
 /* settings */
 .set-card{background:var(--table-2);border:1px solid rgba(255,255,255,.07);border-radius:12px;padding:.85rem .95rem;margin-bottom:.6rem}
+.rule-details summary{cursor:pointer;color:var(--on-soft);font-size:.85rem;line-height:1.6;list-style:none;display:flex;align-items:center;gap:.6rem}
+.rule-details summary::-webkit-details-marker{display:none}
+.rule-details summary::before{content:"▸";color:var(--gold-2)}
+.rule-details[open] summary::before{content:"▾"}
+.rule-details[open] summary{color:var(--on);margin-bottom:.6rem}
+.rule-more{font-family:"Space Mono",monospace;font-size:.62rem;letter-spacing:.05em;color:var(--gold-ink);
+  background:var(--gold-soft);border-radius:99px;padding:.2rem .65rem;white-space:nowrap}
+.rule-more::after{content:" →"}
+.rule-list{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:.7rem}
+.rule-list li{font-size:.82rem;line-height:1.55;color:var(--on-soft);padding-top:.7rem;border-top:1px dashed rgba(255,255,255,.08)}
+.rule-list li:first-child{padding-top:0;border-top:none}
+.rule-list b{display:block;color:var(--gold-2);margin-bottom:.15rem}
 .set-row{display:flex;align-items:center;gap:.7rem;padding:.42rem 0;border-top:1px solid rgba(255,255,255,.05);flex-wrap:wrap}
 .set-row:first-child{border-top:none}
 .set-row .lbl{flex:1;font-size:.88rem;color:var(--on)}
@@ -797,19 +810,19 @@ const DATA=[
   {ja:"あなたが疲れていることを私は知っています。",en:"I know that you are tired.",writeAlt:["I know you are tired."],pat:"主語＋think/know＋(that)＋主語＋動詞",exp:"thatのあとに「主語＋動詞」が続きます。英作文ではthatを省略した「I know you are tired.」も正解です。"}
  ]},
  {name:"when節(〜するとき)",en:"when-clause",items:[
-  {ja:"私は幼い頃、東京に住んでいました。",en:"I lived in Tokyo when I was little.",pat:"whenを使って「〜するとき」を表す文",exp:"when〜は文の前でも後でも置けます。前に置くときは全体をコンマで区切ります。"},
-  {ja:"私が幼い頃、東京に住んでいました。",en:"When I was little, I lived in Tokyo.",pat:"whenを使って「〜するとき」を表す文",exp:"when〜は文の前でも後でも置けます。前に置くときは全体をコンマで区切ります。"},
-  {ja:"私は暇なとき、母を手伝います。",en:"I help my mother when I'm free.",pat:"whenを使って「〜するとき」を表す文",exp:"when〜は文の前でも後でも置けます。前に置くときは全体をコンマで区切ります。"},
-  {ja:"雨のとき、私は歩いて学校へ行きます。",en:"I walk to school when it's rainy.",pat:"whenを使って「〜するとき」を表す文",exp:"when〜は文の前でも後でも置けます。前に置くときは全体をコンマで区切ります。"},
-  {ja:"京都を訪れたとき、舞妓さんを見ました。",en:"I saw a maiko-san when I visited Kyoto.",pat:"whenを使って「〜するとき」を表す文",exp:"when〜は文の前でも後でも置けます。前に置くときは全体をコンマで区切ります。"},
-  {ja:"翔太は時間があるとき、ギターを弾きます。",en:"Shota plays the guitar when he has time.",pat:"whenを使って「〜するとき」を表す文",exp:"when〜は文の前でも後でも置けます。前に置くときは全体をコンマで区切ります。"},
-  {ja:"ミカを見たとき、彼女はうれしそうでした。",en:"When I saw Mika, she looked happy.",pat:"whenを使って「〜するとき」を表す文",exp:"when〜は文の前でも後でも置けます。前に置くときは全体をコンマで区切ります。"},
-  {ja:"彼はメグを見たとき、うれしかったです。",en:"He was happy when he saw Meg.",pat:"whenを使って「〜するとき」を表す文",exp:"when〜は文の前でも後でも置けます。前に置くときは全体をコンマで区切ります。"},
-  {ja:"ユミは子どもの頃、犬を飼っていました。",en:"When Yumi was a child, she had a dog.",pat:"whenを使って「〜するとき」を表す文",exp:"when〜は文の前でも後でも置けます。前に置くときは全体をコンマで区切ります。"},
-  {ja:"暇なとき、あなたは何をしますか。",en:"What do you do when you are free?",pat:"whenを使って「〜するとき」を表す文",exp:"when〜は文の前でも後でも置けます。前に置くときは全体をコンマで区切ります。"},
-  {ja:"父が帰宅したとき、私は音楽を聴いていました。",en:"I was listening to music when my father came home.",pat:"whenを使って「〜するとき」を表す文",exp:"when〜は文の前でも後でも置けます。前に置くときは全体をコンマで区切ります。"},
-  {ja:"私が帰宅したとき、父は夕食を作っていました。",en:"When I came home, my father was making dinner.",pat:"whenを使って「〜するとき」を表す文",exp:"when〜は文の前でも後でも置けます。前に置くときは全体をコンマで区切ります。"},
-  {ja:"私が部屋を掃除しているとき、母が帰宅しました。",en:"My mother got home when I was cleaning my room.",pat:"whenを使って「〜するとき」を表す文",exp:"when〜は文の前でも後でも置けます。前に置くときは全体をコンマで区切ります。"}
+  {ja:"私は幼い頃、東京に住んでいました。",en:"I lived in Tokyo when I was little.",alt:["When I was little, I lived in Tokyo."],pat:"whenを使って「〜するとき」を表す文",exp:"when〜は文の前でも後でも置けます。前に置くときは全体をコンマで区切ります。"},
+  {ja:"私が幼い頃、東京に住んでいました。",en:"When I was little, I lived in Tokyo.",alt:["I lived in Tokyo when I was little."],pat:"whenを使って「〜するとき」を表す文",exp:"when〜は文の前でも後でも置けます。前に置くときは全体をコンマで区切ります。"},
+  {ja:"私は暇なとき、母を手伝います。",en:"I help my mother when I'm free.",alt:["When I'm free, I help my mother."],pat:"whenを使って「〜するとき」を表す文",exp:"when〜は文の前でも後でも置けます。前に置くときは全体をコンマで区切ります。"},
+  {ja:"雨のとき、私は歩いて学校へ行きます。",en:"I walk to school when it's rainy.",alt:["When it's rainy, I walk to school."],pat:"whenを使って「〜するとき」を表す文",exp:"when〜は文の前でも後でも置けます。前に置くときは全体をコンマで区切ります。"},
+  {ja:"京都を訪れたとき、舞妓さんを見ました。",en:"I saw a maiko-san when I visited Kyoto.",alt:["When I visited Kyoto, I saw a maiko-san."],pat:"whenを使って「〜するとき」を表す文",exp:"when〜は文の前でも後でも置けます。前に置くときは全体をコンマで区切ります。"},
+  {ja:"翔太は時間があるとき、ギターを弾きます。",en:"Shota plays the guitar when he has time.",alt:["When he has time, Shota plays the guitar."],pat:"whenを使って「〜するとき」を表す文",exp:"when〜は文の前でも後でも置けます。前に置くときは全体をコンマで区切ります。"},
+  {ja:"ミカを見たとき、彼女はうれしそうでした。",en:"When I saw Mika, she looked happy.",alt:["She looked happy when I saw Mika."],pat:"whenを使って「〜するとき」を表す文",exp:"when〜は文の前でも後でも置けます。前に置くときは全体をコンマで区切ります。"},
+  {ja:"彼はメグを見たとき、うれしかったです。",en:"He was happy when he saw Meg.",alt:["When he saw Meg, he was happy."],pat:"whenを使って「〜するとき」を表す文",exp:"when〜は文の前でも後でも置けます。前に置くときは全体をコンマで区切ります。"},
+  {ja:"ユミは子どもの頃、犬を飼っていました。",en:"When Yumi was a child, she had a dog.",alt:["She had a dog when Yumi was a child."],pat:"whenを使って「〜するとき」を表す文",exp:"when〜は文の前でも後でも置けます。前に置くときは全体をコンマで区切ります。"},
+  {ja:"暇なとき、あなたは何をしますか。",en:"What do you do when you are free?",alt:["When you are free, what do you do?"],pat:"whenを使って「〜するとき」を表す文",exp:"when〜は文の前でも後でも置けます。前に置くときは全体をコンマで区切ります。"},
+  {ja:"父が帰宅したとき、私は音楽を聴いていました。",en:"I was listening to music when my father came home.",alt:["When my father came home, I was listening to music."],pat:"whenを使って「〜するとき」を表す文",exp:"when〜は文の前でも後でも置けます。前に置くときは全体をコンマで区切ります。"},
+  {ja:"私が帰宅したとき、父は夕食を作っていました。",en:"When I came home, my father was making dinner.",alt:["My father was making dinner when I came home."],pat:"whenを使って「〜するとき」を表す文",exp:"when〜は文の前でも後でも置けます。前に置くときは全体をコンマで区切ります。"},
+  {ja:"私が部屋を掃除しているとき、母が帰宅しました。",en:"My mother got home when I was cleaning my room.",alt:["When I was cleaning my room, my mother got home."],pat:"whenを使って「〜するとき」を表す文",exp:"when〜は文の前でも後でも置けます。前に置くときは全体をコンマで区切ります。"}
  ]},
  {name:"because節(理由)",en:"because-clause",items:[
   {ja:"サッカーはとてもわくわくするので、私はサッカーが好きです。",en:"I like soccer because it's very exciting.",pat:"becauseを使って理由を表す文",exp:"becauseのあとには理由(主語＋動詞)が続きます。"},
@@ -823,13 +836,13 @@ const DATA=[
  {name:"if節(条件)",en:"if-clause",items:[
   {ja:"次の日曜日に晴れたら、私はサッカーをします。",en:"If it's fine next Sunday, I will play soccer.",alt:["I will play soccer if it's fine next Sunday."],pat:"ifを使って条件を表す文",exp:"if〜(条件)の中では、未来のことでも現在形を使います。ifを後ろに置く語順も正解です。"},
   {ja:"次の日曜日に晴れたら、私はサッカーをします。",en:"I will play soccer if it's fine next Sunday.",alt:["If it's fine next Sunday, I will play soccer."],pat:"ifを使って条件を表す文",exp:"if〜(条件)の中では、未来のことでも現在形を使います。ifを前に置く語順も正解です。"},
-  {ja:"明日あなたが家にいたら、会いに行きます。",en:"If you are at home tomorrow, I'll visit you.",pat:"ifを使って条件を表す文",exp:"if〜(条件)の中では、未来のことでも現在形を使います。"},
-  {ja:"一緒に買い物へ行ってくれたら、私はうれしいです。",en:"If you go shopping with me, I'll be happy.",pat:"ifを使って条件を表す文",exp:"if〜(条件)の中では、未来のことでも現在形を使います。"},
-  {ja:"明日暑かったら、このTシャツを着ます。",en:"If it is hot tomorrow, I'll wear this T-shirt.",pat:"ifを使って条件を表す文",exp:"if〜(条件)の中では、未来のことでも現在形を使います。"},
-  {ja:"あなたが忙しかったら、私が手伝います。",en:"If you are busy, I will help you.",pat:"ifを使って条件を表す文",exp:"if〜(条件)の中では、未来のことでも現在形を使います。"},
-  {ja:"ペンが必要なら、私のものを使ってもいいですよ。",en:"If you need a pen, you can use mine.",pat:"ifを使って条件を表す文",exp:"if〜(条件)の中では、未来のことでも現在形を使います。"},
-  {ja:"リョウと話せば、彼のことを気に入るでしょう。",en:"You will like Ryo if you talk with him.",pat:"ifを使って条件を表す文",exp:"if〜(条件)の中では、未来のことでも現在形を使います。"},
-  {ja:"明日あなたが来てくれたら、私はうれしいです。",en:"If you come tomorrow, I'll be happy.",pat:"ifを使って条件を表す文",exp:"if〜(条件)の中では、未来のことでも現在形を使います。"}
+  {ja:"明日あなたが家にいたら、会いに行きます。",en:"If you are at home tomorrow, I'll visit you.",alt:["I'll visit you if you are at home tomorrow."],pat:"ifを使って条件を表す文",exp:"if〜(条件)の中では、未来のことでも現在形を使います。"},
+  {ja:"一緒に買い物へ行ってくれたら、私はうれしいです。",en:"If you go shopping with me, I'll be happy.",alt:["I'll be happy if you go shopping with me."],pat:"ifを使って条件を表す文",exp:"if〜(条件)の中では、未来のことでも現在形を使います。"},
+  {ja:"明日暑かったら、このTシャツを着ます。",en:"If it is hot tomorrow, I'll wear this T-shirt.",alt:["I'll wear this T-shirt if it is hot tomorrow."],pat:"ifを使って条件を表す文",exp:"if〜(条件)の中では、未来のことでも現在形を使います。"},
+  {ja:"あなたが忙しかったら、私が手伝います。",en:"If you are busy, I will help you.",alt:["I will help you if you are busy."],pat:"ifを使って条件を表す文",exp:"if〜(条件)の中では、未来のことでも現在形を使います。"},
+  {ja:"ペンが必要なら、私のものを使ってもいいですよ。",en:"If you need a pen, you can use mine.",alt:["You can use mine if you need a pen."],pat:"ifを使って条件を表す文",exp:"if〜(条件)の中では、未来のことでも現在形を使います。"},
+  {ja:"リョウと話せば、彼のことを気に入るでしょう。",en:"You will like Ryo if you talk with him.",alt:["If you talk with him, you will like Ryo."],pat:"ifを使って条件を表す文",exp:"if〜(条件)の中では、未来のことでも現在形を使います。"},
+  {ja:"明日あなたが来てくれたら、私はうれしいです。",en:"If you come tomorrow, I'll be happy.",alt:["I'll be happy if you come tomorrow."],pat:"ifを使って条件を表す文",exp:"if〜(条件)の中では、未来のことでも現在形を使います。"}
  ]},
  {name:"過去進行形(〜していた)",en:"past progressive",items:[
   {ja:"私はテレビを見ていました。",en:"I was watching TV.",pat:"was/were＋動詞のing形「〜していた」",exp:"過去のある時点で進行中だった動作を表します。"},
@@ -967,16 +980,17 @@ const shuffle=a=>{a=a.slice();for(let i=a.length-1;i>0;i--){const j=Math.floor(M
 
 /* ---------- 保存 (localStorage / バージョン付き) ---------- */
 const SKEY="picks-app-v1";
-const DEFAULTS={v:1,q:{},log:[],days:{},badges:[],phrases:[],mine:[],rewards:[],streak:0,lastDay:"",bestStreak:0,
+const DEFAULTS={v:1,q:{},log:[],days:{},badges:[],phrases:[],mine:[],rewards:[],streak:0,lastDay:"",bestStreak:0,deviceSeed:0,
   mission:{date:"",items:[]},resume:null,
   set:{strictCase:false,strictPunct:false,colors:"on",fs:16,speech:true,rate:0.95,
        showJa:true,hints:true,showBP:true,conf:true,cbtMin:10,cbtN:10,nick:"",motion:true,myS:true,tpass:"7777",sfx:true,seasons:[]}};
 let S;
-function load(){try{const raw=localStorage.getItem(SKEY);if(!raw){S=structuredClone(DEFAULTS);return}
+function load(){try{const raw=localStorage.getItem(SKEY);if(!raw){S=structuredClone(DEFAULTS);S.deviceSeed=Math.floor(Math.random()*100000);save();return}
   const p=JSON.parse(raw);if(typeof p!=="object"||p===null)throw 0;
   S=Object.assign(structuredClone(DEFAULTS),p);S.set=Object.assign(structuredClone(DEFAULTS.set),p.set||{});
+  if(!S.deviceSeed){S.deviceSeed=Math.floor(Math.random()*100000);save()}
   /* 将来v2以降はここでマイグレーション */
-}catch(e){console.warn("保存データを読めなかったため初期化しました",e);S=structuredClone(DEFAULTS)}}
+}catch(e){console.warn("保存データを読めなかったため初期化しました",e);S=structuredClone(DEFAULTS);S.deviceSeed=Math.floor(Math.random()*100000)}}
 function save(){try{localStorage.setItem(SKEY,JSON.stringify(S))}catch(e){console.warn("保存失敗",e)}}
 function qs(id){if(!S.q[id])S.q[id]={st:"未挑戦",due:"",wins:0,keys:{c:0,m:0,w:0},wrong:0,hint:0,conf:"",pri:0};return S.q[id]}
 function day(d){d=d||todayStr();if(!S.days[d])S.days[d]={sent:0,self:0,rev:0,keys:0,accS:0,accN:0,wpmS:0,wpmN:0,sec:0,noHint:0,perfect:0};return S.days[d]}
@@ -1154,7 +1168,7 @@ const REWARDS=[
  ["You never know.","どうなるかわからないよ"],["Time flies!","時間がたつのは早い!"],["Easier said than done.","言うはやすく行うはかたし"],
  ["Sounds like a plan!","いいね、そうしよう!"],["The sky's the limit.","可能性は無限大"],["Believe in yourself.","自分を信じて"],
  ["Little by little.","少しずつね"],["You've got this!","きみならできる!"]];
-function todayReward(){const[y,m,dd]=todayStr().split("-").map(Number);return REWARDS[(y*372+m*31+dd)%REWARDS.length]}
+function todayReward(){const[y,m,dd]=todayStr().split("-").map(Number);return REWARDS[(y*372+m*31+dd+(S.deviceSeed||0))%REWARDS.length]}
 function claimReward(){const dy=day();if(dy.rw)return false;dy.rw=1;
  const r=todayReward();S.rewards.push({date:todayStr(),en:r[0],ja:r[1]});
  checkBadges({});save();return true}
@@ -1323,7 +1337,7 @@ function vHome(){
  <section class="sheet gold"><details class="info-pop"><summary aria-label="このカードについて"><span>?</span></summary>
    <div class="info-pop-panel">
     <p><b>出題範囲</b>${(S.set.seasons&&S.set.seasons.length)?S.set.seasons.map(i=>DATA[i-1]?DATA[i-1].name:"").join("・"):"すべてのシーズン"} <small style="color:var(--on-dim)">設定画面で変更できます</small></p>
-    <p>今日のミッションを3つクリアすると<br>宝箱があきます。<br>ネイティブがよく使うフレーズが<br>1つずつたまります。<br><small style="color:var(--on-dim)">記録ページに保存されます</small></p>
+    <p>今日のミッションを3つクリアすると<br>宝箱があきます。<br>ネイティブがよく使うフレーズを<br>貯めよう!<br><small style="color:var(--on-dim)">記録ページに保存されます</small></p>
    </div></details><div class="pad">
    <span class="eyebrow" style="color:var(--gold-ink);font-size:.85rem;letter-spacing:.08em">今日の宝箱</span>
    ${(()=>{const opened=!!d.rw,ready=doneN===3&&!opened;
@@ -1429,7 +1443,7 @@ function vMap(){
      <span class="w-prog">★ ${m}/${items.length}</span>
      <details class="info-pop inline" style="margin-left:.35rem"><summary aria-label="鍵の仕組みについて"><span>?</span></summary>
       <div class="info-pop-panel" style="width:16.5rem">
-       <p><span class="key-ico">${ICONS.key}</span>鍵アイコンを集めよう!<br>3本そろうと、あなたもマスター。</p>
+       <p><span class="key-ico">${ICONS.key}</span>鍵アイコンを集めよう!<br>鍵3本で、上のMASTERゲージが<br>進みます。</p>
        <p><b>お手本</b>鍵1本</p>
        <p><b>ステップ</b>鍵3本</p>
        <p><b>語順</b>鍵2本</p>
@@ -1963,7 +1977,7 @@ function vRecords(){
    return`<div class="phrase-grid">`+rs.map((r,i)=>`<div class="phrase-card"><div><span class="p en">${esc(r.en)}</span><small>${esc(r.ja)} · ${esc(r.date)}</small></div>
    <div class="pc-act"><button data-rs="${i}" title="読み上げ">🔊</button></div></div>`).join("")+`</div>`+
    (rv.length>6?`<button class="show-more" data-more="reward">${rewardAll?"とじる ▲":`すべて表示 (${rv.length}件) ▼`}</button>`:"")})():
-  `<p class="empty">今日のミッションを3つクリアして宝箱をあけると、ネイティブがよく使うフレーズが1つずつたまります。</p>`}`}
+  `<p class="empty">今日のミッションを3つクリアして宝箱をあけて、ネイティブがよく使うフレーズを貯めよう!</p>`}`}
 function dataActionsHtml(){
  return`<div class="data-actions">
   <button id="btnJson">引きつぎデータを保存</button>
@@ -2062,6 +2076,17 @@ function vSettings(){const s=S.set;
   <div class="set-row"><span class="lbl">回答後の自信度をきく<small>「当てずっぽう」なら翌日また出題、「自信あり」なら間をあけて出題。復習のタイミング調整に使います</small></span>${togBtn("conf",s.conf)}</div>
   <div class="set-row"><span class="lbl">ニックネーム(CSVに記録・端末内のみ)<small>本名は入れないでください</small></span>
    <input type="text" id="setNick" maxlength="12" value="${esc(s.nick)}" style="width:8rem"></div>
+  <div class="set-row" style="flex-wrap:wrap;border-top:1px dashed rgba(255,255,255,.08);padding-top:.7rem">
+   <details class="rule-details">
+    <summary>採点のルール<span class="rule-more">くわしく見る</span></summary>
+    <ul class="rule-list">
+     <li><b>短縮形はどちらでもOK</b>I'm / I am、don't / do not などは、どちらで書いても正解です。</li>
+     <li><b>thatの省略(英作文・CBTのみ)</b>「I think (that) 〜」のような文は、英作文とCBTチャレンジではthatを省略しても正解です。タイピング・ステップは、表示された通りに書く練習なのでそのままの形が必要です。</li>
+     <li><b>if節・when節は語順自由</b>「If 〜, S+V.」でも「S+V if 〜.」でも、どちらの語順でも正解です(when節も同様)。becauseは今のところ、後ろに置く語順のみを正解にしています。</li>
+     <li><b>標準はゆるめ、厳しくするのは先生の設定から</b>英作文モードでは、初期設定では大文字・記号(.?!)の細かいミスは不正解にせず、内容が合っていれば正解＋直すポイントを表示します。もっと厳しく採点したい場合は、設定画面いちばん下の「Teacher(先生向け設定)」から「英作文でも大文字・記号を厳格に採点」をオンにしてください。</li>
+    </ul>
+   </details>
+  </div>
  </div>
  <h2 class="sec">Data</h2>
  <div class="set-card" style="padding:.8rem .9rem">${dataActionsHtml()}</div>
