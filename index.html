@@ -14,7 +14,7 @@
   --grid:rgba(120,150,200,.06);
   --on:#F1F5F9; --on-soft:#9AA7B8; --on-dim:#6B7789;
   --paper:#FCFCFA; --paper-2:#F3F4EF;
-  --ink:#14181F; --ink-soft:#59616E; --rule:#E1E4DC;
+  --ink:#14181F; --ink-soft:#4A515C; --rule:#E1E4DC;
   --blue:#4A5FA0; --blue-2:#7186C7; --blue-soft:#EAF0FF; --blue-ink:#1B3E99;
   --red:#FF4D3D; --red-soft:#FFE9E6;
   --gold:#14B8A6; --gold-2:#2DD4BF; --gold-soft:#E1F7F3; --gold-ink:#0B5C52;
@@ -27,6 +27,8 @@
 }
 *{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent}
 html{font-size:var(--fs);-webkit-text-size-adjust:100%}
+html,body{overflow-x:hidden;max-width:100%}
+img,svg{max-width:100%}
 body{
   font-family:"BIZ UDPGothic","Andika",system-ui,sans-serif;
   color:var(--on); line-height:var(--lh); min-height:100vh;
@@ -81,6 +83,10 @@ nav button.on{color:var(--table);background:var(--on)}
 .xp-bar{flex:1;height:5px;border-radius:999px;background:rgba(255,255,255,.09);overflow:hidden}
 .xp-fill{height:100%;background:linear-gradient(90deg,var(--gold),var(--gold-2));border-radius:999px;width:0;transition:width .6s cubic-bezier(.2,.7,.2,1)}
 .xp-label{font-family:"Space Mono",monospace;font-size:.66rem;letter-spacing:.08em;color:var(--on-dim);white-space:nowrap}
+header.compact .head-in{padding:.45rem 1.15rem .3rem}
+header.compact .brand .sub{display:none}
+header.compact .xp-strip{padding:.1rem 1.15rem .35rem}
+header.compact .wordmark{font-size:1.2rem}
 
 /* ===== layout ===== */
 main{max-width:980px;margin:0 auto;padding:.7rem 1.15rem 3rem}
@@ -113,6 +119,7 @@ h2.sec.ja{font-family:"BIZ UDPGothic",sans-serif;font-size:.92rem;font-weight:70
   display:flex;align-items:center;justify-content:center;cursor:pointer;background:var(--paper)}
 .info-pop summary::-webkit-details-marker{display:none}
 .info-pop summary::marker{content:""}
+.info-pop summary:hover{border-color:var(--gold-2);box-shadow:0 0 0 3px rgba(20,184,166,.15)}
 .info-pop summary span{display:block;transform:translateY(-1px)}
 .info-pop[open] summary{border-color:var(--gold);color:var(--gold-ink)}
 .info-pop-panel{position:absolute;top:26px;right:0;width:15rem;background:var(--ink);color:var(--on);
@@ -341,6 +348,18 @@ body:not(.reduce-motion) .loot-fx i:nth-child(3n){animation-delay:2s}
 .menu-big.blue .mi{color:var(--blue-2)}
 .menu-big.blue:hover{border-color:var(--blue-2)}
 .menu-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:.55rem}
+.today-cta{width:100%;display:flex;align-items:center;gap:.85rem;background:linear-gradient(120deg,var(--gold-2),var(--gold));
+  color:#fff;border:0;border-radius:16px;padding:1rem 1.2rem;margin:.7rem 0 1rem;box-shadow:0 6px 18px -6px rgba(20,184,166,.5);
+  transition:transform .12s,box-shadow .12s}
+.today-cta:hover{transform:translateY(-1px);box-shadow:0 8px 22px -6px rgba(20,184,166,.6)}
+.today-cta .tc-ic{width:30px;height:30px;flex:none}
+.today-cta .tc-ic svg{width:100%;height:100%}
+.today-cta .tc-t{display:flex;flex-direction:column;gap:.15rem;min-width:0}
+.today-cta .tc-t b{font-size:1.08rem}
+.today-cta .tc-t small{font-size:.78rem;opacity:.9}
+.today-cta .tc-arw{margin-left:auto;font-size:1.3rem;flex:none}
+.section-lbl{font-family:"Space Mono",monospace;font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;color:var(--on-dim);
+  margin:1.1rem 0 .5rem;padding-top:.6rem;border-top:1px dashed rgba(255,255,255,.12)}
 @media(max-width:680px){.menu-grid{grid-template-columns:1fr}.menu-top{grid-template-columns:1fr}}
 .menu-card{background:var(--table-2);border:1px solid rgba(255,255,255,.07);border-radius:12px;
   padding:.75rem .9rem;text-align:left;display:flex;align-items:center;gap:.6rem;transition:border-color .12s,transform .12s;border-left-width:3px}
@@ -441,7 +460,7 @@ details.unit[open] .u-no{color:#1F1608;background:var(--gold);border-color:var(-
 .q-en{font-family:"Andika",sans-serif;font-weight:700;font-size:1.4rem;line-height:1.42;color:var(--ink);margin:.35rem 0 .15rem;word-break:break-word}
 .q-en .hit{color:var(--gold-ink)}
 .q-en .miss{color:#C0392B;background:var(--warn-soft);border-radius:3px;text-decoration:underline wavy #C0392B 1.5px;text-underline-offset:3px}
-.q-en .rest{color:#B9BDB2}
+.q-en .rest{color:#6B7280}
 .q-ja{color:var(--ink-soft);font-size:.95rem;font-weight:500}
 .q-ja.big{font-size:1.15rem;color:var(--ink);font-weight:700}
 .type-line{margin-top:.9rem}
@@ -624,6 +643,25 @@ body:not(.reduce-motion) .modal-back{animation:rwin .18s ease}
 .cbt-palette button.ans{border-color:var(--gold-2);color:var(--gold-2);background:rgba(20,150,140,.16)}
 .cbt-palette button.flag{border-color:var(--gold);color:var(--gold-2)}
 .cbt-palette button.flag::after{content:"";position:absolute;top:0;right:0;border:5px solid transparent;border-top-color:var(--gold);border-right-color:var(--gold);border-radius:0 6px 0 0}
+.cbt-palette button .pf{position:absolute;bottom:-3px;left:50%;transform:translateX(-50%);font-size:.55rem;line-height:1;color:var(--gold-2);background:#fff;border-radius:50%;width:9px;height:9px;display:flex;align-items:center;justify-content:center}
+.cs-note{font-size:.78rem;color:var(--gold-ink);background:var(--gold-soft);border-radius:8px;padding:.4rem .6rem;margin:.4rem 0}
+.preset-row{display:flex;gap:.5rem;flex-wrap:wrap}
+.preset-card{flex:1;min-width:6.4rem;text-align:left;border:1.5px solid var(--rule);border-radius:10px;padding:.45rem .6rem;background:#fff;transition:border-color .12s,background .12s}
+.preset-card b{display:block;font-family:"Space Mono",monospace;font-size:.72rem;letter-spacing:.06em;color:var(--ink)}
+.preset-card small{display:block;font-size:.72rem;color:var(--ink-soft);margin-top:.1rem}
+.preset-card.on{border-color:var(--gold);background:var(--gold-soft)}
+.preset-card.on b{color:var(--gold-ink)}
+.unit-all-btn{font-size:.8rem;font-weight:600;border:1.5px solid var(--rule);border-radius:999px;padding:.3rem .8rem;background:#fff;color:var(--ink);margin-bottom:.5rem}
+.unit-all-btn.on{border-color:var(--gold);background:var(--gold-soft);color:var(--gold-ink)}
+.cu-group{margin-top:.5rem}
+.cu-lv{display:block;font-family:"Space Mono",monospace;font-size:.62rem;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-soft);margin-bottom:.3rem}
+.cu-chips{display:flex;flex-wrap:wrap;gap:.4rem}
+.cu-chips button{font-size:.78rem;border:1.5px solid var(--rule);border-radius:999px;padding:.28rem .7rem;background:#fff;color:var(--ink-soft)}
+.cu-chips button.on{border-color:var(--gold);background:var(--gold-soft);color:var(--gold-ink);font-weight:600}
+.cbt-confirm-stats{list-style:none;margin:.5rem 0;padding:0;display:flex;flex-direction:column;gap:.3rem}
+.cbt-confirm-stats li{display:flex;justify-content:space-between;font-size:.86rem;color:var(--ink);border-bottom:1px dashed var(--rule);padding:.2rem 0}
+.cbt-confirm-stats li.warn b{color:var(--red)}
+.cbt-warn-msg{font-size:.86rem;color:var(--red);background:rgba(255,77,61,.1);border:1px solid rgba(255,77,61,.3);border-radius:8px;padding:.5rem .7rem;margin:.4rem 0}
 .cbt-noselect{user-select:none;-webkit-user-select:none}
 .cbt-res-row{display:flex;gap:.6rem;align-items:flex-start;padding:.5rem 0;border-top:1px dashed var(--rule);font-size:.88rem}
 .cbt-res-row .m{width:17px;height:17px;flex:none;margin-top:.15rem}
@@ -655,6 +693,13 @@ body:not(.reduce-motion) .modal-back{animation:rwin .18s ease}
 .badge-cell b{font-size:.86rem;color:var(--on);display:block;line-height:1.3}
 .badge-cell small{font-size:.64rem;color:var(--on-dim);display:block;margin-top:.1rem;line-height:1.35}
 .badge-cell.locked b{color:var(--on-soft)}.badge-cell.locked small,.badge-cell.locked .bi{color:var(--on-dim);opacity:.85}
+.badge-cell.next{border-color:var(--gold);background:rgba(20,184,166,.1)}
+.badge-cell.next .bq{border-style:solid;border-color:var(--gold);color:var(--gold-2)}
+.badge-prog{display:flex;align-items:center;gap:.4rem;margin-top:.4rem}
+.badge-prog .m-bar{flex:1;height:4px;border-radius:2px;background:rgba(255,255,255,.12);overflow:hidden}
+.badge-prog .m-bar i{display:block;height:100%;background:var(--gold-2);border-radius:2px}
+.badge-prog small{margin:0;flex:none;color:var(--gold-2)}
+.sub-lbl{font-family:"Space Mono",monospace;font-size:.66rem;letter-spacing:.12em;text-transform:uppercase;color:var(--on-dim);margin:.7rem 0 .4rem}
 .phrase-grid{display:grid;grid-template-columns:1fr 1fr;gap:.5rem}
 @media(max-width:760px){.phrase-grid{grid-template-columns:1fr}}
 .show-more{display:block;width:100%;margin-top:.55rem;padding:.5rem;border-radius:10px;border:1px dashed rgba(255,255,255,.2);
@@ -829,7 +874,7 @@ const DATA=[
     {ja:"私は買い物に行きたいです。",en:"I would like to go shopping.",pat:"主語＋would like to＋動詞の原形",st:[["I","s"],["would like to go","v"],["shopping.","x"]],exp:"would like toはwant toのていねいな言い方です。"},
     {ja:"さやかと私は図書館で勉強する予定です。",en:"Sayaka and I are going to study in the library.",pat:"主語＋be going to＋動詞の原形",st:[["Sayaka and I","s"],["are going to study","v"],["in the library.","x"]],exp:"be going toで「〜する予定」を表します。"},
     {ja:"あなたはここで靴を脱ぐ必要はありません。",en:"You don't have to take off your shoes here.",pat:"主語＋don't have to＋動詞の原形",st:[["You","s"],["don't have to take off","v"],["your shoes here.","o"]],exp:"don't have toは「〜する必要はない」という意味です。"},
-    {ja:"私たちはこのたこを食べなければなりませんか。",en:"Do I have to eat this octopus?",pat:"Do＋主語＋have to＋動詞の原形？",st:[["Do","v"],["I","s"],["have to eat","v"],["this octopus?","o"]],exp:"have toの疑問文はDo/Doesで始めます。"}
+    {ja:"私たちはこのたこを食べなければなりませんか。",en:"Do we have to eat this octopus?",pat:"Do＋主語＋have to＋動詞の原形？",st:[["Do","v"],["we","s"],["have to eat","v"],["this octopus?","o"]],exp:"have toの疑問文はDo/Doesで始めます。"}
  ]}
 ]},
 {name:"2年前期期末",sub:"",grade:"2年",units:[
@@ -851,7 +896,7 @@ const DATA=[
   {ja:"翔太は時間があるとき、ギターを弾きます。",en:"Shota plays the guitar when he has time.",alt:["When he has time, Shota plays the guitar."],pat:"whenを使って「〜するとき」を表す文",exp:"when〜は文の前でも後でも置けます。前に置くときは全体をコンマで区切ります。"},
   {ja:"ミカを見たとき、彼女はうれしそうでした。",en:"When I saw Mika, she looked happy.",alt:["She looked happy when I saw Mika."],pat:"whenを使って「〜するとき」を表す文",exp:"when〜は文の前でも後でも置けます。前に置くときは全体をコンマで区切ります。"},
   {ja:"彼はメグを見たとき、うれしかったです。",en:"He was happy when he saw Meg.",alt:["When he saw Meg, he was happy."],pat:"whenを使って「〜するとき」を表す文",exp:"when〜は文の前でも後でも置けます。前に置くときは全体をコンマで区切ります。"},
-  {ja:"ユミは子どもの頃、犬を飼っていました。",en:"When Yumi was a child, she had a dog.",alt:["She had a dog when Yumi was a child."],pat:"whenを使って「〜するとき」を表す文",exp:"when〜は文の前でも後でも置けます。前に置くときは全体をコンマで区切ります。"},
+  {ja:"ユミは子どもの頃、犬を飼っていました。",en:"Yumi had a dog when she was a child.",alt:["When Yumi was a child, she had a dog."],pat:"whenを使って「〜するとき」を表す文",exp:"when〜は文の前でも後でも置けます。前に置くときは全体をコンマで区切ります。"},
   {ja:"暇なとき、あなたは何をしますか。",en:"What do you do when you are free?",alt:["When you are free, what do you do?"],pat:"whenを使って「〜するとき」を表す文",exp:"when〜は文の前でも後でも置けます。前に置くときは全体をコンマで区切ります。"},
   {ja:"父が帰宅したとき、私は音楽を聴いていました。",en:"I was listening to music when my father came home.",alt:["When my father came home, I was listening to music."],pat:"whenを使って「〜するとき」を表す文",exp:"when〜は文の前でも後でも置けます。前に置くときは全体をコンマで区切ります。"},
   {ja:"私が帰宅したとき、父は夕食を作っていました。",en:"When I came home, my father was making dinner.",alt:["My father was making dinner when I came home."],pat:"whenを使って「〜するとき」を表す文",exp:"when〜は文の前でも後でも置けます。前に置くときは全体をコンマで区切ります。"},
@@ -1016,7 +1061,7 @@ const SKEY="picks-app-v1";
 const DEFAULTS={v:1,q:{},log:[],days:{},badges:[],phrases:[],mine:[],rewards:[],streak:0,lastDay:"",bestStreak:0,deviceSeed:0,
   mission:{date:"",items:[]},resume:null,
   set:{strictCase:false,strictPunct:false,colors:"on",fs:16,speech:true,rate:0.95,
-       showJa:true,hints:true,showBP:true,conf:true,cbtMin:10,cbtN:10,nick:"",motion:true,myS:true,tpass:"7777",sfx:true,seasons:[]}};
+       showJa:true,hints:true,showBP:true,conf:true,cbtMin:10,cbtN:10,nick:"",motion:true,myS:true,tpass:"7777",sfx:true,seasons:[],showKb:true}};
 let S;
 function load(){try{const raw=localStorage.getItem(SKEY);if(!raw){S=structuredClone(DEFAULTS);S.deviceSeed=Math.floor(Math.random()*100000);save();return}
   const p=JSON.parse(raw);if(typeof p!=="object"||p===null)throw 0;
@@ -1273,16 +1318,19 @@ function nav(v){stopSpeak();view=v;session=null;cbt=null;render()}
 function levelName(lv){return DATA[lv-1].name}
 
 function renderHeader(){
+ document.querySelector("header").classList.toggle("compact",view==="session"||view==="cbt");
  $("#chipKeys").innerHTML=`${ICONS.key}<b>${totalKeys()}</b><span>鍵</span>`;
  const live=S.lastDay===todayStr();
  $("#chipStreak").className="streak-chip"+(live?" live":"");
- $("#chipStreak").innerHTML=`${ICONS.flame}<span>${S.streak||0}日</span>`;
+ $("#chipStreak").setAttribute("aria-label",`連続学習日数 ${S.streak||0}日`);
+ $("#chipStreak").innerHTML=`${ICONS.flame}<span>連続 ${S.streak||0}日</span>`;
  $("#nav").innerHTML=["home|ホーム","records|記録","settings|設定"].map(x=>{
    const[v,l]=x.split("|");return`<button class="${view===v?'on':''}" data-nav="${v}">${l}</button>`}).join("");
  document.querySelectorAll("#nav button").forEach(b=>b.onclick=()=>nav(b.dataset.nav));
  const m=masterCount();
  $("#xpFill").style.width=(m/Q.length*100)+"%";
  $("#xpLabel").textContent=`${m} / ${Q.length} 文`;
+ $("#xpLabel").setAttribute("aria-label",`自力で書けるようになった英文 ${m} / ${Q.length} 文`);
 }
 
 /* ---------- ホーム ---------- */
@@ -1366,6 +1414,9 @@ function vHome(){
  return `
  <div class="coach"><div class="avatar">${ICONS.coach}</div><div>
    <div class="c-label">Coach</div><div class="c-msg">${esc(coachMsg())}</div></div></div>
+ <button class="today-cta" data-act="today"><span class="tc-ic">${ICONS.spark}</span>
+   <span class="tc-t"><b>今日の練習をはじめる</b><small>おすすめ5問・約3分</small></span>
+   <span class="tc-arw">→</span></button>
  <div class="home-top">
  <section class="sheet gold chest-card"><details class="info-pop"><summary aria-label="このカードについて"><span>?</span></summary>
    <div class="info-pop-panel">
@@ -1413,12 +1464,13 @@ function vHome(){
    </div>
  </div>
  </div>
+ <h2 class="section-lbl">自分でモードを選ぶ</h2>
  ${DATA.map((lv,i)=>{const total=lv.units.reduce((n,u)=>n+u.items.length,0);
    const mas=Q.filter(q=>q.level===i+1&&isMaster(q.id)).length;
    return[i,total,mas]}).reverse().map(([i,total,mas])=>{const lv=DATA[i];
    return`<section class="season-block"><div class="sb-head">
      <span class="sb-title">${esc(lv.name)}</span>
-     <span class="sb-prog">★ ${mas}<em>/${total}</em></span>
+     <span class="sb-prog" aria-label="自力で書けるようになった英文 ${mas} / ${total} 文">★ ${mas}<em>/${total}</em></span>
      <details class="info-pop inline" style="margin-left:.35rem"><summary aria-label="3つのモードについて"><span>?</span></summary>
       <div class="info-pop-panel">
        <p><b>タイピング・英作文</b>力だめし・復習向けの練習です。<br>まだ身についていない問題から<br>ランダムに5問出します。</p>
@@ -1453,6 +1505,7 @@ function bindHome(){
  else if(a==="weak")startSession(weakList().slice(0,10).map(q=>q.id),"write","苦手集中",true);
  else if(a==="quick-copy")pickRandom("copy");
  else if(a==="quick-write")pickRandom("write");
+ else if(a==="today")todayPractice();
 });
  document.querySelectorAll("[data-season-act]").forEach(b=>b.onclick=()=>{
   const lv=Number(b.dataset.lv),act=b.dataset.seasonAct;
@@ -1465,6 +1518,18 @@ function pickRandom(mode,lv){
  const notMastered=base.filter(q=>!isMaster(q.id));
  const pool=notMastered.length?notMastered:base;
  startSession(shuffle(pool).slice(0,5).map(q=>q.id),mode,mode==="copy"?"タイピング5問":"英作文5問",false)}
+function todayPractice(){
+ const due=dueList();
+ let ids=shuffle(due.map(q=>q.id)).slice(0,5);
+ if(ids.length<5){
+  const sel=S.set.seasons;
+  const inSeasons=(sel&&sel.length)?Q.filter(q=>sel.includes(q.level)):Q;
+  const base=(inSeasons.length?inSeasons:Q).filter(q=>!ids.includes(q.id));
+  const notMastered=base.filter(q=>!isMaster(q.id));
+  const pool=notMastered.length?notMastered:base;
+  ids=ids.concat(shuffle(pool).slice(0,5-ids.length).map(q=>q.id))}
+ if(!ids.length){notice("いまはこのリストに問題がありません。マップから練習してみよう!");return}
+ startSession(ids,"write","今日の練習",false)}
 
 /* ---------- マップ ---------- */
 let mapJump=null;
@@ -1474,7 +1539,7 @@ function vMap(){
   const m=items.filter(q=>isMaster(q.id)).length;
   return`<section class="world" data-lv="${li+1}"><div class="world-head"><span class="w-name">${esc(lv.name)}</span>
      <span class="w-sub">${lv.units.length} stages</span>
-     <span class="w-prog">★ ${m}/${items.length}</span>
+     <span class="w-prog" aria-label="自力で書けるようになった英文 ${m} / ${items.length} 文">★ ${m}/${items.length}</span>
      <details class="info-pop inline" style="margin-left:.35rem"><summary aria-label="鍵の仕組みについて"><span>?</span></summary>
       <div class="info-pop-panel" style="width:16.5rem">
        <p><span class="key-ico">${ICONS.key}</span>鍵アイコンを集めよう!<br>鍵3本で、上のMASTERゲージが<br>進みます。</p>
@@ -1492,7 +1557,7 @@ function vMap(){
      return`<details class="unit"><summary>
        <span class="u-no">${ui+1}</span>
        <span class="u-name">${esc(u.name)}<small>${esc(u.en)}${due?` · 復習${due}`:""}</small></span>
-       <span class="u-prog ${master===qs2.length?'full':''}">${master}/${qs2.length}</span></summary>
+       <span class="u-prog ${master===qs2.length?'full':''}" aria-label="この単元で自力で書けるようになった英文 ${master} / ${qs2.length} 文">${master}/${qs2.length}</span></summary>
        <div class="u-actions">
          <button data-u="${li+1}-${ui}" data-m="copy">お手本</button>
          <button data-u="${li+1}-${ui}" data-m="step">ステップ</button>
@@ -1502,7 +1567,7 @@ function vMap(){
        <div class="q-rows">
        ${qs2.map((q,qi)=>`<button class="q-row" data-q="${q.id}">
          <span class="qn">${qi+1}</span><span class="q-ja2">${esc(q.ja)}</span>
-         ${isMaster(q.id)?'<span class="master-star">★</span>':''}${keysetHtml(q.id)}</button>`).join("")}
+         ${isMaster(q.id)?'<span class="master-star" aria-label="マスター済み">★</span>':''}${keysetHtml(q.id)}</button>`).join("")}
        </div></details>`}).join("")}
    </div></section>`}).join("")}
 function bindMap(){
@@ -1517,7 +1582,7 @@ function bindMap(){
    if(w){
      const firstUnit=w.querySelector(".unit");
      if(firstUnit)firstUnit.open=true;
-     w.scrollIntoView({behavior:"smooth",block:"start"})
+     if(w.scrollIntoView)w.scrollIntoView({behavior:"smooth",block:"start"})
    }
    mapJump=null
  }}
@@ -1575,8 +1640,9 @@ function vCopy(q,a){
  <div class="type-stats">
    <span>ミス <b>${a.err}</b></span><span>Backspace <b>${a.bs}</b></span>
    <span>${a.t0?`経過 <b>${Math.round((Date.now()-a.t0)/1000)}</b> 秒`:"タイプすると計測開始"}</span>
+   <button class="kb-toggle" id="btnKbToggle" type="button" aria-pressed="${S.set.showKb}">${S.set.showKb?"キーボードを隠す":"キーボードを表示"}</button>
  </div>
- ${kbHtml(nextCh)}`}
+ ${S.set.showKb?kbHtml(nextCh):""}`}
 const KB_ROWS=[["1","2","3","4","5","6","7","8","9","0"],["Q","W","E","R","T","Y","U","I","O","P"],["A","S","D","F","G","H","J","K","L"],["shift","Z","X","C","V","B","N","M",",",".","?"]];
 function kbHtml(nextCh){
  const isUpperLetter=/[A-Z]/.test(nextCh);
@@ -1607,13 +1673,14 @@ function bindCopy(q,a){const ti=$("#ti");if(!ti)return;ti.focus();
   const v=ti.value;
   if(v.length>a.prevLen){a.total++;if(!q.en.startsWith(normSp(v))&&!q.en.startsWith(v))a.err++}
   a.prevLen=v.length;a.cur=v;
-  if(normSp(v)===normSp(q.en)){finishCopy(q,a)}else render()}}
+  if(normSp(v)===normSp(q.en)){finishCopy(q,a)}else render()}
+ const kt=$("#btnKbToggle");if(kt)kt.onclick=()=>{S.set.showKb=!S.set.showKb;save();render()}}
 function finishCopy(q,a){
  const sec=(Date.now()-a.t0)/1000;
  a.acc=a.total?Math.max(0,Math.round((a.total-a.err)/a.total*100)):100;
  a.wpm=sec>1?Math.min(250,Math.round(q.words.length/(sec/60))):0;a.sec=Math.round(sec);
  a.done=true;a.result="copy";
- const d=day();d.sent++;d.accS+=a.acc;d.accN++;d.wpmS+=a.wpm;d.wpmN++;d.sec+=a.sec;if(a.acc>=100)d.perfect++;
+ const d=day();d.sent++;d.copySent=(d.copySent||0)+1;d.accS+=a.acc;d.accN++;d.wpmS+=a.wpm;d.wpmN++;d.sec+=a.sec;if(a.acc>=100)d.perfect++;
  if(session.review){d.rev++}
  a.keyNew=giveKey(q,"c");sfx(a.keyNew?"key":"ok");touchStreak();
  logResult({qid:q.id,level:q.level,mode:"copy",result:"ok",input:q.en,answer:q.en,duration:a.sec,accuracy:a.acc,wpm:a.wpm,errType:"",hintLevel:0,confidence:"",});
@@ -1834,40 +1901,62 @@ function showFinish(){
  session=null}
 
 /* ---------- CBT ---------- */
-function startCbtSetup(lv){cbtSel={n:S.set.cbtN,min:S.set.cbtMin,levels:lv?[lv]:[]};view="cbtSetup";render()}
+function startCbtSetup(lv,ui){
+ let units=[];
+ if(lv&&ui!=null)units=[`${lv-1}-${ui}`];
+ else if(lv)units=DATA[lv-1].units.map((u,i)=>`${lv-1}-${i}`);
+ cbtSel={n:S.set.cbtN,min:S.set.cbtMin,units,preset:"standard"};view="cbtSetup";render()}
 let cbtSel=null;
+const CBT_PRESETS=[{k:"quick",l:"QUICK",n:5,min:5},{k:"standard",l:"STANDARD",n:10,min:10},{k:"test",l:"TEST",n:20,min:20},{k:"custom",l:"CUSTOM",n:null,min:null}];
 function vCbtSetup(){
- if(!cbtSel)cbtSel={n:S.set.cbtN,min:S.set.cbtMin,levels:[]};
+ if(!cbtSel)cbtSel={n:S.set.cbtN,min:S.set.cbtMin,levels:[],units:[],preset:"standard"};
+ if(!cbtSel.units)cbtSel.units=[];
  const segs=(key,vals,unit)=>vals.map(v=>`<button data-cs="${key}" data-v="${v.v}" class="${cbtSel[key]===v.v?'on':''}">${v.l}${unit||""}</button>`).join("");
- const allOn=!cbtSel.levels.length;
- const rangeChips=`<button data-cl="0" class="${allOn?'on':''}">ぜんぶ</button>`+
-  DATA.map((lv,i)=>`<button data-cl="${i+1}" class="${cbtSel.levels.includes(i+1)?'on':''}">${esc(lv.name)}</button>`).join("");
+ const presetHtml=CBT_PRESETS.map(p=>`<button data-preset="${p.k}" class="preset-card ${cbtSel.preset===p.k?'on':''}">
+   <b>${p.l}</b><small>${p.k==="custom"?"問題数と時間を自由に設定":`${p.n}問・${p.min}分`}</small></button>`).join("");
+ const allUnits=!cbtSel.units.length;
+ const unitGroups=DATA.map((lv,li)=>{
+   const chips=lv.units.map((u,ui)=>`<button data-cu="${li}-${ui}" class="${allUnits||cbtSel.units.includes(`${li}-${ui}`)?'on':''}">${esc(u.name)}</button>`).join("");
+   return`<div class="cu-group"><span class="cu-lv">${esc(lv.name)}</span><div class="cu-chips">${chips}</div></div>`}).join("");
+ const totalPool=Q.filter(q=>allUnits||cbtSel.units.includes(`${q.level-1}-${q.ui}`)).length;
  return`<section class="sheet"><span class="sheet-label">CBT Challenge</span><div class="pad cbt-setup">
   <span class="eyebrow" style="color:var(--gold-ink)">CBTチャレンジ</span>
   <p class="cs-lead">本番形式のテスト練習です。おわったら、まちがえた問題は自動で「今日の復習」に入ります。</p>
   <div class="rule-chips" aria-label="テストのルール">
-    <span>ヒントなし</span><span>コピー&ペースト禁止</span><span>制限時間あり</span><span>大文字・記号も採点</span>
+    <span>ヒントなし</span><span>コピー&ペースト禁止</span><span>制限時間あり</span><span>大文字・スペース・ピリオド・?も採点</span>
   </div>
+  <p class="cs-note">半角英数で入力しよう。全角文字は不正解になります。</p>
+  <div class="cs-group"><span class="cs-lbl">モード</span>
+   <div class="preset-row">${presetHtml}</div></div>
+  ${cbtSel.preset==="custom"?`
   <div class="cs-group"><span class="cs-lbl">問題数</span>
    <span class="seg">${segs("n",[5,10,15,20].map(v=>({v,l:v})),"問")}</span></div>
   <div class="cs-group"><span class="cs-lbl">制限時間</span>
-   <span class="seg">${segs("min",[5,10,15,20,30].map(v=>({v,l:v})),"分")}</span></div>
-  <div class="cs-group"><span class="cs-lbl">出題範囲<small>複数選べます</small></span>
-   <span class="seg">${rangeChips}</span></div>
+   <span class="seg">${segs("min",[5,10,15,20,30].map(v=>({v,l:v})),"分")}</span></div>`:""}
+  <div class="cs-group"><span class="cs-lbl">出題範囲<small>単元ごとに複数選べます</small></span>
+   <button data-cu="all" class="unit-all-btn ${allUnits?'on':''}">ぜんぶ(${Q.length}問)</button>
+   ${unitGroups}
+  </div>
   <div class="train-nav"><button class="btn-ghost" id="btnBack">もどる</button>
-   <button class="btn-primary btn-gold" id="btnGo">${"スタート"} <span class="cs-sum">${cbtSel.n}問 · ${cbtSel.min}分</span></button></div>
+   <button class="btn-primary btn-gold" id="btnGo" ${totalPool<1?"disabled":""}>${"スタート"} <span class="cs-sum">${Math.min(cbtSel.n,totalPool)}問 · ${cbtSel.min}分</span></button></div>
  </div></section>`}
 function bindCbtSetup(){$("#btnBack").onclick=()=>nav("home");
- document.querySelectorAll("[data-cs]").forEach(b=>b.onclick=()=>{cbtSel[b.dataset.cs]=Number(b.dataset.v);render()});
- document.querySelectorAll("[data-cl]").forEach(b=>b.onclick=()=>{const v=Number(b.dataset.cl);
-  if(v===0){cbtSel.levels=[];render();return}
-  const idx=cbtSel.levels.indexOf(v);
-  if(idx>=0)cbtSel.levels.splice(idx,1);else cbtSel.levels.push(v);
+ document.querySelectorAll("[data-cs]").forEach(b=>b.onclick=()=>{cbtSel[b.dataset.cs]=Number(b.dataset.v);cbtSel.preset="custom";render()});
+ document.querySelectorAll("[data-preset]").forEach(b=>b.onclick=()=>{const p=CBT_PRESETS.find(x=>x.k===b.dataset.preset);
+  cbtSel.preset=p.k;if(p.n){cbtSel.n=p.n;cbtSel.min=p.min}render()});
+ document.querySelectorAll("[data-cu]").forEach(b=>b.onclick=()=>{const v=b.dataset.cu;
+  if(v==="all"){cbtSel.units=[];render();return}
+  const idx=cbtSel.units.indexOf(v);
+  if(!cbtSel.units.length){ // was "all": start from everything, then remove just this one
+    DATA.forEach((lv,li)=>lv.units.forEach((u,ui)=>cbtSel.units.push(`${li}-${ui}`)));
+  }
+  const i2=cbtSel.units.indexOf(v);
+  if(i2>=0)cbtSel.units.splice(i2,1);else cbtSel.units.push(v);
   render()});
  $("#btnGo").onclick=()=>{
-  const n=cbtSel.n,min=cbtSel.min,levels=cbtSel.levels;
+  const n=cbtSel.n,min=cbtSel.min,units=cbtSel.units;
   S.set.cbtN=n;S.set.cbtMin=min;save();
-  const pool=Q.filter(q=>!levels.length||levels.includes(q.level));
+  const pool=Q.filter(q=>!units.length||units.includes(`${q.level-1}-${q.ui}`));
   cbt={list:shuffle(pool).slice(0,n),idx:0,ans:{},flag:{},end:Date.now()+min*60000,submitted:false,confirm:false,usedFlag:false};
   view="cbt";render();
   cbt.timer=setInterval(()=>{if(view!=="cbt"||!cbt){clearInterval(cbt&&cbt.timer);return}
@@ -1878,11 +1967,14 @@ function vCbt(){
  const q=cbt.list[cbt.idx];
  return`<div class="cbt-bar"><span class="cbt-timer" id="cbtTimer">--:--</span>
   <span class="xp-label">${cbt.idx+1} / ${cbt.list.length}</span>
-  <div class="cbt-palette">${cbt.list.map((qq,i)=>`<button data-p="${i}" class="${i===cbt.idx?'cur':''} ${cbt.ans[qq.id]?'ans':''} ${cbt.flag[qq.id]?'flag':''}">${i+1}</button>`).join("")}</div></div>
+  <div class="cbt-palette">${cbt.list.map((qq,i)=>{
+    const cur=i===cbt.idx,ans=!!cbt.ans[qq.id],flag=!!cbt.flag[qq.id];
+    const status=[cur?"現在の問題":"",ans?"解答済み":"未解答",flag?"見直しマーク":""].filter(Boolean).join("・");
+    return`<button data-p="${i}" class="${cur?'cur':''} ${ans?'ans':''} ${flag?'flag':''}" aria-label="問${i+1} ${status}">${i+1}${ans?'<i class="pf">✓</i>':''}</button>`}).join("")}</div></div>
  <section class="sheet cbt-noselect" oncontextmenu="return false"><span class="sheet-label">CBT</span><div class="train-sheet">
-  <div class="q-meta"><span>問${cbt.idx+1}</span>${cbt.flag[q.id]?'<span class="gold">見直しマーク</span>':""}</div>
+  <div class="q-meta"><span>問${cbt.idx+1}</span>${cbt.flag[q.id]?'<span class="gold">🔖 見直しマーク</span>':""}</div>
   <div class="q-ja big">${esc(q.ja)}</div>
-  <div class="type-line"><textarea id="ti" rows="2" autocomplete="off" autocapitalize="off" spellcheck="false" placeholder="英文を入力">${esc(cbt.ans[q.id]||"")}</textarea></div>
+  <div class="type-line"><textarea id="ti" rows="2" autocomplete="off" autocapitalize="off" autocorrect="off" spellcheck="false" placeholder="英文を入力">${esc(cbt.ans[q.id]||"")}</textarea></div>
   <div class="order-note">Enterキーで次へ進めます</div>
   <div class="train-nav">
    <div style="display:flex;gap:.5rem">
@@ -1895,9 +1987,20 @@ function vCbt(){
  ${cbt.confirm?`<div class="modal-back">${vCbtConfirm()}</div>`:""}`}
 function vCbtConfirm(){
  const un=cbt.list.filter(q=>!normSp(cbt.ans[q.id]||"")).length;
+ const ansN=cbt.list.length-un;
+ const flagN=cbt.list.filter(q=>cbt.flag[q.id]).length;
+ const remain=Math.max(0,Math.floor((cbt.end-Date.now())/1000));
+ const remainTxt=`${String(Math.floor(remain/60)).padStart(2,"0")}:${String(remain%60).padStart(2,"0")}`;
  return`<section class="sheet modal"><div class="pad">
   <b style="color:var(--ink)">本当に提出しますか?</b>
-  <p style="font-size:.88rem;color:var(--ink-soft);margin:.3rem 0 .6rem">${un?`未回答が ${un} 問あります。`:"すべて回答済みです。"}提出すると変更できません。</p>
+  <ul class="cbt-confirm-stats">
+   <li><span>解答済み</span><b>${ansN} / ${cbt.list.length} 問</b></li>
+   <li class="${un?'warn':''}"><span>未解答</span><b>${un} 問</b></li>
+   <li><span>見直しマーク</span><b>${flagN} 問</b></li>
+   <li><span>残り時間</span><b>${remainTxt}</b></li>
+  </ul>
+  ${un?`<p class="cbt-warn-msg">⚠ まだ ${un} 問、答えていません。このまま提出すると不正解になります。</p>`:`<p style="font-size:.88rem;color:var(--ink-soft);margin:.3rem 0 .6rem">すべて回答済みです。</p>`}
+  <p style="font-size:.82rem;color:var(--ink-soft);margin:.2rem 0 .6rem">提出すると変更できません。</p>
   <div class="train-nav"><button class="btn-ghost" id="btnCancelSub">もどって見直す</button>
    <button class="btn-primary" id="btnDoSub">提出する</button></div></div></section>`}
 function saveCbtInput(){const ti=$("#ti");if(ti&&cbt&&!cbt.submitted)cbt.ans[cbt.list[cbt.idx].id]=ti.value}
@@ -1948,7 +2051,7 @@ function bindCbtResult(){$("#btnHome3").onclick=()=>nav("home");
 
 /* ---------- フレーズコレクション・自分の英文 ---------- */
 function addPhrase(q){if(!S.phrases.some(p=>p.id===q.id)){S.phrases.push({id:q.id,en:q.en,ja:q.ja,lv:q.level,fav:0,at:todayStr()});save()}}
-let phraseAll=false,rewardAll=false,mineAll=false;
+let phraseAll=false,rewardAll=false,mineAll=false,badgeAll=false;
 function sortedPhrases(){return S.phrases.slice().sort((a,b)=>(b.fav-a.fav))}
 function moreBtn(id,open,total){return`<button class="show-more" data-more="${id}">${open?"とじる ▲":`すべて表示 (${total}件) ▼`}</button>`}
 let editingPhrase=null;
@@ -1975,7 +2078,7 @@ function bindPhrases(){
  const all=sortedPhrases(),list=phraseAll?all:all.slice(0,6);
  document.querySelectorAll("[data-more]").forEach(b=>b.onclick=()=>{
   const k=b.dataset.more;
-  if(k==="phrase")phraseAll=!phraseAll;else if(k==="mine")mineAll=!mineAll;else rewardAll=!rewardAll;
+  if(k==="phrase")phraseAll=!phraseAll;else if(k==="mine")mineAll=!mineAll;else if(k==="badge")badgeAll=!badgeAll;else rewardAll=!rewardAll;
   render()});
  document.querySelectorAll("[data-pf]").forEach(b=>b.onclick=()=>{list[b.dataset.pf].fav=list[b.dataset.pf].fav?0:1;save();render()});
  document.querySelectorAll("[data-ps]").forEach(b=>b.onclick=()=>speak(list[b.dataset.ps].en));
@@ -1990,6 +2093,23 @@ function bindPhrases(){
   const inp=$("#mineInput");if(inp)inp.onkeydown=e=>{if(e.key==="Enter"){e.preventDefault();doSave()}if(e.key==="Escape"){editingPhrase=null;render()}}}}
 
 /* ---------- 記録 ---------- */
+function badgeProgress(b){
+ const rev=()=>Object.values(S.days).reduce((n,d)=>n+(d.rev||0),0);
+ const unitP=(li,ui)=>{const items=Q.filter(q=>q.level===li+1&&q.ui===ui);return[items.filter(q=>isMaster(q.id)).length,items.length]};
+ switch(b.id){
+  case "firstkey":return[totalKeys(),1];
+  case "threesent":return[allSent(),3];
+  case "tensent":return[allSent(),10];
+  case "fifty":return[allSent(),50];
+  case "streak3":return[S.streak,3];
+  case "streak5":return[S.streak,5];
+  case "streak10":return[S.streak,10];
+  case "memkeeper":return[rev(),10];
+  case "unit1":return unitP(0,0);
+  case "unit2":return unitP(0,1);
+  case "unit3":return unitP(0,2);
+  case "unit4":return unitP(0,3);
+  default:return null}}
 const BICON={firstkey:"key",threesent:"pen",tensent:"book",fifty:"chart",acc90:"type",acc95:"type",perfect:"spark",
  comeback:"rev",memkeeper:"rev",nohint:"pen",hintuser:"coach",streak3:"flame",streak5:"flame",streak10:"flame",
  onemore:"circle",nevergiveup:"check",unit1:"map",unit2:"map",unit3:"map",unit4:"map",
@@ -2005,8 +2125,8 @@ function vRecords(){
  return`
  <h2 class="sec ja">今日の記録</h2>
  <div class="stat-grid">
-  <div class="stat"><b>${d.sent}<em> 文</em></b><span>完成した英文</span></div>
-  <div class="stat"><b>${d.self}<em> 問</em></b><span>自力で正解</span></div>
+  <div class="stat"><b>${d.copySent||0}<em> 文</em></b><span>お手本タイピング完成</span></div>
+  <div class="stat"><b>${d.self}<em> 問</em></b><span>英作文で自力正解</span></div>
   <div class="stat"><b>${d.rev}<em> 問</em></b><span>復習した</span></div>
   <div class="stat"><b>${d.accN?Math.round(d.accS/d.accN)+"%":"--"}</b><span>今日の正確さ</span></div>
  </div>
@@ -2015,7 +2135,7 @@ function vRecords(){
   <div class="stat"><b>${weekDays}<em> 日</em></b><span>練習した日</span></div>
   <div class="stat"><b>${weekSent}<em> 文</em></b><span>今週の英文</span></div>
   <div class="stat"><b>${S.streak}<em> 日</em></b><span>連続記録 (最長 ${S.bestStreak})</span></div>
-  <div class="stat"><b>${masterCount()}<em> 文</em></b><span>マスターした基本文</span></div>
+  <div class="stat"><b>${masterCount()}<em> 文</em></b><span>自力で書けるようになった英文<small style="display:block;font-weight:400;opacity:.8">(お手本・ステップ・語順の3つをクリアした文)</small></span></div>
  </div>
  <div class="chart" role="img" aria-label="この7日間の完成英文数">
   ${days7.map((k,i)=>`<div class="col"><div class="bar ${k===todayStr()?'':'blue'}" style="height:${week[i].sent/maxSent*100}%"></div><span class="dlab">${k.slice(5).replace("-","/")}</span></div>`).join("")}
@@ -2028,11 +2148,20 @@ function vRecords(){
   <div class="stat"><b>${S.badges.length}<em> 個</em></b><span>バッジ</span></div>
  </div>
  <h2 class="sec ja">バッジ</h2>
- <div class="badge-grid">
-  ${BADGES.map(b=>{const got=S.badges.includes(b.id);
-   return got?`<div class="badge-cell got"><span class="bi">${ICONS[BICON[b.id]||"badge"]}</span><b>${esc(b.n)}</b><small>${esc(b.d)}</small></div>`
-    :`<div class="badge-cell locked"><span class="bq">?</span><b>？？？</b><small>${esc(b.d)}</small></div>`}).join("")}
- </div>
+ ${(()=>{
+   const got=BADGES.filter(b=>S.badges.includes(b.id));
+   const locked=BADGES.filter(b=>!S.badges.includes(b.id));
+   const scored=locked.map(b=>{const p=badgeProgress(b);const ratio=p&&p[1]?Math.min(.99,p[0]/p[1]):-1;return{b,p,ratio}});
+   scored.sort((a,b)=>b.ratio-a.ratio);
+   const nextUp=scored.slice(0,3),restLocked=scored.slice(3);
+   const gotHtml=got.map(b=>`<div class="badge-cell got"><span class="bi">${ICONS[BICON[b.id]||"badge"]}</span><b>${esc(b.n)}</b><small>${esc(b.d)}</small></div>`).join("");
+   const nextHtml=nextUp.map(({b,p})=>`<div class="badge-cell locked next"><span class="bq">?</span><b>？？？</b><small>${esc(b.d)}</small>
+     ${p?`<div class="badge-prog"><span class="m-bar"><i style="width:${Math.round(Math.min(1,p[0]/p[1])*100)}%"></i></span><small>${Math.min(p[0],p[1])}/${p[1]}</small></div>`:""}</div>`).join("");
+   const restHtml=restLocked.map(({b})=>`<div class="badge-cell locked"><span class="bq">?</span><b>？？？</b><small>${esc(b.d)}</small></div>`).join("");
+   return`<div class="badge-grid">${gotHtml}</div>
+   ${nextUp.length?`<h3 class="sub-lbl">次に取れそうなバッジ</h3><div class="badge-grid">${nextHtml}</div>`:""}
+   ${restLocked.length?`${badgeAll?`<div class="badge-grid">${restHtml}</div>`:""}<button class="show-more" data-more="badge">${badgeAll?"とじる ▲":`残りのバッジをすべて見る (${restLocked.length}個) ▼`}</button>`:""}`
+ })()}
  <h2 class="sec ja">フレーズコレクション</h2>
  <div id="phraseArea">${vPhrases()}</div>
  <h2 class="sec ja">ごほうびフレーズ</h2>
@@ -2089,7 +2218,7 @@ function vPrint(){
    <div class="pv-meta"><span>なまえ: ${S.set.nick?esc(S.set.nick):"<i class='pv-line'></i>"}</span><span>${dstr}</span></div>
   </header>
   <div class="pv-stats">
-   <span><b>${masterCount()}</b><em>/ ${Q.length}</em> マスターした基本文</span>
+   <span><b>${masterCount()}</b><em>/ ${Q.length}</em> 自力で書けるようになった英文</span>
    <span><b>${totalKeys()}</b> あつめた鍵</span>
    <span><b>${allSent()}</b> 完成した英文</span>
    <span><b>${S.bestStreak}</b> 連続記録(最長)</span>
@@ -2137,8 +2266,8 @@ function vSettings(){const s=S.set;
    <span class="seg">${chipBtn("seasons",0,"ぜんぶ",s.seasons)}${DATA.map((lv,i)=>chipBtn("seasons",i+1,lv.name,s.seasons)).join("")}</span>
    <p class="empty" style="width:100%;margin:.3rem 0 0">今の設定 → <b style="color:var(--gold-2)">${(s.seasons&&s.seasons.length)?s.seasons.map(i=>DATA[i-1]?DATA[i-1].name:"").join("・"):"すべてのシーズン("+DATA.map(d=>d.name).join("・")+")"}</b> から出題されます</p></div>
   <div class="set-row"><span class="lbl">回答後の自信度をきく<small>「当てずっぽう」なら翌日また出題、「自信あり」なら間をあけて出題。復習のタイミング調整に使います</small></span>${togBtn("conf",s.conf)}</div>
-  <div class="set-row"><span class="lbl">ニックネーム(CSVに記録・端末内のみ)<small>本名は入れないでください</small></span>
-   <input type="text" id="setNick" maxlength="12" value="${esc(s.nick)}" style="width:8rem"></div>
+  <div class="set-row"><span class="lbl">ニックネーム(CSVに記録・端末内のみ)<small>本名は入れないでください(例：2C-12)</small></span>
+   <input type="text" id="setNick" maxlength="12" value="${esc(s.nick)}" placeholder="例：2C-12" style="width:8rem"></div>
   <div class="set-row" style="flex-wrap:wrap;border-top:1px dashed rgba(255,255,255,.08);padding-top:.7rem">
    <details class="rule-details">
     <summary>採点のルール<span class="rule-more">くわしく見る</span></summary>
