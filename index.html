@@ -197,7 +197,7 @@ body:not(.reduce-motion) .tbx-hero.ready .tbx-chest{animation:rumble 2.4s ease-i
   background:linear-gradient(120deg,var(--gold-2),var(--gold));border:0;border-radius:12px;padding:.6rem 1.3rem;
   box-shadow:0 4px 14px rgba(228,161,27,.45);margin-top:.2rem;align-self:flex-start}
 body:not(.reduce-motion) .btn-open{animation:openpulse 1.6s ease-in-out infinite}
-@keyframes openpulse{0%,100%{box-shadow:0 4px 14px rgba(228,161,27,.45)}50%{box-shadow:0 4px 24px rgba(228,161,27,.85)}}
+@keyframes openpulse{0%,100%{box-shadow:0 4px 14px rgba(228,161,27,.4)}50%{box-shadow:0 4px 18px rgba(228,161,27,.6)}}
 .m-cards{display:flex;flex-direction:column;gap:.55rem;margin-top:.4rem}
 .m-card{display:flex;align-items:center;gap:.7rem;text-align:left;background:#fff;border:1px solid var(--rule);
   border-radius:11px;padding:.48rem .75rem;transition:border-color .12s,transform .12s,box-shadow .12s}
@@ -219,7 +219,6 @@ body:not(.reduce-motion) .btn-open{animation:openpulse 1.6s ease-in-out infinite
 .chest-card .m-card .m-go{color:var(--gold-2)}
 .chest-card .m-card.done .m-go,.chest-card .m-card.done b{color:var(--gold-2)}
 .chest-card .m-ic{color:var(--on-dim)}
-.chest-card .btn-open{background:var(--gold);color:#fff}
 .m-card .m-n{font-family:"Space Mono",monospace;font-size:.62rem;color:var(--ink-soft)}
 .m-card .m-go{flex:none;font-family:"BIZ UDPGothic",sans-serif;font-size:.72rem;color:var(--gold-2)}
 .m-card.done{background:var(--gold-soft);border-color:var(--gold)}
@@ -470,10 +469,10 @@ details.unit[open] .u-no{color:#1F1608;background:var(--gold);border-color:var(-
 
 /* word order chips */
 .order-area{margin:.8rem 0 .2rem}
-.order-built{min-height:3rem;border:1.5px dashed var(--rule);border-radius:10px;background:var(--paper-2);
-  padding:.5rem .6rem;display:flex;gap:.4rem;flex-wrap:wrap;align-items:center}
-.order-bank{display:flex;gap:.45rem;flex-wrap:wrap;margin-top:.6rem}
-.w-chip{font-family:"Andika",sans-serif;font-size:.95rem;font-weight:600;padding:.32rem .7rem;border-radius:9px;
+.order-built{min-height:3.4rem;border:1.5px dashed var(--rule);border-radius:10px;background:var(--paper-2);
+  padding:.6rem .7rem;display:flex;gap:.55rem;flex-wrap:wrap;align-items:center}
+.order-bank{display:flex;gap:.6rem;flex-wrap:wrap;margin-top:.7rem}
+.w-chip{font-family:"Andika",sans-serif;font-size:1.08rem;letter-spacing:.02em;font-weight:600;padding:.5rem .95rem;border-radius:10px;
   border:1.5px solid var(--gold);color:var(--gold-ink);background:#fff;transition:transform .08s;position:relative}
 .w-chip:active{transform:scale(.94)}
 .w-chip.used{opacity:.25;pointer-events:none}
@@ -591,7 +590,7 @@ body:not(.reduce-motion) .ke-burst i{animation:burst .8s ease-out .1s forwards;o
 .f-detail{display:flex;justify-content:center;gap:.35rem;flex-wrap:wrap;margin:.55rem 0}
 .f-detail span{font-family:"Space Mono",monospace;font-size:.66rem;color:var(--ink-soft);background:var(--paper-2);border-radius:999px;padding:.15rem .55rem}
 .badge-pop{display:flex;align-items:center;gap:.75rem;background:#FFFCF3;border:1px solid rgba(228,161,27,.35);border-radius:14px;
-  padding:.75rem 1rem;margin:.6rem auto 0;max-width:22rem;text-align:left;box-shadow:0 3px 10px -6px rgba(180,130,10,.4);animation:stampIn .3s ease}
+  padding:.75rem 1rem;margin:.6rem auto 0;width:fit-content;max-width:22rem;text-align:left;box-shadow:0 3px 10px -6px rgba(180,130,10,.4);animation:stampIn .3s ease}
 .badge-pop .bi{width:40px;height:40px;flex:none;padding:9px;border-radius:50%;background:var(--gold);color:#fff;box-shadow:0 2px 8px rgba(20,184,166,.35)}
 .badge-pop .bi svg{width:100%;height:100%}
 .badge-pop b{font-size:.9rem;color:var(--ink);display:block}
@@ -809,7 +808,7 @@ const DATA=[
     {ja:"私はそれを必要としている人にあげます。",en:"I'll give it to people in need.",pat:"主語＋give＋物＋to＋人",st:[["I'll give","v"],["it","o"],["to people in need.","x"]],exp:"in needで「困っている、必要としている」という意味です。"},
     {ja:"さやかは私たちを駅に導きます。",en:"Sayaka will lead us to the station.",pat:"主語＋will＋動詞＋人＋to＋場所",st:[["Sayaka","s"],["will lead","v"],["us","o"],["to the station.","x"]],exp:"lead 人 to 場所で「人を〜に導く」です。"}
  ]},
- {name:"〜だと思う・望む(that節)",en:"that-clause",items:[
+ {name:"〜だと思う・望む 等(that節)",en:"that-clause",items:[
     {ja:"明日は雨だと思います。",en:"I think it will be rainy tomorrow.",pat:"主語＋think＋主語＋動詞",st:[["I","s"],["think","v"],["it will be rainy tomorrow.","x"]],exp:"天気を言うときの主語はitを使います。"},
     {ja:"私は明日晴れるといいなと思います。",en:"I hope it will be sunny tomorrow.",pat:"主語＋hope＋主語＋動詞",st:[["I","s"],["hope","v"],["it will be sunny tomorrow.","x"]],exp:"hopeのあとに主語＋動詞が続きます。"},
     {ja:"アンドリューは私がギターを弾けるということを知っています。",en:"Andrew knows that I can play the guitar.",writeAlt:["Andrew knows I can play the guitar."],pat:"主語＋knows＋(that)＋主語＋動詞",st:[["Andrew","s"],["knows","v"],["I can play the guitar.","x"]],exp:"英作文ではthatを省略しても正解です(タイピング系では表示どおりに)。"},
@@ -889,8 +888,7 @@ const DATA=[
   {ja:"私はスマートフォンを使っていませんでした。",en:"I was not using my phone.",pat:"was/were＋動詞のing形「〜していた」",exp:"過去のある時点で進行中だった動作を表します。"},
   {ja:"男子たちは泳いでいましたか。",en:"Were the boys swimming?",pat:"was/were＋動詞のing形「〜していた」",exp:"過去のある時点で進行中だった動作を表します。"},
   {ja:"昨夜、あなたは何をしていましたか。",en:"What were you doing last night?",pat:"was/were＋動詞のing形「〜していた」",exp:"過去のある時点で進行中だった動作を表します。"},
-  {ja:"昨夜8時に、あなたは何をしていましたか。",en:"What were you doing at eight last night?",pat:"was/were＋動詞のing形「〜していた」",exp:"過去のある時点で進行中だった動作を表します。"},
-  {ja:"その知らせは私にとって何も新しくありませんでした。",en:"The news was nothing new to me.",pat:"was/were＋動詞のing形「〜していた」",exp:"過去のある時点で進行中だった動作を表します。"}
+  {ja:"昨夜8時に、あなたは何をしていましたか。",en:"What were you doing at eight last night?",pat:"was/were＋動詞のing形「〜していた」",exp:"過去のある時点で進行中だった動作を表します。"}
  ]},
  {name:"to不定詞(名詞的用法)",en:"to-infinitive(noun)",items:[
   {ja:"私は将来、先生になりたいです。",en:"I want to become a teacher in the future.",pat:"want to/need to/try toなど＋動詞の原形",exp:"「〜すること」「〜したい」を表すto＋動詞の原形です。"},
@@ -983,7 +981,8 @@ const DATA=[
   {ja:"ペンギンの羽毛は毎年生えかわります。",en:"Penguins' new feathers grow in every year.",pat:"その他の重要表現",exp:"grow inで「(新しく)生えてくる、生えそろう」という意味です。newを入れることで「新しい羽毛が生えてくる」と自然に伝わります。"},
   {ja:"カズが私を訪ねてくる前に、宿題を終えました。",en:"I finished my homework before Kazu visited me.",pat:"その他の重要表現",exp:"beforeは「〜する前に」という意味の接続詞です。whenやbecauseと同じように主語+動詞が続きます。"},
   {ja:"私はそのケーキの半分をマイクにあげました。",en:"I gave half of the cake to Mike.",alt:["I gave Mike half of the cake."],pat:"その他の重要表現",exp:"half of 〜で「〜の半分」という意味です。"},
-  {ja:"雨は2日から5日の間、続くでしょう。",en:"The rain will last for two to five days.",pat:"その他の重要表現",exp:"lastはここでは動詞で「続く」という意味です。for A to B daysで「A日からB日間」という期間を表します。"}
+  {ja:"雨は2日から5日の間、続くでしょう。",en:"The rain will last for two to five days.",pat:"その他の重要表現",exp:"lastはここでは動詞で「続く」という意味です。for A to B daysで「A日からB日間」という期間を表します。"},
+  {ja:"その知らせは私にとって何も新しくありませんでした。",en:"The news was nothing new to me.",pat:"その他の重要表現",exp:"nothing new to 人で「(人)にとって目新しいことではない」という意味です。"}
  ]}
 ]}
 ];
@@ -1155,7 +1154,7 @@ function sfx(kind){if(!S.set.sfx)return;try{
  else if(kind==="ng"){tone(233,0,.14,"sine",.05)}
 }catch(e){}}
 let dlg=null;
-function askConfirm(msg,onOk,okLabel,danger){dlg={msg,onOk,okLabel:okLabel||"OK",danger:!!danger};renderDlg()}
+function askConfirm(msg,onOk,okLabel,danger,noLabel){dlg={msg,onOk,okLabel:okLabel||"OK",danger:!!danger,noLabel:noLabel||"やめる"};renderDlg()}
 function notice(msg){dlg={msg,onOk:null,okLabel:"OK",noCancel:true};renderDlg()}
 function renderDlg(){
  let el=document.getElementById("dlgBack");
@@ -1163,7 +1162,7 @@ function renderDlg(){
  if(!el){el=document.createElement("div");el.id="dlgBack";el.className="modal-back";document.body.appendChild(el)}
  el.innerHTML=`<section class="sheet modal"><div class="pad">
   <p style="font-size:.92rem;color:var(--ink);white-space:pre-line;margin:.2rem 0 .7rem">${esc(dlg.msg)}</p>
-  <div class="train-nav">${dlg.noCancel?"<span></span>":`<button class="btn-ghost" id="dlgNo">やめる</button>`}
+  <div class="train-nav">${dlg.noCancel?"<span></span>":`<button class="btn-ghost" id="dlgNo">${esc(dlg.noLabel)}</button>`}
    <button class="btn-primary ${dlg.danger?'':''}" id="dlgOk" ${dlg.danger?'style="background:var(--red)"':''}>${esc(dlg.okLabel)}</button></div>
  </div></section>`;
  const no=el.querySelector("#dlgNo");if(no)no.onclick=()=>{dlg=null;renderDlg()};
@@ -1227,7 +1226,7 @@ const BADGES=[
  {id:"onemore",n:"One More Try",d:"間違えた問題にもう一度挑戦",chk:(x)=>x&&x.retry},
  {id:"nevergiveup",n:"Never Give Up",d:"3回以上挑戦して正解",chk:(x)=>x&&x.tries>=3&&x.ok},
  {id:"unit1",n:"Giving Master",d:"あげる・送る表現(SVOO)をマスター",chk:()=>unitMastered(1,0)},
- {id:"unit2",n:"That-Clause Master",d:"〜だと思う・望む(that節)をマスター",chk:()=>unitMastered(1,1)},
+ {id:"unit2",n:"That-Clause Master",d:"〜だと思う・望む 等(that節)をマスター",chk:()=>unitMastered(1,1)},
  {id:"unit3",n:"There is/are Master",d:"There is/are構文をマスター",chk:()=>unitMastered(1,2)},
  {id:"unit4",n:"Bonus Master",d:"その他の重要表現をマスター",chk:()=>unitMastered(1,3)},
  {id:"cbt1",n:"CBT Beginner",d:"CBTチャレンジを完走",chk:(x)=>x&&x.cbt},
@@ -1373,7 +1372,7 @@ function vHome(){
     <p><b>出題範囲</b>${(S.set.seasons&&S.set.seasons.length)?S.set.seasons.map(i=>DATA[i-1]?DATA[i-1].name:"").join("・"):"すべてのシーズン"} <small style="color:var(--on-dim)">設定画面で変更できます</small></p>
     <p>今日のミッションを3つクリアすると<br>宝箱があきます。<br>ネイティブがよく使うフレーズを<br>貯めよう!<br><small style="color:var(--on-dim)">記録ページに保存されます</small></p>
    </div></details><div class="pad">
-   <span class="eyebrow" style="color:var(--gold-ink);font-size:.85rem;letter-spacing:.08em">今日の宝箱</span>
+   <span class="eyebrow" style="font-size:.85rem;letter-spacing:.08em">今日の宝箱</span>
    ${(()=>{const opened=!!d.rw,ready=doneN===3&&!opened;
     if(doneN===3&&opened){const r=todayReward();
      return`<div class="mis-done"><span class="md-stamp">Complete</span><span>ミッション3つ、クリアした!</span></div>
@@ -1458,7 +1457,7 @@ function bindHome(){
  document.querySelectorAll("[data-season-act]").forEach(b=>b.onclick=()=>{
   const lv=Number(b.dataset.lv),act=b.dataset.seasonAct;
   if(act==="cbt")startCbtSetup(lv);else pickRandom(act,lv)});
- document.querySelectorAll("[data-season-map]").forEach(b=>b.onclick=()=>nav("map"))}
+ document.querySelectorAll("[data-season-map]").forEach(b=>b.onclick=()=>{mapJump=Number(b.dataset.seasonMap);nav("map")})}
 function pickRandom(mode,lv){
  const base=lv?Q.filter(q=>q.level===lv):(()=>{const sel=S.set.seasons;
    const inSeasons=(sel&&sel.length)?Q.filter(q=>sel.includes(q.level)):Q;
@@ -1468,11 +1467,12 @@ function pickRandom(mode,lv){
  startSession(shuffle(pool).slice(0,5).map(q=>q.id),mode,mode==="copy"?"タイピング5問":"英作文5問",false)}
 
 /* ---------- マップ ---------- */
+let mapJump=null;
 function vMap(){
  return DATA.map((lv,li)=>[lv,li]).map(([lv,li])=>{
   const items=Q.filter(q=>q.level===li+1);
   const m=items.filter(q=>isMaster(q.id)).length;
-  return`<section class="world"><div class="world-head"><span class="w-name">${esc(lv.name)}</span>
+  return`<section class="world" data-lv="${li+1}"><div class="world-head"><span class="w-name">${esc(lv.name)}</span>
      <span class="w-sub">${lv.units.length} stages</span>
      <span class="w-prog">★ ${m}/${items.length}</span>
      <details class="info-pop inline" style="margin-left:.35rem"><summary aria-label="鍵の仕組みについて"><span>?</span></summary>
@@ -1511,7 +1511,16 @@ function bindMap(){
    const u=DATA[lv-1].units[ui];
    startSession(Q.filter(q=>q.level===lv&&q.ui===ui).map(q=>q.id),b.dataset.m,`${u.name} · ${modeName(b.dataset.m)}`,false)});
  document.querySelectorAll("[data-q]").forEach(b=>b.onclick=()=>{
-   startSession([b.dataset.q],"step","1文ステップ練習",false)})}
+   startSession([b.dataset.q],"step","1文ステップ練習",false)})
+ if(mapJump){
+   const w=document.querySelector(`.world[data-lv="${mapJump}"]`);
+   if(w){
+     const firstUnit=w.querySelector(".unit");
+     if(firstUnit)firstUnit.open=true;
+     w.scrollIntoView({behavior:"smooth",block:"start"})
+   }
+   mapJump=null
+ }}
 function modeName(m){return{copy:"お手本タイピング",step:"ステップタイピング",order:"語順トレーニング",write:"英作文"}[m]||m}
 
 /* ---------- 学習セッション ---------- */
@@ -1543,7 +1552,7 @@ function vSession(){
  else if(m==="step")body=vStep(q,a);
  else if(m==="order")body=vOrder(q,a);
  else body=vWrite(q,a);
- return`<div class="train-top"><button class="btn-quit" id="btnQuit">← やめる(保存されます)</button>
+ return`<div class="train-top"><button class="btn-quit" id="btnQuit">← 中断する</button>
    <div class="steps">${stepTags}</div></div>
  <section class="sheet">
    <div class="train-sheet">${body}</div></section>`}
@@ -2203,7 +2212,7 @@ function render(){
  renderHeader();
  const app=$("#app");
  if(view==="session"&&session){app.innerHTML=vSession();
-   $("#btnQuit").onclick=()=>askConfirm("練習を中断しますか?\n(つづきから再開できます)",()=>nav("home"),"中断する");
+   $("#btnQuit").onclick=()=>askConfirm("練習を中断しますか?\n(つづきから再開できます)",()=>nav("home"),"中断する",false,"戻る");
    const q=curQ(),a=session.att;
    if(a.done)bindDone(q,a);
    else if(session.mode==="copy")bindCopy(q,a);
