@@ -1,0 +1,2407 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#161B24">
+<title>PICKS | 重要表現タイピング</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Andika:wght@400;700&family=BIZ+UDPGothic:wght@400;700&family=Space+Grotesk:wght@500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --table:#0F172A; --table-2:#1B2740; --table-3:#28324D;
+  --grid:rgba(120,150,200,.06);
+  --on:#F1F5F9; --on-soft:#9AA7B8; --on-dim:#6B7789;
+  --paper:#FCFCFA; --paper-2:#F3F4EF;
+  --ink:#14181F; --ink-soft:#4A515C; --rule:#E1E4DC;
+  --blue:#4A5FA0; --blue-2:#7186C7; --blue-soft:#EAF0FF; --blue-ink:#1B3E99;
+  --red:#FF4D3D; --red-soft:#FFE9E6;
+  --gold:#14B8A6; --gold-2:#2DD4BF; --gold-soft:#E1F7F3; --gold-ink:#0B5C52;
+  --amber:#FBBF24; --amber-soft:#FEF3D8; --amber-ink:#8A6008;
+  --ok:#1FA971; --ok-soft:#EAF7F0;
+  --warn:#C3893B; --warn-soft:#FBF1E2;
+  --r:14px;
+  --fs:16px;
+  --lh:1.6;
+}
+*{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent}
+html{font-size:var(--fs);-webkit-text-size-adjust:100%}
+html,body{overflow-x:hidden;max-width:100%}
+img,svg{max-width:100%}
+body{
+  font-family:"BIZ UDPGothic","Andika",system-ui,sans-serif;
+  color:var(--on); line-height:var(--lh); min-height:100vh;
+  background:
+    linear-gradient(var(--grid) 1px,transparent 1px) 0 0/28px 28px,
+    linear-gradient(90deg,var(--grid) 1px,transparent 1px) 0 0/28px 28px,
+    radial-gradient(1200px 600px at 80% -10%,#20293A 0,var(--table) 60%);
+  background-color:var(--table);
+}
+body.reduce-motion *{animation:none!important;transition:none!important}
+.mono{font-family:"Space Mono",ui-monospace,monospace}
+.en{font-family:"Andika","BIZ UDPGothic",sans-serif}
+button{font-family:inherit;cursor:pointer;border:none;background:none;color:inherit}
+textarea,input,select{font-family:inherit;font-size:1rem;color:var(--ink)}
+svg{display:block}
+:focus-visible{outline:2.5px solid var(--gold-2);outline-offset:3px;border-radius:6px}
+::selection{background:rgba(20,184,166,.32)}
+.sheet ::selection,.pv-doc ::selection{background:rgba(20,184,166,.22)}
+::-webkit-scrollbar{width:11px;height:11px}
+::-webkit-scrollbar-track{background:transparent}
+::-webkit-scrollbar-thumb{background:rgba(255,255,255,.16);border-radius:6px;border:3px solid var(--table)}
+::-webkit-scrollbar-thumb:hover{background:rgba(255,255,255,.28)}
+button{cursor:pointer}
+button:disabled{cursor:default}
+.eyebrow{font-family:"Space Mono",monospace;font-size:.66rem;letter-spacing:.22em;text-transform:uppercase}
+.range-note{display:block;font-family:"Space Mono",monospace;font-size:.62rem;color:var(--ink-soft);margin:.15rem 0 .5rem}
+.sr-only{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
+
+/* ===== header ===== */
+header{position:relative;border-bottom:1px solid rgba(255,255,255,.08)}
+.head-in{max-width:980px;margin:0 auto;padding:.85rem 1.15rem .6rem;
+  display:flex;align-items:center;justify-content:space-between;gap:1rem;flex-wrap:wrap}
+.brand{display:flex;align-items:baseline;gap:.6rem}
+.wordmark{font-family:"Space Grotesk",sans-serif;font-weight:700;font-size:1.55rem;letter-spacing:.14em;color:var(--on)}
+.wordmark .dot{color:var(--gold-2)}
+.brand .sub{font-family:"Space Mono",monospace;font-size:.6rem;letter-spacing:.2em;color:var(--on-dim);text-transform:uppercase}
+.status{display:flex;align-items:center;gap:.7rem;flex-wrap:wrap}
+.key-chip{display:flex;align-items:center;gap:.45rem;padding:.34rem .7rem;border:1px solid rgba(228,161,27,.45);
+  border-radius:999px;background:rgba(228,161,27,.08)}
+.key-chip svg{width:14px;height:14px;color:var(--gold-2)}
+.key-chip b{font-family:"Space Mono",monospace;font-size:.78rem;color:var(--gold-2)}
+.key-chip span{font-family:"Space Mono",monospace;font-size:.6rem;letter-spacing:.12em;color:var(--on-dim);text-transform:uppercase}
+.streak-chip{display:flex;align-items:center;gap:.35rem;color:var(--on-soft);font-family:"Space Mono",monospace;font-size:.78rem}
+.streak-chip.live{color:var(--red)}
+.streak-chip svg{width:15px;height:15px}
+nav{display:flex;gap:.3rem;margin-left:.2rem;flex-wrap:wrap}
+nav button{font-family:"Space Mono",monospace;font-size:.68rem;letter-spacing:.1em;text-transform:uppercase;
+  padding:.38rem .7rem;border-radius:8px;color:var(--on-soft)}
+nav button:hover{color:var(--on);background:rgba(255,255,255,.05)}
+nav button.on{color:var(--table);background:var(--on)}
+.xp-strip{max-width:980px;margin:0 auto;padding:.15rem 1.15rem .7rem;display:flex;align-items:center;gap:.7rem}
+.xp-bar{flex:1;height:5px;border-radius:999px;background:rgba(255,255,255,.09);overflow:hidden}
+.xp-fill{height:100%;background:linear-gradient(90deg,var(--gold),var(--gold-2));border-radius:999px;width:0;transition:width .6s cubic-bezier(.2,.7,.2,1)}
+.xp-label{font-family:"Space Mono",monospace;font-size:.66rem;letter-spacing:.08em;color:var(--on-dim);white-space:nowrap}
+header.compact .head-in{padding:.45rem 1.15rem .3rem}
+header.compact .brand .sub{display:none}
+header.compact .xp-strip{padding:.1rem 1.15rem .35rem}
+header.compact .wordmark{font-size:1.2rem}
+
+/* ===== layout ===== */
+main{max-width:980px;margin:0 auto;padding:.7rem 1.15rem 3rem}
+h2.sec{font-family:"Space Mono",monospace;font-size:.72rem;letter-spacing:.18em;text-transform:uppercase;color:var(--on-soft);
+  margin:.85rem 0 .45rem;display:flex;align-items:center;gap:.6rem}
+h2.sec::before{content:"";width:22px;height:1px;background:var(--on-dim)}
+h2.sec.ja{font-family:"BIZ UDPGothic",sans-serif;font-size:.92rem;font-weight:700;letter-spacing:.3em;text-transform:none;color:var(--on)}
+
+/* coach note */
+.coach{display:flex;gap:.6rem;align-items:center;margin:.3rem 0 .9rem;border-left:2px solid var(--gold);padding:.15rem 0 .15rem .8rem}
+.coach .avatar{width:34px;height:34px;flex:none;border-radius:9px;background:var(--table-2);
+  border:1px solid rgba(255,255,255,.12);display:flex;align-items:center;justify-content:center;color:var(--gold-2)}
+.coach .avatar svg{width:19px;height:19px}
+.coach .c-label{font-family:"Space Mono",monospace;font-size:.6rem;letter-spacing:.2em;text-transform:uppercase;color:var(--on-dim)}
+.coach .c-msg{color:var(--on);font-size:.94rem;font-weight:500;margin-top:.05rem}
+
+/* ===== paper sheet ===== */
+.sheet{background:var(--paper);color:var(--ink);border-radius:var(--r);position:relative;
+  box-shadow:0 1px 0 rgba(255,255,255,.04),0 18px 40px -22px rgba(0,0,0,.7);
+  border:1px solid #E7E8E1;overflow:hidden}
+.sheet::before{content:"";position:absolute;left:0;top:0;bottom:0;width:3px;background:linear-gradient(var(--gold),var(--gold-2))}
+.sheet.gold::before{background:linear-gradient(var(--gold),var(--gold-2))}
+.sheet-label{position:absolute;top:.7rem;right:.9rem;font-family:"Space Mono",monospace;
+  font-size:.62rem;letter-spacing:.14em;color:#A9AEA2;text-transform:uppercase}
+.pad{padding:1rem 1.3rem 1.05rem}
+.info-pop{position:absolute;top:.65rem;right:.75rem;z-index:5}
+.info-pop.inline{position:relative;top:0;right:0;flex:none;display:inline-flex}
+.info-pop summary{list-style:none;width:22px;height:22px;border-radius:50%;border:1.5px solid var(--rule);
+  color:var(--ink-soft);font-family:"Space Mono",monospace;font-size:.72rem;font-weight:700;line-height:1;
+  display:flex;align-items:center;justify-content:center;cursor:pointer;background:var(--paper)}
+.info-pop summary::-webkit-details-marker{display:none}
+.info-pop summary::marker{content:""}
+.info-pop summary:hover{border-color:var(--gold-2);box-shadow:0 0 0 3px rgba(20,184,166,.15)}
+.info-pop summary span{display:block;transform:translateY(-1px)}
+.info-pop[open] summary{border-color:var(--gold);color:var(--gold-ink)}
+.info-pop-panel{position:absolute;top:26px;right:0;width:15rem;background:var(--ink);color:var(--on);
+  border-radius:10px;padding:.7rem .8rem;font-size:.72rem;line-height:1.55;box-shadow:0 12px 30px -10px rgba(0,0,0,.5);
+  text-transform:none;letter-spacing:normal}
+.info-pop-panel p{margin:0 0 .45rem}
+.info-pop-panel p:last-child{margin-bottom:0}
+.info-pop-panel b{display:block;color:var(--gold-2)}
+.key-ico{display:inline-block;width:13px;height:13px;color:var(--gold-2);vertical-align:-2px;margin-right:.2rem}
+.key-ico svg{width:100%;height:100%;display:block}
+
+/* mission list */
+.mission-row{display:flex;align-items:center;gap:.6rem;padding:.26rem 0;border-top:1px dashed var(--rule)}
+.mission-row:first-of-type{border-top:none}
+.mission-row .m-ic{width:20px;height:20px;flex:none;color:#C3C7BC}
+.mission-row.done .m-ic{color:var(--ok)}
+.mission-row span{font-size:.9rem;color:var(--ink)}
+.mission-row.done span{color:var(--ink-soft);text-decoration:line-through}
+.mission-note{font-family:"Space Mono",monospace;font-size:.64rem;color:var(--ok);margin-top:.4rem}
+.mis-head{display:flex;align-items:center;justify-content:space-between}
+.mis-keys{display:flex;gap:.25rem}
+.tbox{border:1.5px dashed var(--gold);border-radius:12px;padding:.5rem .75rem;flex:none;
+  display:flex;flex-direction:column;align-items:center;gap:.15rem;min-width:88px;background:#FFFDF6}
+.tbox .t-dia{display:flex;gap:.28rem}
+.tbox .t-dia i{font-style:normal;font-size:1.15rem;line-height:1;color:#E2DAC0}
+.tbox .t-dia i.on{color:var(--gold)}
+body:not(.reduce-motion) .tbox .t-dia i.on{animation:keypop .35s ease;display:inline-block}
+.tbox .t-lab{font-family:"Space Mono",monospace;font-size:.56rem;letter-spacing:.18em;text-transform:uppercase;color:var(--gold-ink)}
+.home-top{display:grid;grid-template-columns:1fr 1fr;gap:.9rem;align-items:stretch}
+.home-top .sheet{margin:0;display:flex;flex-direction:column}
+.home-top .sheet .pad{display:flex;flex-direction:column;flex:1}
+
+.home-side{display:flex;flex-direction:column;gap:.6rem;align-self:start}
+.rc-head{font-family:"Space Mono",monospace;font-size:.62rem;letter-spacing:.16em;text-transform:uppercase;
+  color:var(--on-soft);padding:.45rem .7rem .15rem;position:relative}
+.big-arw{margin-left:auto;color:var(--on-dim);font-size:1rem;transition:transform .15s}
+.menu-big:hover .big-arw,.map-card:hover .big-arw{transform:translateX(3px);color:var(--on-soft)}
+.map-card{display:flex;flex-direction:column;gap:.5rem;text-align:left;background:var(--table-2);
+  border:1px solid rgba(255,255,255,.08);border-radius:14px;padding:.85rem 1rem;cursor:pointer;
+  transition:border-color .15s,transform .12s}
+.map-card:hover{border-color:rgba(45,212,191,.55);transform:translateY(-1px)}
+.mc-head{display:flex;align-items:center;gap:.6rem;width:100%}
+.mc-head .mi{width:22px;height:22px;color:var(--gold-2);flex:none}
+.mc-head b{font-size:1rem;color:var(--on)}
+.mc-lv{display:flex;align-items:center;gap:.6rem;width:100%}
+.mc-name{font-family:"Space Mono",monospace;font-size:.62rem;letter-spacing:.06em;text-transform:uppercase;
+  color:var(--on-soft);flex:none;width:7.2rem;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.mc-bar{flex:1;height:5px;border-radius:3px;background:rgba(255,255,255,.09);overflow:hidden}
+.mc-bar i{display:block;height:100%;border-radius:3px;background:linear-gradient(90deg,var(--gold),var(--gold-2));min-width:0}
+.mc-n{font-family:"Space Mono",monospace;font-size:.66rem;color:var(--gold-2);flex:none;min-width:3.2rem;text-align:right}
+.mc-n em{font-style:normal;color:var(--on-dim)}
+@media(max-width:760px){.home-top{grid-template-columns:1fr}}
+.season-block{margin-top:1.6rem}
+.sb-head{display:flex;align-items:baseline;gap:.7rem;margin:.2rem 0 .7rem;flex-wrap:wrap}
+.sb-title{font-size:1.15rem;font-weight:700;color:var(--on)}
+.sb-sub{font-family:"Space Mono",monospace;font-size:.66rem;letter-spacing:.08em;text-transform:uppercase;color:var(--on-dim)}
+.sb-prog{margin-left:auto;font-family:"Space Mono",monospace;font-size:.72rem;color:var(--gold-2)}
+.sb-prog em{font-style:normal;color:var(--on-dim)}
+.season-detail-link{display:flex;align-items:center;gap:.7rem;width:100%;text-align:left;margin-top:.9rem;padding:.6rem 1rem;
+  background:rgba(20,150,140,.08);border:1.5px solid var(--gold);border-radius:10px;
+  color:var(--on);cursor:pointer}
+.season-detail-link .mi{width:22px;height:22px;flex:none;color:var(--gold-2)}
+.season-detail-link .mt{display:flex;flex-wrap:wrap;align-items:baseline;gap:1.1rem;min-width:0}
+.season-detail-link b{color:var(--gold-2);font-size:.92rem}
+.season-detail-link small{font-family:"Space Mono",monospace;font-size:.68rem;letter-spacing:.03em;color:var(--on-soft)}
+.season-detail-link .sdl-arw{width:18px;height:18px;flex:none;margin-left:auto;color:var(--gold-2)}
+.season-detail-link:hover{background:rgba(20,150,140,.16);border-color:var(--gold-2)}
+.tbx-hero{display:flex;align-items:center;gap:1rem;flex:1;min-height:0;padding:.2rem 0}
+.tbx-chest{width:clamp(150px,44%,210px);flex:none;filter:drop-shadow(0 4px 12px rgba(228,161,27,.25))}
+.tbx-chest svg{width:100%;height:auto;display:block}
+body:not(.reduce-motion) .tbx-hero[data-left="1"] .tbx-chest,
+body:not(.reduce-motion) .tbx-hero.ready .tbx-chest{animation:rumble 2.4s ease-in-out infinite}
+@keyframes rumble{0%,86%,100%{transform:none}88%{transform:translateX(-1.5px) rotate(-.8deg)}91%{transform:translateX(1.5px) rotate(.8deg)}94%{transform:translateX(-1px)}97%{transform:translateX(1px)}}
+.tbx-side{display:flex;flex-direction:column;gap:.3rem;min-width:0}
+@media(max-width:420px){.tbx-hero{flex-direction:column;text-align:center}.tbx-side{align-items:center}.btn-open{align-self:center}}
+.tbx-cnt{font-family:"Space Mono",monospace;font-size:.72rem;letter-spacing:.1em;color:var(--ink-soft)}
+.tbx-cnt b{font-size:1.35rem;color:var(--gold-ink)}
+.tbx-hint{font-size:.72rem;color:var(--ink-soft)}
+.tbx-hint em{font-style:normal;color:#B08D2A;letter-spacing:.05em}
+.tbx-note{font-size:1rem;color:var(--gold-ink);font-weight:700}
+.btn-open{font-family:"BIZ UDPGothic",sans-serif;font-weight:700;font-size:1rem;color:#4A3302;
+  background:linear-gradient(120deg,var(--gold-2),var(--gold));border:0;border-radius:12px;padding:.6rem 1.3rem;
+  box-shadow:0 4px 14px rgba(228,161,27,.45);margin-top:.2rem;align-self:flex-start}
+body:not(.reduce-motion) .btn-open{animation:openpulse 1.6s ease-in-out infinite}
+@keyframes openpulse{0%,100%{box-shadow:0 4px 14px rgba(228,161,27,.4)}50%{box-shadow:0 4px 18px rgba(228,161,27,.6)}}
+.m-cards{display:flex;flex-direction:column;gap:.55rem;margin-top:.4rem}
+.m-card{display:flex;align-items:center;gap:.7rem;text-align:left;background:#fff;border:1px solid var(--rule);
+  border-radius:11px;padding:.48rem .75rem;transition:border-color .12s,transform .12s,box-shadow .12s}
+.m-card:not(.done):hover{border-color:var(--gold-2);transform:translateY(-1px);box-shadow:0 3px 10px rgba(20,184,166,.12)}
+.m-card .m-lock{width:17px;height:17px;color:#C9C2AC;flex:none}
+.m-card .m-lock svg{width:100%;height:100%;display:block}
+.m-card .m-t{flex:1;min-width:0;display:flex;flex-direction:column;gap:.16rem}
+.m-card b{font-size:.85rem;color:var(--ink)}
+.m-card .m-prog{display:flex;align-items:center;gap:.5rem}
+.m-card .m-bar{flex:1;max-width:9rem;height:4px;border-radius:2px;background:#EDEBE4;overflow:hidden}
+.m-card .m-bar i{display:block;height:100%;background:var(--gold-2);border-radius:2px}
+.chest-card{background:var(--table-2);color:var(--on);border:1px solid rgba(255,255,255,.08)}
+.chest-card .eyebrow{color:var(--gold-2)}
+.chest-card .tbx-note{color:var(--gold-2)}
+.chest-card .m-card{background:var(--table-3);border-color:rgba(255,255,255,.08)}
+.chest-card .m-card b{color:var(--on)}
+.chest-card .m-card .m-bar{background:rgba(255,255,255,.1)}
+.chest-card .m-card.done{background:rgba(20,184,166,.14);border-color:var(--gold)}
+.chest-card .m-card .m-go{color:var(--gold-2)}
+.chest-card .m-card.done .m-go,.chest-card .m-card.done b{color:var(--gold-2)}
+.chest-card .m-ic{color:var(--on-dim)}
+.m-card .m-n{font-family:"Space Mono",monospace;font-size:.62rem;color:var(--ink-soft)}
+.m-card .m-go{flex:none;font-family:"BIZ UDPGothic",sans-serif;font-size:.72rem;color:var(--gold-2)}
+.m-card.done{background:var(--gold-soft);border-color:var(--gold)}
+.m-card.done .m-lock{color:var(--gold)}
+.m-card.done .m-bar i{background:var(--gold)}
+.m-card.done .m-go,.m-card.done b{color:var(--gold-ink)}
+.mis-done{display:flex;align-items:center;gap:.55rem;font-size:.84rem;font-weight:700;color:var(--gold-ink);padding:.25rem 0 .1rem}
+.chest-card .mis-done{color:var(--on)}
+.mis-done .md-stamp{font-family:"Space Mono",monospace;font-size:.62rem;letter-spacing:.14em;text-transform:uppercase;font-weight:700;
+  display:inline-flex;align-items:center;gap:.3rem;color:var(--gold-ink);border-radius:99px;padding:.2rem .6rem;flex:none;background:var(--gold-soft)}
+.mis-done .md-stamp::before{content:"";width:6px;height:6px;border-radius:50%;background:currentColor}
+body:not(.reduce-motion) .mis-done{animation:stampIn .4s cubic-bezier(.3,1.4,.5,1)}
+@keyframes keypop{0%{transform:scale(.4) rotate(-30deg)}70%{transform:scale(1.25)}100%{transform:scale(1)}}
+.mis-body{display:flex;gap:1rem;align-items:center;flex:1;min-height:0}
+.mis-list{flex:1;min-width:0}
+.mission-row .m-dia{font-size:.92rem;line-height:1;color:#CFC7AE;flex:none;width:18px;text-align:center}
+.mission-row.done .m-dia{color:var(--gold)}
+.mission-row .m-ok{width:16px;height:16px;color:var(--ok);margin-left:auto;flex:none}
+.mission-row .m-ok svg{width:100%;height:100%}
+
+@keyframes chestpop{0%{transform:scale(.75) rotate(-5deg)}60%{transform:scale(1.1) rotate(2deg)}100%{transform:scale(1)}}
+.mission-note2{display:flex;align-items:center;gap:.4rem;font-family:"Space Mono",monospace;font-size:.66rem;color:var(--gold-ink);margin-top:.45rem}
+.mission-note2 svg{width:13px;height:13px}
+.mission-note2 b{font-size:.8rem}
+.mix-chip{font-family:"Space Mono",monospace;font-size:.58rem;letter-spacing:.1em;color:var(--gold-ink);
+  border:1px solid var(--gold);border-radius:5px;padding:.08rem .35rem;margin-left:.45rem}
+.f-review-note{font-size:.8rem;color:var(--ink-soft);margin-top:.7rem}
+.fin-sheet{max-width:760px;margin-left:auto;margin-right:auto}
+.fin-sheet .finish{position:relative;overflow:hidden;padding:1.6rem .8rem 1.4rem}
+.fin-emblem{width:172px;margin:0 auto .2rem;filter:drop-shadow(0 4px 12px rgba(228,161,27,.3))}
+.fin-emblem svg{width:100%;height:auto;display:block}
+body:not(.reduce-motion) .fg-rays{transform-origin:100px 72px;animation:rays 18s linear infinite}
+body:not(.reduce-motion) .fg-medal{transform-origin:100px 72px;animation:keypop .6s cubic-bezier(.34,1.56,.64,1)}
+body:not(.reduce-motion) .fg-spark path{animation:twinkle 1.9s ease-in-out infinite}
+body:not(.reduce-motion) .fg-spark path:nth-child(2){animation-delay:.5s}
+body:not(.reduce-motion) .fg-spark path:nth-child(3){animation-delay:1s}
+body:not(.reduce-motion) .fg-spark path:nth-child(4){animation-delay:1.4s}
+.fin-confetti{position:absolute;inset:0;pointer-events:none}
+.fin-confetti i{position:absolute;top:-14px;font-style:normal;opacity:0}
+.fin-confetti i::before{content:"◆";font-size:.7rem;color:var(--gold)}
+.fin-confetti i:nth-child(3n)::before{color:var(--blue);font-size:.55rem}
+.fin-confetti i:nth-child(4n)::before{color:var(--red);font-size:.5rem}
+.fin-confetti i:nth-child(1){left:4%}.fin-confetti i:nth-child(2){left:12%}.fin-confetti i:nth-child(3){left:19%}
+.fin-confetti i:nth-child(4){left:27%}.fin-confetti i:nth-child(5){left:34%}.fin-confetti i:nth-child(6){left:42%}
+.fin-confetti i:nth-child(7){left:50%}.fin-confetti i:nth-child(8){left:58%}.fin-confetti i:nth-child(9){left:65%}
+.fin-confetti i:nth-child(10){left:73%}.fin-confetti i:nth-child(11){left:80%}.fin-confetti i:nth-child(12){left:87%}
+.fin-confetti i:nth-child(13){left:93%}.fin-confetti i:nth-child(14){left:97%}
+body:not(.reduce-motion) .fin-confetti i{animation:confall 1.7s ease-in forwards}
+body:not(.reduce-motion) .fin-confetti i:nth-child(2n){animation-duration:2.1s;animation-delay:.15s}
+body:not(.reduce-motion) .fin-confetti i:nth-child(3n){animation-delay:.35s}
+body:not(.reduce-motion) .fin-confetti i:nth-child(5n){animation-delay:.55s;animation-duration:2.4s}
+@keyframes confall{0%{transform:translateY(0) rotate(0);opacity:1}80%{opacity:1}
+ 100%{transform:translateY(420px) rotate(260deg);opacity:0}}
+.reward{margin-top:.55rem;border:1.5px dashed var(--gold);background:linear-gradient(135deg,#FBF3DC,#FFFAEE);border-radius:12px;
+  padding:.55rem .8rem;display:flex;gap:.7rem;align-items:center;flex-wrap:wrap;position:relative}
+body:not(.reduce-motion) .reward.new{animation:rwin .5s ease}
+@keyframes rwin{0%{opacity:0;transform:translateY(6px)}100%{opacity:1;transform:none}}
+.reward .r-stamp{font-family:"Space Mono",monospace;font-size:.6rem;letter-spacing:.14em;text-transform:uppercase;color:var(--gold-ink);
+  display:inline-flex;align-items:center;gap:.3rem;border-radius:99px;padding:.16rem .55rem;background:var(--gold-soft);flex:none}
+.reward .r-stamp::before{content:"";width:6px;height:6px;border-radius:50%;background:currentColor}
+.reward .r-t{display:flex;flex-direction:column;gap:.05rem;min-width:0}
+.reward .r-en{font-weight:700;font-size:1.02rem;color:var(--ink)}
+.reward .r-ja{font-size:.74rem;color:var(--ink-soft)}
+.reward .r-note{flex-basis:100%;font-family:"Space Mono",monospace;font-size:.6rem;color:var(--gold-ink)}
+.reward.loot{background:radial-gradient(130% 150% at 50% 0%,#2B2F63 0%,#191C3C 55%,#12142E 100%);
+  border:1.5px solid var(--gold);flex-wrap:nowrap;align-items:center;justify-content:flex-start;gap:1rem;padding:.6rem 1.3rem;overflow:hidden;margin-top:.4rem;flex:1;min-height:0}
+.loot-chest{width:clamp(96px,26%,150px);flex:none;filter:drop-shadow(0 4px 14px rgba(245,198,79,.35))}
+.loot-chest svg{width:100%;height:auto;display:block}
+body:not(.reduce-motion) .kg-rays{transform-origin:100px 66px;animation:rays 16s linear infinite}
+@keyframes rays{to{transform:rotate(360deg)}}
+body:not(.reduce-motion) .kg-spark path{animation:twinkle 1.8s ease-in-out infinite}
+body:not(.reduce-motion) .kg-spark path:nth-child(2){animation-delay:.4s}
+body:not(.reduce-motion) .kg-spark path:nth-child(3){animation-delay:.9s}
+body:not(.reduce-motion) .kg-spark path:nth-child(4){animation-delay:1.3s}
+@keyframes twinkle{0%,100%{opacity:.25}50%{opacity:1}}
+.loot-t{display:flex;flex-direction:column;gap:.16rem;align-items:flex-start;text-align:left;min-width:0}
+.loot-head{display:flex;align-items:center;gap:.5rem}
+.btn-speak-mini{width:24px;height:24px;border-radius:50%;flex:none;display:flex;align-items:center;justify-content:center;
+  border:1.5px solid #7E8FE8;color:#D3DAFF;background:transparent;cursor:pointer;padding:0}
+.btn-speak-mini svg{width:13px;height:13px}
+.btn-speak-mini:hover{background:rgba(126,143,232,.15)}
+.speak-row .btn-speak-mini{border-color:var(--gold);color:var(--gold-ink)}
+.speak-row .btn-speak-mini:hover{background:var(--gold-soft)}
+@media(max-width:760px){.reward.loot{flex-direction:column}.loot-t{align-items:center;text-align:center}}
+.reward.loot .r-stamp{color:var(--amber);border-color:var(--amber)}
+.reward.loot .r-en{color:#fff;font-size:1.15rem}
+.reward.loot .r-ja{color:#C6CBEF;font-size:.8rem}
+.reward.loot .btn-speak{border-color:#7E8FE8;color:#D3DAFF;background:transparent;margin-top:.15rem;padding:.25rem .7rem}
+.reward.loot .r-note{color:#9BA3D8;flex-basis:auto;font-size:.56rem}
+.loot-fx{position:absolute;inset:0;pointer-events:none}
+.loot-fx i{position:absolute;font-style:normal;font-size:.55rem;color:var(--gold-2);opacity:.7}
+.loot-fx i:nth-child(1){left:8%;top:18%}.loot-fx i:nth-child(2){left:16%;top:70%;color:#7E8FE8}
+.loot-fx i:nth-child(3){left:46%;top:12%;font-size:.4rem}.loot-fx i:nth-child(4){left:88%;top:24%}
+.loot-fx i:nth-child(5){left:80%;top:72%;color:#7E8FE8;font-size:.4rem}.loot-fx i:nth-child(6){left:94%;top:55%;font-size:.45rem}
+body:not(.reduce-motion) .loot-fx i{animation:floaty 3.2s ease-in-out infinite}
+body:not(.reduce-motion) .loot-fx i:nth-child(2n){animation-delay:1.1s}
+body:not(.reduce-motion) .loot-fx i:nth-child(3n){animation-delay:2s}
+@keyframes floaty{0%,100%{transform:translateY(0);opacity:.45}50%{transform:translateY(-5px);opacity:1}}
+
+
+/* home quick stats */
+.mini-stats{display:flex;gap:.35rem;flex-wrap:wrap;margin-top:.35rem}
+.mini-stats span{font-family:"Space Mono",monospace;font-size:.64rem;color:var(--ink-soft);background:var(--paper-2);border-radius:999px;padding:.16rem .6rem}
+.mini-stats b{color:var(--ink)}
+
+/* home menu: primary row + secondary row */
+.menu-top{display:grid;grid-template-columns:1fr 1fr;gap:.55rem;margin-bottom:.55rem}
+.menu-top.single{grid-template-columns:1fr}
+.menu-big{border-radius:14px;padding:.85rem 1rem;text-align:left;display:flex;align-items:center;gap:.7rem;
+  border:1px solid rgba(255,255,255,.08);background:var(--table-2);transition:border-color .12s,transform .12s;cursor:pointer}
+.menu-big:hover{transform:translateY(-1px)}
+.menu-big .mi{width:22px;height:22px;flex:none}
+.menu-big .mt{display:flex;flex-wrap:wrap;align-items:baseline;gap:.6rem;min-width:0}
+.menu-big b{font-size:1.02rem;color:var(--on)}
+.menu-big small{font-family:"Space Mono",monospace;font-size:.6rem;letter-spacing:.08em;text-transform:uppercase;color:var(--on-dim)}
+.menu-big.gold{border-color:rgba(228,161,27,.55);background:linear-gradient(135deg,rgba(228,161,27,.14),var(--table-2) 55%)}
+.menu-big.gold .mi{color:var(--gold-2)}
+.menu-big.gold:hover{border-color:var(--gold-2)}
+.menu-big.blue{border-color:rgba(113,134,199,.45);background:linear-gradient(135deg,rgba(74,95,160,.15),var(--table-2) 55%)}
+.menu-big.blue .mi{color:var(--blue-2)}
+.menu-big.blue:hover{border-color:var(--blue-2)}
+.menu-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:.55rem}
+.today-cta{width:100%;display:flex;align-items:center;gap:.85rem;background:linear-gradient(120deg,var(--gold-2),var(--gold));
+  color:#fff;border:0;border-radius:16px;padding:1rem 1.2rem;margin:.7rem 0 1rem;box-shadow:0 6px 18px -6px rgba(20,184,166,.5);
+  transition:transform .12s,box-shadow .12s}
+.today-cta:hover{transform:translateY(-1px);box-shadow:0 8px 22px -6px rgba(20,184,166,.6)}
+.today-cta .tc-ic{width:30px;height:30px;flex:none}
+.today-cta .tc-ic svg{width:100%;height:100%}
+.today-cta .tc-t{display:flex;flex-direction:column;gap:.15rem;min-width:0}
+.today-cta .tc-t b{font-size:1.08rem}
+.today-cta .tc-t small{font-size:.78rem;opacity:.9}
+.today-cta .tc-arw{margin-left:auto;font-size:1.3rem;flex:none}
+.section-lbl{font-family:"Space Mono",monospace;font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;color:var(--on-dim);
+  margin:1.1rem 0 .5rem;padding-top:.6rem;border-top:1px dashed rgba(255,255,255,.12)}
+@media(max-width:680px){.menu-grid{grid-template-columns:1fr}.menu-top{grid-template-columns:1fr}}
+.menu-card{background:var(--table-2);border:1px solid rgba(255,255,255,.07);border-radius:12px;
+  padding:.75rem .9rem;text-align:left;display:flex;align-items:center;gap:.6rem;transition:border-color .12s,transform .12s;border-left-width:3px}
+.menu-card .mt{display:flex;flex-direction:column;gap:.08rem}
+.menu-card:hover{transform:translateY(-1px)}
+.menu-card .mi{width:20px;height:20px;flex:none}
+.menu-card.c-blue{border-left-color:var(--blue)}.menu-card.c-blue .mi{color:var(--blue-2)}.menu-card.c-blue:hover{border-color:rgba(113,134,199,.55);border-left-color:var(--blue)}
+.menu-card.c-red{border-left-color:var(--red)}.menu-card.c-red .mi{color:#FF7A6E}.menu-card.c-red:hover{border-color:rgba(255,77,61,.5);border-left-color:var(--red)}
+.menu-card.c-gold{border-left-color:var(--gold)}.menu-card.c-gold .mi{color:var(--gold-2)}.menu-card.c-gold:hover{border-color:rgba(228,161,27,.55);border-left-color:var(--gold)}
+.menu-card b{font-size:.92rem;color:var(--on)}
+.menu-card small{font-family:"Space Mono",monospace;font-size:.6rem;letter-spacing:.08em;text-transform:uppercase;color:var(--on-dim)}
+.menu-card .cnt{font-family:"Space Mono",monospace;font-size:.68rem;color:var(--gold-2)}
+.rev-card{background:var(--table-2);border:1px solid rgba(255,255,255,.07);border-radius:14px;padding:.5rem .55rem}
+.rev-row{display:flex;align-items:center;gap:.7rem;width:100%;text-align:left;padding:.68rem 1rem;border-radius:10px;cursor:pointer}
+.rev-row+.rev-row{border-top:1px dashed rgba(255,255,255,.08)}
+.rev-row:hover{background:rgba(255,255,255,.04)}
+.rev-row .mi{width:22px;height:22px;color:var(--gold-2);flex:none}
+.rev-row .rr-t{display:flex;flex-wrap:wrap;align-items:baseline;gap:.5rem;min-width:0}
+.rev-row .rr-t b{display:inline-block;min-width:5.4em}
+.rev-row b{font-size:.9rem;color:var(--on)}
+.rev-row small{font-size:.72rem;color:var(--on-dim)}
+.rev-row .cnt{margin-left:auto;font-family:"Space Mono",monospace;font-size:.72rem;color:var(--gold-2);flex:none}
+.rev-row .arw{color:var(--on-dim);flex:none}
+.rev-row.off{cursor:default;opacity:.55}
+.rev-row.off:hover{background:transparent}
+.rev-row.off .mi,.rev-row.off .cnt{color:var(--on-dim)}
+.btn-primary{font-family:"Andika",sans-serif;font-weight:600;font-size:.98rem;letter-spacing:.01em;
+  color:#fff;background:var(--gold);padding:.55rem 1.25rem;border-radius:10px;
+  display:inline-flex;align-items:center;gap:.5rem;transition:transform .12s,background .12s}
+.btn-primary:hover{background:#0F9488}
+.btn-primary:active{transform:translateY(1px)}
+.btn-primary:disabled{opacity:.4;cursor:not-allowed}
+.btn-primary svg{width:17px;height:17px}
+.btn-gold{background:#0F766E;color:#fff}
+.btn-gold:hover{background:#D69614}
+
+/* ===== map ===== */
+.world{margin-bottom:1rem}
+.world-head{display:flex;align-items:baseline;gap:.7rem;margin:.2rem 0 .5rem}
+.world-head .w-name{font-family:"Space Grotesk",sans-serif;font-weight:600;font-size:1.05rem;color:var(--on)}
+.world-head .w-sub{font-family:"Space Mono",monospace;font-size:.62rem;letter-spacing:.14em;text-transform:uppercase;color:var(--on-dim)}
+.world-head .w-prog{margin-left:auto;font-family:"Space Mono",monospace;font-size:.7rem;color:var(--gold-2)}
+.unit-list{display:grid;grid-template-columns:1fr 1fr;gap:.6rem;align-items:start}
+@media(max-width:720px){.unit-list{grid-template-columns:1fr}}
+details.unit{background:var(--table-2);border:1px solid rgba(255,255,255,.07);border-radius:12px;overflow:hidden}
+details.unit[open]{border-color:rgba(228,161,27,.5)}
+details.unit summary{list-style:none;cursor:pointer;padding:.7rem .85rem;display:flex;align-items:center;gap:.7rem}
+details.unit summary::-webkit-details-marker{display:none}
+.u-no{font-family:"Space Mono",monospace;font-size:.7rem;font-weight:700;color:var(--on-soft);
+  min-width:2rem;height:2rem;border:1px solid rgba(255,255,255,.12);border-radius:8px;
+  display:flex;align-items:center;justify-content:center}
+details.unit[open] .u-no{color:#1F1608;background:var(--gold);border-color:var(--gold)}
+.u-name{flex:1;font-weight:600;font-size:.92rem;line-height:1.28;color:var(--on)}
+.u-name small{display:block;font-family:"Space Mono",monospace;font-size:.6rem;letter-spacing:.06em;
+  color:var(--on-dim);text-transform:uppercase;font-weight:400;margin-top:.05rem}
+.u-prog{font-family:"Space Mono",monospace;font-size:.72rem;color:var(--on-dim)}
+.u-prog.full{color:var(--gold-2)}
+.u-actions{display:flex;gap:.4rem;padding:.55rem .85rem;border-top:1px solid rgba(255,255,255,.06);flex-wrap:wrap}
+.u-actions button{font-family:"Space Mono",monospace;font-size:.64rem;letter-spacing:.06em;text-transform:uppercase;
+  padding:.34rem .65rem;border-radius:8px;border:1px solid rgba(255,255,255,.16);color:var(--on-soft)}
+.u-actions button:hover{color:var(--on);border-color:rgba(92,139,255,.6)}
+.q-rows{border-top:1px solid rgba(255,255,255,.06)}
+.q-row{width:100%;display:flex;align-items:center;gap:.6rem;text-align:left;
+  padding:.55rem .85rem;font-size:.86rem;color:var(--on-soft);border-top:1px solid rgba(255,255,255,.04)}
+.q-row:hover{background:rgba(228,161,27,.07);color:var(--on)}
+.q-row .qn{font-family:"Space Mono",monospace;font-size:.62rem;color:var(--on-dim);min-width:1.6rem}
+.q-row .q-ja2{flex:1;line-height:1.35}
+.keyset{display:flex;gap:3px;margin-left:auto}
+.keyset svg{width:13px;height:13px;color:rgba(255,255,255,.16)}
+.keyset svg.got{color:var(--gold-2)}
+.master-star{color:var(--gold-2);font-family:"Space Mono",monospace;font-size:.62rem}
+
+/* ===== training ===== */
+.train-top{display:flex;align-items:center;justify-content:space-between;margin-bottom:.8rem;gap:.6rem;flex-wrap:wrap}
+.btn-quit{font-family:"Space Mono",monospace;font-size:.68rem;letter-spacing:.08em;text-transform:uppercase;
+  color:var(--on-soft);padding:.35rem .55rem;border-radius:8px}
+.btn-quit:hover{color:var(--on);background:rgba(255,255,255,.05)}
+.steps{display:flex;gap:.35rem;align-items:center;flex-wrap:wrap}
+.stp{font-family:"Space Mono",monospace;font-size:.62rem;letter-spacing:.06em;text-transform:uppercase;
+  padding:.24rem .55rem;border-radius:999px;color:var(--on-dim);border:1px solid rgba(255,255,255,.1)}
+.stp.on{color:var(--table);background:var(--on);border-color:var(--on)}
+.stp.past{color:var(--gold-2);border-color:rgba(228,161,27,.55)}
+.train-sheet{padding:1.25rem 1.35rem 1.2rem}
+.q-meta{font-family:"Space Mono",monospace;font-size:.64rem;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-soft);display:flex;gap:.8rem;flex-wrap:wrap;align-items:center}
+.key-progress{display:inline-flex;gap:.25rem;align-items:center;margin-left:auto}
+.key-progress i{width:22px;height:22px;color:var(--rule);transition:color .2s}
+.key-progress i svg{width:100%;height:100%;display:block}
+.key-progress i.on{color:var(--gold)}
+.key-progress i.pop{animation:keyPop2 .55s cubic-bezier(.34,1.56,.64,1)}
+@keyframes keyPop2{0%{transform:scale(1)}40%{transform:scale(1.7);color:var(--gold-2)}100%{transform:scale(1)}}
+.passage-box{margin:.6rem 0 .9rem;border:1px solid var(--rule);border-radius:10px;background:var(--paper-2);padding:.1rem .9rem}
+.passage-box summary{cursor:pointer;font-size:.8rem;color:var(--ink-soft);padding:.6rem 0;list-style:none}
+.passage-box summary::-webkit-details-marker{display:none}
+.passage-box summary::before{content:"▸ ";color:var(--gold-ink)}
+.passage-box[open] summary::before{content:"▾ "}
+.passage-en{font-family:"Andika","BIZ UDPGothic",sans-serif;font-size:.92rem;line-height:1.7;color:var(--ink);padding:.2rem 0 .9rem;white-space:normal}
+.q-meta .gold{color:var(--gold-ink)}
+.q-en{font-family:"Andika",sans-serif;font-weight:700;font-size:1.4rem;line-height:1.42;color:var(--ink);margin:.35rem 0 .15rem;word-break:break-word}
+.q-en .hit{color:var(--gold-ink)}
+.q-en .miss{color:#C0392B;background:var(--warn-soft);border-radius:3px;text-decoration:underline wavy #C0392B 1.5px;text-underline-offset:3px}
+.q-en .rest{color:#6B7280}
+.q-ja{color:var(--ink-soft);font-size:.95rem;font-weight:500}
+.q-ja.big{font-size:1.15rem;color:var(--ink);font-weight:700}
+.type-line{margin-top:.9rem}
+.type-line input,.type-line textarea{width:100%;border:1.5px solid var(--rule);border-radius:10px;padding:.6rem .75rem;
+  background:#fff;line-height:1.55;font-family:"Andika","BIZ UDPGothic",sans-serif;font-size:1.05rem}
+.type-line input:focus,.type-line textarea:focus{border-color:var(--gold)}
+.type-line textarea{resize:vertical;min-height:3.2rem}
+.type-bar{display:flex;align-items:center;justify-content:space-between;gap:.6rem;flex-wrap:wrap;margin-top:.5rem}
+.type-stats{display:flex;gap:0;flex-wrap:wrap;margin-top:0}
+.kb-toggle{font-family:"BIZ UDPGothic",sans-serif;font-size:.72rem;font-weight:600;color:var(--gold-ink);
+  background:var(--gold-soft);border:1px solid var(--gold);border-radius:999px;padding:.28rem .75rem;flex:none;white-space:nowrap}
+.kb-toggle:hover{background:#DDF3EE}
+.kb-board{margin-top:1.1rem;padding:.85rem .7rem;background:#F3F4EF;border:1px solid var(--rule);border-radius:12px;
+  display:flex;flex-direction:column;gap:.35rem;align-items:center}
+.kb-row{display:flex;gap:.3rem;justify-content:center;width:100%}
+.kb-row2{padding:0 .6rem}
+.kb-key{min-width:2rem;flex:1;max-width:2.6rem;text-align:center;padding:.4rem 0;border-radius:7px;
+  background:#fff;border:1px solid #DCDED5;box-shadow:0 1.5px 0 #DCDED5;
+  font-family:"Space Mono",monospace;font-size:.78rem;color:var(--ink-soft);text-transform:none;user-select:none}
+.kb-key.wide{flex:1.8;max-width:4.2rem;font-size:.66rem}
+.kb-key.active{background:var(--gold);border-color:var(--gold-2);color:#fff;box-shadow:0 1.5px 0 var(--gold-ink)}
+.kb-key.dim{color:#B9BCB2;background:#EBECE6;font-size:.7rem}
+.kb-space{flex:none;width:60%;max-width:16rem}
+.kb-hint{font-family:"Space Mono",monospace;font-size:.66rem;color:var(--gold-ink);margin-top:.2rem}
+.type-stats span{font-family:"Space Mono",monospace;font-size:.72rem;color:var(--ink-soft)}
+.type-stats span:not(:first-child)::before{content:"·";margin:0 .6rem;color:var(--rule)}
+.type-stats span b{color:var(--ink);font-weight:700;margin-left:.3rem}
+.type-stats b{color:var(--ink)}
+
+/* word order chips */
+.order-area{margin:.8rem 0 .2rem}
+.order-built{min-height:3.4rem;border:1.5px dashed var(--rule);border-radius:10px;background:var(--paper-2);
+  padding:.6rem .7rem;display:flex;gap:.55rem;flex-wrap:wrap;align-items:center}
+.order-bank{display:flex;gap:.6rem;flex-wrap:wrap;margin-top:.7rem}
+.w-chip{font-family:"Andika",sans-serif;font-size:1.08rem;letter-spacing:.02em;font-weight:600;padding:.5rem .95rem;border-radius:10px;
+  border:1.5px solid var(--gold);color:var(--gold-ink);background:#fff;transition:transform .08s;position:relative}
+.w-chip:active{transform:scale(.94)}
+.w-chip.used{opacity:.25;pointer-events:none}
+.w-chip .kbd{position:absolute;top:-7px;right:-5px;font-family:"Space Mono",monospace;font-size:.54rem;
+  background:var(--ink);color:#fff;border-radius:4px;padding:0 .25rem}
+.w-chip.built{border-color:var(--rule);color:var(--ink)}
+.w-chip.punct{min-width:2.1rem;text-align:center;border-color:var(--gold);color:var(--gold-ink);font-weight:800}
+.order-note{font-family:"Space Mono",monospace;font-size:.62rem;color:var(--ink-soft);margin-top:.4rem}
+
+/* feedback */
+.fb{margin-top:.8rem;border-radius:10px;padding:.65rem .85rem;font-size:.9rem;line-height:1.6}
+.fb.good{background:var(--ok-soft);color:#14563C;border:1px solid #BFE5D2}
+.fb.almost{background:var(--warn-soft);color:#6E4A16;border:1px solid #EBD5AE}
+.fb.info{background:var(--gold-soft);color:var(--gold-ink);border:1px solid #BFE5DD}
+.fb .h{font-family:"Space Mono",monospace;font-size:.6rem;letter-spacing:.14em;text-transform:uppercase;display:block;margin-bottom:.15rem;opacity:.75}
+.fb ul{margin:.2rem 0 0 1.1rem}
+.fb li{margin:.1rem 0}
+.stamp{position:absolute;right:.8rem;top:.6rem;font-family:"Space Mono",monospace;font-weight:700;
+  letter-spacing:.12em;font-size:.68rem;color:var(--red);display:inline-flex;align-items:center;gap:.3rem;
+  animation:stampIn .3s cubic-bezier(.3,1.4,.5,1)}
+.stamp::before{content:"";width:6px;height:6px;border-radius:50%;background:currentColor}
+.stamp.gold{color:var(--gold-ink)}
+@keyframes stampIn{from{transform:scale(1.4);opacity:0}to{transform:scale(1);opacity:1}}
+
+/* hint */
+.aid{margin-top:.7rem;display:flex;gap:.45rem;flex-wrap:wrap;align-items:center}
+.btn-aid{font-family:"Space Mono",monospace;font-size:.68rem;letter-spacing:.06em;text-transform:uppercase;
+  padding:.4rem .8rem;border-radius:8px;border:1px solid var(--gold);color:var(--gold-ink);background:#fff}
+.btn-aid:disabled{opacity:.35;cursor:not-allowed}
+.aid-note{font-family:"Space Mono",monospace;font-size:.6rem;color:var(--ink-soft)}
+.aid-box{margin-top:.5rem;background:var(--gold-soft);border-radius:10px;padding:.6rem .8rem;font-size:.9rem;color:var(--ink);line-height:1.7}
+.aid-box.hints{display:flex;flex-direction:column;gap:0;padding:.15rem .8rem}
+.hint-row{display:flex;align-items:baseline;gap:.6rem;padding:.34rem 0;font-size:.92rem}
+.hint-row+.hint-row{border-top:1px dashed rgba(11,92,82,.18)}
+.hint-row .h-tag{flex:none;font-family:"Space Mono",monospace;font-size:.6rem;letter-spacing:.06em;color:var(--gold-ink);
+  display:inline-flex;align-items:baseline;gap:.3rem;width:4.6rem}
+.hint-row .h-tag em{font-style:normal;color:var(--ink-soft);font-family:"BIZ UDPGothic",sans-serif;font-size:.68rem}
+.aid-box .h{font-family:"Space Mono",monospace;font-size:.6rem;letter-spacing:.14em;text-transform:uppercase;color:var(--gold-ink);display:block;margin-bottom:.15rem}
+.aid-box .en{font-weight:700}
+
+/* structure blueprint */
+.blueprint{margin-top:.8rem;background:var(--paper-2);border:1px solid var(--rule);border-radius:12px;padding:.7rem .85rem}
+.blueprint .h{font-family:"Space Mono",monospace;font-size:.6rem;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-soft);display:block;margin-bottom:.4rem}
+.bp-row{display:flex;gap:.4rem;flex-wrap:wrap}
+.bp-cell{border-radius:9px;padding:.3rem .6rem .35rem;border:1.5px solid var(--rule);background:#fff;text-align:center}
+.bp-cell .w{font-family:"Andika",sans-serif;font-weight:700;font-size:.98rem;color:var(--ink);display:block}
+.bp-cell .role{font-size:.62rem;color:var(--ink-soft);display:block;margin-top:.05rem}
+body[data-colors="on"] .bp-cell.role-s{background:#FFF6D9;border-color:#EAD588}
+body[data-colors="on"] .bp-cell.role-v{background:#FFE7DC;border-color:#F0A587}
+body[data-colors="on"] .bp-cell.role-o{background:var(--blue-soft);border-color:#BFD0F7}
+body[data-colors="on"] .bp-cell.role-x{background:#DCF3EC;border-color:#7FCDB4}
+body[data-colors="hc"] .bp-cell{border-width:2.5px}
+body[data-colors="hc"] .bp-cell.role-s{border-color:#8A6008}
+body[data-colors="hc"] .bp-cell.role-v{border-color:#C63C00}
+body[data-colors="hc"] .bp-cell.role-o{border-color:#1B3E99}
+body[data-colors="hc"] .bp-cell.role-x{border-color:#00694B}
+.pattern-tag{font-family:"Space Mono",monospace;font-size:.66rem;color:var(--ink-soft);background:#fff;border:1px solid var(--rule);border-radius:999px;padding:.16rem .6rem;display:inline-block;margin-top:.5rem}
+
+/* speech / confidence */
+.speak-row{display:flex;gap:.5rem;align-items:center;margin-top:.7rem;flex-wrap:wrap}
+.btn-speak{display:inline-flex;align-items:center;gap:.4rem;font-size:.85rem;font-weight:600;color:var(--gold-ink);
+  border:1.5px solid var(--gold);border-radius:999px;padding:.35rem .85rem;background:#fff}
+.btn-speak svg{width:15px;height:15px}
+.speak-note{font-family:"Space Mono",monospace;font-size:.62rem;color:var(--ink-soft)}
+.conf-row{display:flex;gap:.45rem;margin-top:.7rem;flex-wrap:wrap;align-items:center}
+.conf-note{flex-basis:100%;font-size:.68rem;color:var(--ink-soft)}
+.conf-btn{flex:1;min-width:110px;border:1.5px solid var(--rule);border-radius:10px;background:#fff;
+  padding:.5rem .6rem;font-size:.85rem;color:var(--ink);transition:border-color .1s}
+.conf-btn:hover{border-color:var(--gold)}
+.conf-btn.on{border-color:var(--gold);background:var(--gold-soft)}
+.train-nav{display:flex;justify-content:space-between;gap:.7rem;margin-top:1.1rem;flex-wrap:wrap}
+.btn-ghost{font-family:"Space Mono",monospace;font-size:.72rem;letter-spacing:.06em;text-transform:uppercase;
+  color:var(--ink-soft);padding:.55rem .9rem;border-radius:10px;border:1.5px solid var(--rule);background:#fff}
+.btn-ghost:hover{border-color:var(--ink-soft)}
+.key-earn{position:relative;display:flex;align-items:center;gap:.65rem;background:#FFFCF3;
+  border:1px solid rgba(228,161,27,.35);border-left:4px solid var(--gold);border-radius:10px;padding:.55rem .8rem;margin-top:.8rem;overflow:hidden;max-width:26rem;
+  box-shadow:0 3px 10px -6px rgba(180,130,10,.4);animation:stampIn .3s cubic-bezier(.3,1.4,.5,1)}
+.key-earn::after{content:"";position:absolute;top:0;bottom:0;width:46px;left:-60px;transform:skewX(-18deg);
+  background:linear-gradient(90deg,transparent,rgba(255,255,255,.85),transparent)}
+body:not(.reduce-motion) .key-earn::after{animation:shine 1.1s ease .15s 1}
+@keyframes shine{to{left:110%}}
+.ke-icon{display:flex;align-items:center;justify-content:center;width:34px;height:34px;flex:none;border-radius:50%;
+  background:var(--gold);color:#fff;box-shadow:0 2px 8px rgba(228,161,27,.45)}
+.ke-icon svg{width:18px;height:18px}
+body:not(.reduce-motion) .ke-icon{animation:keypop .45s cubic-bezier(.34,1.56,.64,1)}
+.ke-t b{font-size:.92rem;color:var(--gold-ink);display:block}
+.ke-dias{display:flex;align-items:center;gap:.3rem;margin-top:.15rem}
+.ke-dias i{font-style:normal;width:16px;height:16px;color:#E0D7BC}
+.ke-dias i svg{width:100%;height:100%;display:block}
+.ke-dias i.on{color:var(--gold)}
+.ke-dias small{font-size:.7rem;color:#8A6008;margin-left:.3rem}
+.key-earn.master{background:var(--amber-soft);border-left-color:var(--amber)}
+.key-earn.master .ke-icon{background:var(--amber);color:#fff}
+.key-earn.master .ke-t b{color:var(--amber-ink);letter-spacing:.03em}
+.ke-burst{position:absolute;left:28px;top:50%;width:0;height:0;pointer-events:none}
+.ke-burst i{position:absolute;font-style:normal}
+.ke-burst i::before{content:"◆";font-size:.6rem;color:var(--gold)}
+.ke-burst i:nth-child(2n)::before{color:var(--amber)}
+.ke-burst i:nth-child(3n)::before{font-size:.45rem}
+body:not(.reduce-motion) .ke-burst i{animation:burst .8s ease-out .1s forwards;opacity:0}
+.ke-burst i:nth-child(1){--bx:46px;--by:-30px}.ke-burst i:nth-child(2){--bx:70px;--by:-6px}
+.ke-burst i:nth-child(3){--bx:52px;--by:22px}.ke-burst i:nth-child(4){--bx:14px;--by:-40px}
+.ke-burst i:nth-child(5){--bx:-14px;--by:-26px}.ke-burst i:nth-child(6){--bx:-26px;--by:8px}
+.ke-burst i:nth-child(7){--bx:10px;--by:34px}.ke-burst i:nth-child(8){--bx:88px;--by:-28px}
+@keyframes burst{0%{transform:translate(0,0) scale(.4);opacity:1}80%{opacity:1}
+  100%{transform:translate(var(--bx),var(--by)) scale(1) rotate(120deg);opacity:0}}
+
+/* finish */
+.finish{text-align:center;padding:.6rem 0 .3rem}
+.finish .fstamp{display:inline-flex;align-items:center;gap:.4rem;font-family:"Space Mono",monospace;font-weight:700;letter-spacing:.14em;
+  color:var(--gold-ink);background:var(--gold-soft);border-radius:999px;padding:.3rem 1rem;font-size:.85rem;
+  animation:stampIn .35s cubic-bezier(.3,1.4,.5,1)}
+.finish .fstamp::before{content:"";width:7px;height:7px;border-radius:50%;background:currentColor}
+.finish .ftitle{font-family:"Space Grotesk",sans-serif;font-weight:600;font-size:1.1rem;color:var(--ink);margin-top:.7rem}
+.f-detail{display:flex;justify-content:center;gap:.35rem;flex-wrap:wrap;margin:.55rem 0}
+.f-detail span{font-family:"Space Mono",monospace;font-size:.66rem;color:var(--ink-soft);background:var(--paper-2);border-radius:999px;padding:.15rem .55rem}
+.badge-pop{display:flex;align-items:center;gap:.75rem;background:#FFFCF3;border:1px solid rgba(228,161,27,.35);border-radius:14px;
+  padding:.75rem 1rem;margin:.6rem auto 0;width:fit-content;max-width:22rem;text-align:left;box-shadow:0 3px 10px -6px rgba(180,130,10,.4);animation:stampIn .3s ease}
+.badge-pop .bi{width:40px;height:40px;flex:none;padding:9px;border-radius:50%;background:var(--gold);color:#fff;box-shadow:0 2px 8px rgba(20,184,166,.35)}
+.badge-pop .bi svg{width:100%;height:100%}
+.badge-pop b{font-size:.9rem;color:var(--ink);display:block}
+.badge-pop small{display:block;font-size:.74rem;color:var(--ink-soft);margin-top:.1rem}
+
+/* CBT */
+.modal-back{position:fixed;inset:0;background:rgba(10,12,20,.62);backdrop-filter:blur(2px);z-index:50;
+  display:flex;align-items:center;justify-content:center;padding:1rem}
+body:not(.reduce-motion) .modal-back{animation:rwin .18s ease}
+.modal{margin:0;width:min(480px,94vw);box-shadow:0 18px 50px rgba(0,0,0,.5)}
+.cbt-setup .cs-lead{font-size:.9rem;color:var(--ink-soft);margin:.45rem 0 .6rem;max-width:44rem}
+.rule-chips{display:flex;gap:.4rem;flex-wrap:wrap;margin-bottom:.9rem}
+.rule-chips span{font-family:"BIZ UDPGothic",sans-serif;font-size:.72rem;color:var(--gold-ink);
+  border:1px solid var(--gold);background:var(--gold-soft);border-radius:999px;padding:.22rem .65rem}
+.cs-group{display:flex;align-items:center;gap:1rem;padding:.55rem 0;border-top:1px dashed rgba(0,0,0,.08)}
+.cs-lbl{flex:none;width:5.2rem;font-family:"Space Mono",monospace;font-size:.66rem;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-soft)}
+.cbt-setup .seg{display:inline-flex;flex-wrap:wrap;border:1px solid rgba(0,0,0,.16);border-radius:9px;overflow:hidden}
+.cbt-setup .seg button{font-family:"BIZ UDPGothic",sans-serif;font-size:.8rem;padding:.4rem .85rem;background:#fff;color:var(--ink-soft);border:0;cursor:pointer}
+.cbt-setup .seg button+button{border-left:1px solid rgba(0,0,0,.12)}
+.cbt-setup .seg button.on{background:var(--ink);color:#fff}
+.cs-sum{font-family:"Space Mono",monospace;font-size:.68rem;opacity:.85;margin-left:.5rem}
+@media(max-width:680px){.cs-group{flex-direction:column;align-items:flex-start;gap:.4rem}}
+.cbt-bar{display:flex;align-items:center;gap:.7rem;margin-bottom:.7rem;flex-wrap:wrap}
+.cbt-timer{font-family:"Space Mono",monospace;font-weight:700;font-size:1.15rem;color:var(--on)}
+.cbt-timer.low{color:var(--red)}
+.cbt-palette{display:flex;gap:.3rem;flex-wrap:wrap;margin-left:auto}
+.cbt-palette button{font-family:"Space Mono",monospace;font-size:.66rem;width:1.8rem;height:1.8rem;border-radius:7px;
+  border:1px solid rgba(255,255,255,.18);color:var(--on-soft)}
+.cbt-palette button.cur{background:var(--on);color:var(--table)}
+.cbt-palette button{position:relative}
+.cbt-palette button.ans{border-color:var(--gold-2);color:var(--gold-2);background:rgba(20,150,140,.16)}
+.cbt-palette button.flag{border-color:var(--gold);color:var(--gold-2)}
+.cbt-palette button.flag::after{content:"";position:absolute;top:0;right:0;border:5px solid transparent;border-top-color:var(--gold);border-right-color:var(--gold);border-radius:0 6px 0 0}
+.cbt-palette button .pf{position:absolute;bottom:-3px;left:50%;transform:translateX(-50%);font-size:.55rem;line-height:1;color:var(--gold-2);background:#fff;border-radius:50%;width:9px;height:9px;display:flex;align-items:center;justify-content:center}
+.cs-note{font-size:.78rem;color:var(--gold-ink);background:var(--gold-soft);border-radius:8px;padding:.4rem .6rem;margin:.4rem 0}
+.preset-row{display:flex;gap:.5rem;flex-wrap:wrap}
+.preset-card{flex:1;min-width:6.4rem;text-align:left;border:1.5px solid var(--rule);border-radius:10px;padding:.45rem .6rem;background:#fff;transition:border-color .12s,background .12s}
+.preset-card b{display:block;font-family:"Space Mono",monospace;font-size:.72rem;letter-spacing:.06em;color:var(--ink)}
+.preset-card small{display:block;font-size:.72rem;color:var(--ink-soft);margin-top:.1rem;word-break:keep-all;overflow-wrap:break-word}
+.preset-card.on{border-color:var(--gold);background:var(--gold-soft)}
+.preset-card.on b{color:var(--gold-ink)}
+.unit-all-btn{font-size:.8rem;font-weight:600;border:1.5px solid var(--rule);border-radius:999px;padding:.3rem .8rem;background:#fff;color:var(--ink);margin-bottom:.5rem}
+.unit-all-btn.on{border-color:var(--gold);background:var(--gold-soft);color:var(--gold-ink)}
+.cs-range{margin-top:.55rem;padding-top:.55rem;border-top:1px dashed rgba(0,0,0,.08)}
+.cs-range-head{display:flex;align-items:baseline;gap:.5rem;margin-bottom:.5rem;flex-wrap:wrap}
+.cs-lbl2{font-family:"Space Mono",monospace;font-size:.66rem;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-soft)}
+.cs-range-head small{font-size:.74rem;color:var(--ink-soft)}
+.cu-group{margin-top:.6rem;padding:.55rem .65rem;background:var(--paper-2);border-radius:10px}
+.cu-lv{display:block;font-family:"Space Mono",monospace;font-size:.62rem;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-soft);margin-bottom:.3rem}
+.cu-chips{display:flex;flex-wrap:wrap;gap:.4rem}
+.cu-chips button{font-size:.78rem;border:1.5px solid var(--rule);border-radius:999px;padding:.28rem .7rem;background:#fff;color:var(--ink-soft)}
+.cu-chips button.on{border-color:var(--gold);background:var(--gold-soft);color:var(--gold-ink);font-weight:600}
+.cbt-confirm-stats{list-style:none;margin:.5rem 0;padding:0;display:flex;flex-direction:column;gap:.3rem}
+.cbt-confirm-stats li{display:flex;justify-content:space-between;font-size:.86rem;color:var(--ink);border-bottom:1px dashed var(--rule);padding:.2rem 0}
+.cbt-confirm-stats li.warn b{color:var(--red)}
+.cbt-warn-msg{font-size:.86rem;color:var(--red);background:rgba(255,77,61,.1);border:1px solid rgba(255,77,61,.3);border-radius:8px;padding:.5rem .7rem;margin:.4rem 0}
+.cbt-noselect{user-select:none;-webkit-user-select:none}
+.cbt-res-row{display:flex;gap:.6rem;align-items:flex-start;padding:.5rem 0;border-top:1px dashed var(--rule);font-size:.88rem}
+.cbt-res-row .m{width:17px;height:17px;flex:none;margin-top:.15rem}
+.cbt-res-row.ok .m{color:var(--ok)}.cbt-res-row.ng .m{color:var(--warn)}
+.cbt-res-row .en2{font-family:"Andika",sans-serif;font-weight:700}
+.cbt-res-row .my{color:var(--ink-soft);font-size:.82rem}
+
+/* records */
+.stat-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:.55rem}
+@media(max-width:720px){.stat-grid{grid-template-columns:1fr 1fr}}
+.stat{background:var(--table-2);border:1px solid rgba(255,255,255,.07);border-radius:12px;padding:.8rem}
+.stat b{font-family:"Space Mono",monospace;font-weight:700;font-size:1.5rem;color:var(--on);display:block;line-height:1}
+.stat b em{font-style:normal;font-size:.8rem;color:var(--on-dim)}
+.stat span{font-family:"Space Mono",monospace;font-size:.6rem;letter-spacing:.08em;text-transform:uppercase;color:var(--on-dim);margin-top:.3rem;display:block}
+.chart{display:flex;align-items:flex-end;gap:6px;height:110px;background:var(--table-2);
+  border:1px solid rgba(255,255,255,.07);border-radius:12px;padding:.8rem .9rem .5rem;margin-top:.55rem}
+.chart .col{flex:1;display:flex;flex-direction:column;align-items:center;gap:.25rem;height:100%;justify-content:flex-end}
+.chart .bar{width:100%;max-width:34px;background:linear-gradient(180deg,var(--gold-2),var(--gold));border-radius:5px 5px 2px 2px;min-height:2px}
+.chart .bar.blue{background:var(--table-3)}
+.chart .dlab{font-family:"Space Mono",monospace;font-size:.56rem;color:var(--on-dim)}
+.badge-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:.5rem}
+.badge-cell{background:var(--table-2);border:1px solid rgba(255,255,255,.07);border-radius:12px;padding:.7rem .6rem;text-align:center}
+.badge-cell .bi{display:block;width:20px;height:20px;margin:0 auto .45rem;color:var(--on-dim)}
+.badge-cell .bi svg{width:100%;height:100%}
+.badge-cell .bq{display:flex;align-items:center;justify-content:center;width:22px;height:22px;margin:0 auto .4rem;
+  font-family:"Space Mono",monospace;font-size:.85rem;color:var(--on-dim);border:1.5px dashed rgba(255,255,255,.28);border-radius:50%}
+.badge-cell.got{border-color:rgba(228,161,27,.55)}
+.badge-cell.got .bi{color:var(--gold-2)}
+.badge-cell b{font-size:.86rem;color:var(--on);display:block;line-height:1.3}
+.badge-cell small{font-size:.64rem;color:var(--on-dim);display:block;margin-top:.1rem;line-height:1.35}
+.badge-cell.locked b{color:var(--on-soft)}.badge-cell.locked small,.badge-cell.locked .bi{color:var(--on-dim);opacity:.85}
+.badge-cell.next{border-color:var(--gold);background:rgba(20,184,166,.1)}
+.badge-cell.next .bq{border-style:solid;border-color:var(--gold);color:var(--gold-2)}
+.badge-prog{display:flex;align-items:center;gap:.4rem;margin-top:.4rem}
+.badge-prog .m-bar{flex:1;height:4px;border-radius:2px;background:rgba(255,255,255,.12);overflow:hidden}
+.badge-prog .m-bar i{display:block;height:100%;background:var(--gold-2);border-radius:2px}
+.badge-prog small{margin:0;flex:none;color:var(--gold-2)}
+.sub-lbl{font-family:"Space Mono",monospace;font-size:.66rem;letter-spacing:.12em;text-transform:uppercase;color:var(--on-dim);margin:.7rem 0 .4rem}
+.phrase-grid{display:grid;grid-template-columns:1fr 1fr;gap:.5rem}
+@media(max-width:760px){.phrase-grid{grid-template-columns:1fr}}
+.show-more{display:block;width:100%;margin-top:.55rem;padding:.5rem;border-radius:10px;border:1px dashed rgba(255,255,255,.2);
+  background:transparent;color:var(--on-soft);font-family:"BIZ UDPGothic",sans-serif;font-size:.78rem;cursor:pointer}
+.show-more:hover{border-color:var(--gold);color:var(--gold-2)}
+.phrase-card.editing{border-color:var(--gold-2)}
+.mine-input{width:100%;background:rgba(255,255,255,.07);border:1px solid var(--gold-2);border-radius:8px;
+  padding:.4rem .6rem;font-family:"Andika",sans-serif;font-size:.9rem;color:var(--on)}
+.mine-input:focus{outline:none;background:rgba(255,255,255,.1)}
+.mine-actions{display:flex;justify-content:flex-end;gap:.4rem;margin-top:.4rem}
+.mine-actions .btn-aid{background:transparent;color:var(--on-soft);border-color:rgba(255,255,255,.25)}
+.mine-actions .btn-aid.save{color:var(--gold-2);border-color:var(--gold-2)}
+.phrase-card{background:var(--table-2);border:1px solid rgba(255,255,255,.07);border-radius:10px;padding:.55rem .8rem;display:flex;gap:.6rem;align-items:flex-start;flex-wrap:nowrap}
+.phrase-card>div:first-child{flex:1;min-width:0}
+.phrase-card .pc-act{flex:none}
+.phrase-card .p{font-weight:600;font-size:.92rem;color:var(--on);font-family:"Andika",sans-serif}
+.phrase-card small{font-family:"Space Mono",monospace;font-size:.6rem;color:var(--on-dim);display:block}
+.phrase-card .pc-act{margin-left:auto;display:flex;gap:.3rem}
+.phrase-card .pc-act button{font-size:.8rem;padding:.2rem .45rem;border-radius:7px;border:1px solid rgba(255,255,255,.14);color:var(--on-soft)}
+.phrase-card .pc-act button:hover{color:var(--on)}
+.phrase-card .fav{color:var(--gold-2)}
+.mine{border-left:2px solid var(--gold)}
+.data-actions{display:grid;grid-template-columns:repeat(auto-fit,minmax(168px,1fr));gap:.5rem;margin-top:.8rem}
+.data-actions button,.data-actions label{text-align:center;font-family:"BIZ UDPGothic",sans-serif;font-size:.78rem;letter-spacing:0;
+  padding:.55rem .4rem;border-radius:10px;border:1px solid rgba(255,255,255,.16);color:var(--on-soft);background:transparent;cursor:pointer;
+  white-space:nowrap;display:flex;align-items:center;justify-content:center}
+.data-actions button:hover,.data-actions label:hover{color:var(--on);border-color:rgba(255,255,255,.3)}
+.data-actions .danger{border-color:rgba(255,77,61,.5);color:#FF7A6E}
+.empty{font-family:"Space Mono",monospace;font-size:.72rem;color:var(--on-dim)}
+.info-card{background:var(--table-2);border:1px solid rgba(255,255,255,.07);border-radius:12px;padding:.9rem 1.1rem;
+  font-size:.84rem;color:var(--on-soft);line-height:1.9;margin-top:.9rem}
+.info-card b{color:var(--on)}
+
+/* settings */
+.set-card{background:var(--table-2);border:1px solid rgba(255,255,255,.07);border-radius:12px;padding:.85rem .95rem;margin-bottom:.6rem}
+.rule-details summary{cursor:pointer;color:var(--on-soft);font-size:.85rem;line-height:1.6;list-style:none;display:flex;align-items:center;gap:.6rem}
+.rule-details summary::-webkit-details-marker{display:none}
+.rule-details summary::before{content:"▸";color:var(--gold-2)}
+.rule-details[open] summary::before{content:"▾"}
+.rule-details[open] summary{color:var(--on);margin-bottom:.6rem}
+.rule-more{font-family:"Space Mono",monospace;font-size:.62rem;letter-spacing:.05em;color:var(--gold-ink);
+  background:var(--gold-soft);border-radius:99px;padding:.2rem .65rem;white-space:nowrap}
+.rule-more::after{content:" →"}
+.rule-list{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:.7rem}
+.rule-list li{font-size:.82rem;line-height:1.55;color:var(--on-soft);padding-top:.7rem;border-top:1px dashed rgba(255,255,255,.08)}
+.rule-list li:first-child{padding-top:0;border-top:none}
+.rule-list b{display:block;color:var(--gold-2);margin-bottom:.15rem}
+.set-row{display:flex;align-items:center;gap:.7rem;padding:.42rem 0;border-top:1px solid rgba(255,255,255,.05);flex-wrap:wrap}
+.set-row:first-child{border-top:none}
+.set-row .lbl{flex:1;font-size:.88rem;color:var(--on)}
+.set-row .lbl small{display:block;font-size:.7rem;color:var(--on-dim)}
+.set-row input[type=text],.set-row input[type=password]{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.2);
+  border-radius:8px;padding:.34rem .6rem;font-size:.85rem;color:var(--on);caret-color:var(--gold-2)}
+.set-row input::placeholder{color:var(--on-dim)}
+.set-row input:focus{outline:none;border-color:var(--gold-2);background:rgba(255,255,255,.09)}
+.seg{display:flex;border:1px solid rgba(255,255,255,.16);border-radius:9px;overflow:hidden}
+.seg button{font-size:.76rem;padding:.32rem .7rem;color:var(--on-soft)}
+.seg button.on{background:var(--on);color:var(--table)}
+.toggle{width:44px;height:24px;border-radius:999px;background:rgba(255,255,255,.14);position:relative;transition:background .15s;flex:none}
+.toggle::after{content:"";position:absolute;top:3px;left:3px;width:18px;height:18px;border-radius:50%;background:#fff;transition:left .15s}
+.toggle.on{background:var(--ok)}
+.toggle.on::after{left:23px}
+
+@media(max-width:560px){
+  .wordmark{font-size:1.3rem}
+  .train-sheet{padding:1rem .95rem 1rem}
+  .q-en{font-size:1.18rem}
+}
+/* ---- 学習のきろく(印刷) ---- */
+.pv-actions{display:flex;justify-content:space-between;margin-bottom:.7rem}
+.pv-doc{background:#fff;color:#1A1C20;border-radius:10px;padding:11mm 12mm;max-width:210mm;margin:0 auto;
+  box-shadow:0 10px 30px rgba(0,0,0,.35);font-family:"BIZ UDPGothic",sans-serif}
+.pv-head{display:flex;justify-content:space-between;align-items:flex-end;gap:1rem;border-bottom:2.5px solid #1A1C20;padding-bottom:.5rem}
+.pv-logo{font-family:"Space Grotesk",sans-serif;font-weight:700;font-size:1.5rem;letter-spacing:.14em}
+.pv-logo i{font-style:normal;color:var(--gold)}
+.pv-sub{display:block;font-family:"Space Mono",monospace;font-size:.6rem;letter-spacing:.14em;text-transform:uppercase;color:#666;margin-top:.1rem}
+.pv-meta{display:flex;flex-direction:column;align-items:flex-end;gap:.15rem;font-size:.8rem;color:#333}
+.pv-line{display:inline-block;width:9rem;border-bottom:1px solid #999;height:1em}
+.pv-stats{display:flex;flex-wrap:wrap;gap:.4rem 1.4rem;padding:.6rem 0;border-bottom:1px solid #D8D8D8;font-size:.74rem;color:#444}
+.pv-stats b{font-family:"Space Mono",monospace;font-size:1rem;color:#1A1C20;margin-right:.2rem}
+.pv-stats em{font-style:normal;color:#999;font-size:.7rem}
+.pv-sec{margin-top:.9rem;break-inside:auto}
+.pv-sec h3{font-size:.92rem;letter-spacing:.24em;border-left:4px solid var(--gold);padding-left:.5rem;margin-bottom:.45rem}
+.pv-sec h3 .pv-n{font-family:"Space Mono",monospace;font-size:.68rem;color:#888;margin-left:.5rem;letter-spacing:0}
+.pv-cols{column-count:2;column-gap:1.6rem}
+.pv-item{break-inside:avoid;padding:.28rem 0;border-bottom:1px dotted #CFCFCF}
+.pv-item.wide{column-span:all}
+.pv-en{display:block;font-weight:700;font-size:.88rem}
+.pv-ja{display:block;font-size:.72rem;color:#555}
+.pv-ja em{font-style:normal;color:#999}
+.pv-badges{display:flex;flex-wrap:wrap;gap:.35rem}
+.pv-badges span{font-size:.7rem;border:1px solid #B98A17;color:#7A5A0A;border-radius:999px;padding:.16rem .6rem}
+.pv-foot{margin-top:1rem;padding-top:.4rem;border-top:1px solid #D8D8D8;font-family:"Space Mono",monospace;font-size:.58rem;color:#999;text-align:center;letter-spacing:.08em}
+@media print{
+ @page{size:A4;margin:12mm}
+ body{background:#fff!important}
+ body::before,body::after{display:none!important}
+ header,.pv-actions{display:none!important}
+ main{max-width:none;padding:0;margin:0}
+ .pv-doc{box-shadow:none;border-radius:0;padding:0;max-width:none}
+}
+</style>
+</head>
+<body data-colors="on">
+<header>
+  <div class="head-in">
+    <div class="brand">
+      <span class="wordmark">PICKS<span class="dot">.</span></span>
+      <span class="sub">今おぼえたい表現、ピックアップ</span>
+    </div>
+    <div class="status">
+      <span class="key-chip" id="chipKeys" title="集めた鍵の数"></span>
+      <span class="streak-chip" id="chipStreak"></span>
+      <nav id="nav"></nav>
+    </div>
+  </div>
+  <div class="xp-strip">
+    <span class="xp-label">MASTER</span>
+    <div class="xp-bar"><div class="xp-fill" id="xpFill"></div></div>
+    <span class="xp-label" id="xpLabel"></span>
+  </div>
+</header>
+<main id="app" aria-live="polite"></main>
+<script>
+"use strict";
+/* =====================================================================
+   PICKS — 期間限定・重要表現タイピング  (KEYS / DRAFT. の姉妹アプリ)
+   - 外部API・ログイン・サーバー送信なし / localStorageのみ
+   - 問題データはこの DATA 配列に集約(アプリ本体ロジックと分離)
+   - DATA の第1階層＝「シーズン」。数か月おきに新しいシーズンを配列の
+     末尾に追加していく(過去のシーズンは消さず、ずっと選べる本棚方式)
+   ===================================================================== */
+
+/* ---------- 問題データ ----------
+ ja:日本語 / en:正解英文(第1候補) / alt:追加正解 / pat:文の型
+ st:[[語句,役割]] 役割 s=主語 v=動詞・助動詞 o=目的語・補語 x=その他
+ exp:ワンポイント解説   ※短縮形(I'm等)は自動で相互展開されます
+ passage:(ユニット単位) 読解文などをタイピング画面の上に表示したいとき */
+const DATA=[
+{name:"2年前期中間",sub:"",grade:"2年",units:[
+ {name:"あげる・送る表現(SVOO)",en:"give type",items:[
+    {ja:"私は彼にそのかばんをあげました。",en:"I gave him the bag.",alt:["I gave the bag to him."],pat:"主語＋動詞＋人＋物",st:[["I","s"],["gave","v"],["him","o"],["the bag.","o"]],exp:"giveは「人に＋物を」の順で並べます。"},
+    {ja:"健が私に本をくれました。",en:"Ken gave me a book.",alt:["Ken gave a book to me."],pat:"主語＋動詞＋人＋物",st:[["Ken","s"],["gave","v"],["me","o"],["a book.","o"]],exp:"give 人 物で「人に物をあげる」という意味です。"},
+    {ja:"弟が私にＴシャツをくれました。",en:"My brother gave me a T-shirt.",alt:["My brother gave a T-shirt to me."],pat:"主語＋動詞＋人＋物",st:[["My brother","s"],["gave","v"],["me","o"],["a T-shirt.","o"]],exp:"give 人 物で「人に物をあげる」という意味です。"},
+    {ja:"母が私にギターをくれました。",en:"My mother gave me a guitar.",alt:["My mother gave a guitar to me."],pat:"主語＋動詞＋人＋物",st:[["My mother","s"],["gave","v"],["me","o"],["a guitar.","o"]],exp:"give 人 物で「人に物をあげる」という意味です。"},
+    {ja:"父が私にコンピューターをくれました。",en:"My father gave me a computer.",alt:["My father gave a computer to me."],pat:"主語＋動詞＋人＋物",st:[["My father","s"],["gave","v"],["me","o"],["a computer.","o"]],exp:"give 人 物で「人に物をあげる」という意味です。"},
+    {ja:"母はこれらの新しい本を私にくれました。",en:"My mother gave me these new books.",alt:["My mother gave these new books to me."],pat:"主語＋動詞＋人＋物",st:[["My mother","s"],["gave","v"],["me","o"],["these new books.","o"]],exp:"give 人 物の語順です。"},
+    {ja:"母は私たちにクッキーをいくつか買ってくれました。",en:"Our mother bought us some cookies.",alt:["Our mother bought some cookies for us."],pat:"主語＋動詞＋人＋物",st:[["Our mother","s"],["bought","v"],["us","o"],["some cookies.","o"]],exp:"buy 人 物で「人に物を買ってあげる」です。"},
+    {ja:"彼女はそのCDを買いました。（「彼に」を加えて）",en:"She bought him the CD.",alt:["She bought the CD for him."],pat:"主語＋動詞＋人＋物",st:[["She","s"],["bought","v"],["him","o"],["the CD.","o"]],exp:"buy 人 物の順に人を割り込ませます。"},
+    {ja:"私はボブにメッセージを送るつもりです。",en:"I will send Bob a message.",alt:["I will send a message to Bob."],pat:"主語＋will＋動詞＋人＋物",st:[["I","s"],["will send","v"],["Bob","o"],["a message.","o"]],exp:"willのあとの動詞は原形(send)にします。"},
+    {ja:"私はそれを必要としている人にあげます。",en:"I'll give it to people in need.",pat:"主語＋give＋物＋to＋人",st:[["I'll give","v"],["it","o"],["to people in need.","x"]],exp:"in needで「困っている、必要としている」という意味です。"}
+ ]},
+ {name:"〜だと思う・望む 等(that節)",en:"that-clause",items:[
+    {ja:"明日は雨だと思います。",en:"I think it will be rainy tomorrow.",pat:"主語＋think＋主語＋動詞",st:[["I","s"],["think","v"],["it will be rainy tomorrow.","x"]],exp:"天気を言うときの主語はitを使います。"},
+    {ja:"私は明日晴れるといいなと思います。",en:"I hope it will be sunny tomorrow.",pat:"主語＋hope＋主語＋動詞",st:[["I","s"],["hope","v"],["it will be sunny tomorrow.","x"]],exp:"hopeのあとに主語＋動詞が続きます。"},
+    {ja:"アンドリューは私がギターを弾けるということを知っています。",en:"Andrew knows that I can play the guitar.",writeAlt:["Andrew knows I can play the guitar."],pat:"主語＋knows＋(that)＋主語＋動詞",st:[["Andrew","s"],["knows","v"],["I can play the guitar.","x"]],exp:"英作文ではthatを省略しても正解です(タイピング系では表示どおりに)。"},
+    {ja:"参加できなくてすみません。",en:"I am sorry I can't join it.",writeAlt:["I am sorry that I can't join it."],pat:"I am sorry＋(that)＋主語＋動詞",st:[["I","s"],["am sorry","v"],["I can't join it.","x"]],exp:"英作文ではthatを省略しても正解です(タイピング系では表示どおりに)。"},
+    {ja:"あなたがとても速く走ったので、私は驚いています。",en:"I am surprised you ran very fast.",writeAlt:["I am surprised that you ran very fast."],pat:"I am surprised＋(that)＋主語＋動詞",st:[["I","s"],["am surprised","v"],["you ran very fast.","x"]],exp:"英作文ではthatを省略しても正解です(タイピング系では表示どおりに)。"}
+ ]},
+ {name:"There is/are構文",en:"there is/are",items:[
+    {ja:"この公園には今日、たくさんの人がいます。",en:"There are many people in this park today.",pat:"There are＋名詞(複数)＋その他",st:[["There","s"],["are","v"],["many people","o"],["in this park today.","x"]],exp:"複数の人やものがいる/あるときはThere areを使います。"},
+    {ja:"新しいレストランがあります。",en:"There is a new restaurant.",pat:"There is＋名詞(単数)",st:[["There","s"],["is","v"],["a new restaurant.","o"]],exp:"1つ・1人のときはThere isを使います。"},
+    {ja:"本は何冊ありますか。",en:"How many books are there?",pat:"How many＋名詞＋be動詞＋there？",st:[["How many books","o"],["are","v"],["there?","s"]],exp:"数をたずねるときはHow many＋複数形で始めます。"}
+ ]},
+ {name:"その他の重要表現",en:"other expressions",items:[
+    {ja:"芽室はコーンで有名です。",en:"Memuro is famous for corn.",pat:"主語＋be動詞＋famous for＋名詞",st:[["Memuro","s"],["is famous for","v"],["corn.","o"]],exp:"be famous forで「〜で有名」という意味です。cornは通常、数えない名詞として使います(×corns)。"},
+    {ja:"彼の考えは私のものとは異なっています。",en:"His idea is different from mine.",pat:"主語＋be動詞＋different from＋名詞",st:[["His idea","s"],["is","v"],["different from mine.","o"]],exp:"be different fromで「〜と異なる」という意味です。"},
+    {ja:"またね。",en:"Keep in touch.",pat:"Keep in touch.(決まり文句)",exp:"「連絡を取り合おうね」という意味の決まり文句です。"},
+    {ja:"私たちは訓練を経験します。",en:"We go through some training.",pat:"主語＋go through＋名詞",st:[["We","s"],["go through","v"],["some training.","o"]],exp:"go throughで「〜を経験する」という意味です。"},
+    {ja:"その試合は時間がかかりました。",en:"The game took time.",pat:"主語＋動詞の過去形＋目的語",st:[["The game","s"],["took","v"],["time.","o"]],exp:"take timeで「時間がかかる」、過去形はtook。"},
+    {ja:"私は買い物に行きたいです。",en:"I would like to go shopping.",pat:"主語＋would like to＋動詞の原形",st:[["I","s"],["would like to go","v"],["shopping.","x"]],exp:"would like toはwant toのていねいな言い方です。"},
+    {ja:"さやかと私は図書館で勉強する予定です。",en:"Sayaka and I are going to study in the library.",pat:"主語＋be going to＋動詞の原形",st:[["Sayaka and I","s"],["are going to study","v"],["in the library.","x"]],exp:"be going toで「〜する予定」を表します。"},
+    {ja:"あなたはここで靴を脱ぐ必要はありません。",en:"You don't have to take off your shoes here.",pat:"主語＋don't have to＋動詞の原形",st:[["You","s"],["don't have to take off","v"],["your shoes here.","o"]],exp:"don't have toは「〜する必要はない」という意味です。"},
+    {ja:"私たちはこのたこを食べなければなりませんか。",en:"Do we have to eat this octopus?",pat:"Do＋主語＋have to＋動詞の原形？",st:[["Do","v"],["we","s"],["have to eat","v"],["this octopus?","o"]],exp:"have toの疑問文はDo/Doesで始めます。"},
+    {ja:"さやかは私たちを駅に導きます。",en:"Sayaka will lead us to the station.",pat:"その他の重要表現",st:[["Sayaka","s"],["will lead","v"],["us","o"],["to the station.","x"]],exp:"lead 人 to 場所で「人を〜に導く」という意味です。"}
+ ]}
+]},
+{name:"2年前期期末",sub:"",grade:"2年",units:[
+ {name:"that節",en:"that-clause",items:[
+  {ja:"私はそれがよい考えだと思います。",en:"I think that it's a good idea.",writeAlt:["I think it's a good idea."],pat:"主語＋think/know＋(that)＋主語＋動詞",exp:"thatのあとに「主語＋動詞」が続きます。英作文ではthatを省略した「I think it's a good idea.」も正解です。"},
+  {ja:"私はそれがよい考えだとは思いません。",en:"I don't think that it's a good idea.",writeAlt:["I don't think it's a good idea."],pat:"主語＋think/know＋(that)＋主語＋動詞",exp:"thatのあとに「主語＋動詞」が続きます。英作文ではthatを省略した「I don't think it's a good idea.」も正解です。"},
+  {ja:"あなたはそれがよい考えだと思いますか。",en:"Do you think that it's a good idea?",writeAlt:["Do you think it's a good idea?"],pat:"主語＋think/know＋(that)＋主語＋動詞",exp:"thatのあとに「主語＋動詞」が続きます。英作文ではthatを省略した「Do you think it's a good idea?」も正解です。"},
+  {ja:"私はリナが猫を飼っていると思います。",en:"I think that Rina has a cat.",writeAlt:["I think Rina has a cat."],pat:"主語＋think/know＋(that)＋主語＋動詞",exp:"thatのあとに「主語＋動詞」が続きます。英作文ではthatを省略した「I think Rina has a cat.」も正解です。"},
+  {ja:"コウジはあなたが沖縄出身だと知っていますか。",en:"Does Koji know that you are from Okinawa?",writeAlt:["Does Koji know you are from Okinawa?"],pat:"主語＋think/know＋(that)＋主語＋動詞",exp:"thatのあとに「主語＋動詞」が続きます。英作文ではthatを省略した「Does Koji know you are from Okinawa?」も正解です。"},
+  {ja:"クミは私が速く走れるとは思っていません。",en:"Kumi doesn't think that I can run fast.",writeAlt:["Kumi doesn't think I can run fast."],pat:"主語＋think/know＋(that)＋主語＋動詞",exp:"thatのあとに「主語＋動詞」が続きます。英作文ではthatを省略した「Kumi doesn't think I can run fast.」も正解です。"},
+  {ja:"あなたが疲れていることを私は知っています。",en:"I know that you are tired.",writeAlt:["I know you are tired."],pat:"主語＋think/know＋(that)＋主語＋動詞",exp:"thatのあとに「主語＋動詞」が続きます。英作文ではthatを省略した「I know you are tired.」も正解です。"}
+ ]},
+ {name:"when節(〜するとき)",en:"when-clause",items:[
+  {ja:"私は幼い頃、東京に住んでいました。",en:"I lived in Tokyo when I was little.",alt:["When I was little, I lived in Tokyo."],pat:"whenを使って「〜するとき」を表す文",exp:"when〜は文の前でも後でも置けます。前に置くときは全体をコンマで区切ります。"},
+  {ja:"私が幼い頃、東京に住んでいました。",en:"When I was little, I lived in Tokyo.",alt:["I lived in Tokyo when I was little."],pat:"whenを使って「〜するとき」を表す文",exp:"when〜は文の前でも後でも置けます。前に置くときは全体をコンマで区切ります。"},
+  {ja:"私は暇なとき、母を手伝います。",en:"I help my mother when I'm free.",alt:["When I'm free, I help my mother."],pat:"whenを使って「〜するとき」を表す文",exp:"when〜は文の前でも後でも置けます。前に置くときは全体をコンマで区切ります。"},
+  {ja:"雨のとき、私は歩いて学校へ行きます。",en:"I walk to school when it's rainy.",alt:["When it's rainy, I walk to school."],pat:"whenを使って「〜するとき」を表す文",exp:"when〜は文の前でも後でも置けます。前に置くときは全体をコンマで区切ります。"},
+  {ja:"京都を訪れたとき、舞妓さんを見ました。",en:"I saw a maiko-san when I visited Kyoto.",alt:["When I visited Kyoto, I saw a maiko-san."],pat:"whenを使って「〜するとき」を表す文",exp:"when〜は文の前でも後でも置けます。前に置くときは全体をコンマで区切ります。"},
+  {ja:"翔太は時間があるとき、ギターを弾きます。",en:"Shota plays the guitar when he has time.",alt:["When he has time, Shota plays the guitar."],pat:"whenを使って「〜するとき」を表す文",exp:"when〜は文の前でも後でも置けます。前に置くときは全体をコンマで区切ります。"},
+  {ja:"ミカを見たとき、彼女はうれしそうでした。",en:"When I saw Mika, she looked happy.",alt:["She looked happy when I saw Mika."],pat:"whenを使って「〜するとき」を表す文",exp:"when〜は文の前でも後でも置けます。前に置くときは全体をコンマで区切ります。"},
+  {ja:"彼はメグを見たとき、うれしかったです。",en:"He was happy when he saw Meg.",alt:["When he saw Meg, he was happy."],pat:"whenを使って「〜するとき」を表す文",exp:"when〜は文の前でも後でも置けます。前に置くときは全体をコンマで区切ります。"},
+  {ja:"ユミは子どもの頃、犬を飼っていました。",en:"Yumi had a dog when she was a child.",alt:["When Yumi was a child, she had a dog."],pat:"whenを使って「〜するとき」を表す文",exp:"when〜は文の前でも後でも置けます。前に置くときは全体をコンマで区切ります。"},
+  {ja:"暇なとき、あなたは何をしますか。",en:"What do you do when you are free?",alt:["When you are free, what do you do?"],pat:"whenを使って「〜するとき」を表す文",exp:"when〜は文の前でも後でも置けます。前に置くときは全体をコンマで区切ります。"},
+  {ja:"父が帰宅したとき、私は音楽を聴いていました。",en:"I was listening to music when my father came home.",alt:["When my father came home, I was listening to music."],pat:"whenを使って「〜するとき」を表す文",exp:"when〜は文の前でも後でも置けます。前に置くときは全体をコンマで区切ります。"},
+  {ja:"私が帰宅したとき、父は夕食を作っていました。",en:"When I came home, my father was making dinner.",alt:["My father was making dinner when I came home."],pat:"whenを使って「〜するとき」を表す文",exp:"when〜は文の前でも後でも置けます。前に置くときは全体をコンマで区切ります。"},
+  {ja:"私が部屋を掃除しているとき、母が帰宅しました。",en:"My mother got home when I was cleaning my room.",alt:["When I was cleaning my room, my mother got home."],pat:"whenを使って「〜するとき」を表す文",exp:"when〜は文の前でも後でも置けます。前に置くときは全体をコンマで区切ります。"}
+ ]},
+ {name:"because節(理由)",en:"because-clause",items:[
+  {ja:"サッカーはとてもわくわくするので、私はサッカーが好きです。",en:"I like soccer because it's very exciting.",pat:"becauseを使って理由を表す文",exp:"becauseのあとには理由(主語＋動詞)が続きます。"},
+  {ja:"マイは親切なので、私は彼女が好きです。",en:"I like Mai because she is kind.",pat:"becauseを使って理由を表す文",exp:"becauseのあとには理由(主語＋動詞)が続きます。"},
+  {ja:"英語はおもしろいので、私は英語が好きです。",en:"I like English because it is interesting.",pat:"becauseを使って理由を表す文",exp:"becauseのあとには理由(主語＋動詞)が続きます。"},
+  {ja:"疲れていたので、私は家に帰りました。",en:"I went home because I was tired.",pat:"becauseを使って理由を表す文",exp:"becauseのあとには理由(主語＋動詞)が続きます。"},
+  {ja:"今日は母の誕生日なので、プレゼントを買いました。",en:"I bought a present because today is my mother's birthday.",pat:"becauseを使って理由を表す文",exp:"becauseのあとには理由(主語＋動詞)が続きます。"},
+  {ja:"なぜ猫が好きなのですか。",en:"Why do you like cats?",pat:"becauseを使って理由を表す文",exp:"becauseのあとには理由(主語＋動詞)が続きます。"},
+  {ja:"かわいいからです。",en:"Because they are cute.",pat:"becauseを使って理由を表す文",exp:"becauseのあとには理由(主語＋動詞)が続きます。"}
+ ]},
+ {name:"if節(条件)",en:"if-clause",items:[
+  {ja:"次の日曜日に晴れたら、私はサッカーをします。",en:"If it's fine next Sunday, I will play soccer.",alt:["I will play soccer if it's fine next Sunday."],pat:"ifを使って条件を表す文",exp:"if〜(条件)の中では、未来のことでも現在形を使います。ifを後ろに置く語順も正解です。"},
+  {ja:"次の日曜日に晴れたら、私はサッカーをします。",en:"I will play soccer if it's fine next Sunday.",alt:["If it's fine next Sunday, I will play soccer."],pat:"ifを使って条件を表す文",exp:"if〜(条件)の中では、未来のことでも現在形を使います。ifを前に置く語順も正解です。"},
+  {ja:"明日あなたが家にいたら、会いに行きます。",en:"If you are at home tomorrow, I'll visit you.",alt:["I'll visit you if you are at home tomorrow."],pat:"ifを使って条件を表す文",exp:"if〜(条件)の中では、未来のことでも現在形を使います。"},
+  {ja:"一緒に買い物へ行ってくれたら、私はうれしいです。",en:"If you go shopping with me, I'll be happy.",alt:["I'll be happy if you go shopping with me."],pat:"ifを使って条件を表す文",exp:"if〜(条件)の中では、未来のことでも現在形を使います。"},
+  {ja:"明日暑かったら、このTシャツを着ます。",en:"If it is hot tomorrow, I'll wear this T-shirt.",alt:["I'll wear this T-shirt if it is hot tomorrow."],pat:"ifを使って条件を表す文",exp:"if〜(条件)の中では、未来のことでも現在形を使います。"},
+  {ja:"あなたが忙しかったら、私が手伝います。",en:"If you are busy, I will help you.",alt:["I will help you if you are busy."],pat:"ifを使って条件を表す文",exp:"if〜(条件)の中では、未来のことでも現在形を使います。"},
+  {ja:"ペンが必要なら、私のものを使ってもいいですよ。",en:"If you need a pen, you can use mine.",alt:["You can use mine if you need a pen."],pat:"ifを使って条件を表す文",exp:"if〜(条件)の中では、未来のことでも現在形を使います。"},
+  {ja:"リョウと話せば、彼のことを気に入るでしょう。",en:"You will like Ryo if you talk with him.",alt:["If you talk with him, you will like Ryo."],pat:"ifを使って条件を表す文",exp:"if〜(条件)の中では、未来のことでも現在形を使います。"},
+  {ja:"明日あなたが来てくれたら、私はうれしいです。",en:"If you come tomorrow, I'll be happy.",alt:["I'll be happy if you come tomorrow."],pat:"ifを使って条件を表す文",exp:"if〜(条件)の中では、未来のことでも現在形を使います。"}
+ ]},
+ {name:"過去進行形(〜していた)",en:"past progressive",items:[
+  {ja:"私はテレビを見ていました。",en:"I was watching TV.",pat:"was/were＋動詞のing形「〜していた」",exp:"過去のある時点で進行中だった動作を表します。"},
+  {ja:"アンナは4時に図書館で本を読んでいました。",en:"Anna was reading a book in the library at four.",pat:"was/were＋動詞のing形「〜していた」",exp:"過去のある時点で進行中だった動作を表します。"},
+  {ja:"私たちはテニスをしていました。",en:"We were playing tennis.",pat:"was/were＋動詞のing形「〜していた」",exp:"過去のある時点で進行中だった動作を表します。"},
+  {ja:"男子たちはサッカーをしていました。",en:"The boys were playing soccer.",pat:"was/were＋動詞のing形「〜していた」",exp:"過去のある時点で進行中だった動作を表します。"},
+  {ja:"あなたは昼食を食べていましたか。",en:"Were you having lunch?",pat:"was/were＋動詞のing形「〜していた」",exp:"過去のある時点で進行中だった動作を表します。"},
+  {ja:"カイトは歩いて学校へ行っていましたか。",en:"Was Kaito walking to school?",pat:"was/were＋動詞のing形「〜していた」",exp:"過去のある時点で進行中だった動作を表します。"},
+  {ja:"私たちはその歌を練習していました。",en:"We were practicing the song.",pat:"was/were＋動詞のing形「〜していた」",exp:"過去のある時点で進行中だった動作を表します。"},
+  {ja:"私はスマートフォンを使っていませんでした。",en:"I was not using my phone.",pat:"was/were＋動詞のing形「〜していた」",exp:"過去のある時点で進行中だった動作を表します。"},
+  {ja:"男子たちは泳いでいましたか。",en:"Were the boys swimming?",pat:"was/were＋動詞のing形「〜していた」",exp:"過去のある時点で進行中だった動作を表します。"},
+  {ja:"昨夜、あなたは何をしていましたか。",en:"What were you doing last night?",pat:"was/were＋動詞のing形「〜していた」",exp:"過去のある時点で進行中だった動作を表します。"},
+  {ja:"昨夜8時に、あなたは何をしていましたか。",en:"What were you doing at eight last night?",pat:"was/were＋動詞のing形「〜していた」",exp:"過去のある時点で進行中だった動作を表します。"}
+ ]},
+ {name:"to不定詞(名詞的用法)",en:"to-infinitive(noun)",items:[
+  {ja:"私は将来、先生になりたいです。",en:"I want to become a teacher in the future.",pat:"want to/need to/try toなど＋動詞の原形",exp:"「〜すること」「〜したい」を表すto＋動詞の原形です。"},
+  {ja:"私は英語を話そうとします。",en:"I try to speak English.",pat:"want to/need to/try toなど＋動詞の原形",exp:"「〜すること」「〜したい」を表すto＋動詞の原形です。"},
+  {ja:"歌うことは楽しいです。",en:"To sing is fun.",pat:"want to/need to/try toなど＋動詞の原形",exp:"「〜すること」「〜したい」を表すto＋動詞の原形です。"},
+  {ja:"私は牛乳を飲みたいです。",en:"I want to drink milk.",pat:"want to/need to/try toなど＋動詞の原形",exp:"「〜すること」「〜したい」を表すto＋動詞の原形です。"},
+  {ja:"私はミカに会いたいです。",en:"I want to see Mika.",pat:"want to/need to/try toなど＋動詞の原形",exp:"「〜すること」「〜したい」を表すto＋動詞の原形です。"},
+  {ja:"ケンはカナダを訪れたがっています。",en:"Ken wants to visit Canada.",pat:"want to/need to/try toなど＋動詞の原形",exp:"「〜すること」「〜したい」を表すto＋動詞の原形です。"},
+  {ja:"私はペンを買う必要があります。",en:"I need to buy a pen.",pat:"want to/need to/try toなど＋動詞の原形",exp:"「〜すること」「〜したい」を表すto＋動詞の原形です。"},
+  {ja:"私は歌手になりたいです。",en:"I want to be a singer.",pat:"want to/need to/try toなど＋動詞の原形",exp:"「〜すること」「〜したい」を表すto＋動詞の原形です。"},
+  {ja:"彼は科学の本を読みたがっています。",en:"He wants to read a science book.",pat:"want to/need to/try toなど＋動詞の原形",exp:"「〜すること」「〜したい」を表すto＋動詞の原形です。"},
+  {ja:"彼女はケーキを作りたがっています。",en:"She wants to make a cake.",pat:"want to/need to/try toなど＋動詞の原形",exp:"「〜すること」「〜したい」を表すto＋動詞の原形です。"},
+  {ja:"あなたはすぐに帰宅する必要がありますか。",en:"Do you need to go home soon?",pat:"want to/need to/try toなど＋動詞の原形",exp:"「〜すること」「〜したい」を表すto＋動詞の原形です。"},
+  {ja:"ケビンは日本語で話そうとしました。",en:"Kevin tried to talk in Japanese.",pat:"want to/need to/try toなど＋動詞の原形",exp:"「〜すること」「〜したい」を表すto＋動詞の原形です。"},
+  {ja:"私は音楽の先生になりたいです。",en:"I want to become a music teacher.",pat:"want to/need to/try toなど＋動詞の原形",exp:"「〜すること」「〜したい」を表すto＋動詞の原形です。"},
+  {ja:"エリはテニスをしたがっています。",en:"Eri wants to play tennis.",pat:"want to/need to/try toなど＋動詞の原形",exp:"「〜すること」「〜したい」を表すto＋動詞の原形です。"},
+  {ja:"彼は野球をすることが好きです。",en:"He likes to play baseball.",pat:"want to/need to/try toなど＋動詞の原形",exp:"「〜すること」「〜したい」を表すto＋動詞の原形です。"}
+ ]},
+ {name:"to不定詞(副詞的用法:目的)",en:"to-infinitive(purpose)",items:[
+  {ja:"アフリカの人々の中には、水を運ぶためにつぼを使う人がいます。",en:"Some African people use pots to carry water.",pat:"動詞の原形＋to＋動詞の原形「〜するために」",exp:"「〜するために」と目的を表すto＋動詞の原形です。"},
+  {ja:"その仕事をするために、私たちはここへ来ました。",en:"To do the job, we came here.",pat:"動詞の原形＋to＋動詞の原形「〜するために」",exp:"「〜するために」と目的を表すto＋動詞の原形です。"},
+  {ja:"私はアメリカへ行くために英語を勉強しています。",en:"I study English to go to America.",pat:"動詞の原形＋to＋動詞の原形「〜するために」",exp:"「〜するために」と目的を表すto＋動詞の原形です。"},
+  {ja:"私は勉強するためにここへ来ました。",en:"I came here to study.",pat:"動詞の原形＋to＋動詞の原形「〜するために」",exp:"「〜するために」と目的を表すto＋動詞の原形です。"},
+  {ja:"トムは走るために早起きします。",en:"Tom gets up early to run.",pat:"動詞の原形＋to＋動詞の原形「〜するために」",exp:"「〜するために」と目的を表すto＋動詞の原形です。"},
+  {ja:"私はかばんを買うために買い物へ行きました。",en:"I went shopping to buy a bag.",pat:"動詞の原形＋to＋動詞の原形「〜するために」",exp:"「〜するために」と目的を表すto＋動詞の原形です。"},
+  {ja:"エイミーは寺を見るために京都を訪れました。",en:"Amy visited Kyoto to see temples.",pat:"動詞の原形＋to＋動詞の原形「〜するために」",exp:"「〜するために」と目的を表すto＋動詞の原形です。"},
+  {ja:"私たちは野球をするために公園へ行きました。",en:"We went to the park to play baseball.",pat:"動詞の原形＋to＋動詞の原形「〜するために」",exp:"「〜するために」と目的を表すto＋動詞の原形です。"},
+  {ja:"天ぷらを作るために、卵がいくつか必要です。",en:"I need some eggs to make tempura.",pat:"動詞の原形＋to＋動詞の原形「〜するために」",exp:"「〜するために」と目的を表すto＋動詞の原形です。"},
+  {ja:"宿題をするためにコンピューターを使いますか。",en:"Do you use a computer to do your homework?",pat:"動詞の原形＋to＋動詞の原形「〜するために」",exp:"「〜するために」と目的を表すto＋動詞の原形です。"},
+  {ja:"エレンは食べ物を探すために台所へ行きました。",en:"Ellen went to the kitchen to find food.",pat:"動詞の原形＋to＋動詞の原形「〜するために」",exp:"「〜するために」と目的を表すto＋動詞の原形です。"},
+  {ja:"パンダを見るために動物園へ行きましょう。",en:"Let's go to the zoo to see pandas.",pat:"動詞の原形＋to＋動詞の原形「〜するために」",exp:"「〜するために」と目的を表すto＋動詞の原形です。"},
+  {ja:"私は大仏を見るために奈良を訪れました。",en:"I visited Nara to see the Daibutsu.",pat:"動詞の原形＋to＋動詞の原形「〜するために」",exp:"「〜するために」と目的を表すto＋動詞の原形です。"},
+  {ja:"コウジは英語を勉強するために図書館へ行きました。",en:"Koji went to the library to study English.",pat:"動詞の原形＋to＋動詞の原形「〜するために」",exp:"「〜するために」と目的を表すto＋動詞の原形です。"}
+ ]},
+ {name:"動名詞(-ing)",en:"gerund",items:[
+  {ja:"私は友達と話すことを楽しみました。",en:"I enjoyed talking with my friends.",pat:"動詞＋動詞のing形「〜すること」",exp:"like/enjoy/finishなどのあとはing形(動名詞)が続きます。"},
+  {ja:"私はギターを弾くことが好きです。",en:"I like playing the guitar.",pat:"動詞＋動詞のing形「〜すること」",exp:"like/enjoy/finishなどのあとはing形(動名詞)が続きます。"},
+  {ja:"私はテレビを見ることが好きです。",en:"I like watching TV.",pat:"動詞＋動詞のing形「〜すること」",exp:"like/enjoy/finishなどのあとはing形(動名詞)が続きます。"},
+  {ja:"私は公園で走ることを楽しみました。",en:"I enjoyed running in the park.",pat:"動詞＋動詞のing形「〜すること」",exp:"like/enjoy/finishなどのあとはing形(動名詞)が続きます。"},
+  {ja:"私たちはサッカーをすることが好きです。",en:"We like playing soccer.",pat:"動詞＋動詞のing形「〜すること」",exp:"like/enjoy/finishなどのあとはing形(動名詞)が続きます。"},
+  {ja:"ボブは日本語を学ぶことが好きです。",en:"Bob likes learning Japanese.",pat:"動詞＋動詞のing形「〜すること」",exp:"like/enjoy/finishなどのあとはing形(動名詞)が続きます。"},
+  {ja:"私は宿題をし終えました。",en:"I finished doing my homework.",pat:"動詞＋動詞のing形「〜すること」",exp:"like/enjoy/finishなどのあとはing形(動名詞)が続きます。"},
+  {ja:"私たちは英語で話すことを楽しみました。",en:"We enjoyed talking in English.",pat:"動詞＋動詞のing形「〜すること」",exp:"like/enjoy/finishなどのあとはing形(動名詞)が続きます。"},
+  {ja:"彼らは沖縄で泳ぐことを楽しみました。",en:"They enjoyed swimming in Okinawa.",pat:"動詞＋動詞のing形「〜すること」",exp:"like/enjoy/finishなどのあとはing形(動名詞)が続きます。"},
+  {ja:"ミナは歌を歌うことが好きです。",en:"Mina likes singing songs.",pat:"動詞＋動詞のing形「〜すること」",exp:"like/enjoy/finishなどのあとはing形(動名詞)が続きます。"},
+  {ja:"その映画を見て楽しみましたか。",en:"Did you enjoy seeing the movie?",pat:"動詞＋動詞のing形「〜すること」",exp:"like/enjoy/finishなどのあとはing形(動名詞)が続きます。"},
+  {ja:"私はまだ夕食を作り始めることができません。",en:"I can't start cooking dinner yet.",pat:"動詞＋動詞のing形「〜すること」",exp:"like/enjoy/finishなどのあとはing形(動名詞)が続きます。"},
+  {ja:"昨日、読書を楽しみましたか。",en:"Did you enjoy reading yesterday?",pat:"動詞＋動詞のing形「〜すること」",exp:"like/enjoy/finishなどのあとはing形(動名詞)が続きます。"},
+  {ja:"私たちはコンテストに向けて、その歌を歌う練習をしました。",en:"We practiced singing the song for the contest.",pat:"動詞＋動詞のing形「〜すること」",exp:"like/enjoy/finishなどのあとはing形(動名詞)が続きます。"}
+ ]},
+ {name:"look/feel like構文",en:"look/feel like",items:[
+  {ja:"明日は雨が降るように感じます。",en:"I feel like it will rain tomorrow.",pat:"look like/feel like＋名詞・文",exp:"「〜のように見える/感じる」という意味です。"},
+  {ja:"今日は春のように感じます。",en:"It feels like spring today.",pat:"look like/feel like＋名詞・文",exp:"「〜のように見える/感じる」という意味です。"},
+  {ja:"それはペンのように見えます。",en:"It looks like a pen.",pat:"look like/feel like＋名詞・文",exp:"「〜のように見える/感じる」という意味です。"},
+  {ja:"それはおいしいチョコレートのように見えます。",en:"It looks like delicious chocolate.",pat:"look like/feel like＋名詞・文",exp:"「〜のように見える/感じる」という意味です。"}
+ ]},
+ {name:"with+名詞(様態・手段)",en:"with + noun",items:[
+  {ja:"彼女は容易に英語を話します。",en:"She speaks English with ease.",pat:"with＋抽象名詞「〜を持って・〜して」",exp:"withのあとに様子や手段を表す名詞が続きます。"},
+  {ja:"私たちは協力することで、よりよい仕事ができます。",en:"We can do better work with cooperation.",pat:"with＋抽象名詞「〜を持って・〜して」",exp:"withのあとに様子や手段を表す名詞が続きます。"},
+  {ja:"彼らは努力して、その問題を解決しました。",en:"They solved the problem with effort.",pat:"with＋抽象名詞「〜を持って・〜して」",exp:"withのあとに様子や手段を表す名詞が続きます。"}
+ ]},
+ {name:"レストラン会話表現",en:"restaurant",items:[
+  {ja:"あなたは何を食べたいですか。",en:"What would you like to eat?",pat:"接客・注文の決まり文句",exp:"お店での注文のやり取りでよく使う表現です。"},
+  {ja:"ご注文をお受けしましょうか。",en:"May I take your order?",pat:"接客・注文の決まり文句",exp:"お店での注文のやり取りでよく使う表現です。"},
+  {ja:"はい、お願いします。",en:"Yes, please.",pat:"接客・注文の決まり文句",exp:"お店での注文のやり取りでよく使う表現です。"},
+  {ja:"何になさいますか。",en:"What would you like?",pat:"接客・注文の決まり文句",exp:"お店での注文のやり取りでよく使う表現です。"},
+  {ja:"スパゲッティをお願いします。",en:"I'd like spaghetti.",pat:"接客・注文の決まり文句",exp:"お店での注文のやり取りでよく使う表現です。"},
+  {ja:"何をお飲みになりますか。",en:"What would you like to drink?",pat:"接客・注文の決まり文句",exp:"お店での注文のやり取りでよく使う表現です。"},
+  {ja:"グラス1杯のオレンジジュースをお願いします。",en:"A glass of orange juice, please.",pat:"接客・注文の決まり文句",exp:"お店での注文のやり取りでよく使う表現です。"},
+  {ja:"かしこまりました。",en:"All right.",pat:"接客・注文の決まり文句",exp:"お店での注文のやり取りでよく使う表現です。"}
+ ]},
+ {name:"その他の重要表現",en:"other expressions",items:[
+  {ja:"私は賛成します。",en:"I agree.",pat:"その他の重要表現",exp:"agreeは「賛成する」という意味の動詞です。"},
+  {ja:"彼はそのニュースをまだ知りません。",en:"He doesn't know the news yet.",pat:"その他の重要表現",exp:"否定文の最後につくyetは「まだ(〜ない)」という意味です。"},
+  {ja:"その歌は世界中で人気です。",en:"The song is popular all over the world.",pat:"その他の重要表現",exp:"all over the worldで「世界中で」という意味です。"},
+  {ja:"私たちはあの本を全然読んでいません。",en:"We don't read that book at all.",pat:"その他の重要表現",exp:"not〜at allで「全然〜ない」という強い否定になります。"},
+  {ja:"王は新しい文化を創造しました。",en:"The king created a new culture.",pat:"その他の重要表現",exp:"createは「創造する、生み出す」という意味の動詞です。"},
+  {ja:"これらの2つの都市の間には長い距離があります。",en:"There's a long distance between these two cities.",pat:"その他の重要表現",exp:"between A and Bで「AとBの間に」。ここではthese two citiesがまとめて「B」にあたります。"},
+  {ja:"人々は新しいデザインを考え出します。",en:"People think of new designs.",pat:"その他の重要表現",exp:"think ofで「〜を思いつく」という意味です。"},
+  {ja:"カレンはよい考えをよく思いつきます。",en:"Karen often thinks of good ideas.",pat:"その他の重要表現",exp:"think ofで「〜を思いつく」。oftenのような頻度をあらわす副詞は一般動詞の前に置きます。"},
+  {ja:"私はそこに1人で行けると思います。",en:"I think I can go there by myself.",pat:"その他の重要表現",exp:"by myselfで「1人で、自分の力で」という意味です。"},
+  {ja:"彼女はカップ1杯の紅茶を飲みました。",en:"She had a cup of tea.",pat:"その他の重要表現",exp:"have(had)は「飲む・食べる」の意味でも使います。a cup of teaで「カップ1杯の紅茶」。"},
+  {ja:"私たちは体育館の外にいなければいけません。",en:"We must stay out of the gym.",pat:"その他の重要表現",exp:"stay out of 〜で「〜の外にいる、〜に入らない」という意味です。"},
+  {ja:"1人につき鉛筆を3本取ってください。",en:"Please take three pencils per person.",pat:"その他の重要表現",exp:"per personで「1人につき、1人あたり」という意味です。"},
+  {ja:"準備ができるまでここで待ってください。",en:"Please wait here until it's ready.",pat:"その他の重要表現",exp:"untilは「〜まで(ずっと)」と、ある状態が続くことを表す接続詞です。"},
+  {ja:"トムは日本の食べ物が好きです。",en:"Tom likes Japanese food.",pat:"その他の重要表現",exp:"3人称単数(Tom)が主語のとき、一般動詞にsがつきます(likes)。"},
+  {ja:"彼は納豆さえ食べます。",en:"He even eats natto.",pat:"その他の重要表現",exp:"evenは「〜さえ、〜でも」という強調の副詞で、強調したい語(ここではeats natto)の前に置きます。"},
+  {ja:"あなたは犬について何か特別なことを知っていますか。",en:"Do you know something special about dogs?",pat:"その他の重要表現",exp:"somethingを修飾する形容詞は後ろに置きます(something special)。"},
+  {ja:"私はその問題を解き明かすことができます。",en:"I can figure out the problem.",pat:"その他の重要表現",exp:"figure outで「(考えて)解き明かす、理解する」という意味の熟語です。"},
+  {ja:"ペンギンの羽毛は毎年生えかわります。",en:"Penguins' new feathers grow in every year.",pat:"その他の重要表現",exp:"grow inで「(新しく)生えてくる、生えそろう」という意味です。newを入れることで「新しい羽毛が生えてくる」と自然に伝わります。"},
+  {ja:"カズが私を訪ねてくる前に、宿題を終えました。",en:"I finished my homework before Kazu visited me.",pat:"その他の重要表現",exp:"beforeは「〜する前に」という意味の接続詞です。whenやbecauseと同じように主語+動詞が続きます。"},
+  {ja:"私はそのケーキの半分をマイクにあげました。",en:"I gave half of the cake to Mike.",alt:["I gave Mike half of the cake."],pat:"その他の重要表現",exp:"half of 〜で「〜の半分」という意味です。"},
+  {ja:"雨は2日から5日の間、続くでしょう。",en:"The rain will last for two to five days.",pat:"その他の重要表現",exp:"lastはここでは動詞で「続く」という意味です。for A to B daysで「A日からB日間」という期間を表します。"},
+  {ja:"その知らせは私にとって何も新しくありませんでした。",en:"The news was nothing new to me.",pat:"その他の重要表現",exp:"nothing new to 人で「(人)にとって目新しいことではない」という意味です。"}
+ ]}
+]}
+];
+/* ---------- 問題コンパイル(ヒント等を自動生成) ---------- */
+const Q=[];const QBY={};
+function seedShuffle(arr,seedStr){const a=arr.slice();let s=0;for(const c of seedStr)s=(s*31+c.charCodeAt(0))>>>0;
+ for(let i=a.length-1;i>0;i--){s=(s*9301+49297)%233280;const j=Math.floor(s/233280*(i+1));[a[i],a[j]]=[a[j],a[i]]}
+ if(a.length>2&&a.join(" ")===arr.join(" "))a.push(a.shift());
+ return a}
+DATA.forEach((lv,li)=>{lv.units.forEach((u,ui)=>{u.items.forEach((it,qi)=>{
+  const id=`L${li+1}-U${ui+1}-${qi+1}`;
+  const en=it.en;
+  const words=en.replace(/[.?!]+$/,"").split(" ");
+  const punct=(en.match(/[.?!]$/)||["."])[0];
+  const fl=words.map(w=>{const m=w.match(/^([A-Za-z])(.*)$/);return m?m[1]+m[2].replace(/[A-Za-z]/g,"_"):w;}).join(" ")+punct;
+  const q={id,level:li+1,ui,qi,unit:u.name,passage:u.passage||"",ja:it.ja,answers:[en,...(it.alt||[])],writeAlt:it.writeAlt||[],en,
+    words,punct,firstLetter:fl,pat:it.pat||"",st:it.st||null,exp:it.exp||"",
+    hints:[it.pat||"文の型を思い出そう。",`${words.length}語で書きます。`,fl,seedShuffle(words,id).join(" / "),en]};
+  Q.push(q);QBY[id]=q;
+});});});
+
+/* ---------- ユーティリティ ---------- */
+const $=s=>document.querySelector(s);
+const esc=s=>String(s??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+const todayStr=()=>{const d=new Date();return`${d.getFullYear()}-${String(d.getMonth()+1).padStart(2,"0")}-${String(d.getDate()).padStart(2,"0")}`};
+const addDays=n=>{const d=new Date();d.setDate(d.getDate()+n);return`${d.getFullYear()}-${String(d.getMonth()+1).padStart(2,"0")}-${String(d.getDate()).padStart(2,"0")}`};
+const shuffle=a=>{a=a.slice();for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]]}return a};
+
+/* ---------- 保存 (localStorage / バージョン付き) ---------- */
+const SKEY="picks-app-v1";
+const DEFAULTS={v:1,q:{},log:[],days:{},badges:[],phrases:[],mine:[],rewards:[],streak:0,lastDay:"",bestStreak:0,deviceSeed:0,
+  mission:{date:"",items:[]},resume:null,
+  set:{strictCase:false,strictPunct:false,colors:"on",fs:16,speech:true,rate:0.95,
+       showJa:true,hints:true,showBP:true,conf:true,cbtMin:10,cbtN:10,nick:"",motion:true,myS:true,tpass:"7777",sfx:true,seasons:[],showKb:true}};
+let S;
+function load(){try{const raw=localStorage.getItem(SKEY);if(!raw){S=structuredClone(DEFAULTS);S.deviceSeed=Math.floor(Math.random()*100000);save();return}
+  const p=JSON.parse(raw);if(typeof p!=="object"||p===null)throw 0;
+  S=Object.assign(structuredClone(DEFAULTS),p);S.set=Object.assign(structuredClone(DEFAULTS.set),p.set||{});
+  if(!S.deviceSeed){S.deviceSeed=Math.floor(Math.random()*100000);save()}
+  /* 将来v2以降はここでマイグレーション */
+}catch(e){console.warn("保存データを読めなかったため初期化しました",e);S=structuredClone(DEFAULTS);S.deviceSeed=Math.floor(Math.random()*100000)}}
+function save(){try{localStorage.setItem(SKEY,JSON.stringify(S))}catch(e){console.warn("保存失敗",e)}}
+function qs(id){if(!S.q[id])S.q[id]={st:"未挑戦",due:"",wins:0,keys:{c:0,m:0,w:0},wrong:0,hint:0,conf:"",pri:0};return S.q[id]}
+function day(d){d=d||todayStr();if(!S.days[d])S.days[d]={sent:0,self:0,rev:0,keys:0,accS:0,accN:0,wpmS:0,wpmN:0,sec:0,noHint:0,perfect:0};return S.days[d]}
+
+/* ---------- 正誤判定エンジン ---------- */
+const CONTR=[["I'm","I am"],["you're","you are"],["he's","he is"],["she's","she is"],["it's","it is"],
+ ["we're","we are"],["they're","they are"],["that's","that is"],["there's","there is"],["what's","what is"],
+ ["who's","who is"],["let's","let us"],["isn't","is not"],["aren't","are not"],["wasn't","was not"],["weren't","were not"],
+ ["don't","do not"],["doesn't","does not"],["didn't","did not"],["can't","cannot"],["won't","will not"],
+ ["haven't","have not"],["hasn't","has not"],["hadn't","had not"],["I've","I have"],["you've","you have"],
+ ["we've","we have"],["they've","they have"],["I'll","I will"],["you'll","you will"],["he'll","he will"],
+ ["she'll","she will"],["it'll","it will"],["we'll","we will"],["they'll","they will"],
+ ["shouldn't","should not"],["wouldn't","would not"],["couldn't","could not"],["I'd","I would"]];
+function normSp(s){return String(s).normalize("NFKC").replace(/[\u2018\u2019\u02BC]/g,"'").replace(/[\u201C\u201D]/g,'"')
+  .replace(/\u3000/g," ").replace(/\s+/g," ").trim()}
+/* 中学校で学習する同義語(意味がほぼ等価なものだけを厳選)。双方向に正解として扱う */
+const SYN=[["bicycle","bike"],["bicycles","bikes"],["photo","picture"],["photos","pictures"],
+ ["photograph","photo"],["movie","film"],["movies","films"],["everyone","everybody"],
+ ["begin","start"],["begins","starts"],["began","started"],["beginning","starting"],
+ ["big","large"],["bigger","larger"],["biggest","largest"]];
+function expandVariants(ans){const set=new Set([normSp(ans)]);let grew=true;
+  const cap=s=>s.charAt(0).toUpperCase()+s.slice(1);
+  while(grew&&set.size<60){grew=false;
+    for(const s of [...set]){for(const[c,f]of [...CONTR,...SYN]){
+      for(const[cc,ff] of [[c,f],[cap(c),cap(f)]]){
+        const a=s.replace(new RegExp("\\b"+cc+"\\b","g"),ff);
+        if(a!==s&&!set.has(a)){set.add(a);grew=true}
+        const b=s.replace(new RegExp("\\b"+ff+"\\b","g"),cc);
+        if(b!==s&&!set.has(b)){set.add(b);grew=true}
+      }}}}
+  return set}
+function contentKey(s){return normSp(s).toLowerCase().replace(/[.?!,"]/g,"").replace(/'/g,"").replace(/\s+/g," ").trim()}
+function lev(a,b){const m=a.length,n=b.length,d=Array.from({length:m+1},(_,i)=>[i,...Array(n).fill(0)]);
+  for(let j=1;j<=n;j++)d[0][j]=j;
+  for(let i=1;i<=m;i++)for(let j=1;j<=n;j++)d[i][j]=Math.min(d[i-1][j]+1,d[i][j-1]+1,d[i-1][j-1]+(a[i-1]===b[j-1]?0:1));
+  return d[m][n]}
+const PAST_IRR={go:"went",have:"had",get:"got",come:"came",see:"saw",make:"made",take:"took",give:"gave",send:"sent",tell:"told",teach:"taught",say:"said",eat:"ate",run:"ran",swim:"swam",sing:"sang",buy:"bought",think:"thought"};
+/* 戻り値: {ok, perfect, issues[], msgs[]} */
+function judge(input,q,strict){
+  const inp=normSp(input);if(!inp)return{ok:false,perfect:false,issues:["empty"],msgs:["英文を入力してみよう。"]};
+  let variants=new Set();q.answers.forEach(a=>expandVariants(a).forEach(v=>variants.add(v)));
+  if(variants.has(inp))return{ok:true,perfect:true,issues:[],msgs:[]};
+  const ck=contentKey(inp);const okContent=[...variants].some(v=>contentKey(v)===ck);
+  const issues=[],msgs=[];
+  if(okContent){
+    if(/^[a-z]/.test(inp))
+      {issues.push("capital");msgs.push("文頭は大文字で始めよう。")}
+    const lastCh=inp.slice(-1);
+    if(q.punct==="?"&&lastCh!=="?"){issues.push("qmark");msgs.push("たずねる文なので、最後に「?」を付けよう。")}
+    else if(q.punct==="!"&&lastCh!=="!"){issues.push("emark");msgs.push("感嘆文なので、最後に「!」を付けよう。")}
+    else if(q.punct==="."&&lastCh!=="."){issues.push("period");msgs.push("文の最後にピリオドを付けよう。")}
+    if(q.en.includes("'")&&!inp.includes("'")){issues.push("apos");msgs.push("アポストロフィ(')を忘れずに。")}
+    if(issues.length===0){issues.push("case");msgs.push("大文字・小文字をもう一度見直そう。")}
+    return{ok:!strict,perfect:false,issues,msgs};
+  }
+  /* 内容の誤り分析: 最も近い正解と比較 */
+  let best=null,bestD=1e9;
+  for(const v of variants){const d=lev(contentKey(v),ck);if(d<bestD){bestD=d;best=v}}
+  const awRaw=normSp(best).replace(/[.?!]+$/,"").split(" "),iwRaw=normSp(inp).replace(/[.?!]+$/,"").split(" ");
+  const aw=awRaw.map(contentKey),iw=iwRaw.map(contentKey);
+  const aDisp={},iDisp={};awRaw.forEach((w,i)=>{if(!(aw[i] in aDisp))aDisp[aw[i]]=w});iwRaw.forEach((w,i)=>{if(!(iw[i] in iDisp))iDisp[iw[i]]=w});
+  const aSet={},iSet={};aw.forEach(w=>aSet[w]=(aSet[w]||0)+1);iw.forEach(w=>iSet[w]=(iSet[w]||0)+1);
+  const missing=[],extra=[];
+  Object.keys(aSet).forEach(w=>{if((iSet[w]||0)<aSet[w])missing.push(w)});
+  Object.keys(iSet).forEach(w=>{if((aSet[w]||0)<iSet[w])extra.push(w)});
+  const sameSet=missing.length===0&&extra.length===0;
+  if(sameSet&&aw.join(" ")!==iw.join(" ")){issues.push("order");msgs.push("使う単語は合っています。語順をもう一度考えてみよう。")}
+  else{
+    /* スペル: missing と extra のペアで距離1-2 */
+    const spellPairs=[];
+    missing.slice().forEach(mw=>{extra.slice().forEach(ew=>{
+      if(lev(mw,ew)<=Math.max(1,Math.floor(mw.length/4))&&!spellPairs.some(p=>p[0]===mw||p[1]===ew))spellPairs.push([mw,ew])})});
+    spellPairs.forEach(([mw,ew])=>{
+      issues.push("spell");
+      const mwD=aDisp[mw]||mw,ewD=iDisp[ew]||ew;
+      /* 文法ヒューリスティック */
+      if(ew+"s"===mw||ew+"es"===mw)msgs.push(`「${ewD}」に-s(-es)が必要です。「${mwD}」の形を確認しよう。`);
+      else if(mw+"s"===ew||mw+"es"===ew)msgs.push(`「${ewD}」の-s(-es)は不要です。「${mwD}」の形を確認しよう。`);
+      else if(PAST_IRR[ew]===mw)msgs.push(`過去のことなので、動詞を過去形(${mwD})にしよう。`);
+      else if(ew+"ed"===mw||ew+"d"===mw)msgs.push(`過去のことなので、動詞を過去形にしよう。`);
+      else if(["am","is","are","was","were"].includes(mw)&&["am","is","are","was","were"].includes(ew))msgs.push(`主語に合うbe動詞は「${mwD}」です。`);
+      else msgs.push(`「${ewD}」のスペルをもう一度確認しよう。`);
+      missing.splice(missing.indexOf(mw),1);extra.splice(extra.indexOf(ew),1);});
+    if(missing.length){issues.push("missing");
+      if(missing.every(w=>["a","an","the"].includes(w)))msgs.push("冠詞(a / an / the)を忘れていないかな。");
+      else msgs.push(`足りない単語がありそうです: ${missing.slice(0,3).map(w=>aDisp[w]||w).join(", ")}`)}
+    if(extra.length){issues.push("extra");msgs.push(`この文では使わない単語があります: ${extra.slice(0,3).map(w=>iDisp[w]||w).join(", ")}`)}
+    if(!issues.length){issues.push("other");msgs.push("もう一度、日本語の意味と語順を確かめてみよう。")}
+  }
+  return{ok:false,perfect:false,issues,msgs};
+}
+
+/* ---------- 間隔反復 ---------- */
+function schedule(q,result){/* result: wrong | hint | self | guess | surewrong */
+  const st=qs(q.id);
+  if(result==="wrong"){st.wins=0;st.due=todayStr();st.st="要復習";st.wrong++}
+  else if(result==="surewrong"){st.wins=0;st.due=todayStr();st.st="要復習";st.wrong++;st.pri=1}
+  else if(result==="guess"){st.due=addDays(1);st.st="練習中"}
+  else if(result==="hint"){st.due=addDays(1);st.st="ヒントありで正解"}
+  else{st.wins++;st.st=st.wins>=3?"定着":"自力で正解";
+    st.due=addDays(st.wins===1?3:st.wins===2?7:st.wins===3?14:30);st.pri=0}
+  save()}
+function dueList(){const t=todayStr();return Q.filter(q=>{const s=S.q[q.id];return s&&s.due&&s.due<=t})
+  .sort((a,b)=>(S.q[b.id].pri||0)-(S.q[a.id].pri||0))}
+function unsureList(){return Q.filter(q=>{const s=S.q[q.id];return s&&!isMaster(q.id)&&(["要復習","ヒントありで正解","練習中"].includes(s.st)||["mid","guess"].includes(s.conf))})}
+function weakList(){return Q.filter(q=>(S.q[q.id]?.wrong||0)>=2).sort((a,b)=>S.q[b.id].wrong-S.q[a.id].wrong)}
+
+/* ---------- 鍵・マスター ---------- */
+function giveKey(q,k){const st=qs(q.id);if(st.keys[k])return false;st.keys[k]=1;day().keys++;save();return true}
+function isMaster(id){const s=S.q[id];return s&&s.keys.c&&s.keys.m&&s.keys.w}
+function totalKeys(){return Object.values(S.q).reduce((n,s)=>n+(s.keys?s.keys.c+s.keys.m+s.keys.w:0),0)}
+function masterCount(){return Q.filter(q=>isMaster(q.id)).length}
+
+/* ---------- 音声 ---------- */
+const canSpeak=typeof speechSynthesis!=="undefined";
+let AC=null;
+function sfx(kind){if(!S.set.sfx)return;try{
+ AC=AC||new (window.AudioContext||window.webkitAudioContext)();
+ if(AC.state==="suspended")AC.resume();
+ const t=AC.currentTime;
+ const tone=(f,st,d,type,vol)=>{type=type||"sine";vol=vol||.1;
+  const o=AC.createOscillator(),g=AC.createGain();o.type=type;o.frequency.setValueAtTime(f,t+st);
+  g.gain.setValueAtTime(0,t+st);g.gain.linearRampToValueAtTime(vol,t+st+.012);g.gain.exponentialRampToValueAtTime(.0008,t+st+d);
+  o.connect(g);g.connect(AC.destination);o.start(t+st);o.stop(t+st+d+.03)};
+ if(kind==="ok"){tone(659,0,.12);tone(880,.09,.18)}
+ else if(kind==="key"){tone(523,0,.1);tone(659,.08,.1);tone(784,.16,.24,"sine",.12)}
+ else if(kind==="chest"){tone(392,0,.16,"triangle",.11);tone(523,.12,.16,"triangle",.11);tone(659,.24,.16,"triangle",.12);tone(1047,.38,.4,"triangle",.13)}
+ else if(kind==="ng"){tone(233,0,.14,"sine",.05)}
+}catch(e){}}
+let dlg=null;
+function askConfirm(msg,onOk,okLabel,danger,noLabel){dlg={msg,onOk,okLabel:okLabel||"OK",danger:!!danger,noLabel:noLabel||"やめる"};renderDlg()}
+function notice(msg){dlg={msg,onOk:null,okLabel:"OK",noCancel:true};renderDlg()}
+function renderDlg(){
+ let el=document.getElementById("dlgBack");
+ if(!dlg){if(el)el.remove();return}
+ if(!el){el=document.createElement("div");el.id="dlgBack";el.className="modal-back";document.body.appendChild(el)}
+ el.innerHTML=`<section class="sheet modal"><div class="pad">
+  <p style="font-size:.92rem;color:var(--ink);white-space:pre-line;margin:.2rem 0 .7rem">${esc(dlg.msg)}</p>
+  <div class="train-nav">${dlg.noCancel?"<span></span>":`<button class="btn-ghost" id="dlgNo">${esc(dlg.noLabel)}</button>`}
+   <button class="btn-primary ${dlg.danger?'':''}" id="dlgOk" ${dlg.danger?'style="background:var(--red)"':''}>${esc(dlg.okLabel)}</button></div>
+ </div></section>`;
+ const no=el.querySelector("#dlgNo");if(no)no.onclick=()=>{dlg=null;renderDlg()};
+ el.querySelector("#dlgOk").onclick=()=>{const f=dlg&&dlg.onOk;dlg=null;renderDlg();if(f)f()}}
+function stopSpeak(){if(canSpeak)try{speechSynthesis.cancel()}catch(e){}}
+function speak(text){if(!canSpeak||!S.set.speech)return;try{speechSynthesis.cancel();
+  const u=new SpeechSynthesisUtterance(text);u.lang="en-US";u.rate=S.set.rate;
+  const v=speechSynthesis.getVoices().find(v=>v.lang&&v.lang.startsWith("en"));if(v)u.voice=v;
+  speechSynthesis.speak(u)}catch(e){}}
+
+/* ---------- ストリーク ---------- */
+function touchStreak(){const t=todayStr();if(S.lastDay===t)return;
+  const y=addDays(-1);S.streak=(S.lastDay===y)?S.streak+1:1;S.lastDay=t;
+  if(S.streak>S.bestStreak)S.bestStreak=S.streak;save()}
+
+/* ---------- 今日のミッション ---------- */
+const MISSION_POOL=[
+ {id:"m3",txt:"3文タイピングする",chk:d=>d.sent>=3,prog:d=>[Math.min(3,d.sent),3],act:"quick-copy"},
+ {id:"rev1",txt:"復習を1問クリアする",chk:d=>d.rev>=1,prog:d=>[Math.min(1,d.rev),1],act:"review"},
+ {id:"nohint",txt:"ヒントなしで1問正解する",chk:d=>d.noHint>=1,prog:d=>[Math.min(1,d.noHint),1],act:"quick-write"},
+ {id:"acc90",txt:"正確さ90%以上を1回出す",chk:d=>d.accN>0&&d.accS/d.accN>=90||d.perfect>=1,prog:d=>[(d.accN>0&&d.accS/d.accN>=90||d.perfect>=1)?1:0,1],act:"quick-copy"},
+ {id:"key1",txt:"鍵を1本手に入れる",chk:d=>d.keys>=1,prog:d=>[Math.min(1,d.keys),1],act:"quick-copy"},
+ {id:"self1",txt:"日本語から自力で1問書く",chk:d=>d.self>=1,prog:d=>[Math.min(1,d.self),1],act:"quick-write"}];
+function missions(){const t=todayStr();
+  if(S.mission.date!==t){S.mission={date:t,items:shuffle(MISSION_POOL).slice(0,3).map(m=>m.id)};save()}
+  return S.mission.items.map(id=>MISSION_POOL.find(m=>m.id===id)).filter(Boolean)}
+const REWARDS=[
+ ["Nailed it!","完ぺきにできた!"],["No way!","うそでしょ!/ まさか!"],["You made my day.","おかげで最高の1日になったよ"],
+ ["Piece of cake!","朝めし前だよ!"],["Way to go!","その調子!よくやった!"],["Hang in there.","がんばって(ふんばって)"],
+ ["It's up to you.","きみ次第だよ"],["Long time no see!","ひさしぶり!"],["That makes sense.","なるほどね"],
+ ["I'm all ears.","じっくり聞くよ"],["Break a leg!","(本番)がんばってね!"],["So far, so good.","今のところ順調"],
+ ["Better late than never.","遅れてもやらないよりまし"],["Practice makes perfect.","習うより慣れよ"],
+ ["It's a deal!","それで決まり!"],["Fingers crossed!","うまくいきますように!"],["Take your time.","ゆっくりでいいよ"],
+ ["After you.","お先にどうぞ"],["My bad!","ごめん、わたしのミス!"],["Good for you!","よかったね!"],
+ ["Now you're talking!","そうこなくちゃ!"],["Keep it up!","その調子でつづけて!"],["That's the spirit!","その意気だ!"],
+ ["You never know.","どうなるかわからないよ"],["Time flies!","時間がたつのは早い!"],["Easier said than done.","言うはやすく行うはかたし"],
+ ["Sounds like a plan!","いいね、そうしよう!"],["The sky's the limit.","可能性は無限大"],["Believe in yourself.","自分を信じて"],
+ ["Little by little.","少しずつね"],["You've got this!","きみならできる!"]];
+function todayReward(){const[y,m,dd]=todayStr().split("-").map(Number);return REWARDS[(y*372+m*31+dd+(S.deviceSeed||0))%REWARDS.length]}
+function claimReward(){const dy=day();if(dy.rw)return false;dy.rw=1;
+ const r=todayReward();S.rewards.push({date:todayStr(),en:r[0],ja:r[1]});
+ checkBadges({});save();return true}
+
+
+/* ---------- バッジ ---------- */
+const BADGES=[
+ {id:"firstkey",n:"First Key",d:"はじめての鍵を手に入れた",chk:()=>totalKeys()>=1},
+ {id:"threesent",n:"Three Sentences",d:"3文完成した",chk:()=>allSent()>=3},
+ {id:"tensent",n:"Ten Sentences",d:"10文完成した",chk:()=>allSent()>=10},
+ {id:"fifty",n:"Fifty Sentences",d:"50文完成した",chk:()=>allSent()>=50},
+ {id:"acc90",n:"Accuracy 90",d:"正確さ90%以上でタイピング",chk:(x)=>x&&x.acc>=90},
+ {id:"acc95",n:"Accuracy 95",d:"正確さ95%以上でタイピング",chk:(x)=>x&&x.acc>=95},
+ {id:"perfect",n:"Perfect Typing",d:"正確さ100%を達成",chk:(x)=>x&&x.acc>=100},
+ {id:"comeback",n:"Comeback",d:"復習問題をクリアした",chk:(x)=>x&&x.review},
+ {id:"memkeeper",n:"Memory Keeper",d:"復習を10問クリアした",chk:()=>Object.values(S.days).reduce((n,d)=>n+d.rev,0)>=10},
+ {id:"nohint",n:"Independent Writer",d:"ヒントなしで自力正解",chk:(x)=>x&&x.noHint},
+ {id:"hintuser",n:"Hint User",d:"ヒントを上手に使って正解",chk:(x)=>x&&x.hinted},
+ {id:"streak3",n:"3 Day Streak",d:"3日連続で学習",chk:()=>S.streak>=3},
+ {id:"streak5",n:"5 Day Streak",d:"5日連続で学習",chk:()=>S.streak>=5},
+ {id:"streak10",n:"10 Day Streak",d:"10日連続で学習",chk:()=>S.streak>=10},
+ {id:"onemore",n:"One More Try",d:"間違えた問題にもう一度挑戦",chk:(x)=>x&&x.retry},
+ {id:"nevergiveup",n:"Never Give Up",d:"3回以上挑戦して正解",chk:(x)=>x&&x.tries>=3&&x.ok},
+ {id:"unit1",n:"Giving Master",d:"あげる・送る表現(SVOO)をマスター",chk:()=>unitMastered(1,0)},
+ {id:"unit2",n:"That-Clause Master",d:"〜だと思う・望む 等(that節)をマスター",chk:()=>unitMastered(1,1)},
+ {id:"unit3",n:"There is/are Master",d:"There is/are構文をマスター",chk:()=>unitMastered(1,2)},
+ {id:"unit4",n:"Bonus Master",d:"その他の重要表現をマスター",chk:()=>unitMastered(1,3)},
+ {id:"cbt1",n:"CBT Beginner",d:"CBTチャレンジを完走",chk:(x)=>x&&x.cbt},
+ {id:"cbtready",n:"CBT Ready",d:"CBTで80%以上正解",chk:(x)=>x&&x.cbt&&x.cbtRate>=80},
+ {id:"reviewck",n:"Review Checker",d:"CBTで見直しマークを使った",chk:(x)=>x&&x.cbtFlag},
+ {id:"treasure",n:"Treasure Hunter",d:"はじめて宝箱をあけた",chk:()=>Object.values(S.days).some(d=>d.rw)},
+ {id:"treasure5",n:"Phrase Rich",d:"ごほうびフレーズを5つあつめた",chk:()=>S.rewards.length>=5}];
+function allSent(){return Object.values(S.days).reduce((n,d)=>n+d.sent,0)}
+function unitMastered(lv,ui){const items=Q.filter(q=>q.level===lv&&q.ui===ui);return items.length>0&&items.every(q=>isMaster(q.id))}
+let newBadges=[];
+function checkBadges(ctx){newBadges=[];BADGES.forEach(b=>{if(!S.badges.includes(b.id)){
+  try{if(b.chk(ctx)){S.badges.push(b.id);newBadges.push(b)}}catch(e){}}});if(newBadges.length)save();return newBadges}
+
+/* ---------- 学習ログ ---------- */
+function logResult(o){S.log.push(Object.assign({date:todayStr(),time:new Date().toTimeString().slice(0,8)},o));
+  if(S.log.length>800)S.log=S.log.slice(-800);save()}
+
+/* =====================================================================
+   ビュー
+   ===================================================================== */
+const ICONS={
+ key:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="7.5" cy="15.5" r="4.5"/><path d="m11 12 8.5-8.5M16 7l3 3"/></svg>',
+ flame:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8.5 14.5A2.5 2.5 0 0 0 11 12c0-1.38-.5-2-1-3-1.072-2.143-.224-4.054 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 1 1-14 0c0-1.153.433-2.294 1-3a2.5 2.5 0 0 0 2.5 2.5z"/></svg>',
+ map:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m3 6 6-3 6 3 6-3v15l-6 3-6-3-6 3zM9 3v15M15 6v15"/></svg>',
+ type:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="5" width="20" height="14" rx="2"/><path d="M6 9h.01M10 9h.01M14 9h.01M18 9h.01M6 13h.01M18 13h.01M9 13h6"/></svg>',
+ pen:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 3a2.85 2.83 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5Z"/></svg>',
+ rev:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"/><path d="M3 3v5h5"/></svg>',
+ cbt:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>',
+ chart:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><path d="M7 13v5M12 8v10M17 11v7"/></svg>',
+ badge:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="6"/><path d="M15.5 13 17 22l-5-3-5 3 1.5-9"/></svg>',
+ book:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v20H6.5a2.5 2.5 0 0 1 0-5H20"/></svg>',
+ spark:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v3M12 18v3M3 12h3M18 12h3M5.6 5.6l2.1 2.1M16.3 16.3l2.1 2.1M5.6 18.4l2.1-2.1M16.3 7.7l2.1-2.1"/></svg>',
+ sound:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/><path d="M15.5 8.5a5 5 0 0 1 0 7M19 5a9 9 0 0 1 0 14"/></svg>',
+ check:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>',
+ circle:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/></svg>',
+ xmark:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6 6 18M6 6l12 12"/></svg>',
+ arrowRight:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>',
+ keyhole:'<svg viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="8.6" r="4.1"/><path d="M9.3 11 14.7 11 17 21 7 21 Z"/></svg>',
+ coach:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2 2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>'};
+function keysetHtml(id){const s=S.q[id]||{keys:{}};const k=s.keys||{};
+ return `<span class="keyset" title="Copy / Memory / Writing">${['c','m','w'].map(x=>ICONS.key.replace('<svg','<svg class="'+(k[x]?'got':'')+'"')).join("")}</span>`}
+let view="home",session=null,cbt=null;
+function nav(v){stopSpeak();view=v;session=null;cbt=null;render()}
+function levelName(lv){return DATA[lv-1].name}
+
+function renderHeader(){
+ document.querySelector("header").classList.toggle("compact",view==="session"||view==="cbt");
+ $("#chipKeys").innerHTML=`${ICONS.key}<b>${totalKeys()}</b><span>鍵</span>`;
+ const live=S.lastDay===todayStr();
+ $("#chipStreak").className="streak-chip"+(live?" live":"");
+ $("#chipStreak").setAttribute("aria-label",`連続学習日数 ${S.streak||0}日`);
+ $("#chipStreak").innerHTML=`${ICONS.flame}<span>連続 ${S.streak||0}日</span>`;
+ $("#nav").innerHTML=["home|ホーム","records|記録","settings|設定"].map(x=>{
+   const[v,l]=x.split("|");return`<button class="${view===v?'on':''}" data-nav="${v}">${l}</button>`}).join("");
+ document.querySelectorAll("#nav button").forEach(b=>b.onclick=()=>nav(b.dataset.nav));
+ const m=masterCount();
+ $("#xpFill").style.width=(m/Q.length*100)+"%";
+ $("#xpLabel").textContent=`${m} / ${Q.length} 文`;
+ $("#xpLabel").setAttribute("aria-label",`自力で書けるようになった英文 ${m} / ${Q.length} 文`);
+}
+
+/* ---------- ホーム ---------- */
+function coachMsg(){const d=day(),due=dueList().length;
+ if(due>0)return`おかえり。今日の復習が ${due} 問待っています。1問だけでもOK。`;
+ if(d.sent===0)return`まずは1文。「見て打つ」からでいい。鍵は毎日少しずつ集まります。`;
+ if(d.sent<3)return`いい調子。あと ${3-d.sent} 文でミッション達成です。`;
+ return`今日もよく頑張りました。音読までできたら完ぺきです。`}
+const ORNATE_KEY='<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="7.3" cy="7.3" r="4.3"/><circle cx="7.3" cy="7.3" r="1.5" fill="currentColor" stroke="none" opacity=".55"/><path d="M10.4 10.4 19.3 19.3"/><path d="M15.2 15.2 17.6 12.8M17.4 17.4 19.8 15"/></svg>'
+const RICH_CHEST=`<svg viewBox="0 0 200 150" role="img" aria-label="宝箱">
+<defs>
+ <radialGradient id="kg-glow" cx="50%" cy="46%" r="60%">
+  <stop offset="0%" stop-color="#FFE9A8" stop-opacity=".95"/><stop offset="45%" stop-color="#F5C64F" stop-opacity=".38"/><stop offset="100%" stop-color="#F5C64F" stop-opacity="0"/>
+ </radialGradient>
+ <linearGradient id="kg-gold" x1="0" y1="0" x2="0" y2="1">
+  <stop offset="0%" stop-color="#FFE08A"/><stop offset="55%" stop-color="#E4A11B"/><stop offset="100%" stop-color="#B87B10"/>
+ </linearGradient>
+ <linearGradient id="kg-wood" x1="0" y1="0" x2="0" y2="1">
+  <stop offset="0%" stop-color="#7A4030"/><stop offset="100%" stop-color="#54291E"/>
+ </linearGradient>
+ <linearGradient id="kg-in" x1="0" y1="0" x2="0" y2="1">
+  <stop offset="0%" stop-color="#FFF3C4"/><stop offset="100%" stop-color="#F0B93E"/>
+ </linearGradient>
+</defs>
+<g class="kg-rays" opacity=".85">${[...Array(12)].map((_,i)=>`<path d="M100 66 L${100+70*Math.cos(i*Math.PI/6)} ${66+70*Math.sin(i*Math.PI/6)} L${100+70*Math.cos((i+.45)*Math.PI/6)} ${66+70*Math.sin((i+.45)*Math.PI/6)} Z" fill="#F5C64F" opacity="${i%2?0.10:0.2}"/>`).join("")}</g>
+<circle cx="100" cy="66" r="62" fill="url(#kg-glow)"/>
+<g>
+ <path d="M52 60 q0 -26 48 -26 q48 0 48 26 l0 10 -96 0 z" fill="url(#kg-wood)" stroke="#3A1B12" stroke-width="2"/>
+ <path d="M52 60 q0 -26 48 -26 q48 0 48 26" fill="none" stroke="url(#kg-gold)" stroke-width="5"/>
+ <ellipse cx="100" cy="72" rx="46" ry="10" fill="url(#kg-in)"/>
+ <g stroke="#3A1B12" stroke-width="1.4">
+  <path d="M84 66 l8 -9 8 9 -8 9 z" fill="#4DC4FF"/>
+  <path d="M104 68 l7 -8 7 8 -7 8 z" fill="#FF6B6B"/>
+  <path d="M70 70 l6 -7 6 7 -6 7 z" fill="#7ED957"/>
+  <path d="M120 70 l6 -7 6 7 -6 7 z" fill="#C77DFF"/>
+  <circle cx="80" cy="76" r="4.4" fill="url(#kg-gold)"/><circle cx="100" cy="78" r="4.4" fill="url(#kg-gold)"/><circle cx="118" cy="77" r="4.4" fill="url(#kg-gold)"/>
+ </g>
+ <path d="M50 76 h100 v40 a8 8 0 0 1 -8 8 h-84 a8 8 0 0 1 -8 -8 z" fill="url(#kg-wood)" stroke="#3A1B12" stroke-width="2"/>
+ <path d="M50 76 h100 v8 h-100 z" fill="url(#kg-gold)"/>
+ <path d="M50 116 h100" stroke="url(#kg-gold)" stroke-width="6"/>
+ <path d="M56 76 v48 M144 76 v48" stroke="url(#kg-gold)" stroke-width="6"/>
+ ${[74,100,126].map(x=>`<rect x="${x-9}" y="86" width="18" height="18" rx="4" fill="url(#kg-gold)" stroke="#8A5B08" stroke-width="1.5"/><circle cx="${x}" cy="92.2" r="3.1" fill="#3A1B12"/><path d="M${x-2.1} 93.4 L${x+2.1} 93.4 L${x+1.3} 100.2 L${x-1.3} 100.2 Z" fill="#3A1B12"/>`).join("")}
+</g>
+<g class="kg-spark" fill="#FFF3C4">
+ <path d="M40 30 l2.4 5.6 5.6 2.4 -5.6 2.4 -2.4 5.6 -2.4 -5.6 -5.6 -2.4 5.6 -2.4 z"/>
+ <path d="M158 24 l2 4.6 4.6 2 -4.6 2 -2 4.6 -2 -4.6 -4.6 -2 4.6 -2 z"/>
+ <path d="M170 84 l1.6 3.8 3.8 1.6 -3.8 1.6 -1.6 3.8 -1.6 -3.8 -3.8 -1.6 3.8 -1.6 z"/>
+ <path d="M30 92 l1.6 3.8 3.8 1.6 -3.8 1.6 -1.6 3.8 -1.6 -3.8 -3.8 -1.6 3.8 -1.6 z"/>
+</g></svg>`;
+function chestSealed(n){const lit=i=>i<n;
+ return`<svg viewBox="0 0 200 132" role="img" aria-label="封印された宝箱 ${n}/3">
+ <defs>
+  <radialGradient id="sg-glow" cx="50%" cy="44%" r="60%">
+   <stop offset="0%" stop-color="#FFE9A8" stop-opacity="${(.25+n*.25).toFixed(2)}"/><stop offset="100%" stop-color="#F5C64F" stop-opacity="0"/>
+  </radialGradient>
+  <linearGradient id="sg-gold" x1="0" y1="0" x2="0" y2="1">
+   <stop offset="0%" stop-color="#FFE08A"/><stop offset="55%" stop-color="#E4A11B"/><stop offset="100%" stop-color="#B87B10"/>
+  </linearGradient>
+  <linearGradient id="sg-wood" x1="0" y1="0" x2="0" y2="1">
+   <stop offset="0%" stop-color="#7A4030"/><stop offset="100%" stop-color="#54291E"/>
+  </linearGradient>
+ </defs>
+ <circle cx="100" cy="62" r="58" fill="url(#sg-glow)"/>
+ <g>
+  <path d="M55 52 q0 -24 45 -24 q45 0 45 24 l0 8 -90 0 z" fill="url(#sg-wood)" stroke="#3A1B12" stroke-width="2"/>
+  <path d="M55 52 q0 -24 45 -24 q45 0 45 24" fill="none" stroke="url(#sg-gold)" stroke-width="4.5"/>
+  <path d="M56 60 h88" stroke="#FFE9A8" stroke-width="${(n*0.9).toFixed(1)}" opacity="${n?0.9:0}"/>
+  <path d="M54 59 h92" stroke="#1C0F09" stroke-width="2.5" opacity=".55"/>
+  <path d="M53 60 h94 v42 a8 8 0 0 1 -8 8 h-78 a8 8 0 0 1 -8 -8 z" fill="url(#sg-wood)" stroke="#3A1B12" stroke-width="2"/>
+  <path d="M53 60 h94 v7 h-94 z" fill="url(#sg-gold)"/>
+  <path d="M58 60 v50 M142 60 v50" stroke="url(#sg-gold)" stroke-width="5"/>
+  ${[0,1,2].map(i=>{const x=74+i*26;
+   return`<g><rect x="${x-9}" y="76" width="18" height="18" rx="4" fill="${lit(i)?"url(#sg-gold)":"#3E2A22"}" stroke="${lit(i)?"#8A5B08":"#2A1812"}" stroke-width="1.5"/>
+    <circle cx="${x}" cy="82.2" r="2.7" fill="${lit(i)?"#54291E":"#1C110C"}"/><path d="M${x-1.8} 83.2 L${x+1.8} 83.2 L${x+1.1} 89 L${x-1.1} 89 Z" fill="${lit(i)?"#54291E":"#1C110C"}"/></g>`}).join("")}
+ </g>
+ ${n>=2?`<g fill="#F5C64F" opacity=".9"><path d="M38 30 l2 4.6 4.6 2 -4.6 2 -2 4.6 -2 -4.6 -4.6 -2 4.6 -2 z"/><path d="M162 26 l1.6 3.8 3.8 1.6 -3.8 1.6 -1.6 3.8 -1.6 -3.8 -3.8 -1.6 3.8 -1.6 z"/></g>`:""}
+</svg>`}
+function vHome(){
+ const d=day(),ms=missions(),due=dueList();
+ const doneN=ms.filter(m=>m.chk(d)).length;
+ return `
+ <div class="coach"><div class="avatar">${ICONS.coach}</div><div>
+   <div class="c-label">Coach</div><div class="c-msg">${esc(coachMsg())}</div></div></div>
+ <button class="today-cta" data-act="today"><span class="tc-ic">${ICONS.spark}</span>
+   <span class="tc-t"><b>今日の練習をはじめる</b><small>おすすめ5問・約3分</small></span>
+   <span class="tc-arw">→</span></button>
+ <div class="home-top">
+ <section class="sheet gold chest-card"><details class="info-pop"><summary aria-label="このカードについて"><span>?</span></summary>
+   <div class="info-pop-panel">
+    <p><b>出題範囲</b>${(S.set.seasons&&S.set.seasons.length)?S.set.seasons.map(i=>DATA[i-1]?DATA[i-1].name:"").join("・"):"すべてのシーズン"} <small style="color:var(--on-dim)">設定画面で変更できます</small></p>
+    <p>今日のミッションを3つクリアすると<br>宝箱があきます。<br>ネイティブがよく使うフレーズを<br>貯めよう!<br><small style="color:var(--on-dim)">記録ページに保存されます</small></p>
+   </div></details><div class="pad">
+   <span class="eyebrow" style="font-size:.85rem;letter-spacing:.08em">今日の宝箱</span>
+   ${(()=>{const opened=!!d.rw,ready=doneN===3&&!opened;
+    if(doneN===3&&opened){const r=todayReward();
+     return`<div class="mis-done"><span class="md-stamp">Complete</span><span>ミッション3つ、クリアした!</span></div>
+     <div class="reward loot">
+      <span class="loot-fx" aria-hidden="true"><i>◆</i><i>◆</i><i>◆</i><i>◆</i><i>◆</i><i>◆</i></span>
+      <div class="loot-chest">${RICH_CHEST}</div>
+      <div class="loot-t"><div class="loot-head"><span class="r-stamp">Treasure!</span>${canSpeak&&S.set.speech?`<button class="btn-speak-mini" id="btnRw" aria-label="聞く">${ICONS.sound}</button>`:""}</div>
+       <span class="r-en en">${esc(r[0])}</span><span class="r-ja">${esc(r[1])}</span></div></div>`}
+    return`<div class="tbx-hero ${ready?'ready':''}" data-left="${3-doneN}">
+     <div class="tbx-chest">${chestSealed(doneN)}</div>
+     <div class="tbx-side">
+      ${ready?`<button class="btn-open" data-act="open-chest">宝箱をあける</button>`
+        :`<span class="tbx-note">${doneN===2?"あと1つ! もうすぐひらく":doneN===1?"1つクリア! いい調子":"ミッションを3つクリアして<br>宝箱をあけよう"}</span>`}
+     </div>
+    </div>
+    <div class="m-cards">
+    ${ms.map(m=>{const ok=m.chk(d),pg=m.prog(d);
+     return`<button class="m-card ${ok?'done':''}" data-act="${ok?'':m.act}" ${ok?'disabled':''}>
+      <span class="m-lock">${ICONS.keyhole}</span>
+      <span class="m-t"><b>${esc(m.txt)}</b>
+       <span class="m-prog"><span class="m-bar"><i style="width:${pg[1]?Math.round(pg[0]/pg[1]*100):0}%"></i></span><span class="m-n">${pg[0]}/${pg[1]}</span></span></span>
+      <span class="m-go">${ok?"クリア":"はじめる →"}</span>
+     </button>`}).join("")}
+    </div>`})()}
+ </div></section>
+ <div class="home-side">
+   ${S.resume?`<button class="menu-big gold" data-act="resume"><span class="mi">${ICONS.spark}</span><span class="mt"><b>つづきから</b><small>${esc(S.resume.label)}</small></span><span class="big-arw">→</span></button>`:""}
+   <div class="rev-card">
+    <div class="rc-head">復習コーナー<details class="info-pop" style="top:.3rem;right:.3rem"><summary aria-label="復習コーナーについて"><span>?</span></summary>
+      <div class="info-pop-panel">
+       <p><b>今日の復習</b>今日やるともっとも効果的な問題</p>
+       <p><b>まだ不安</b>「少し迷った」「当てずっぽう」と<br>答えた問題</p>
+       <p><b>苦手集中</b>まちがいが多い問題</p>
+      </div></details></div>
+    ${revRow("review",ICONS.rev,"今日の復習","",due.length)}
+    ${revRow("unsure",ICONS.book,"まだ不安","",unsureList().length)}
+    ${revRow("weak",ICONS.flame,"苦手集中","",weakList().length)}
+   </div>
+ </div>
+ </div>
+ <h2 class="section-lbl">自分でモードを選ぶ</h2>
+ ${DATA.map((lv,i)=>{const total=lv.units.reduce((n,u)=>n+u.items.length,0);
+   const mas=Q.filter(q=>q.level===i+1&&isMaster(q.id)).length;
+   return[i,total,mas]}).reverse().map(([i,total,mas])=>{const lv=DATA[i];
+   return`<section class="season-block"><div class="sb-head">
+     <span class="sb-title">${esc(lv.name)}</span>
+     <span class="sb-prog" aria-label="自力で書けるようになった英文 ${mas} / ${total} 文">★ ${mas}<em>/${total}</em></span>
+     <details class="info-pop inline" style="margin-left:.35rem"><summary aria-label="3つのモードについて"><span>?</span></summary>
+      <div class="info-pop-panel">
+       <p><b>タイピング・英作文</b>力だめし・復習向けの練習です。<br>まだ身についていない問題から<br>ランダムに5問出します。</p>
+       <p><b>CBTチャレンジ</b>本番形式のテストです。<br>範囲や問題数は自分で選べます。</p>
+      </div></details></div>
+    <div class="menu-grid">
+     <button class="menu-card c-blue" data-season-act="copy" data-lv="${i+1}"><span class="mi">${ICONS.type}</span><span class="mt"><b>タイピング</b></span></button>
+     <button class="menu-card c-red" data-season-act="write" data-lv="${i+1}"><span class="mi">${ICONS.pen}</span><span class="mt"><b>英作文</b></span></button>
+     <button class="menu-card c-gold" data-season-act="cbt" data-lv="${i+1}"><span class="mi">${ICONS.cbt}</span><span class="mt"><b>CBTチャレンジ</b></span></button>
+    </div>
+    <button class="season-detail-link" data-season-map="${i+1}"><span class="mi">${ICONS.map}</span>
+      <span class="mt"><b>はじめて学ぶ人はこちら</b><small>お手本 → ステップ → 語順 → 英作文</small></span>
+      <span class="sdl-arw">${ICONS.arrowRight}</span></button>
+   </section>`}).join("")}`}
+function revRow(act,icon,name,desc,n){
+ const off=n===0;
+ return`<button class="rev-row ${off?'off':''}" data-act="${off?'':act}" ${off?'disabled':''}>
+  <span class="mi">${icon}</span>
+  <span class="rr-t"><b>${name}</b>${off?"<small>いまはありません</small>":desc?`<small>${desc}</small>`:""}</span>
+  <span class="cnt">${n} 問</span>
+  <span class="arw">${off?"":"→"}</span></button>`}
+function bindHome(){
+ const rw=$("#btnRw");if(rw)rw.onclick=()=>speak(todayReward()[0]);
+ document.querySelectorAll("[data-act]").forEach(b=>b.onclick=()=>{
+  if(b.dataset.act==="open-chest"){sfx("chest");claimReward();render();return}
+ const a=b.dataset.act;
+ if(a==="map")nav("map");
+ else if(a==="records")nav("records");
+ else if(a==="resume"&&S.resume)resumeSession();
+ else if(a==="review")startSession(dueList().map(q=>q.id),"write","今日の復習",true);
+ else if(a==="unsure")startSession(unsureList().slice(0,10).map(q=>q.id),"write","まだ不安",true);
+ else if(a==="weak")startSession(weakList().slice(0,10).map(q=>q.id),"write","苦手集中",true);
+ else if(a==="quick-copy")pickRandom("copy");
+ else if(a==="quick-write")pickRandom("write");
+ else if(a==="today")todayPractice();
+});
+ document.querySelectorAll("[data-season-act]").forEach(b=>b.onclick=()=>{
+  const lv=Number(b.dataset.lv),act=b.dataset.seasonAct;
+  if(act==="cbt")startCbtSetup(lv);else pickRandom(act,lv)});
+ document.querySelectorAll("[data-season-map]").forEach(b=>b.onclick=()=>{mapJump=Number(b.dataset.seasonMap);nav("map")})}
+function pickRandom(mode,lv){
+ const base=lv?Q.filter(q=>q.level===lv):(()=>{const sel=S.set.seasons;
+   const inSeasons=(sel&&sel.length)?Q.filter(q=>sel.includes(q.level)):Q;
+   return inSeasons.length?inSeasons:Q})();
+ const notMastered=base.filter(q=>!isMaster(q.id));
+ const pool=notMastered.length?notMastered:base;
+ startSession(shuffle(pool).slice(0,5).map(q=>q.id),mode,mode==="copy"?"タイピング5問":"英作文5問",false)}
+function todayPractice(){
+ const due=dueList();
+ let ids=shuffle(due.map(q=>q.id)).slice(0,5);
+ if(ids.length<5){
+  const sel=S.set.seasons;
+  const inSeasons=(sel&&sel.length)?Q.filter(q=>sel.includes(q.level)):Q;
+  const base=(inSeasons.length?inSeasons:Q).filter(q=>!ids.includes(q.id));
+  const notMastered=base.filter(q=>!isMaster(q.id));
+  const pool=notMastered.length?notMastered:base;
+  ids=ids.concat(shuffle(pool).slice(0,5-ids.length).map(q=>q.id))}
+ if(!ids.length){notice("いまはこのリストに問題がありません。マップから練習してみよう!");return}
+ startSession(ids,"write","今日の練習",false)}
+
+/* ---------- マップ ---------- */
+let mapJump=null;
+function vMap(){
+ return DATA.map((lv,li)=>[lv,li]).map(([lv,li])=>{
+  const items=Q.filter(q=>q.level===li+1);
+  const m=items.filter(q=>isMaster(q.id)).length;
+  return`<section class="world" data-lv="${li+1}"><div class="world-head"><span class="w-name">${esc(lv.name)}</span>
+     <span class="w-sub">${lv.units.length} stages</span>
+     <span class="w-prog" aria-label="自力で書けるようになった英文 ${m} / ${items.length} 文">★ ${m}/${items.length}</span>
+     <details class="info-pop inline" style="margin-left:.35rem"><summary aria-label="鍵の仕組みについて"><span>?</span></summary>
+      <div class="info-pop-panel" style="width:16.5rem">
+       <p><span class="key-ico">${ICONS.key}</span>鍵アイコンを集めよう!<br>鍵3本で、上のMASTERゲージが<br>進みます。</p>
+       <p><b>お手本</b>鍵1本</p>
+       <p><b>ステップ</b>鍵3本</p>
+       <p><b>語順</b>鍵2本</p>
+       <p><b>英作文</b>鍵1本 <small style="color:var(--on-dim)">ヒントなしのとき</small></p>
+       <p>文を直接タップした場合は、<br>ステップが始まります。</p>
+      </div></details></div>
+   <div class="unit-list">
+   ${lv.units.map((u,ui)=>{
+     const qs2=Q.filter(q=>q.level===li+1&&q.ui===ui);
+     const master=qs2.filter(q=>isMaster(q.id)).length;
+     const due=qs2.filter(q=>{const s=S.q[q.id];return s&&s.due&&s.due<=todayStr()}).length;
+     return`<details class="unit"><summary>
+       <span class="u-no">${ui+1}</span>
+       <span class="u-name">${esc(u.name)}<small>${esc(u.en)}${due?` · 復習${due}`:""}</small></span>
+       <span class="u-prog ${master===qs2.length?'full':''}" aria-label="この単元で自力で書けるようになった英文 ${master} / ${qs2.length} 文">${master}/${qs2.length}</span></summary>
+       <div class="u-actions">
+         <button data-u="${li+1}-${ui}" data-m="copy">お手本</button>
+         <button data-u="${li+1}-${ui}" data-m="step">ステップ</button>
+         <button data-u="${li+1}-${ui}" data-m="order">語順</button>
+         <button data-u="${li+1}-${ui}" data-m="write">英作文</button>
+       </div>
+       <div class="q-rows">
+       ${qs2.map((q,qi)=>`<button class="q-row" data-q="${q.id}">
+         <span class="qn">${qi+1}</span><span class="q-ja2">${esc(q.ja)}</span>
+         ${isMaster(q.id)?'<span class="master-star" aria-label="マスター済み">★</span>':''}${keysetHtml(q.id)}</button>`).join("")}
+       </div></details>`}).join("")}
+   </div></section>`}).join("")}
+function bindMap(){
+ document.querySelectorAll("[data-u]").forEach(b=>b.onclick=()=>{
+   const[lv,ui]=b.dataset.u.split("-").map(Number);
+   const u=DATA[lv-1].units[ui];
+   startSession(Q.filter(q=>q.level===lv&&q.ui===ui).map(q=>q.id),b.dataset.m,`${u.name} · ${modeName(b.dataset.m)}`,false)});
+ document.querySelectorAll("[data-q]").forEach(b=>b.onclick=()=>{
+   startSession([b.dataset.q],"step","1文ステップ練習",false)})
+ if(mapJump){
+   const w=document.querySelector(`.world[data-lv="${mapJump}"]`);
+   if(w){
+     const firstUnit=w.querySelector(".unit");
+     if(firstUnit)firstUnit.open=true;
+     if(w.scrollIntoView)w.scrollIntoView({behavior:"smooth",block:"start"})
+   }
+   mapJump=null
+ }}
+function modeName(m){return{copy:"お手本タイピング",step:"ステップタイピング",order:"語順トレーニング",write:"英作文"}[m]||m}
+
+/* ---------- 学習セッション ---------- */
+function startSession(ids,mode,label,review){
+ if(!ids.length){notice("いまはこのリストに問題がありません。マップから練習してみよう!");return}
+ let list=ids.slice(),mixed={};
+ if(!review&&mode==="write"){ /* 定着のため、期限がきた復習問題を自動で混ぜる(インターリーブ) */
+   const extra=dueList().map(q=>q.id).filter(id=>!list.includes(id)).slice(0,2);
+   extra.forEach((id,i)=>{const pos=i===0?0:Math.min(list.length,Math.ceil(list.length/2));list.splice(pos,0,id);mixed[id]=1});
+ }
+ session={list,idx:0,mode,label,review:!!review,att:null,requeued:{},correct:0,t0:Date.now(),mixed,startKeys:totalKeys(),startMaster:masterCount()};
+ S.resume={list,idx:0,mode,label,review:!!review,mixed};save();
+ view="session";render()}
+function resumeSession(){const r=S.resume;if(!r)return;
+ session={list:r.list.filter(id=>QBY[id]),idx:Math.min(r.idx,r.list.length-1),mode:r.mode,label:r.label,review:r.review,att:null,requeued:{},correct:0,t0:Date.now(),mixed:r.mixed||{}};
+ if(!session.list.length){S.resume=null;save();return}
+ view="session";render()}
+function curQ(){return QBY[session.list[session.idx]]}
+function newAtt(){const q=curQ();session.att={tries:0,hint:0,conf:"",done:false,step:1,phase:0,
+ t0:0,total:0,err:0,bs:0,prevLen:0,order:[],usedIdx:[],result:"",acc:null,wpm:null,retry:(S.q[q.id]?.wrong||0)>0}}
+function vSession(){
+ if(!session.att)newAtt();
+ const q=curQ(),a=session.att,m=session.mode;
+ const stepTags=m==="step"?[1,2,3,4].map(s=>`<span class="stp ${s===a.step?'on':s<a.step?'past':''}">Step ${s}</span>`).join(""):
+   session.list.map((_,i)=>`<span class="stp ${i===session.idx?'on':i<session.idx?'past':''}">${i+1}</span>`).join("");
+ let body="";
+ if(a.done)body=vDone(q,a);
+ else if(m==="copy")body=vCopy(q,a);
+ else if(m==="step")body=vStep(q,a);
+ else if(m==="order")body=vOrder(q,a);
+ else body=vWrite(q,a);
+ return`<div class="train-top"><button class="btn-quit" id="btnQuit">← 中断する</button>
+   <div class="steps">${stepTags}</div></div>
+ <section class="sheet">
+   <div class="train-sheet">${body}</div></section>`}
+function isMixed(q){return!!(session&&session.mixed&&session.mixed[q.id])}
+function metaHtml(q,justEarned){const s=S.q[q.id];
+ return`<div class="q-meta"><span>${esc(levelName(q.level))} · ${esc(q.unit)}${session&&session.mode?" · "+esc(modeName(session.mode)):""}</span>${isMixed(q)?'<span class="mix-chip">復習</span>':""}
+  <span class="key-progress" aria-label="このもんだいの鍵の進み具合">${['c','m','w'].map(k=>`<i class="${s&&s.keys[k]?'on':''}${justEarned===k?' pop':''}">${ICONS.key}</i>`).join("")}</span></div>
+  ${q.passage?`<details class="passage-box"><summary>読解文を見る</summary><div class="passage-en en">${esc(q.passage).replace(/\n/g,"<br>")}</div></details>`:""}`}
+
+/* --- お手本タイピング --- */
+function vCopy(q,a){
+ const t=q.en,inp=a.cur||"",matched=(()=>{let n=0;while(n<inp.length&&n<t.length&&inp[n]===t[n])n++;return n})();
+ const bad=inp.length>matched;
+ const nextCh=!bad?t[matched]:"";
+ return`${metaHtml(q)}
+ <div class="q-en en" aria-label="お手本">${esc(t.slice(0,matched))?`<span class="hit">${esc(t.slice(0,matched))}</span>`:""}${bad?`<span class="miss">${esc(t.slice(matched,matched+1))}</span><span class="rest">${esc(t.slice(matched+1))}</span>`:`<span class="rest">${esc(t.slice(matched))}</span>`}</div>
+ ${S.set.showJa?`<div class="q-ja">${esc(q.ja)}</div>`:""}
+ <div class="type-line"><input id="ti" autocomplete="off" autocapitalize="off" spellcheck="false"
+   placeholder="お手本を見ながら、そのまま打とう" value="${esc(inp)}" aria-label="入力欄"></div>
+ <div class="type-bar">
+  <div class="type-stats">
+   <span>ミス <b>${a.err}</b></span><span>Backspace <b>${a.bs}</b></span>
+   <span>${a.t0?`経過 <b>${Math.round((Date.now()-a.t0)/1000)}</b> 秒`:"タイプすると計測開始"}</span>
+  </div>
+  <button class="kb-toggle" id="btnKbToggle" type="button" aria-pressed="${S.set.showKb}">${S.set.showKb?"キーボードを隠す":"キーボードを表示"}</button>
+ </div>
+ ${S.set.showKb?kbHtml(nextCh):""}`}
+const KB_ROWS=[["1","2","3","4","5","6","7","8","9","0"],["Q","W","E","R","T","Y","U","I","O","P"],["A","S","D","F","G","H","J","K","L"],["shift","Z","X","C","V","B","N","M",",",".","?"]];
+function kbHtml(nextCh){
+ const isUpperLetter=/[A-Z]/.test(nextCh);
+ const isApos=nextCh==="'";
+ const needsShift=isUpperLetter||isApos;
+ const lower=nextCh?nextCh.toLowerCase():"";
+ const isPunct=k=>[",",".","?"].includes(k);
+ const rowHtml=(row,isNumRow)=>row.map(k=>{
+   let active=false,dim=isNumRow;
+   if(isNumRow){if(k==="7"&&isApos){active=true;dim=false}}
+   else if(k==="shift")active=needsShift;
+   else if(isPunct(k))active=nextCh===k;
+   else active=/[A-Za-z]/.test(k)&&lower===k.toLowerCase();
+   return `<span class="kb-key${active?' active':''}${k==="shift"?' wide':''}${dim?' dim':''}">${k==="shift"?"Shift":k}</span>`}).join("");
+ const spaceActive=nextCh===" ";
+ return`<div class="kb-board" aria-hidden="true">
+  <div class="kb-row">${rowHtml(KB_ROWS[0],true)}</div>
+  <div class="kb-row">${rowHtml(KB_ROWS[1])}</div>
+  <div class="kb-row kb-row2">${rowHtml(KB_ROWS[2])}</div>
+  <div class="kb-row">${rowHtml(KB_ROWS[3])}</div>
+  <div class="kb-row"><span class="kb-key kb-space${spaceActive?' active':''}">Space</span></div>
+  ${isApos?'<div class="kb-hint">アポストロフィ(\')は Shift + 7</div>':""}
+ </div>`}
+function bindCopy(q,a){const ti=$("#ti");if(!ti)return;ti.focus();
+ try{ti.setSelectionRange(ti.value.length,ti.value.length)}catch(e){}
+ ti.onkeydown=e=>{if(e.key==="Backspace")a.bs++};
+ ti.oninput=()=>{if(!a.t0)a.t0=Date.now();
+  const v=ti.value;
+  if(v.length>a.prevLen){a.total++;if(!q.en.startsWith(normSp(v))&&!q.en.startsWith(v))a.err++}
+  a.prevLen=v.length;a.cur=v;
+  if(normSp(v)===normSp(q.en)){finishCopy(q,a)}else render()}
+ const kt=$("#btnKbToggle");if(kt)kt.onclick=()=>{S.set.showKb=!S.set.showKb;save();render()}}
+function finishCopy(q,a){
+ const sec=(Date.now()-a.t0)/1000;
+ a.acc=a.total?Math.max(0,Math.round((a.total-a.err)/a.total*100)):100;
+ a.wpm=sec>1?Math.min(250,Math.round(q.words.length/(sec/60))):0;a.sec=Math.round(sec);
+ a.done=true;a.result="copy";
+ const d=day();d.sent++;d.copySent=(d.copySent||0)+1;d.accS+=a.acc;d.accN++;d.wpmS+=a.wpm;d.wpmN++;d.sec+=a.sec;if(a.acc>=100)d.perfect++;
+ if(session.review){d.rev++}
+ a.keyNew=giveKey(q,"c");sfx(a.keyNew?"key":"ok");touchStreak();
+ logResult({qid:q.id,level:q.level,mode:"copy",result:"ok",input:q.en,answer:q.en,duration:a.sec,accuracy:a.acc,wpm:a.wpm,errType:"",hintLevel:0,confidence:"",});
+ checkBadges({acc:a.acc,review:session.review,retry:a.retry,tries:1,ok:true});
+ save();render();speak(q.en)}
+
+/* --- ステップ --- */
+function stepPrompt(q,step){
+ if(step===1)return{en:q.en,ja:q.ja};
+ if(step===2){const w=q.words.map((w,i)=>i%2===1?w.replace(/[A-Za-z]/g,"_"):w);return{en:w.join(" ")+q.punct,ja:q.ja}}
+ if(step===3)return{en:q.firstLetter,ja:q.ja};
+ return{en:"",ja:q.ja}}
+function vStep(q,a){const p=stepPrompt(q,a.step);
+ return`${metaHtml(q)}
+ ${p.en?`<div class="q-en en">${esc(p.en)}</div>`:""}
+ <div class="q-ja ${p.en?"":"big"}">${esc(q.ja)}</div>
+ <div class="type-line"><input id="ti" autocomplete="off" autocapitalize="off" spellcheck="false" placeholder="${a.step===4?"日本語だけを見て、英文を打とう":"英文を打とう"}" aria-label="入力欄"></div>
+ <div id="fbArea">${a.fb||""}</div>
+ <div class="train-nav">
+   <button class="btn-ghost" id="btnSkipQ">この文をとばす</button>
+   <button class="btn-primary" id="btnCheck">${ICONS.check} 確認する</button>
+ </div>`}
+function bindStep(q,a){const ti=$("#ti");if(ti){ti.focus();ti.onkeydown=e=>{if(e.key==="Enter"){e.preventDefault();$("#btnCheck").click()}}}
+ $("#btnCheck").onclick=()=>{const r=judge(ti.value,q,false);a.tries++;
+  if(r.ok){
+    if(a.step<4){a.fb=fbHtml(r,q,`Step ${a.step} クリア!`);a.step++;a.fb+="";render()}
+    else{a.done=true;a.result="step";
+      const d=day();d.sent++;d.self++;if(session.review)d.rev++;
+      const k1=giveKey(q,"c"),k2=giveKey(q,"m"),k3=giveKey(q,"w");a.keyNew=k1||k2||k3;sfx(a.keyNew?"key":"ok");touchStreak();
+      logResult({qid:q.id,level:q.level,mode:"step",result:"ok",input:normSp(ti.value),answer:q.en,duration:0,accuracy:"",wpm:"",errType:"",hintLevel:a.step-1,confidence:""});
+      checkBadges({review:session.review,retry:a.retry,tries:a.tries,ok:true,noHint:false,hinted:true});
+      save();render();speak(q.en)}}
+  else{a.fb=fbHtml(r,q);render()}};
+ $("#btnSkipQ").onclick=()=>{scheduleAndNext(q,a,"wrong",true)}}
+
+/* --- 語順 --- */
+function vOrder(q,a){
+ if(!a.tokens)a.tokens=q.words.map(w=>({w,isPunct:false})).concat(q.punct?[{w:q.punct,isPunct:true}]:[]);
+ if(!a.shuffled){a.shuffled=shuffle(a.tokens.map((t,i)=>({...t,i})));a.usedIdx=[]}
+ if(a.phase===1)return vCopyPhase(q,a);
+ const built=a.usedIdx.map(k=>a.shuffled[k]);
+ return`${metaHtml(q)}
+ <div class="q-ja big">${esc(q.ja)}</div>
+ <div class="order-area">
+  <div class="order-built" aria-label="作った英文">${built.length?built.map((o,bi)=>`<button class="w-chip built ${o.isPunct?'punct':''}" data-b="${bi}">${esc(o.w)}</button>`).join(""):'<span class="order-note">下のカードを順にタップ(数字キーでもOK)</span>'}</div>
+  <div class="order-bank">${a.shuffled.map((o,i)=>`<button class="w-chip ${o.isPunct?'punct':''} ${a.usedIdx.includes(i)?'used':''}" data-c="${i}">${esc(o.w)}<span class="kbd">${i+1}</span></button>`).join("")}</div>
+  <div class="order-note">句読点(. や ?)も1枚のカードです・Backspaceで1つ戻せます</div></div>
+ <div id="fbArea">${a.fb||""}</div>
+ <div class="train-nav"><button class="btn-ghost" id="btnReset">やり直す</button>
+  <button class="btn-primary" id="btnCheck" ${a.usedIdx.length===a.tokens.length?"":"disabled"}>${ICONS.check} 語順を確認</button></div>`}
+function vCopyPhase(q,a){
+ return`${metaHtml(q)}
+ <div class="fb good"><span class="h">Nice</span>語順OK! 仕上げに、この英文をタイピングしよう。</div>
+ <div class="q-en en" style="margin-top:.6rem">${esc(q.en)}</div>
+ <div class="type-line"><input id="ti" autocomplete="off" autocapitalize="off" spellcheck="false" aria-label="入力欄"></div>`}
+function bindOrder(q,a){
+ if(a.phase===1){const ti=$("#ti");if(ti){ti.focus();ti.oninput=()=>{
+   if(normSp(ti.value)===normSp(q.en)){
+     a.done=true;a.result="order";
+     const d=day();d.sent++;if(session.review)d.rev++;
+     const k1=giveKey(q,"c"),k2=giveKey(q,"m");a.keyNew=k1||k2;sfx(a.keyNew?"key":"ok");touchStreak();
+     logResult({qid:q.id,level:q.level,mode:"order",result:"ok",input:q.en,answer:q.en,duration:0,accuracy:"",wpm:"",errType:"",hintLevel:4,confidence:""});
+     checkBadges({review:session.review,retry:a.retry,tries:a.tries||1,ok:true,hinted:true});
+     save();render();speak(q.en)}}}
+  return}
+ document.querySelectorAll("[data-c]").forEach(b=>b.onclick=()=>{
+   const i=Number(b.dataset.c);if(!a.usedIdx.includes(i)){a.usedIdx.push(i);a.fb="";render()}});
+ document.querySelectorAll("[data-b]").forEach(b=>b.onclick=()=>{a.usedIdx.splice(Number(b.dataset.b),1);render()});
+ document.onkeydown=e=>{if(view!=="session"||!session||session.att!==a||a.phase===1)return;
+   if(e.key==="Backspace"){a.usedIdx.pop();render();e.preventDefault()}
+   const n=Number(e.key);if(n>=1&&n<=a.shuffled.length&&!a.usedIdx.includes(n-1)){a.usedIdx.push(n-1);render()}};
+ $("#btnReset").onclick=()=>{a.usedIdx=[];a.fb="";render()};
+ const ck=$("#btnCheck");if(ck)ck.onclick=()=>{
+   const built=a.usedIdx.map(k=>a.shuffled[k]);a.tries=(a.tries||0)+1;
+   const builtWords=built.filter(o=>!o.isPunct).map(o=>o.w).join(" ");
+   const hasPunct=a.tokens.some(t=>t.isPunct);
+   const punctOk=!hasPunct||(built.length&&built[built.length-1].isPunct&&built.filter(o=>o.isPunct).length===1);
+   if(builtWords===q.words.join(" ")&&punctOk){a.phase=1;render()}
+   else if(builtWords===q.words.join(" ")&&hasPunct){a.fb=`<div class="fb almost"><span class="h">Almost</span>単語の順番はOK! 句読点(${esc(q.punct)})を最後に置こう。</div>`;render()}
+   else{a.fb=`<div class="fb almost"><span class="h">Almost</span>使う単語は合っています。語順をもう一度考えてみよう。</div>`;render()}}}
+
+/* --- 英作文 --- */
+function vWrite(q,a){
+ return`${metaHtml(q)}
+ <div class="q-ja big">${esc(q.ja)}</div>
+ <div class="type-line"><textarea id="ti" autocomplete="off" autocapitalize="off" spellcheck="false" placeholder="英文を書こう" rows="2"></textarea></div>
+ ${S.set.hints?`<div class="aid">
+   <button class="btn-aid" id="btnHint" ${a.hint>=5?"disabled":""}>ヒント ${a.hint}/5</button>
+   <span class="aid-note">段階ヒント: 型 → 語数 → 頭文字 → カード → 全文</span></div>
+   <div id="hintBox">${a.hint?hintBoxHtml(q,a.hint):""}</div>`:""}
+ <div id="fbArea">${a.fb||""}</div>
+ <div class="train-nav">
+   <button class="btn-ghost" id="btnSkipQ">あとで復習する</button>
+   <button class="btn-primary" id="btnCheck">${ICONS.check} 確認する</button></div>`}
+function hintBoxHtml(q,lv){const labels=["型","語数","頭文字","カード","全文"];
+ let rows="";for(let i=1;i<=lv;i++){const h=q.hints[i-1];
+  rows+=`<div class="hint-row"><span class="h-tag">${i}<em>${labels[i-1]}</em></span><span class="${i>=3?'en':''}">${esc(h)}</span></div>`}
+ return`<div class="aid-box hints">${rows}</div>`}
+function fbHtml(r,q,goodMsg){
+ if(r.ok&&r.perfect)return`<div class="fb good"><span class="h">Perfect</span>${esc(goodMsg||"完ぺきな英文です!")}</div>`;
+ if(r.ok)return`<div class="fb good"><span class="h">OK</span>内容と語順は合っています。<ul>${r.msgs.map(m=>`<li>${esc(m)}</li>`).join("")}</ul></div>`;
+ return`<div class="fb almost"><span class="h">Try Again</span><ul>${r.msgs.map(m=>`<li>${esc(m)}</li>`).join("")}</ul></div>`}
+function bindWrite(q,a){const ti=$("#ti");if(ti){ti.focus();
+  ti.onkeydown=e=>{if(e.key==="Enter"&&!e.shiftKey){e.preventDefault();$("#btnCheck").click()}}}
+ const bh=$("#btnHint");if(bh)bh.onclick=()=>{a.hint=Math.min(5,a.hint+1);render()};
+ $("#btnSkipQ").onclick=()=>scheduleAndNext(q,a,"wrong",true);
+ $("#btnCheck").onclick=()=>{
+  const strict=S.set.strictCase||S.set.strictPunct;
+  const qw=q.writeAlt&&q.writeAlt.length?{...q,answers:[...q.answers,...q.writeAlt]}:q;
+  const r=judge(ti.value,qw,strict);a.tries++;a.lastInput=normSp(ti.value);
+  if(r.ok){a.done=true;a.result="write";a.issues=r.issues;a.fbOk=fbHtml(r,q);
+    const d=day();d.sent++;if(session.review||isMixed(q))d.rev++;
+    if(a.hint===0){d.self++;d.noHint++;a.keyNew=giveKey(q,"w")}else a.keyNew=giveKey(q,"m");sfx(a.keyNew?"key":"ok");
+    touchStreak();
+    logResult({qid:q.id,level:q.level,mode:"write",result:"ok",input:a.lastInput,answer:q.en,duration:0,accuracy:"",wpm:"",errType:r.issues.join(";"),hintLevel:a.hint,confidence:a.conf});
+    checkBadges({review:session.review||isMixed(q),retry:a.retry,tries:a.tries,ok:true,noHint:a.hint===0,hinted:a.hint>0});
+    addPhrase(q);save();render();speak(q.en)}
+  else{sfx("ng");a.fb=fbHtml(r,q);a.lastWrongSure=false;
+    logResult({qid:q.id,level:q.level,mode:"write",result:"ng",input:a.lastInput,answer:q.en,duration:0,accuracy:"",wpm:"",errType:r.issues.join(";"),hintLevel:a.hint,confidence:""});
+    render()}}}
+
+/* --- 正解後(設計図・音声・自信度・次へ) --- */
+function vDone(q,a){
+ const showConf=S.set.conf&&!a.confDone&&session.mode!=="copy";
+ const earned=a.result==="write"?(a.hint===0?"w":"m"):a.result==="order"?"m":a.result==="step"?"w":"c";
+ return`${metaHtml(q,a.keyNew?earned:null)}
+ <div style="position:relative"><span class="stamp gold">${a.result==="copy"&&a.acc>=100?"PERFECT":"CLEAR"}</span>
+ <div class="q-en en">${esc(q.en)}</div><div class="q-ja">${esc(q.ja)}</div></div>
+ ${a.fbOk||""}
+ ${a.acc!==null&&a.acc!==undefined&&a.result==="copy"?`<div class="type-stats"><span>正確さ <b>${a.acc}%</b></span><span>速さ <b>${a.wpm}</b> wpm</span><span>時間 <b>${a.sec}</b> 秒</span><span>ミス <b>${a.err}</b></span></div>`:""}
+ ${a.keyNew&&isMaster(q.id)?`<div class="key-earn master">
+    <span class="ke-icon">${ORNATE_KEY}</span>
+    <div class="ke-t"><b>MASTER!</b><small>3本そろいました。この文はもうきみのもの</small></div></div>`:""}
+ ${S.set.showBP?blueprintHtml(q):""}
+ ${q.exp?`<div class="aid-box" style="margin-top:.6rem"><span class="h">Point</span>${esc(q.exp)}</div>`:""}
+ <div class="speak-row">
+   ${canSpeak&&S.set.speech?`<button class="btn-speak-mini" id="btnSpeak" aria-label="もう一度聞く">${ICONS.sound}</button>`:""}
+   <span class="speak-note">声に出して読もう</span>
+ </div>
+ ${showConf?`<div class="conf-row" role="group" aria-label="自信度">
+   <button class="conf-btn ${a.conf==='sure'?'on':''}" data-cf="sure">自信あり</button>
+   <button class="conf-btn ${a.conf==='mid'?'on':''}" data-cf="mid">少し迷った</button>
+   <button class="conf-btn ${a.conf==='guess'?'on':''}" data-cf="guess">当てずっぽう</button>
+   <span class="conf-note">正直に選ぶと、次にこの文が出るタイミングをPICKSがちょうどよく調整します</span></div>`:""}
+ ${newBadges.length?newBadges.map(b=>`<div class="badge-pop"><span class="bi">${ICONS.badge}</span><div><b>${esc(b.n)}</b><small>${esc(b.d)}</small></div></div>`).join(""):""}
+ <div class="train-nav"><span></span>
+   <button class="btn-primary btn-gold" id="btnNext">${session.idx<session.list.length-1?"次の問題へ":"結果を見る"} →</button></div>`}
+function blueprintHtml(q){
+ const roles={s:"主語",v:"動詞",o:"目的語・補語",x:"その他"};
+ if(q.st)return`<div class="blueprint"><span class="h">英文の設計図</span>
+  <div class="bp-row">${q.st.map(([w,r])=>`<span class="bp-cell role-${r}"><span class="w">${esc(w)}</span><span class="role">${roles[r]}</span></span>`).join("")}</div>
+  ${q.pat?`<span class="pattern-tag">${esc(q.pat)}</span>`:""}</div>`;
+ return q.pat?`<div class="blueprint"><span class="h">英文の設計図</span><span class="pattern-tag">${esc(q.pat)}</span></div>`:""}
+function bindDone(q,a){
+ const bs=$("#btnSpeak");if(bs)bs.onclick=()=>speak(q.en);
+ document.onkeydown=e=>{if(e.key==="Enter"&&view==="session"&&session&&session.att===a&&a.done){
+   e.preventDefault();const bn=$("#btnNext");if(bn)bn.click()}};
+ document.querySelectorAll("[data-cf]").forEach(b=>b.onclick=()=>{a.conf=b.dataset.cf;render()});
+ $("#btnNext").onclick=()=>{
+  const res=a.conf==="guess"?"guess":(a.result==="write"&&a.hint===0)||a.result==="step"?"self":"hint";
+  schedule(q,res);a.confDone=true;nextQ()}}
+function scheduleAndNext(q,a,res,requeue){
+ schedule(q,res);
+ if(requeue&&!session.requeued[q.id]&&session.list.length<30){session.requeued[q.id]=1;session.list.push(q.id)}
+ nextQ()}
+function nextQ(){
+ stopSpeak();
+ if(session.idx<session.list.length-1){session.idx++;session.att=null;
+   S.resume=Object.assign({},S.resume,{idx:session.idx,list:session.list});save();render()}
+ else{S.resume=null;save();showFinish()}}
+const FIN_EMBLEM=`<svg viewBox="0 0 200 170" role="img" aria-label="クリア記念メダル">
+<defs>
+ <radialGradient id="fg-glow" cx="50%" cy="42%" r="58%">
+  <stop offset="0%" stop-color="#FFE9A8" stop-opacity=".9"/><stop offset="55%" stop-color="#F5C64F" stop-opacity=".3"/><stop offset="100%" stop-color="#F5C64F" stop-opacity="0"/>
+ </radialGradient>
+ <linearGradient id="fg-gold" x1="0" y1="0" x2="0" y2="1">
+  <stop offset="0%" stop-color="#FFE08A"/><stop offset="55%" stop-color="#E4A11B"/><stop offset="100%" stop-color="#B87B10"/>
+ </linearGradient>
+</defs>
+<g class="fg-rays" opacity=".9">${[...Array(12)].map((_,i)=>`<path d="M100 72 L${100+66*Math.cos(i*Math.PI/6)} ${72+66*Math.sin(i*Math.PI/6)} L${100+66*Math.cos((i+.45)*Math.PI/6)} ${72+66*Math.sin((i+.45)*Math.PI/6)} Z" fill="#F5C64F" opacity="${i%2?0.10:0.18}"/>`).join("")}</g>
+<circle cx="100" cy="72" r="58" fill="url(#fg-glow)"/>
+<g class="fg-medal">
+ <path d="M82 112 l-12 34 16-8 8 16 12-30z" fill="#2E6BFF" opacity=".85"/>
+ <path d="M118 112 l12 34 -16-8 -8 16 -12-30z" fill="#FF4D3D" opacity=".85"/>
+ <circle cx="100" cy="72" r="40" fill="url(#fg-gold)" stroke="#8A5B08" stroke-width="2"/>
+ <circle cx="100" cy="72" r="31" fill="#FFFDF4" stroke="#E4A11B" stroke-width="2"/>
+ <g transform="translate(84 56) scale(1.35)" stroke="#B87B10" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+  <circle cx="7.3" cy="7.3" r="4.3"/><circle cx="7.3" cy="7.3" r="1.5" fill="#E4A11B" stroke="none"/>
+  <path d="M10.4 10.4 19.3 19.3"/><path d="M15.2 15.2 17.6 12.8M17.4 17.4 19.8 15"/>
+ </g>
+</g>
+<g class="fg-spark" fill="#F5C64F">
+ <path d="M34 34 l2 4.8 4.8 2 -4.8 2 -2 4.8 -2 -4.8 -4.8 -2 4.8 -2 z"/>
+ <path d="M164 30 l1.7 4 4 1.7 -4 1.7 -1.7 4 -1.7 -4 -4 -1.7 4 -1.7 z"/>
+ <path d="M168 96 l1.4 3.4 3.4 1.4 -3.4 1.4 -1.4 3.4 -1.4 -3.4 -3.4 -1.4 3.4 -1.4 z"/>
+ <path d="M28 92 l1.4 3.4 3.4 1.4 -3.4 1.4 -1.4 3.4 -1.4 -3.4 -3.4 -1.4 3.4 -1.4 z"/>
+</g></svg>`;
+function showFinish(){
+ stopSpeak();
+ const n=session.list.length,wasReview=session.review,dueN=dueList().length;
+ const keysGained=totalKeys()-(session.startKeys||0),masterGained=masterCount()-(session.startMaster||0);
+ $("#app").innerHTML=`<section class="sheet gold fin-sheet"><div class="pad finish">
+  <span class="fin-confetti" aria-hidden="true">${[...Array(14)].map(()=>"<i></i>").join("")}</span>
+  <div class="fin-emblem">${FIN_EMBLEM}</div>
+  <span class="fstamp">SESSION CLEAR</span>
+  <div class="ftitle">${esc(session.label)}</div>
+  ${keysGained||masterGained?`<div class="f-detail">${keysGained?`<span>鍵 +${keysGained}本</span>`:""}${masterGained?`<span>マスター +${masterGained}文</span>`:""}</div>`:""}
+  ${newBadges.length?newBadges.map(b=>`<div class="badge-pop"><span class="bi">${ICONS.badge}</span><div><b>${esc(b.n)}</b><small>${esc(b.d)}</small></div></div>`).join(""):""}
+  ${(!wasReview&&dueN)?`<p class="f-review-note">記憶が消えかけたタイミングでの復習が、いちばん定着します。</p>`:""}
+  <div class="train-nav" style="justify-content:center;margin-top:1rem">
+    <button class="btn-ghost" id="btnHome2">ホームへ</button>
+    ${(!wasReview&&dueN)?`<button class="btn-primary btn-gold" id="btnRev2">つづけて復習する (${dueN}問)</button>`:`<button class="btn-primary" id="btnMap2">マップへ</button>`}</div>
+ </div></section>`;
+ renderHeader();
+ $("#btnHome2").onclick=()=>nav("home");
+ const bm=$("#btnMap2");if(bm)bm.onclick=()=>nav("map");
+ const br=$("#btnRev2");if(br)br.onclick=()=>{session=null;startSession(dueList().map(q=>q.id),"write","今日の復習",true);return};
+ session=null}
+
+/* ---------- CBT ---------- */
+function startCbtSetup(lv,ui){
+ let units=[];
+ if(lv&&ui!=null)units=[`${lv-1}-${ui}`];
+ else if(lv)units=DATA[lv-1].units.map((u,i)=>`${lv-1}-${i}`);
+ cbtSel={n:S.set.cbtN,min:S.set.cbtMin,units,preset:"standard"};view="cbtSetup";render()}
+let cbtSel=null;
+const CBT_PRESETS=[{k:"quick",l:"QUICK",n:5,min:5},{k:"standard",l:"STANDARD",n:10,min:10},{k:"test",l:"TEST",n:20,min:20},{k:"custom",l:"CUSTOM",n:null,min:null}];
+function vCbtSetup(){
+ if(!cbtSel)cbtSel={n:S.set.cbtN,min:S.set.cbtMin,levels:[],units:[],preset:"standard"};
+ if(!cbtSel.units)cbtSel.units=[];
+ const segs=(key,vals,unit)=>vals.map(v=>`<button data-cs="${key}" data-v="${v.v}" class="${cbtSel[key]===v.v?'on':''}">${v.l}${unit||""}</button>`).join("");
+ const presetHtml=CBT_PRESETS.map(p=>`<button data-preset="${p.k}" class="preset-card ${cbtSel.preset===p.k?'on':''}">
+   <b>${p.l}</b><small>${p.k==="custom"?"問題数と時間を<br>自由に設定":`${p.n}問・${p.min}分`}</small></button>`).join("");
+ const allUnits=!cbtSel.units.length;
+ const unitGroups=DATA.map((lv,li)=>{
+   const chips=lv.units.map((u,ui)=>`<button data-cu="${li}-${ui}" class="${allUnits||cbtSel.units.includes(`${li}-${ui}`)?'on':''}">${esc(u.name)}</button>`).join("");
+   return`<div class="cu-group"><span class="cu-lv">${esc(lv.name)}</span><div class="cu-chips">${chips}</div></div>`}).join("");
+ const totalPool=Q.filter(q=>allUnits||cbtSel.units.includes(`${q.level-1}-${q.ui}`)).length;
+ return`<section class="sheet"><span class="sheet-label">CBT Challenge</span><div class="pad cbt-setup">
+  <span class="eyebrow" style="color:var(--gold-ink)">CBTチャレンジ</span>
+  <p class="cs-lead">本番形式のテスト練習です。おわったら、まちがえた問題は自動で「今日の復習」に入ります。</p>
+  <div class="rule-chips" aria-label="テストのルール">
+    <span>ヒントなし</span><span>コピー&ペースト禁止</span><span>制限時間あり</span><span>大文字・スペース・ピリオド・?も採点</span>
+  </div>
+  <p class="cs-note">半角英数で入力しよう。全角文字は不正解になります。</p>
+  <div class="cs-group"><span class="cs-lbl">モード</span>
+   <div class="preset-row">${presetHtml}</div></div>
+  ${cbtSel.preset==="custom"?`
+  <div class="cs-group"><span class="cs-lbl">問題数</span>
+   <span class="seg">${segs("n",[5,10,15,20].map(v=>({v,l:v})),"問")}</span></div>
+  <div class="cs-group"><span class="cs-lbl">制限時間</span>
+   <span class="seg">${segs("min",[5,10,15,20,30].map(v=>({v,l:v})),"分")}</span></div>`:""}
+  <div class="cs-range">
+   <div class="cs-range-head"><span class="cs-lbl2">出題範囲</span><small>単元ごとに複数選べます</small></div>
+   <button data-cu="all" class="unit-all-btn ${allUnits?'on':''}">ぜんぶ(${Q.length}問)</button>
+   ${unitGroups}
+  </div>
+  <div class="train-nav"><button class="btn-ghost" id="btnBack">もどる</button>
+   <button class="btn-primary btn-gold" id="btnGo" ${totalPool<1?"disabled":""}>${"スタート"} <span class="cs-sum">${Math.min(cbtSel.n,totalPool)}問 · ${cbtSel.min}分</span></button></div>
+ </div></section>`}
+function bindCbtSetup(){$("#btnBack").onclick=()=>nav("home");
+ document.querySelectorAll("[data-cs]").forEach(b=>b.onclick=()=>{cbtSel[b.dataset.cs]=Number(b.dataset.v);cbtSel.preset="custom";render()});
+ document.querySelectorAll("[data-preset]").forEach(b=>b.onclick=()=>{const p=CBT_PRESETS.find(x=>x.k===b.dataset.preset);
+  cbtSel.preset=p.k;if(p.n){cbtSel.n=p.n;cbtSel.min=p.min}render()});
+ document.querySelectorAll("[data-cu]").forEach(b=>b.onclick=()=>{const v=b.dataset.cu;
+  if(v==="all"){cbtSel.units=[];render();return}
+  const idx=cbtSel.units.indexOf(v);
+  if(!cbtSel.units.length){ // was "all": start from everything, then remove just this one
+    DATA.forEach((lv,li)=>lv.units.forEach((u,ui)=>cbtSel.units.push(`${li}-${ui}`)));
+  }
+  const i2=cbtSel.units.indexOf(v);
+  if(i2>=0)cbtSel.units.splice(i2,1);else cbtSel.units.push(v);
+  render()});
+ $("#btnGo").onclick=()=>{
+  const n=cbtSel.n,min=cbtSel.min,units=cbtSel.units;
+  S.set.cbtN=n;S.set.cbtMin=min;save();
+  const pool=Q.filter(q=>!units.length||units.includes(`${q.level-1}-${q.ui}`));
+  cbt={list:shuffle(pool).slice(0,n),idx:0,ans:{},flag:{},end:Date.now()+min*60000,submitted:false,confirm:false,usedFlag:false};
+  view="cbt";render();
+  cbt.timer=setInterval(()=>{if(view!=="cbt"||!cbt){clearInterval(cbt&&cbt.timer);return}
+    if(Date.now()>=cbt.end&&!cbt.submitted){submitCbt(true)}else{const el=$("#cbtTimer");if(el){const s=Math.max(0,Math.floor((cbt.end-Date.now())/1000));
+      el.textContent=`${String(Math.floor(s/60)).padStart(2,"0")}:${String(s%60).padStart(2,"0")}`;el.className="cbt-timer"+(s<60?" low":"")}}},500)}}
+function vCbt(){
+ if(cbt.submitted)return vCbtResult();
+ const q=cbt.list[cbt.idx];
+ return`<div class="cbt-bar"><span class="cbt-timer" id="cbtTimer">--:--</span>
+  <span class="xp-label">${cbt.idx+1} / ${cbt.list.length}</span>
+  <div class="cbt-palette">${cbt.list.map((qq,i)=>{
+    const cur=i===cbt.idx,ans=!!cbt.ans[qq.id],flag=!!cbt.flag[qq.id];
+    const status=[cur?"現在の問題":"",ans?"解答済み":"未解答",flag?"見直しマーク":""].filter(Boolean).join("・");
+    return`<button data-p="${i}" class="${cur?'cur':''} ${ans?'ans':''} ${flag?'flag':''}" aria-label="問${i+1} ${status}">${i+1}${ans?'<i class="pf">✓</i>':''}</button>`}).join("")}</div></div>
+ <section class="sheet cbt-noselect" oncontextmenu="return false"><span class="sheet-label">CBT</span><div class="train-sheet">
+  <div class="q-meta"><span>問${cbt.idx+1}</span>${cbt.flag[q.id]?'<span class="gold">🔖 見直しマーク</span>':""}</div>
+  <div class="q-ja big">${esc(q.ja)}</div>
+  <div class="type-line"><textarea id="ti" rows="2" autocomplete="off" autocapitalize="off" autocorrect="off" spellcheck="false" placeholder="英文を入力">${esc(cbt.ans[q.id]||"")}</textarea></div>
+  <div class="order-note">Enterキーで次へ進めます</div>
+  <div class="train-nav">
+   <div style="display:flex;gap:.5rem">
+    <button class="btn-ghost" id="btnPrev" ${cbt.idx===0?"disabled":""}>← 前へ</button>
+    <button class="btn-ghost" id="btnFlag">${cbt.flag[q.id]?"マーク解除":"見直しマーク"}</button></div>
+   <div style="display:flex;gap:.5rem">
+    ${cbt.idx<cbt.list.length-1?`<button class="btn-ghost" id="btnNextC">次へ →</button>`:""}
+    <button class="btn-primary btn-gold" id="btnSubmit">提出する</button></div>
+  </div></div></section>
+ ${cbt.confirm?`<div class="modal-back">${vCbtConfirm()}</div>`:""}`}
+function vCbtConfirm(){
+ const un=cbt.list.filter(q=>!normSp(cbt.ans[q.id]||"")).length;
+ const ansN=cbt.list.length-un;
+ const flagN=cbt.list.filter(q=>cbt.flag[q.id]).length;
+ const remain=Math.max(0,Math.floor((cbt.end-Date.now())/1000));
+ const remainTxt=`${String(Math.floor(remain/60)).padStart(2,"0")}:${String(remain%60).padStart(2,"0")}`;
+ return`<section class="sheet modal"><div class="pad">
+  <b style="color:var(--ink)">本当に提出しますか?</b>
+  <ul class="cbt-confirm-stats">
+   <li><span>解答済み</span><b>${ansN} / ${cbt.list.length} 問</b></li>
+   <li class="${un?'warn':''}"><span>未解答</span><b>${un} 問</b></li>
+   <li><span>見直しマーク</span><b>${flagN} 問</b></li>
+   <li><span>残り時間</span><b>${remainTxt}</b></li>
+  </ul>
+  ${un?`<p class="cbt-warn-msg">⚠ まだ ${un} 問、答えていません。このまま提出すると不正解になります。</p>`:`<p style="font-size:.88rem;color:var(--ink-soft);margin:.3rem 0 .6rem">すべて回答済みです。</p>`}
+  <p style="font-size:.82rem;color:var(--ink-soft);margin:.2rem 0 .6rem">提出すると変更できません。</p>
+  <div class="train-nav"><button class="btn-ghost" id="btnCancelSub">もどって見直す</button>
+   <button class="btn-primary" id="btnDoSub">提出する</button></div></div></section>`}
+function saveCbtInput(){const ti=$("#ti");if(ti&&cbt&&!cbt.submitted)cbt.ans[cbt.list[cbt.idx].id]=ti.value}
+function bindCbt(){
+ if(cbt.submitted){bindCbtResult();return}
+ const sheet=document.querySelector(".cbt-noselect");
+ if(sheet){["copy","paste","cut"].forEach(ev=>sheet.addEventListener(ev,e=>e.preventDefault()));
+   sheet.addEventListener("selectstart",e=>{if(e.target.id!=="ti")e.preventDefault()})}
+ const ti=$("#ti");if(ti){ti.focus();["paste","copy","cut","drop"].forEach(ev=>ti.addEventListener(ev,e=>e.preventDefault()));
+  ti.onkeydown=e=>{if(e.key==="Enter"&&!e.shiftKey){e.preventDefault();
+    const nx=$("#btnNextC");if(nx)nx.click();else $("#btnSubmit").click()}}}
+ document.querySelectorAll("[data-p]").forEach(b=>b.onclick=()=>{saveCbtInput();cbt.idx=Number(b.dataset.p);cbt.confirm=false;render()});
+ const pv=$("#btnPrev");if(pv)pv.onclick=()=>{saveCbtInput();cbt.idx--;render()};
+ const nx=$("#btnNextC");if(nx)nx.onclick=()=>{saveCbtInput();cbt.idx++;render()};
+ $("#btnFlag").onclick=()=>{saveCbtInput();const id=cbt.list[cbt.idx].id;cbt.flag[id]=!cbt.flag[id];cbt.usedFlag=true;render()};
+ $("#btnSubmit").onclick=()=>{saveCbtInput();cbt.confirm=true;render()};
+ const cs=$("#btnCancelSub");if(cs)cs.onclick=()=>{cbt.confirm=false;render()};
+ const ds=$("#btnDoSub");if(ds)ds.onclick=()=>submitCbt(false)}
+function submitCbt(timeup){saveCbtInput();clearInterval(cbt.timer);
+ cbt.res=cbt.list.map(q=>{const inp=cbt.ans[q.id]||"";
+   const qw=q.writeAlt&&q.writeAlt.length?{...q,answers:[...q.answers,...q.writeAlt]}:q;
+   const r=judge(inp,qw,true);
+   if(!r.perfect&&!(r.issues.length===0))schedule(q,"wrong");else if(r.perfect)schedule(q,"self");
+   logResult({qid:q.id,level:q.level,mode:"cbt",result:r.perfect?"ok":"ng",input:normSp(inp),answer:q.en,duration:0,accuracy:"",wpm:"",errType:r.issues.join(";"),hintLevel:0,confidence:""});
+   return{q,inp,ok:r.perfect,msgs:r.msgs}});
+ cbt.timeup=timeup;cbt.submitted=true;
+ const okN=cbt.res.filter(r=>r.ok).length,rate=Math.round(okN/cbt.res.length*100);
+ const d=day();d.sent+=okN;touchStreak();
+ checkBadges({cbt:true,cbtRate:rate,cbtFlag:cbt.usedFlag});save();render()}
+function vCbtResult(){
+ const okN=cbt.res.filter(r=>r.ok).length,rate=Math.round(okN/cbt.res.length*100);
+ return`<section class="sheet gold"><span class="sheet-label">CBT Result</span><div class="pad">
+  <div class="finish"><span class="fstamp">${rate>=80?"GREAT":"FINISH"}</span>
+   <div class="ftitle">${okN} / ${cbt.res.length} 問正解 (${rate}%)${cbt.timeup?" · 時間切れで自動提出":""}</div>
+   <div class="f-detail"><span>まちがえた問題は「今日の復習」に入りました</span></div></div>
+  <div style="margin-top:.6rem">
+  ${cbt.res.map((r,i)=>`<div class="cbt-res-row ${r.ok?'ok':'ng'}"><span class="m">${r.ok?ICONS.check:ICONS.xmark}</span>
+   <div><div>${i+1}. ${esc(r.q.ja)}</div><div class="en2">${esc(r.q.en)}</div>
+   ${!r.ok?`<div class="my">あなたの答え: ${r.inp?esc(normSp(r.inp)):"（未回答）"}</div>${r.msgs.length?`<div class="my">${esc(r.msgs[0])}</div>`:""}`:""}</div></div>`).join("")}
+  </div>
+  <div class="train-nav" style="justify-content:center"><button class="btn-ghost" id="btnHome3">ホームへ</button>
+   <button class="btn-primary" id="btnReview3">まちがいを復習する</button></div>
+ </div></section>`}
+function bindCbtResult(){$("#btnHome3").onclick=()=>nav("home");
+ $("#btnReview3").onclick=()=>{const wrong=cbt.res.filter(r=>!r.ok).map(r=>r.q.id);
+   if(!wrong.length){nav("home");return}
+   cbt=null;startSession(wrong,"write","CBTのまちがい直し",true)}}
+
+/* ---------- フレーズコレクション・自分の英文 ---------- */
+function addPhrase(q){if(!S.phrases.some(p=>p.id===q.id)){S.phrases.push({id:q.id,en:q.en,ja:q.ja,lv:q.level,fav:0,at:todayStr()});save()}}
+let phraseAll=false,rewardAll=false,mineAll=false,badgeAll=false;
+function sortedPhrases(){return S.phrases.slice().sort((a,b)=>(b.fav-a.fav))}
+function moreBtn(id,open,total){return`<button class="show-more" data-more="${id}">${open?"とじる ▲":`すべて表示 (${total}件) ▼`}</button>`}
+let editingPhrase=null;
+function vPhrases(){
+ if(!S.phrases.length&&!S.mine.length)return`<p class="empty">正解した基本文がここにたまります。</p>`;
+ const list=sortedPhrases(),shown=phraseAll?list:list.slice(0,6);
+ return`<div class="phrase-grid">`+shown.map((p,i)=>{
+  if(editingPhrase===p.id)return`<div class="phrase-card editing"><div style="flex:1">
+    <small style="display:block;margin-bottom:.3rem">「${esc(p.en)}」を自分のことに変えて書こう(自動採点はしません)</small>
+    <input type="text" class="mine-input" id="mineInput" value="${esc(p.en)}" spellcheck="false" autocomplete="off">
+    <div class="mine-actions"><button class="btn-aid" data-mc="1">やめる</button><button class="btn-aid save" data-mv="1">保存する</button></div>
+   </div></div>`;
+  return`<div class="phrase-card"><div><span class="p en">${esc(p.en)}</span><small>${esc(p.ja)} · ${esc(levelName(p.lv))}</small></div>
+  <div class="pc-act">
+   <button data-pf="${i}" class="${p.fav?'fav':''}" title="お気に入り">★</button>
+   <button data-ps="${i}" title="読み上げ">🔊</button>
+   <button data-pm="${i}" title="自分の英文を作る">✎</button>
+  </div></div>`}).join("")+`</div>`+
+  (list.length>6?moreBtn("phrase",phraseAll,list.length):"")+
+  (S.mine.length?(()=>{const ms=mineAll?S.mine:S.mine.slice(-4);
+   return`<h2 class="sec ja">自分で書いた英文</h2><div class="phrase-grid">`+ms.map(m=>`<div class="phrase-card mine"><div><span class="p en">${esc(m.en)}</span><small>もとの文: ${esc(m.base)} · ${esc(m.at)}</small></div></div>`).join("")+`</div>`+
+   (S.mine.length>4?moreBtn("mine",mineAll,S.mine.length):"")})():"")}
+function bindPhrases(){
+ const all=sortedPhrases(),list=phraseAll?all:all.slice(0,6);
+ document.querySelectorAll("[data-more]").forEach(b=>b.onclick=()=>{
+  const k=b.dataset.more;
+  if(k==="phrase")phraseAll=!phraseAll;else if(k==="mine")mineAll=!mineAll;else if(k==="badge")badgeAll=!badgeAll;else rewardAll=!rewardAll;
+  render()});
+ document.querySelectorAll("[data-pf]").forEach(b=>b.onclick=()=>{list[b.dataset.pf].fav=list[b.dataset.pf].fav?0:1;save();render()});
+ document.querySelectorAll("[data-ps]").forEach(b=>b.onclick=()=>speak(list[b.dataset.ps].en));
+ document.querySelectorAll("[data-pm]").forEach(b=>b.onclick=()=>{editingPhrase=list[b.dataset.pm].id;render();
+   const inp=$("#mineInput");if(inp){inp.focus();inp.setSelectionRange(inp.value.length,inp.value.length)}});
+ const mc=document.querySelector("[data-mc]");if(mc)mc.onclick=()=>{editingPhrase=null;render()};
+ const mv=document.querySelector("[data-mv]");if(mv){
+  const doSave=()=>{const p=S.phrases.find(x=>x.id===editingPhrase);const v=normSp($("#mineInput").value);
+   if(p&&v&&v!==normSp(p.en)){S.mine.push({base:p.en,en:v,at:todayStr()})}
+   editingPhrase=null;save();render()};
+  mv.onclick=doSave;
+  const inp=$("#mineInput");if(inp)inp.onkeydown=e=>{if(e.key==="Enter"){e.preventDefault();doSave()}if(e.key==="Escape"){editingPhrase=null;render()}}}}
+
+/* ---------- 記録 ---------- */
+function badgeProgress(b){
+ const rev=()=>Object.values(S.days).reduce((n,d)=>n+(d.rev||0),0);
+ const unitP=(li,ui)=>{const items=Q.filter(q=>q.level===li+1&&q.ui===ui);return[items.filter(q=>isMaster(q.id)).length,items.length]};
+ switch(b.id){
+  case "firstkey":return[totalKeys(),1];
+  case "threesent":return[allSent(),3];
+  case "tensent":return[allSent(),10];
+  case "fifty":return[allSent(),50];
+  case "streak3":return[S.streak,3];
+  case "streak5":return[S.streak,5];
+  case "streak10":return[S.streak,10];
+  case "memkeeper":return[rev(),10];
+  case "unit1":return unitP(0,0);
+  case "unit2":return unitP(0,1);
+  case "unit3":return unitP(0,2);
+  case "unit4":return unitP(0,3);
+  default:return null}}
+const BICON={firstkey:"key",threesent:"pen",tensent:"book",fifty:"chart",acc90:"type",acc95:"type",perfect:"spark",
+ comeback:"rev",memkeeper:"rev",nohint:"pen",hintuser:"coach",streak3:"flame",streak5:"flame",streak10:"flame",
+ onemore:"circle",nevergiveup:"check",unit1:"map",unit2:"map",unit3:"map",unit4:"map",
+ cbt1:"cbt",cbtready:"cbt",reviewck:"check",treasure:"key",treasure5:"book"};
+function vRecords(){
+ const d=day();const days7=[...Array(7)].map((_,i)=>addDays(i-6));
+ const week=days7.map(k=>S.days[k]||{sent:0,accS:0,accN:0});
+ const weekSent=week.reduce((n,x)=>n+x.sent,0);
+ const weekDays=week.filter(x=>x.sent>0).length;
+ const allS=allSent();
+ const allSec=Object.values(S.days).reduce((n,x)=>n+(x.sec||0),0);
+ const maxSent=Math.max(1,...week.map(x=>x.sent));
+ return`
+ <h2 class="sec ja">今日の記録</h2>
+ <div class="stat-grid">
+  <div class="stat"><b>${d.copySent||0}<em> 文</em></b><span>お手本タイピング完成</span></div>
+  <div class="stat"><b>${d.self}<em> 問</em></b><span>英作文で自力正解</span></div>
+  <div class="stat"><b>${d.rev}<em> 問</em></b><span>復習した</span></div>
+  <div class="stat"><b>${d.accN?Math.round(d.accS/d.accN)+"%":"--"}</b><span>今日の正確さ</span></div>
+ </div>
+ <h2 class="sec ja">今週の記録</h2>
+ <div class="stat-grid">
+  <div class="stat"><b>${weekDays}<em> 日</em></b><span>練習した日</span></div>
+  <div class="stat"><b>${weekSent}<em> 文</em></b><span>今週の英文</span></div>
+  <div class="stat"><b>${S.streak}<em> 日</em></b><span>連続記録 (最長 ${S.bestStreak})</span></div>
+  <div class="stat"><b>${masterCount()}<em> 文</em></b><span>自力で書けるようになった英文<small style="display:block;font-weight:400;opacity:.8">(お手本・ステップ・語順の3つをクリアした文)</small></span></div>
+ </div>
+ <div class="chart" role="img" aria-label="この7日間の完成英文数">
+  ${days7.map((k,i)=>`<div class="col"><div class="bar ${k===todayStr()?'':'blue'}" style="height:${week[i].sent/maxSent*100}%"></div><span class="dlab">${k.slice(5).replace("-","/")}</span></div>`).join("")}
+ </div>
+ <h2 class="sec ja">これまでの合計</h2>
+ <div class="stat-grid">
+  <div class="stat"><b>${allS}<em> 文</em></b><span>総英文数</span></div>
+  <div class="stat"><b>${Math.round(allSec/60)}<em> 分</em></b><span>タイピング時間</span></div>
+  <div class="stat"><b>${totalKeys()}<em> 本</em></b><span>集めた鍵</span></div>
+  <div class="stat"><b>${S.badges.length}<em> 個</em></b><span>バッジ</span></div>
+ </div>
+ <h2 class="sec ja">バッジ</h2>
+ ${(()=>{
+   const got=BADGES.filter(b=>S.badges.includes(b.id));
+   const locked=BADGES.filter(b=>!S.badges.includes(b.id));
+   const scored=locked.map(b=>{const p=badgeProgress(b);const ratio=p&&p[1]?Math.min(.99,p[0]/p[1]):-1;return{b,p,ratio}});
+   scored.sort((a,b)=>b.ratio-a.ratio);
+   const nextUp=scored.slice(0,3),restLocked=scored.slice(3);
+   const gotHtml=got.map(b=>`<div class="badge-cell got"><span class="bi">${ICONS[BICON[b.id]||"badge"]}</span><b>${esc(b.n)}</b><small>${esc(b.d)}</small></div>`).join("");
+   const nextHtml=nextUp.map(({b,p})=>`<div class="badge-cell locked next"><span class="bq">?</span><b>？？？</b><small>${esc(b.d)}</small>
+     ${p?`<div class="badge-prog"><span class="m-bar"><i style="width:${Math.round(Math.min(1,p[0]/p[1])*100)}%"></i></span><small>${Math.min(p[0],p[1])}/${p[1]}</small></div>`:""}</div>`).join("");
+   const restHtml=restLocked.map(({b})=>`<div class="badge-cell locked"><span class="bq">?</span><b>？？？</b><small>${esc(b.d)}</small></div>`).join("");
+   return`<div class="badge-grid">${gotHtml}</div>
+   ${nextUp.length?`<h3 class="sub-lbl">次に取れそうなバッジ</h3><div class="badge-grid">${nextHtml}</div>`:""}
+   ${restLocked.length?`${badgeAll?`<div class="badge-grid">${restHtml}</div>`:""}<button class="show-more" data-more="badge">${badgeAll?"とじる ▲":`残りのバッジをすべて見る (${restLocked.length}個) ▼`}</button>`:""}`
+ })()}
+ <h2 class="sec ja">フレーズコレクション</h2>
+ <div id="phraseArea">${vPhrases()}</div>
+ <h2 class="sec ja">ごほうびフレーズ</h2>
+ ${S.rewards.length?(()=>{const rv=S.rewards.slice().reverse(),rs=rewardAll?rv:rv.slice(0,6);
+   return`<div class="phrase-grid">`+rs.map((r,i)=>`<div class="phrase-card"><div><span class="p en">${esc(r.en)}</span><small>${esc(r.ja)} · ${esc(r.date)}</small></div>
+   <div class="pc-act"><button data-rs="${i}" title="読み上げ">🔊</button></div></div>`).join("")+`</div>`+
+   (rv.length>6?`<button class="show-more" data-more="reward">${rewardAll?"とじる ▲":`すべて表示 (${rv.length}件) ▼`}</button>`:"")})():
+  `<p class="empty">今日のミッションを3つクリアして宝箱をあけて、ネイティブがよく使うフレーズを貯めよう!</p>`}`}
+function dataActionsHtml(){
+ return`<div class="data-actions">
+  <button id="btnJson">引きつぎデータを保存</button>
+  <label>引きつぎデータを読みこむ<input type="file" id="fileJson" accept=".json" class="sr-only"></label>
+  <button id="btnCsv">記録一覧を書き出す(CSV)</button>
+  <button id="btnPrint">学習のきろくを印刷</button>
+  <button class="danger" id="btnResetAll">データを全部消す</button>
+ </div>
+ <div class="info-card">記録はこの端末のブラウザの中に保存されています。<b>別のパソコンやタブレットで続きから使いたいとき</b>は、今の端末で「引きつぎデータを保存」→ 新しい端末で「引きつぎデータを読みこむ」の順に使ってください。「記録一覧(CSV)」は、学習のようすをExcelなどで見たいとき(先生への提出など)に使います。データは外部には送信されません。</div>`}
+function dl(name,text,type){const a=document.createElement("a");
+ a.href=URL.createObjectURL(new Blob([text],{type}));a.download=name;a.click();setTimeout(()=>URL.revokeObjectURL(a.href),5000)}
+function csvCell(v){v=String(v??"");return/[",\n]/.test(v)?'"'+v.replace(/"/g,'""')+'"':v}
+function bindRecords(){
+ bindPhrases();
+ const rvAll=S.rewards.slice().reverse(),rws=rewardAll?rvAll:rvAll.slice(0,6);
+ document.querySelectorAll("[data-rs]").forEach(b=>b.onclick=()=>speak(rws[b.dataset.rs].en))}
+function bindDataActions(){
+ $("#btnCsv").onclick=()=>{
+  const head="date,time,questionId,level,mode,result,input,correctAnswer,duration,accuracy,wpm,errorType,hintLevel,confidence,nickname";
+  const rows=S.log.map(l=>[l.date,l.time,l.qid,l.level,l.mode,l.result,l.input,l.answer,l.duration,l.accuracy,l.wpm,l.errType,l.hintLevel,l.confidence,S.set.nick].map(csvCell).join(","));
+  dl("picks-results.csv","\uFEFF"+[head,...rows].join("\n"),"text/csv")};
+ $("#btnPrint").onclick=()=>{view="print";render()};
+ $("#btnJson").onclick=()=>dl("picks-backup.json",JSON.stringify(S,null,1),"application/json");
+ $("#fileJson").onchange=e=>{const f=e.target.files[0];if(!f)return;
+  const r=new FileReader();r.onload=()=>{try{const p=JSON.parse(r.result);
+    if(typeof p!=="object"||p===null||!("v"in p))throw new Error("形式が違います");
+    askConfirm("いまのデータをこのバックアップで置きかえます。よろしいですか?",()=>{
+      localStorage.setItem(SKEY,JSON.stringify(p));load();applySettings();render();notice("復元しました")},"置きかえる",true)}
+   catch(err){notice("読み込めませんでした: 正しいPICKSのバックアップJSONか確認してください")}};r.readAsText(f)};
+ $("#btnResetAll").onclick=()=>askConfirm("すべてのデータを消します。\nこの操作は元にもどせません。よろしいですか?",()=>{
+   try{localStorage.removeItem(SKEY)}catch(e){}
+   try{localStorage.setItem(SKEY,JSON.stringify(structuredClone(DEFAULTS)))}catch(e){}
+   location.reload()},"全部消す",true)}
+
+/* ---------- 印刷用「学習のきろく」 ---------- */
+function vPrint(){
+ const list=sortedPhrases(),rv=S.rewards.slice(),mine=S.mine.slice();
+ const gotB=BADGES.filter(b=>S.badges.includes(b.id));
+ const dt=new Date(),dstr=`${dt.getFullYear()}年${dt.getMonth()+1}月${dt.getDate()}日`;
+ const sec=(t,n,body)=>n?`<section class="pv-sec"><h3>${t}<span class="pv-n">${n}</span></h3>${body}</section>`:"";
+ return`<div class="pv-actions"><button class="btn-ghost" id="btnPvBack">← 記録にもどる</button>
+   <button class="btn-primary btn-gold" id="btnPvGo">印刷する / PDF保存</button></div>
+ <div class="pv-doc">
+  <header class="pv-head">
+   <div><span class="pv-logo">PICKS<i>.</i></span><span class="pv-sub">重要表現タイピング — 学習のきろく</span></div>
+   <div class="pv-meta"><span>なまえ: ${S.set.nick?esc(S.set.nick):"<i class='pv-line'></i>"}</span><span>${dstr}</span></div>
+  </header>
+  <div class="pv-stats">
+   <span><b>${masterCount()}</b><em>/ ${Q.length}</em> 自力で書けるようになった英文</span>
+   <span><b>${totalKeys()}</b> あつめた鍵</span>
+   <span><b>${allSent()}</b> 完成した英文</span>
+   <span><b>${S.bestStreak}</b> 連続記録(最長)</span>
+   <span><b>${gotB.length}</b><em>/ ${BADGES.length}</em> バッジ</span>
+  </div>
+  ${sec("フレーズコレクション",list.length,`<div class="pv-cols">${list.map(p=>`<div class="pv-item"><span class="pv-en">${p.fav?"★ ":""}${esc(p.en)}</span><span class="pv-ja">${esc(p.ja)}</span></div>`).join("")}</div>`)}
+  ${sec("ごほうびフレーズ",rv.length,`<div class="pv-cols">${rv.map(r=>`<div class="pv-item"><span class="pv-en">${esc(r.en)}</span><span class="pv-ja">${esc(r.ja)} <em>(${esc(r.date)})</em></span></div>`).join("")}</div>`)}
+  ${sec("自分で書いた英文",mine.length,`${mine.map(m=>`<div class="pv-item wide"><span class="pv-en">${esc(m.en)}</span><span class="pv-ja">もとの文: ${esc(m.base)}</span></div>`).join("")}`)}
+  ${sec("手に入れたバッジ",gotB.length,`<div class="pv-badges">${gotB.map(b=>`<span>${esc(b.n)}</span>`).join("")}</div>`)}
+  <footer class="pv-foot">PICKS — 期間限定・重要表現タイピング · このきろくは自分の端末の中だけに保存されています</footer>
+ </div>`}
+function bindPrint(){
+ $("#btnPvBack").onclick=()=>nav("records");
+ $("#btnPvGo").onclick=()=>window.print()}
+
+/* ---------- 設定 ---------- */
+let teacherOpen=false;
+function segBtn(key,val,label,cur){return`<button data-set="${key}" data-val="${val}" class="${String(cur)===String(val)?'on':''}">${label}</button>`}
+function chipBtn(key,val,label,arr){const all=!arr||!arr.length;
+ const on=val===0?all:(arr&&arr.includes(val));
+ return`<button data-chip="${key}" data-val="${val}" class="${on?'on':''}">${esc(label)}</button>`}
+function togBtn(key,cur){return`<button class="toggle ${cur?'on':''}" data-tg="${key}" role="switch" aria-checked="${cur}" aria-label="切り替え"></button>`}
+function vSettings(){const s=S.set;
+ return`
+ <h2 class="sec">Display</h2>
+ <div class="set-card">
+  <div class="set-row"><span class="lbl">文構造の色分け<small>色だけに頼らずラベルも表示します</small></span>
+   <span class="seg">${segBtn("colors","on","色あり",s.colors)}${segBtn("colors","hc","高コントラスト",s.colors)}${segBtn("colors","off","色なし",s.colors)}</span></div>
+  <div class="set-row"><span class="lbl">文字の大きさ</span>
+   <span class="seg">${segBtn("fs","15","小",s.fs)}${segBtn("fs","16","中",s.fs)}${segBtn("fs","18","大",s.fs)}</span></div>
+  <div class="set-row"><span class="lbl">アニメーションを減らす</span>${togBtn("motionOff",!s.motion)}</div>
+  <div class="set-row"><span class="lbl">お手本タイピングで日本語訳も表示<small>オフにすると、英文だけを見て打つ練習になります</small></span>${togBtn("showJa",s.showJa)}</div>
+  <div class="set-row"><span class="lbl">正解後に英文の設計図を表示</span>${togBtn("showBP",s.showBP)}</div>
+ </div>
+ <h2 class="sec">Sound</h2>
+ <div class="set-card">
+  <div class="set-row"><span class="lbl">音声読み上げ${canSpeak?"":"<small>このブラウザでは利用できません</small>"}</span>${togBtn("speech",s.speech)}</div>
+  <div class="set-row"><span class="lbl">効果音<small>正解・鍵・宝箱の小さな音。周りが気になるときはオフに</small></span>${togBtn("sfx",s.sfx)}</div>
+  <div class="set-row"><span class="lbl">読み上げ速度</span>
+   <span class="seg">${segBtn("rate","0.8","ゆっくり",s.rate)}${segBtn("rate","0.95","ふつう",s.rate)}${segBtn("rate","1.1","速い",s.rate)}</span></div>
+ </div>
+ <h2 class="sec">Learning</h2>
+ <div class="set-card">
+  <div class="set-row" style="flex-wrap:wrap"><span class="lbl">今日の練習・宝箱で出題する範囲</span>
+   <span class="seg">${chipBtn("seasons",0,"ぜんぶ",s.seasons)}${DATA.map((lv,i)=>chipBtn("seasons",i+1,lv.name,s.seasons)).join("")}</span>
+   <p class="empty" style="width:100%;margin:.3rem 0 0">今の設定 → <b style="color:var(--gold-2)">${(s.seasons&&s.seasons.length)?s.seasons.map(i=>DATA[i-1]?DATA[i-1].name:"").join("・"):"すべてのシーズン("+DATA.map(d=>d.name).join("・")+")"}</b> から出題されます</p></div>
+  <div class="set-row"><span class="lbl">回答後の自信度をきく<small>「当てずっぽう」なら翌日また出題、「自信あり」なら間をあけて出題。復習のタイミング調整に使います</small></span>${togBtn("conf",s.conf)}</div>
+  <div class="set-row"><span class="lbl">ニックネーム(CSVに記録・端末内のみ)<small>本名は入れないでください(例：2C-12)</small></span>
+   <input type="text" id="setNick" maxlength="12" value="${esc(s.nick)}" placeholder="例：2C-12" style="width:8rem"></div>
+  <div class="set-row" style="flex-wrap:wrap;border-top:1px dashed rgba(255,255,255,.08);padding-top:.7rem">
+   <details class="rule-details">
+    <summary>採点のルール<span class="rule-more">くわしく見る</span></summary>
+    <ul class="rule-list">
+     <li><b>お手本・語順</b>表示された英文と完全に同じ形で打つ練習です。短縮形(I'm/don't など)も、表示された通りの形が必要です。ゆるさはありません。</li>
+     <li><b>ステップ</b>大文字・記号(.?!)の細かい違いは大目に見ます。ただし単語そのものは表示通りが必要で、thatの省略などは正解になりません。</li>
+     <li><b>英作文</b>日本語だけを見て、自分で英文を組み立てる練習です。短縮形はどちらの形でもOK、thatの省略もOK。大文字・記号は初期設定ではゆるめですが、先生の設定で厳しくできます(設定画面いちばん下の「Teacher」→「英作文でも大文字・記号を厳格に採点」)。</li>
+     <li><b>CBTチャレンジ</b>短縮形・thatの省略はOKですが、大文字・記号はどんな設定でも常に厳しく採点します。</li>
+     <li><b>if(when)節の語順</b>「If(When) 〜, S+V.」でも「S+V if(when) 〜.」でも、ステップ・英作文・CBTチャレンジでは正解になります。お手本と語順は、表示された語順に固定されています。</li>
+     <li><b>give/buy/sendの書きかえ</b>「give(buy)等 人 物」でも「give(buy)等 物 to(for) 人」でも、ステップ・英作文・CBTチャレンジでは正解になります。お手本と語順は、表示された語順に固定されています。</li>
+    </ul>
+   </details>
+  </div>
+ </div>
+ <h2 class="sec">Data</h2>
+ <div class="set-card" style="padding:.8rem .9rem">${dataActionsHtml()}</div>
+ <h2 class="sec">Teacher</h2>
+ <div class="set-card">
+  ${teacherOpen?`
+  <div class="set-row"><span class="lbl">ヒントを許可</span>${togBtn("hints",s.hints)}</div>
+  <div class="set-row"><span class="lbl">英作文でも大文字・記号を厳格に採点<small>オフのときは内容が合っていれば正解+直すポイント表示</small></span>${togBtn("strictCase",s.strictCase)}</div>
+  <div class="set-row"><span class="lbl">CBTの標準問題数</span>
+   <span class="seg">${segBtn("cbtN","5","5",s.cbtN)}${segBtn("cbtN","10","10",s.cbtN)}${segBtn("cbtN","20","20",s.cbtN)}</span></div>
+  <div class="set-row"><span class="lbl">CBTの標準時間(分)</span>
+   <span class="seg">${segBtn("cbtMin","5","5",s.cbtMin)}${segBtn("cbtMin","10","10",s.cbtMin)}${segBtn("cbtMin","15","15",s.cbtMin)}</span></div>
+  <div class="data-actions" style="margin:.2rem 0 .4rem">
+   <button id="btnQCsv">問題データを書き出す(CSV)</button>
+   <button class="danger" id="btnResetHist">学習履歴だけ初期化</button></div>
+  <div class="set-row"><span class="lbl">パスコードの変更<small>4〜12文字・この端末にのみ保存</small></span>
+   <input type="password" id="newPass" style="width:7rem" placeholder="新しいパスコード" autocomplete="off">
+   <button class="btn-aid" id="btnChgPass" style="background:transparent">変更</button></div>
+  <p class="empty" style="padding:.4rem 0">※このパスコードは簡易的なもので、安全な認証機能ではありません。忘れた場合は「データを全部消す」で初期値にもどります。</p>`
+  :`<div class="set-row"><span class="lbl">先生向け設定<small>パスコードを入力</small></span>
+   <input type="password" id="tPass" style="width:6rem" placeholder="****" autocomplete="off">
+   <button class="btn-aid" id="btnTeacher" style="background:transparent">ひらく</button></div>`}
+ </div>
+ <p class="empty">PICKSは外部サーバーやAIを使いません。入力内容はこの端末の中にだけ保存されます。</p>`}
+function bindSettings(){
+ document.querySelectorAll("[data-set]").forEach(b=>b.onclick=()=>{const k=b.dataset.set;let v=b.dataset.val;
+  if(k==="fs"||k==="cbtN"||k==="cbtMin")v=Number(v);if(k==="rate")v=Number(v);
+  S.set[k]=v;save();applySettings();render()});
+ document.querySelectorAll("[data-tg]").forEach(b=>b.onclick=()=>{const k=b.dataset.tg;
+  if(k==="motionOff")S.set.motion=!S.set.motion;else S.set[k]=!S.set[k];
+  save();applySettings();render()});
+ document.querySelectorAll("[data-chip]").forEach(b=>b.onclick=()=>{const k=b.dataset.chip,v=Number(b.dataset.val);
+  if(v===0){S.set[k]=[];save();render();return}
+  let arr=Array.isArray(S.set[k])?S.set[k].slice():[];
+  const idx=arr.indexOf(v);if(idx>=0)arr.splice(idx,1);else arr.push(v);
+  S.set[k]=arr;save();render()});
+ const nk=$("#setNick");if(nk)nk.onchange=()=>{S.set.nick=normSp(nk.value).slice(0,12);save()};
+ bindDataActions();
+ const qc=$("#btnQCsv");if(qc)qc.onclick=()=>{
+  const head="id,level,unit,japanese,answer,alternativeAnswers,writeOnlyAlternatives,typingText,wordBlocks,sentencePattern,explanation";
+  const rows=Q.map(q=>[q.id,q.level,q.unit,q.ja,q.en,q.answers.slice(1).join("|"),q.writeAlt.join("|"),q.en,q.words.join("/"),q.pat,q.exp].map(csvCell).join(","));
+  dl("picks-questions.csv","\uFEFF"+[head,...rows].join("\n"),"text/csv")};
+ const rh=$("#btnResetHist");if(rh)rh.onclick=()=>askConfirm("学習履歴(鍵・バッジ・記録)を初期化します。\n設定は残ります。よろしいですか?",()=>{
+   const set=S.set;S=structuredClone(DEFAULTS);S.set=set;save();render();notice("学習履歴を初期化しました(設定は残っています)")},"初期化する",true);
+ const bt=$("#btnTeacher");if(bt)bt.onclick=()=>{
+  if($("#tPass").value===(S.set.tpass||"7777")){teacherOpen=true;render()}else notice("パスコードが違います")}
+ const cp=$("#btnChgPass");if(cp)cp.onclick=()=>{
+  const v=normSp($("#newPass").value);
+  if(v.length<4||v.length>12){notice("パスコードは4〜12文字で設定してください");return}
+  S.set.tpass=v;save();$("#newPass").value="";notice("パスコードを変更しました(この端末にのみ保存されます)")}}
+function applySettings(){
+ document.documentElement.style.setProperty("--fs",S.set.fs+"px");
+ document.body.dataset.colors=S.set.colors;
+ document.body.classList.toggle("reduce-motion",!S.set.motion)}
+
+/* ---------- レンダリング ---------- */
+function render(){
+ renderHeader();
+ const app=$("#app");
+ if(view==="session"&&session){app.innerHTML=vSession();
+   $("#btnQuit").onclick=()=>askConfirm("練習を中断しますか?\n(つづきから再開できます)",()=>nav("home"),"中断する",false,"戻る");
+   const q=curQ(),a=session.att;
+   if(a.done)bindDone(q,a);
+   else if(session.mode==="copy")bindCopy(q,a);
+   else if(session.mode==="step")bindStep(q,a);
+   else if(session.mode==="order")bindOrder(q,a);
+   else bindWrite(q,a);
+   return}
+ if(view==="cbtSetup"){app.innerHTML=vCbtSetup();bindCbtSetup();return}
+ if(view==="cbt"&&cbt){app.innerHTML=vCbt();bindCbt();return}
+ if(view==="map"){app.innerHTML=vMap();bindMap();return}
+ if(view==="records"){app.innerHTML=vRecords();bindRecords();return}
+ if(view==="print"){app.innerHTML=vPrint();bindPrint();return}
+ if(view==="settings"){app.innerHTML=vSettings();bindSettings();return}
+ view="home";app.innerHTML=vHome();bindHome()}
+
+/* ---------- 簡易テスト(開発用: コンソールで runTests() ) ---------- */
+function runTests(){
+ const q1=Q.find(x=>x.en==="I gave him the bag.");
+ const q5=Q.find(x=>x.en==="How many books are there?");
+ const q18=Q.find(x=>x.en==="Our mother bought us some cookies.");
+ const q11=Q.find(x=>x.en==="Ken gave me a book.");
+ const q14=Q.find(x=>x.en==="There are many people in this park today.");
+ const q15=Q.find(x=>x.en==="You don't have to take off your shoes here.");
+ const q3=Q.find(x=>x.en==="I am sorry I can't join it.");
+ const t=[,
+  [judge("I gave him the bag.",q1,false).perfect,true,"完全一致"],
+  [judge("i gave him the bag",q1,false).ok,true,"練習モード:内容一致は正解"],
+  [judge("i gave him the bag",q1,true).ok,false,"テストモード:大文字・記号で不正解"],
+  [judge("I gave him the bag.",q1,true).perfect,true,"strict完全一致"],
+  [judge("How many books are there",q5,false).issues.includes("qmark"),true,"疑問符不足の検出"],
+  [judge("Us bought our mother some cookies.",q18,false).issues.includes("order"),true,"語順違い検出"],
+  [judge("Ken give me a book.",q11,false).issues.includes("spell"),true,"不規則動詞の過去形検出(give→gave)"],
+  [judge("There are many people in this park.",q14,false).issues.includes("missing"),true,"単語不足検出(todayが無い)"],
+  [judge("  I   gave   him   the   bag.  ",q1,false).perfect,true,"連続空白・前後空白の正規化"],
+  [judge("You do not have to take off your shoes here.",q15,true).perfect,true,"短縮形⇔非短縮形 don't⇔do not"],
+  [judge("I am sorry that I can't join it.",{...q3,answers:[...q3.answers,...q3.writeAlt]},false).perfect,true,"thatの省略(英作文限定のwriteAlt)は英作文判定に混ぜると正解"],
+  [judge("I am sorry that I can't join it.",q3,false).perfect,false,"タイピング/ステップ(writeAlt未使用)ではthat追加は不正解のまま"],
+  [judge("I am sorry I cant join it.",q3,false).issues.includes("apos"),true,"アポストロフィ抜け検出"],
+ ].filter(Boolean);
+ let ok=0;t.forEach(([got,want,name])=>{const p=got===want;if(p)ok++;console[p?"log":"error"](`${p?"✔":"✘"} ${name}`,p?"":`got=${got}`)});
+ console.log(`${ok}/${t.length} passed`);return ok===t.length}
+
+/* ---------- 起動 ---------- */
+function init(){load();applySettings();
+ window.addEventListener("storage",e=>{if(e.key===SKEY){load();applySettings();if(view!=="session"&&view!=="cbt")render()}});
+ if(canSpeak)try{speechSynthesis.getVoices()}catch(e){}
+ render()}
+if(typeof document!=="undefined"&&document.getElementById("app"))init();
+if(typeof globalThis!=="undefined")globalThis.runTests=runTests;
+</script>
+</body>
+</html>
