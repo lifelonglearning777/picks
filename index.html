@@ -1314,11 +1314,17 @@ function checkBadges(ctx){newBadges=[];BADGES.forEach(b=>{if(!S.badges.includes(
    ・認証・ユーザーDB・学習ログの永続化はTransable親が担当。ここでは「学習の事実」のみを送る。
    ・氏名・メール・learner_id/user_id は送らない・受け取らない。
    ・targetOriginに"*"は使わない。allowlistに一致したorigin以外へは送信しない。
+   ・Handshake(2026-08 Transable開発者確認済み): bridge.initは存在しない。
+     親: iframeを ?embed=1&parent_origin=<親origin> で開く
+     子→親: bridge.ready
+     親→子: bridge.ack (payload.parent_origin / payload.session_id)
+     子→親: session.started / item.attempt.completed / session.completed ...
+     子はsession_idをEventに載せる必要はない(紐づけは親が行う)。
    ===================================================================== */
 const PICKS_APP_VERSION="2026.07.28";
 const TRANSABLE_PARENT_ORIGINS=[
- "https://www.transable.net", // 本番(実ドメインが確定したら合わせる)
- "https://develop.example.com", // 検証用(Transable側から提示されたoriginに置き換える)
+ "https://transable.net", // 本番(wwwなし。2026-08 Transable開発者確認済み)
+ "https://develop.djrcy718kg99d.amplifyapp.com", // develop検証環境
  "http://localhost:3000" // ローカル開発用
 ];
 let tbTargetOrigin=null;
@@ -1331,11 +1337,25 @@ function tbUuid(){
  try{if(window.crypto&&crypto.randomUUID)return crypto.randomUUID()}catch(e){}
  return "xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx".replace(/[xy]/g,c=>{
    const r=Math.random()*16|0,v=c==="x"?r:(r&0x3|0x8);return v.toString(16)})}
+function tbIsTrustedOrigin(origin){
+ if(!origin)return false;
+ if(TRANSABLE_PARENT_ORIGINS.includes(origin))return true;
+ // develop環境はAmplifyのプレビューURLがブランチごとに変わることがあるため、
+ // 同じホスティング基盤(*.amplifyapp.com/https限定)ならパターンでも許可する。
+ try{
+   const u=new URL(origin);
+   if(u.protocol==="https:"&&u.hostname.endsWith(".amplifyapp.com"))return true;
+ }catch(e){}
+ return false}
 function tbResolveParentOrigin(){
  if(tbTargetOrigin)return tbTargetOrigin;
  try{
+   const qp=new URLSearchParams(location.search).get("parent_origin");
+   if(qp&&tbIsTrustedOrigin(qp)){tbTargetOrigin=qp;return qp}
+ }catch(e){}
+ try{
    const ref=document.referrer?new URL(document.referrer).origin:null;
-   if(ref&&TRANSABLE_PARENT_ORIGINS.includes(ref)){tbTargetOrigin=ref;return ref}
+   if(ref&&tbIsTrustedOrigin(ref)){tbTargetOrigin=ref;return ref}
  }catch(e){}
  return null}
 function postToTransable(eventType,payload,activity){
@@ -1360,10 +1380,9 @@ function tbActivityFor(q){
 function initBridge(){
  if(!isEmbedMode())return;
  window.addEventListener("message",e=>{
-   if(!TRANSABLE_PARENT_ORIGINS.includes(e.origin))return;
+   if(!tbIsTrustedOrigin(e.origin))return;
    const d=e.data;
-   if(d&&d.type==="bridge.init"&&d.parent_origin&&TRANSABLE_PARENT_ORIGINS.includes(d.parent_origin))tbTargetOrigin=d.parent_origin;
-   if(d&&d.type==="bridge.ack")tbTargetOrigin=e.origin});
+   if(d&&d.event_type==="bridge.ack")tbTargetOrigin=e.origin});
  postToTransable("bridge.ready",{app_version:PICKS_APP_VERSION,provider:"picks"})}
 
 /* ---------- 学習ログ ---------- */
