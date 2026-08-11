@@ -1,0 +1,8 @@
+{
+  "schema_version": 1,
+  "provider_key": "picks",
+  "name": "PICKS",
+  "activity_title": "英文タイピング練習",
+  "description": "中学英語の重要文を、お手本・ステップ・語順・英作文の4モードでタイピング練習します。学習のようすはTransableに記録されます。",
+  "locale": "ja"
+}

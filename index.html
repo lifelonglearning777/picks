@@ -1323,7 +1323,8 @@ function checkBadges(ctx){newBadges=[];BADGES.forEach(b=>{if(!S.badges.includes(
    ===================================================================== */
 const PICKS_APP_VERSION="2026.07.28";
 const TRANSABLE_PARENT_ORIGINS=[
- "https://transable.net", // 本番(wwwなし。2026-08 Transable開発者確認済み)
+ "https://transable.net", // 本番(wwwなし。2026-08杉山さん個別回答で明示された値)
+ "https://www.transable.net", // 本番(www付き。汎用仕様書のチェックリストで両方必須とされているため併記)
  "https://develop.djrcy718kg99d.amplifyapp.com", // develop検証環境
  "http://localhost:3000" // ローカル開発用
 ];
@@ -1377,12 +1378,21 @@ function postToTransable(eventType,payload,activity){
 function tbActivityFor(q){
  if(!q)return undefined;
  return{external_activity_id:`unit-L${q.level}-U${q.ui+1}`,title:q.unit||"",unit:q.unit||""}}
+function tbShowContinueBanner(){
+ if(document.getElementById("tbContinueBanner"))return;
+ const b=document.createElement("div");
+ b.id="tbContinueBanner";
+ b.style.cssText="position:fixed;left:0;right:0;bottom:0;z-index:9999;background:#0F172A;color:#fff;padding:12px 16px;display:flex;align-items:center;justify-content:center;gap:12px;font-family:inherit;font-size:14px;box-shadow:0 -2px 12px rgba(0,0,0,.25)";
+ b.innerHTML='<span>この課題は終了しました。</span><button id="tbContinueBtn" style="background:#14B8A6;color:#0F172A;border:none;border-radius:8px;padding:8px 16px;font-weight:700;cursor:pointer;font-size:14px">続きをやる</button>';
+ document.body.appendChild(b);
+ document.getElementById("tbContinueBtn").onclick=()=>{postToTransable("ui.continue_requested",{});b.remove()}}
 function initBridge(){
  if(!isEmbedMode())return;
  window.addEventListener("message",e=>{
    if(!tbIsTrustedOrigin(e.origin))return;
    const d=e.data;
-   if(d&&d.event_type==="bridge.ack")tbTargetOrigin=e.origin});
+   if(d&&d.event_type==="bridge.ack")tbTargetOrigin=e.origin;
+   if(d&&d.event_type==="bridge.practice_ended")tbShowContinueBanner()});
  postToTransable("bridge.ready",{app_version:PICKS_APP_VERSION,provider:"picks"})}
 
 /* ---------- 学習ログ ---------- */
